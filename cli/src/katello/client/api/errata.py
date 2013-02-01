@@ -17,6 +17,14 @@ from katello.client.api.base import KatelloAPI
 
 class ErrataAPI(KatelloAPI):
     """ Connection class to access errata calls """
+    def all_errata(self):
+        path = "/api/errata"
+        params = {}
+        params['paged'] = True
+        params['sort_order'] = 'ASC'
+        params['sort_by'] = 'name'
+        pack = self.server.GET(path,params)[1]
+        return pack
 
     def errata_filter(self, repo_id=None, environment_id=None, prod_id=None, type_in=None, severity=None):
         path = "/api/errata"

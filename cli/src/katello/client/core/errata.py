@@ -39,10 +39,25 @@ class ErrataAction(BaseAction):
 
 
 # package actions ------------------------------------------------------------
+class ListAll(ErrataAction):
+  description = _("list all errata")
+
+  def run(self):
+    self.printer.add_column('id', _("ID"))
+    self.printer.add_column('title', _("Title"))
+    self.printer.add_column('type', _("Type"))
+
+    errata = self.api.all_errata()['erratum']
+
+    self.printer.set_header(_("Errata List"))
+    self.printer.print_items(errata)
+    return os.EX_OK
+
 
 class List(ErrataAction):
 
     description = _('list all errata for a repo')
+
 
     def setup_parser(self, parser):
         parser.add_option('--repo_id', dest='repo_id',

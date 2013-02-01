@@ -24,7 +24,7 @@ class Api::ErrataController < Api::ApiController
   before_filter :authorize
 
   def rules
-    env_readable = lambda{ @environment.contents_readable? }
+    env_readable = lambda{ !Katello.config.katello? || @environment.contents_readable? }
     readable = lambda{ @repo.environment.contents_readable? and @repo.product.readable? }
     {
       :index => env_readable,
@@ -42,11 +42,15 @@ class Api::ErrataController < Api::ApiController
   param :severity, String, :desc => "Severity of errata. Usually one of: Critical, Important, Moderate, Low. Case insensitive."
   param :type, String, :desc => "Type of errata. Usually one of: security, bugfix, enhancement. Case insensitive."
   def index
-    filter = params.slice(:repoid, :product_id, :environment_id, :type, :severity).symbolize_keys
-    unless filter[:repoid] or filter[:environment_id]
-      raise HttpErrors::BadRequest.new(_("Repo ID or environment must be provided"))
+    if Katello.config.katello?
+      filter = params.slice(:repoid, :product_id, :environment_id, :type, :severity).symbolize_keys
+      unless filter[:repoid] or filter[:environment_id]
+        raise HttpErrors::BadRequest.new(_("Repo ID or environment must be provided"))
+      end
+      render :json => Errata.filter(filter)
+    else
+      render :json => upstream_index
     end
-    render :json => Errata.filter(filter)
   end
 
   api :GET, "/repositories/:repository_id/errata/:id", "Show an erratum"
@@ -56,14 +60,43 @@ class Api::ErrataController < Api::ApiController
 
   private
 
+  def upstream_index
+    sort_order    = params[:sort_order] if params[:sort_order]
+    sort_by       = params[:sort_by] if params[:sort_by]
+    query_string  = params[:name] ? "name:#{params[:name]}" : params[:search]
+
+    if params[:paged]
+      page_size = params[:page_size] || current_user.page_size || 10
+    end
+
+    erratum = UpstreamErrata.search(query_string,params[:offset], page_size)
+    total_count = erratum.size
+
+    if params[:paged]
+      erratum = {
+        :erratum  => erratum,
+        :subtotal => total_count,
+        :total    => items.total_items
+      }
+    end
+
+    return erratum.to_json
+  end
+
   def find_environment
     if params.has_key?(:environment_id)
       @environment = KTEnvironment.find(params[:environment_id])
       raise HttpErrors::NotFound, _("Couldn't find environment '%s'") % params[:environment_id] if @environment.nil?
-    elsif params.has_key?(:repoid)
-      @repo = Repository.find(params[:repoid])
-      raise HttpErrors::NotFound, _("Couldn't find repository '%s'") % params[:repoid] if @repo.nil?
-      @environment = @repo.environment
+    else
+      if Katello.config.katello?
+        if params.has_key?(:repoid)
+          @repo = Repository.find(params[:repoid])
+          raise HttpErrors::NotFound, _("Couldn't find repository '%s'") % params[:repoid] if @repo.nil?
+          @environment = @repo.environment
+        end
+      else
+        @environment = current_user.default_environment
+      end
     end
     @environment
   end
