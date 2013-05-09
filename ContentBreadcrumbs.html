@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ContentBreadcrumbs
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (C)</a> &raquo;
+    
+    
+    <span class="title">ContentBreadcrumbs</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ContentBreadcrumbs
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="PromotionsHelper.html" title="PromotionsHelper (module)">PromotionsHelper</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/helpers/breadcrumb_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#changeset_id-instance_method" title="#changeset_id (instance method)">- (Object) <strong>changeset_id</strong>(cs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#details_path-instance_method" title="#details_path (instance method)">- (Object) <strong>details_path</strong>(product_id = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#distribution_bc_id-instance_method" title="#distribution_bc_id (instance method)">- (Object) <strong>distribution_bc_id</strong>(product) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#errata_bc_filters-instance_method" title="#errata_bc_filters (instance method)">- (Object) <strong>errata_bc_filters</strong>(env_name, product = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Create an array of hash elements each containing an id and label for the supported errata filters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#errata_bc_id-instance_method" title="#errata_bc_id (instance method)">- (Object) <strong>errata_bc_id</strong>(product, filter = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_content_breadcrumb-instance_method" title="#generate_content_breadcrumb (instance method)">- (Object) <strong>generate_content_breadcrumb</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Generates a json structure of the breadcrumb, consisting of a hash map of:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#packages_bc_id-instance_method" title="#packages_bc_id (instance method)">- (Object) <strong>packages_bc_id</strong>(product) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#product_bc_id-instance_method" title="#product_bc_id (instance method)">- (Object) <strong>product_bc_id</strong>(product) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#repo_bc_id-instance_method" title="#repo_bc_id (instance method)">- (Object) <strong>repo_bc_id</strong>(product) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="changeset_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>changeset_id</strong>(cs) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+208
+209
+210</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 208</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_changeset_id'>changeset_id</span> <span class='id identifier rubyid_cs'>cs</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_cs'>cs</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='kw'>if</span> <span class='id identifier rubyid_cs'>cs</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="details_path-instance_method">
+  
+    - (<tt>Object</tt>) <strong>details_path</strong>(product_id = nil) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 109</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_details_path'>details_path</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='op'>=</span><span class='kw'>nil</span>
+  <span class='id identifier rubyid_promotion_details_path'>promotion_details_path</span><span class='lparen'>(</span><span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='comma'>,</span> <span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product_id'>product_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="distribution_bc_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>distribution_bc_id</strong>(product) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+212
+213
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 212</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_distribution_bc_id'>distribution_bc_id</span> <span class='id identifier rubyid_product'>product</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>distribution_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="errata_bc_filters-instance_method">
+  
+    - (<tt>Object</tt>) <strong>errata_bc_filters</strong>(env_name, product = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Create an array of hash elements each containing an id and label for the supported errata filters.  This
+may be used when building out the breadcrumb and rendering the errata filters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 218</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_errata_bc_filters'>errata_bc_filters</span> <span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_filters'>filters</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_labels'>labels</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>All</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Severity: Critical</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Severity: Important</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Severity: Moderate</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+            <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Severity: Low</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Type: Security</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Type: Bug Fix</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Type: Enhancement</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbracket'>]</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_filters'>filters</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_all</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_critical</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span><span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Critical</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_important</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Important</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_moderate</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Moderate</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_low</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Low</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_security</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>security</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_bugfix</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>6</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bugfix</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_enhancement</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enhancement</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_filters'>filters</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>all</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>critical</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Critical</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>important</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Important</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>moderate</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Moderate</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>low</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>4</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:severity</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Low</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>security</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>5</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>security</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bugfix</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>6</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bugfix</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+               <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enhancement</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_labels'>labels</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_promotion_path'>errata_promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_env_name'>env_name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>enhancement</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="errata_bc_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>errata_bc_id</strong>(product, filter = nil) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+196
+197
+198
+199
+200
+201
+202</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 196</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span> <span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='op'>=</span><span class='kw'>nil</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_filter'>filter</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_filter'>filter</span><span class='rbrace'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_content_breadcrumb-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate_content_breadcrumb</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Generates a json structure of the breadcrumb, consisting of a hash map of:</p>
+
+<pre class="code ruby"><code class="ruby">:id =&gt;  {:url, :name, :trail} # where name is a human readable name, and :trail is
+                              # a list of other :ids creating the trail leading up to it
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_content_breadcrumb'>generate_content_breadcrumb</span>
+ <span class='id identifier rubyid_bc'>bc</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+ <span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content</span><span class='tstring_end'>&quot;</span></span>
+ <span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>products</span><span class='tstring_end'>&quot;</span></span>
+ <span class='id identifier rubyid_content_views_crumb_id'>content_views_crumb_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content_views</span><span class='tstring_end'>&quot;</span></span>
+
+ <span class='id identifier rubyid_errata_crumb_id'>errata_crumb_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata</span><span class='tstring_end'>&quot;</span></span>
+ <span class='id identifier rubyid_errata_filters'>errata_filters</span> <span class='op'>=</span> <span class='id identifier rubyid_errata_bc_filters'>errata_bc_filters</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+
+ <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_details_promotion_path'>details_promotion_path</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='comma'>,</span>
+     <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:cache</span> <span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:content</span><span class='op'>=&gt;</span><span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>detail</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                               <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:environment_name</span> <span class='op'>=&gt;</span> <span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
+                                         <span class='symbol'>:read_contents</span> <span class='op'>=&gt;</span> <span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_contents_readable?'>contents_readable?</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+ <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_errata_crumb_id'>errata_crumb_id</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span>
+     <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Errata</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:cache</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:content</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_filters</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:errata_filters</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_filters'>errata_filters</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+ <span class='id identifier rubyid_errata_filters'>errata_filters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_filter'>filter</span><span class='op'>|</span>
+   <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='comma'>,</span>
+       <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_errata_crumb_id'>errata_crumb_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:scrollable</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:searchable</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+ <span class='kw'>end</span>
+
+ <span class='comment'># build the crumb that contains the list of products
+</span> <span class='id identifier rubyid_product_info'>product_info</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+ <span class='ivar'>@products</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prod'>prod</span><span class='op'>|</span>
+   <span class='id identifier rubyid_product_info'>product_info</span><span class='lbracket'>[</span><span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>product</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:product</span><span class='op'>=&gt;</span><span class='id identifier rubyid_prod'>prod</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+ <span class='kw'>end</span>
+ <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_products_promotion_path'>products_promotion_path</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Products</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+     <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:client_render</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_product_info'>product_info</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:total_size</span> <span class='op'>=&gt;</span> <span class='ivar'>@products</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+ <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_content_views_crumb_id'>content_views_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_content_views_promotion_path'>content_views_promotion_path</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content Views</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+                <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+ <span class='ivar'>@products</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prod'>prod</span><span class='op'>|</span>
+   <span class='id identifier rubyid_product_id'>product_id</span> <span class='op'>=</span> <span class='id identifier rubyid_product_bc_id'>product_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_prod'>prod</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_errata_id'>errata_id</span> <span class='op'>=</span> <span class='id identifier rubyid_errata_bc_id'>errata_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_prod'>prod</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_errata_filters'>errata_filters</span> <span class='op'>=</span> <span class='id identifier rubyid_errata_bc_filters'>errata_bc_filters</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_prod'>prod</span><span class='rparen'>)</span>
+
+   <span class='comment'>#top of this product
+</span>   <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='comma'>,</span> <span class='id identifier rubyid_details_promotion_path'>details_promotion_path</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span><span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:cache</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:product_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+              <span class='symbol'>:content</span><span class='op'>=&gt;</span><span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>detail</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                               <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:product</span><span class='op'>=&gt;</span><span class='id identifier rubyid_prod'>prod</span><span class='comma'>,</span> <span class='symbol'>:environment_name</span> <span class='op'>=&gt;</span> <span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
+                                         <span class='symbol'>:read_contents</span> <span class='op'>=&gt;</span> <span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_contents_readable?'>contents_readable?</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+   <span class='comment'>#product_packages
+</span>   <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_packages_bc_id'>packages_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_prod'>prod</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_packages_promotion_path'>packages_promotion_path</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Packages</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span><span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:scrollable</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:searchable</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:product_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+   <span class='comment'>#product_errata
+</span>   <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_errata_id'>errata_id</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Errata</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                   <span class='lbrace'>{</span><span class='symbol'>:cache</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:product_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:content</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>errata_filters</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:errata_filters</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_errata_filters'>errata_filters</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+   <span class='id identifier rubyid_errata_filters'>errata_filters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_filter'>filter</span><span class='op'>|</span>
+     <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='comma'>,</span>
+         <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='comma'>,</span> <span class='id identifier rubyid_errata_id'>errata_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:scrollable</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:searchable</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:product_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+   <span class='kw'>end</span>
+
+   <span class='comment'>#product_repos
+</span>   <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_repo_bc_id'>repo_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_prod'>prod</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_repos_promotion_path'>repos_promotion_path</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+                   <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Repos</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span><span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:scrollable</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:searchable</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:product_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+   <span class='comment'>#product_distributions
+</span>   <span class='id identifier rubyid_add_crumb_node!'>add_crumb_node!</span><span class='lparen'>(</span><span class='id identifier rubyid_bc'>bc</span><span class='comma'>,</span> <span class='id identifier rubyid_distribution_bc_id'>distribution_bc_id</span><span class='lparen'>(</span><span class='id identifier rubyid_prod'>prod</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_distributions_promotion_path'>distributions_promotion_path</span><span class='lparen'>(</span><span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_changeset_id'>changeset_id</span><span class='lparen'>(</span><span class='ivar'>@changeset</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
+                   <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Distributions</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_content_crumb_id'>content_crumb_id</span><span class='comma'>,</span><span class='id identifier rubyid_products_crumb_id'>products_crumb_id</span><span class='comma'>,</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:scrollable</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:product_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+ <span class='kw'>end</span>
+
+ <span class='id identifier rubyid_bc'>bc</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="packages_bc_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>packages_bc_id</strong>(product) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 192</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_packages_bc_id'>packages_bc_id</span> <span class='id identifier rubyid_product'>product</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>packages_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="product_bc_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>product_bc_id</strong>(product) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 188</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_product_bc_id'>product_bc_id</span> <span class='id identifier rubyid_product'>product</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>details_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="repo_bc_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>repo_bc_id</strong>(product) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/breadcrumb_helper.rb', line 204</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_repo_bc_id'>repo_bc_id</span> <span class='id identifier rubyid_product'>product</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repo_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:24 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

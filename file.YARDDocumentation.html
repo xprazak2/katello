@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: YARDDocumentation
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: YARDDocumentation</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>YARD documentation</h1>
+
+<h2>Browsing</h2>
+
+<p>There are several options</p>
+
+<ul>
+<li>  start Katello server and click on the link in the UI footer or go directly to
+<a href="http://path.to.katello/a_prefix/yard/docs/katello/frames" target="_parent" title="http://path.to.katello/a_prefix/yard/docs/katello/frames">http://path.to.katello/a_prefix/yard/docs/katello/frames</a></li>
+<li>  run standalone server <code>yard server --reload</code> and go to <a href="http://localhost:8808" target="_parent" title="http://localhost:8808">http://localhost:8808</a></li>
+</ul>
+
+<p><em>Note: if any of the above fails try to run <code>bundle exec yard doc --no-cache</code> first.</em></p>
+
+<ul>
+<li><p>generate documentation statically</p>
+
+<ul>
+<li>  run <code>yard doc</code> in <code>katello/src</code></li>
+<li>  <code>open katello/src/yardoc/index.html</code></li>
+<li>  <code>yarddoc</code> directory is in <code>.gitignore</code></li>
+</ul></li>
+</ul>
+
+<p>Enable gem <code>yard-activerecord</code> in <code>bundler.d/development.rb</code> to have attributes and associations of ActiveRecord
+documented. <em>Note: It&#39;ll be permanently added later when gem is published and rpm packaged.</em></p>
+
+<h2>Basics</h2>
+
+<ul>
+<li>  YARD is set to <a href="http://daringfireball.net/projects/markdown/syntax#html">Markdown syntax</a> by default.
+Files without extension and code documentation will us it. It can be overridden by different file extension.</li>
+<li>  Consider reading <a href="http://rubydoc.info/docs/yard/file/docs/GettingStarted.md">Getting started</a> guide
+to get familiar with YARD features.</li>
+<li>  There is a <a href="https://gist.github.com/1827484">cheat-sheet</a> available.</li>
+<li>  <a href="http://rubydoc.info/docs/yard/file/docs/Tags.md#List_of_Available_Tags">Tag list</a> is also very useful</li>
+</ul>
+
+<h3>Other tips</h3>
+
+<ul>
+<li><p>Markdown is indented by 4 spaces. 2 space indentation also works but only sometimes, it&#39;s better to use 4 to avoid
+trouble.</p>
+
+<pre class="code ruby"><code class="ruby">-   list1
+
+        a block of code
+
+-   list2
+-   list3
+
+    -   list3.1
+    -   list3.2
+
+-   list4
+</code></pre></li>
+<li><p>If there is a method which is should be private but it cannot be because its accessed by another object,
+It&#39;s useful to mark it with <a href="http://rubydoc.info/docs/yard/file/docs/Tags.md#api">@api private</a>
+tag to indicate that it should not be used outside of a library where it&#39;s defined.
+Follow Glue::Foreman::User::ClassMethods#disable_foreman_orchestration! to see the result.</p></li>
+<li><p>Tag <a href="http://rubydoc.info/docs/yard/file/docs/Tags.md#option">@option</a> is very useful to document what options a
+method uses, because options are not specified
+in the method signature. Options are usually hidden somewhere in the method body.</p></li>
+</ul>
+
+<h2>What to document</h2>
+
+<ul>
+<li>  Internal APIs should be documented, like: <span class='object_link'><a href="Notifications.html" title="Notifications (module)">Notifications</a></span>, Resources::AbstractModel. Other parts don&#39;t need
+documentation if they are self-documenting/readable enough.</li>
+<li><p>Create namespaces to group classes to a meaningful whole.</p>
+
+<ul>
+<li>  If there is a documentation you would like to write and you do not have a place to put it, consider to create a
+namespace (module) before creating a guide in <code>doc</code> directory.</li>
+</ul></li>
+<li><p>High level overviews belong to /doc directory. Look at
+<a href="http://rubydoc.info/docs/yard/file/docs/GettingStarted.md#Embedding_Docstrings__include_____">include:</a> directive
+to save you some typing.</p></li>
+</ul>
+
+<h1>Reducing amount of needed documentation</h1>
+
+<h2>Small pieces and self-documentation</h2>
+
+<p>The smallest pieces should be self-documented. It will reduce amount of needed documentation. Also the smallest pieces
+are changed often so if they are self-documenting there is no problem with outdated documentation.</p>
+
+<h3>Variables</h3>
+
+<ul>
+<li><p>All variables should have proper descriptive names (long name always better than a shortcut), e.g.:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_user'>user</span>     <span class='comment'># instance of User
+</span><span class='id identifier rubyid_user_id'>user_id</span>  <span class='comment'># an_user.id
+</span><span class='id identifier rubyid_users'>users</span>    <span class='comment'># array of Users
+</span><span class='id identifier rubyid_user_ids'>user_ids</span> <span class='comment'># array of Integers, user ids
+</span></code></pre>
+
+<p><code>user</code> and <code>user_id</code> should not be mixed it often leads to wrong assumptions about variable content/type.</p></li>
+</ul>
+
+<h3>Methods</h3>
+
+<ul>
+<li>  A method should do one thing (Single responsibility principle).</li>
+<li>  Body should be short and readable, it should not take more than a minute or two to understand.</li>
+<li>  Method name describes (documents) what it does. (long name is always better than a shortcut)</li>
+<li>  If method has to many parameters consider using Hash options.</li>
+<li>  If method violates these guidelines it should be split in smaller methods, which gives the smaller chunks a name
+and description what it does.</li>
+</ul>
+
+<h3>Code</h3>
+
+<ul>
+<li>  use various Ruby syntax features to document what it does and to make it more readable</li>
+<li>  functional style is usually more readable and less error prone</li>
+<li>  don&#39;t forget to document <em>why</em> code does what it does. (It is not much useful when code is clear in what it does
+but a reader does not have a clue why there is that bloody <code>if</code> condition for some corner case.)</li>
+</ul>
+
+<h4>Some examples</h4>
+
+<ul>
+<li><p>iterations</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_user_ids'>user_ids</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_u'>u</span><span class='op'>|</span> <span class='id identifier rubyid_user_ids'>user_ids</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='rbrace'>}</span>
+<span class='comment'># would be better written functionally to avoid side-effects (changing content of user_ids variable)
+</span><span class='id identifier rubyid_user_ids'>user_ids</span> <span class='op'>=</span> <span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_ids'>ids</span><span class='comma'>,</span> <span class='id identifier rubyid_user'>user</span><span class='op'>|</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='rbrace'>}</span>
+</code></pre></li>
+<li><p>object construction</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_user'>user</span>          <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>John Dow</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>password</span><span class='tstring_end'>'</span></span>
+<span class='comment'># would be better as
+</span><span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_user'>user</span><span class='op'>|</span>
+  <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>John Dow</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>password</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span>
+<span class='comment'># because it optically separates user creation from rest of the code, reader can skip this quickly
+</span><span class='comment'># if he isn't interested in this part of code.
+</span></code></pre></li>
+<li><p>if and case as expression</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:organization_id</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_organization_id'>organization_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:organization_id</span><span class='rbracket'>]</span>
+<span class='kw'>else</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_a_model'>a_model</span>
+  <span class='kw'>when</span> <span class='const'>User</span>
+    <span class='id identifier rubyid_organization_id'>organization_id</span> <span class='op'>=</span> <span class='id identifier rubyid_a_model'>a_model</span><span class='period'>.</span><span class='id identifier rubyid_default_organization'>default_organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='kw'>when</span> <span class='const'>Organization</span>
+    <span class='id identifier rubyid_organization_id'>organization_id</span> <span class='op'>=</span> <span class='id identifier rubyid_a_model'>a_model</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+<span class='comment'># could be written as
+</span><span class='id identifier rubyid_organization_id'>organization_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:organization_id</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='kw'>case</span> <span class='id identifier rubyid_a_model'>a_model</span>
+                                              <span class='kw'>when</span> <span class='const'>User</span>
+                                                <span class='id identifier rubyid_a_model'>a_model</span><span class='period'>.</span><span class='id identifier rubyid_default_organization'>default_organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+                                              <span class='kw'>when</span> <span class='const'>Organization</span>
+                                                <span class='id identifier rubyid_a_model'>a_model</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+                                              <span class='kw'>else</span>
+                                                <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span>
+                                              <span class='kw'>end</span>
+<span class='comment'># starts with `organization_id =` so reader immediately knows what the block of code is about
+</span><span class='comment'># functional style
+</span><span class='comment'># do not forget to raise on unexpected values
+</span><span class='comment'># same style is useful for if conditions
+</span><span class='id identifier rubyid_a_variable'>a_variable</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='kw'>true</span>
+               <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this is true</span><span class='tstring_end'>'</span></span>
+             <span class='kw'>else</span>
+               <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this is false</span><span class='tstring_end'>'</span></span>
+             <span class='kw'>end</span>
+</code></pre></li>
+</ul>
+
+<h4><a href="https://github.com/styleguide/ruby">Ruby style guide</a> should not be forgotten</h4>
+
+<p>Exceptions from the guide:</p>
+
+<ul>
+<li>  documentation section, we do not use Tomdoc</li>
+<li>  <code>and</code> and <code>or</code> can be used for code flow control which is theirs true purpose, never in conditions</li>
+<li><p><code>unless</code> with <code>else</code> can be used where the first part is much shorter</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>unless</span> <span class='id identifier rubyid_a_test'>a_test</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>an_error_message</span><span class='tstring_end'>'</span></span>
+<span class='kw'>else</span>
+  <span class='comment'># ... long
+</span><span class='kw'>end</span>
+</code></pre></li>
+</ul>
+
+<h2>Other random thoughts</h2>
+
+<ul>
+<li>  If a class starts to have a lot of methods its useful to create helper classes accessible via one method
+from original class, good example is <span class='object_link'><a href="Notifications/Notifier.html" title="Notifications::Notifier (class)">Notifications::Notifier</a></span> accessible by
+<span class='object_link'><a href="Notifications/ControllerHelper.html#notify-instance_method" title="Notifications::ControllerHelper#notify (method)">Notifications::ControllerHelper#notify</a></span> method. Before It was implement as a helper module and
+included to controller.</li>
+<li>  If an API is being written it should not only be documented but also have generous amount of argument, type checks
+(raise errors) to ensure that the API is used properly by developers.</li>
+</ul>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu May  9 10:19:20 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

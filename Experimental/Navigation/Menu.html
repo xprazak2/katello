@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Experimental::Navigation::Menu
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Experimental.html" title="Experimental (module)">Experimental</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Navigation.html" title="Experimental::Navigation (module)">Navigation</a></span></span>
+     &raquo; 
+    <span class="title">Menu</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Experimental::Navigation::Menu
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Experimental::Navigation::Menu</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="AdministrationMenu.html" title="Experimental::Navigation::AdministrationMenu (module)">AdministrationMenu</a></span>, <span class='object_link'><a href="ContentMenu.html" title="Experimental::Navigation::ContentMenu (module)">ContentMenu</a></span>, <span class='object_link'><a href="DashboardMenu.html" title="Experimental::Navigation::DashboardMenu (module)">DashboardMenu</a></span>, <span class='object_link'><a href="SystemMenu.html" title="Experimental::Navigation::SystemMenu (module)">SystemMenu</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/lib/experimental/navigation.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_url_options-instance_method" title="#default_url_options (instance method)">- (Object) <strong>default_url_options</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate-instance_method" title="#generate (instance method)">- (Object) <strong>generate</strong>(menus) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_admin_menu-instance_method" title="#generate_admin_menu (instance method)">- (Object) <strong>generate_admin_menu</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_main_menu-instance_method" title="#generate_main_menu (instance method)">- (Object) <strong>generate_main_menu</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Menu) <strong>initialize</strong>(current_organization) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of Menu.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#prune_menu-instance_method" title="#prune_menu (instance method)">- (Object) <strong>prune_menu</strong>(menu_items) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="SystemMenu.html" title="Experimental::Navigation::SystemMenu (module)">SystemMenu</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SystemMenu.html#menu_system_groups-instance_method" title="Experimental::Navigation::SystemMenu#menu_system_groups (method)">#menu_system_groups</a></span>, <span class='object_link'><a href="SystemMenu.html#menu_systems-instance_method" title="Experimental::Navigation::SystemMenu#menu_systems (method)">#menu_systems</a></span>, <span class='object_link'><a href="SystemMenu.html#menu_systems_environments_list-instance_method" title="Experimental::Navigation::SystemMenu#menu_systems_environments_list (method)">#menu_systems_environments_list</a></span>, <span class='object_link'><a href="SystemMenu.html#menu_systems_org_list-instance_method" title="Experimental::Navigation::SystemMenu#menu_systems_org_list (method)">#menu_systems_org_list</a></span>, <span class='object_link'><a href="SystemMenu.html#system_groups_content_subnav-instance_method" title="Experimental::Navigation::SystemMenu#system_groups_content_subnav (method)">#system_groups_content_subnav</a></span>, <span class='object_link'><a href="SystemMenu.html#system_groups_navigation-instance_method" title="Experimental::Navigation::SystemMenu#system_groups_navigation (method)">#system_groups_navigation</a></span>, <span class='object_link'><a href="SystemMenu.html#system_groups_subnav-instance_method" title="Experimental::Navigation::SystemMenu#system_groups_subnav (method)">#system_groups_subnav</a></span>, <span class='object_link'><a href="SystemMenu.html#systems_content_subnav-instance_method" title="Experimental::Navigation::SystemMenu#systems_content_subnav (method)">#systems_content_subnav</a></span>, <span class='object_link'><a href="SystemMenu.html#systems_navigation-instance_method" title="Experimental::Navigation::SystemMenu#systems_navigation (method)">#systems_navigation</a></span>, <span class='object_link'><a href="SystemMenu.html#systems_subnav-instance_method" title="Experimental::Navigation::SystemMenu#systems_subnav (method)">#systems_subnav</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="DashboardMenu.html" title="Experimental::Navigation::DashboardMenu (module)">DashboardMenu</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="DashboardMenu.html#menu_dashboard-instance_method" title="Experimental::Navigation::DashboardMenu#menu_dashboard (method)">#menu_dashboard</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ContentMenu.html" title="Experimental::Navigation::ContentMenu (module)">ContentMenu</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ContentMenu.html#menu_changeset_management-instance_method" title="Experimental::Navigation::ContentMenu#menu_changeset_management (method)">#menu_changeset_management</a></span>, <span class='object_link'><a href="ContentMenu.html#menu_content-instance_method" title="Experimental::Navigation::ContentMenu#menu_content (method)">#menu_content</a></span>, <span class='object_link'><a href="ContentMenu.html#menu_content_search-instance_method" title="Experimental::Navigation::ContentMenu#menu_content_search (method)">#menu_content_search</a></span>, <span class='object_link'><a href="ContentMenu.html#menu_content_view_definitions-instance_method" title="Experimental::Navigation::ContentMenu#menu_content_view_definitions (method)">#menu_content_view_definitions</a></span>, <span class='object_link'><a href="ContentMenu.html#menu_repositories-instance_method" title="Experimental::Navigation::ContentMenu#menu_repositories (method)">#menu_repositories</a></span>, <span class='object_link'><a href="ContentMenu.html#menu_subscriptions-instance_method" title="Experimental::Navigation::ContentMenu#menu_subscriptions (method)">#menu_subscriptions</a></span>, <span class='object_link'><a href="ContentMenu.html#menu_sync_management-instance_method" title="Experimental::Navigation::ContentMenu#menu_sync_management (method)">#menu_sync_management</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="AdministrationMenu.html" title="Experimental::Navigation::AdministrationMenu (module)">AdministrationMenu</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="AdministrationMenu.html#menu_about-instance_method" title="Experimental::Navigation::AdministrationMenu#menu_about (method)">#menu_about</a></span>, <span class='object_link'><a href="AdministrationMenu.html#menu_administration-instance_method" title="Experimental::Navigation::AdministrationMenu#menu_administration (method)">#menu_administration</a></span>, <span class='object_link'><a href="AdministrationMenu.html#menu_orgs-instance_method" title="Experimental::Navigation::AdministrationMenu#menu_orgs (method)">#menu_orgs</a></span>, <span class='object_link'><a href="AdministrationMenu.html#menu_roles-instance_method" title="Experimental::Navigation::AdministrationMenu#menu_roles (method)">#menu_roles</a></span>, <span class='object_link'><a href="AdministrationMenu.html#menu_sync_tasks-instance_method" title="Experimental::Navigation::AdministrationMenu#menu_sync_tasks (method)">#menu_sync_tasks</a></span>, <span class='object_link'><a href="AdministrationMenu.html#menu_users-instance_method" title="Experimental::Navigation::AdministrationMenu#menu_users (method)">#menu_users</a></span>, <span class='object_link'><a href="AdministrationMenu.html#user_navigation-instance_method" title="Experimental::Navigation::AdministrationMenu#user_navigation (method)">#user_navigation</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Experimental::Navigation::Menu (class)">Menu</a></span></tt>) <strong>initialize</strong>(current_organization) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>A new instance of Menu</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/experimental/navigation.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span>
+  <span class='ivar'>@current_organization</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="default_url_options-instance_method">
+  
+    - (<tt>Object</tt>) <strong>default_url_options</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/experimental/navigation.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_default_url_options'>default_url_options</span>
+  <span class='lbrace'>{</span> <span class='symbol'>:script_name</span> <span class='op'>=&gt;</span> <span class='const'>ActionController</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_relative_url_root'>relative_url_root</span>
+  <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_application'>application</span><span class='period'>.</span><span class='id identifier rubyid_routes'>routes</span><span class='period'>.</span><span class='id identifier rubyid_default_url_options'>default_url_options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate</strong>(menus) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/experimental/navigation.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate'>generate</span><span class='lparen'>(</span><span class='id identifier rubyid_menus'>menus</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_menus'>menus</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_admin_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate_admin_menu</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/experimental/navigation.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_admin_menu'>generate_admin_menu</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_generate'>generate</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_menu_administration'>menu_administration</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_main_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate_main_menu</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/experimental/navigation.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_main_menu'>generate_main_menu</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_generate'>generate</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_menu_dashboard'>menu_dashboard</span><span class='comma'>,</span> <span class='id identifier rubyid_menu_content'>menu_content</span><span class='comma'>,</span> <span class='id identifier rubyid_menu_systems'>menu_systems</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="prune_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>prune_menu</strong>(menu_items) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/experimental/navigation.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_menu_items'>menu_items</span><span class='rparen'>)</span>
+  <span class='comment'>#have a list of menu items -&gt; example [dashboard_hash, organizations_hash]
+</span>  <span class='comment'>#we need to prune that list based on
+</span>  <span class='comment'>#1. :if block wont pass (Permission issues  -&gt; eg: user has no org access)   OR
+</span>  <span class='comment'>#2. No accessible children (-&gt; eg: none of the second level items under org work out for the user)
+</span>  <span class='id identifier rubyid_menu_items'>menu_items</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_menu'>menu</span><span class='op'>|</span>
+    <span class='comment'># check the :if block
+</span>    <span class='id identifier rubyid_if_proc'>if_proc</span> <span class='op'>=</span>  <span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:if</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_if_proc'>if_proc</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_if_proc'>if_proc</span> <span class='op'>==</span> <span class='symbol'>:sub_level</span> <span class='op'>||</span> <span class='id identifier rubyid_if_proc'>if_proc</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
+       <span class='comment'># :if block worked out.
+</span>       <span class='comment'># Checking the children
+</span>       <span class='kw'>if</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span>
+         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='kw'>if</span> <span class='const'>Proc</span> <span class='op'>===</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span>
+         <span class='comment'># prune the sub menus
+</span>         <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span>
+
+         <span class='comment'># now that they have been pruned, set the default url.
+</span>         <span class='comment'># pick that from the first accessible child
+</span>         <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:sub_level</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+           <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span>
+         <span class='kw'>end</span>
+
+         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='kw'>if</span> <span class='const'>Proc</span><span class='op'>===</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span>
+
+         <span class='comment'>#we want this item to be pruned
+</span>         <span class='comment'># if there are no accessible children
+</span>
+         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+       <span class='kw'>else</span>
+         <span class='comment'># this is a leaf node
+</span>         <span class='comment'># and its condition has already been evaluated to true
+</span>         <span class='comment'># so keep it
+</span>         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='kw'>if</span> <span class='const'>Proc</span><span class='op'>===</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span>
+         <span class='kw'>false</span>
+       <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='comment'># This node's condition has been evaluated to false
+</span>      <span class='comment'># so prune it.
+</span>      <span class='kw'>true</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:54 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

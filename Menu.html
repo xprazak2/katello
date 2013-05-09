@@ -1,0 +1,698 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Menu
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (M)</a> &raquo;
+    
+    
+    <span class="title">Menu</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Menu
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/helpers/menu.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">+ (Object) <strong>included</strong>(base) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#prune_menu-instance_method" title="#prune_menu (instance method)">- (Object) <strong>prune_menu</strong>(menu_items) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_admin_menu-instance_method" title="#render_admin_menu (instance method)">- (Object) <strong>render_admin_menu</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_main_menu-instance_method" title="#render_main_menu (instance method)">- (Object) <strong>render_main_menu</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_main_sub_menu-instance_method" title="#render_main_sub_menu (instance method)">- (Object) <strong>render_main_sub_menu</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_menu-instance_method" title="#render_menu (instance method)">- (Object) <strong>render_menu</strong>(level, items = nil, prune = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_notifications_menu-instance_method" title="#render_notifications_menu (instance method)">- (Object) <strong>render_notifications_menu</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_sublevel_menu-instance_method" title="#render_sublevel_menu (instance method)">- (Object) <strong>render_sublevel_menu</strong>(items = nil, prune = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="included-class_method">
+  
+    + (<tt>Object</tt>) <strong>included</strong>(base) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:include</span><span class='comma'>,</span> <span class='const'>Navigation</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:render_menu</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:render_sublevel_menu</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:render_main_menu</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:render_main_sub_menu</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:render_admin_menu</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:render_notifications_menu</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="prune_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>prune_menu</strong>(menu_items)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_prune_menu'>prune_menu</span> <span class='id identifier rubyid_menu_items'>menu_items</span>
+  <span class='comment'>#have a list of menu items -&gt; example [dashboard_hash, organizations_hash]
+</span>  <span class='comment'>#we need to prune that list based on
+</span>  <span class='comment'>#1. :if block wont pass (Permission issues  -&gt; eg: user has no org access)   OR
+</span>  <span class='comment'>#2. No accessible children (-&gt; eg: none of the second level items under org work out for the user)
+</span>  <span class='id identifier rubyid_menu_items'>menu_items</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_menu'>menu</span><span class='op'>|</span>
+    <span class='comment'># check the :if block
+</span>    <span class='id identifier rubyid_if_proc'>if_proc</span> <span class='op'>=</span>  <span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:if</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_if_proc'>if_proc</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_if_proc'>if_proc</span> <span class='op'>==</span> <span class='symbol'>:sub_level</span> <span class='op'>||</span> <span class='id identifier rubyid_if_proc'>if_proc</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
+       <span class='comment'># :if block worked out.
+</span>       <span class='comment'># Checking the children
+</span>       <span class='kw'>if</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span>
+         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='kw'>if</span> <span class='const'>Proc</span> <span class='op'>===</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span>
+         <span class='comment'># prune the sub menus
+</span>         <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span>
+
+         <span class='comment'># now that they have been pruned, set the default url.
+</span>         <span class='comment'># pick that from the first accessible child
+</span>         <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:sub_level</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+           <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span>
+         <span class='kw'>end</span>
+
+         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='kw'>if</span> <span class='const'>Proc</span><span class='op'>===</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span>
+
+         <span class='comment'>#we want this item to be pruned
+</span>         <span class='comment'># if there are no accessible children
+</span>
+         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+       <span class='kw'>else</span>
+         <span class='comment'># this is a leaf node
+</span>         <span class='comment'># and its condition has already been evaluated to true
+</span>         <span class='comment'># so keep it
+</span>         <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span> <span class='op'>=</span>  <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='kw'>if</span> <span class='const'>Proc</span><span class='op'>===</span><span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:url</span><span class='rbracket'>]</span>
+         <span class='kw'>false</span>
+       <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='comment'># This node's condition has been evaluated to false
+</span>      <span class='comment'># so prune it.
+</span>      <span class='kw'>true</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_admin_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_admin_menu</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_admin_menu'>render_admin_menu</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='id identifier rubyid_admin_main'>admin_main</span>
+  <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_items'>items</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_render_navigation'>render_navigation</span><span class='lparen'>(</span><span class='symbol'>:items</span><span class='op'>=&gt;</span><span class='id identifier rubyid_items'>items</span><span class='comma'>,</span> <span class='symbol'>:expand_all</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:level</span><span class='op'>=&gt;</span> <span class='int'>2</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_main_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_main_menu</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_main_menu'>render_main_menu</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_prune'>prune</span> <span class='op'>=</span> <span class='ivar'>@main_nav</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='ivar'>@main_nav</span> <span class='op'>||=</span> <span class='id identifier rubyid_menu_main'>menu_main</span>
+  <span class='id identifier rubyid_render_menu'>render_menu</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='ivar'>@main_nav</span><span class='comma'>,</span> <span class='id identifier rubyid_prune'>prune</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_main_sub_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_main_sub_menu</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_main_sub_menu'>render_main_sub_menu</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_prune'>prune</span> <span class='op'>=</span> <span class='ivar'>@main_nav</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='ivar'>@main_nav</span> <span class='op'>||=</span> <span class='id identifier rubyid_menu_main'>menu_main</span>
+  <span class='id identifier rubyid_render_sublevel_menu'>render_sublevel_menu</span><span class='lparen'>(</span><span class='ivar'>@main_nav</span><span class='comma'>,</span> <span class='id identifier rubyid_prune'>prune</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_menu</strong>(level, items = nil, prune = true) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_menu'>render_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_level'>level</span><span class='comma'>,</span> <span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_prune'>prune</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_items'>items</span> <span class='op'>||=</span> <span class='id identifier rubyid_menu_main'>menu_main</span>
+  <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_items'>items</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_prune'>prune</span>
+  <span class='id identifier rubyid_render_navigation'>render_navigation</span><span class='lparen'>(</span><span class='symbol'>:items</span><span class='op'>=&gt;</span><span class='id identifier rubyid_items'>items</span><span class='comma'>,</span> <span class='symbol'>:expand_all</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:level</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_level'>level</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_notifications_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_notifications_menu</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_notifications_menu'>render_notifications_menu</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='id identifier rubyid_notifications_menu_main'>notifications_menu_main</span>
+  <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_items'>items</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_render_navigation'>render_navigation</span><span class='lparen'>(</span><span class='symbol'>:items</span><span class='op'>=&gt;</span><span class='id identifier rubyid_items'>items</span><span class='comma'>,</span> <span class='symbol'>:expand_all</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_sublevel_menu-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_sublevel_menu</strong>(items = nil, prune = true) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/menu.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_sublevel_menu'>render_sublevel_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_prune'>prune</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_items'>items</span> <span class='op'>||=</span> <span class='id identifier rubyid_menu_main'>menu_main</span>
+  <span class='id identifier rubyid_prune_menu'>prune_menu</span><span class='lparen'>(</span><span class='id identifier rubyid_items'>items</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_prune'>prune</span>
+  <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_top_level'>top_level</span><span class='op'>|</span>
+    <span class='id identifier rubyid_render_navigation'>render_navigation</span><span class='lparen'>(</span><span class='symbol'>:items</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_top_level'>top_level</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:expand_all</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_top_level'>top_level</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:21 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

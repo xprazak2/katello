@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: SyncManagementHelper::RepoMethods
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../SyncManagementHelper.html" title="SyncManagementHelper (module)">SyncManagementHelper</a></span></span>
+     &raquo; 
+    <span class="title">RepoMethods</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: SyncManagementHelper::RepoMethods
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../ProvidersHelper.html" title="ProvidersHelper (module)">ProvidersHelper</a></span>, <span class='object_link'><a href="../SyncManagementController.html" title="SyncManagementController (class)">SyncManagementController</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/helpers/sync_management_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#arches-instance_method" title="#arches (instance method)">- (Object) <strong>arches</strong>(arch_repos) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns all archs in hash representation.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_arches-instance_method" title="#collect_arches (instance method)">- (Object) <strong>collect_arches</strong>(repos) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>converts array of repositories to hash using architecture as key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_minor-instance_method" title="#collect_minor (instance method)">- (Object) <strong>collect_minor</strong>(repos) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>converts array of repositories to hash using minor as key.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_repos-instance_method" title="#collect_repos (instance method)">- (Object) <strong>collect_repos</strong>(products, env, include_disabled = false) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns all repos in hash representation with minors and arch children included.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#minors-instance_method" title="#minors (instance method)">- (Object) <strong>minors</strong>(minor_repos) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns all minors in hash representation with arch children included.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pprint_collection-instance_method" title="#pprint_collection (instance method)">- (Object) <strong>pprint_collection</strong>(coll) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Used for debugging collect_repos output.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="arches-instance_method">
+  
+    - (<tt>Object</tt>) <strong>arches</strong>(arch_repos) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns all archs in hash representation</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_arches'>arches</span><span class='lparen'>(</span><span class='id identifier rubyid_arch_repos'>arch_repos</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_collect_arches'>collect_arches</span><span class='lparen'>(</span><span class='id identifier rubyid_arch_repos'>arch_repos</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_arch'>arch</span><span class='comma'>,</span> <span class='id identifier rubyid_repos'>repos</span><span class='op'>|</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_arch'>arch</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_arch'>arch</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:repos</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repos'>repos</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_arches-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_arches</strong>(repos) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>converts array of repositories to hash using architecture as key</p>
+
+<p>collect_arches [&lt;#repo1 arch:i386&gt;, &lt;#repo2 arch:i386&gt;, &lt;#repo3 arch:x86_64&gt;] # =&gt;
+  =&gt; [&lt;#repo1&gt;, &lt;#repo2&gt;], &#39;x86_64&#39; =&gt; [#<repo3>]</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_arches'>collect_arches</span><span class='lparen'>(</span><span class='id identifier rubyid_repos'>repos</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_group_by'>group_by</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:arch</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_minor-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_minor</strong>(repos) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>converts array of repositories to hash using minor as key</p>
+
+<p>repositories having nil minor are returned as a second variable, if none such is present,
+empty array is returned</p>
+
+<p>collect_arches [&lt;#repo1 minor:1&gt;, &lt;#repo2 minor:2&gt;, &lt;#repo3 minor:nil&gt;] # =&gt;
+  [=&gt; [&lt;#repo1&gt;], &#39;2&#39; =&gt; &lt;#repo2&gt;], [#<repo3>]]</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_minor'>collect_minor</span><span class='lparen'>(</span><span class='id identifier rubyid_repos'>repos</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span>               <span class='op'>=</span> <span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_group_by'>group_by</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:minor</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result_without_minor'>result_without_minor</span> <span class='op'>=</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='id identifier rubyid_result_without_minor'>result_without_minor</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_repos-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_repos</strong>(products, env, include_disabled = false) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns all repos in hash representation with minors and arch children included</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_repos'>collect_repos</span><span class='lparen'>(</span><span class='id identifier rubyid_products'>products</span><span class='comma'>,</span> <span class='id identifier rubyid_env'>env</span><span class='comma'>,</span> <span class='id identifier rubyid_include_disabled'>include_disabled</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='const'>Glue</span><span class='op'>::</span><span class='const'>Pulp</span><span class='op'>::</span><span class='const'>Repos</span><span class='period'>.</span><span class='id identifier rubyid_prepopulate!'>prepopulate!</span> <span class='id identifier rubyid_products'>products</span><span class='comma'>,</span> <span class='id identifier rubyid_env'>env</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prod'>prod</span><span class='op'>|</span>
+    <span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='comma'>,</span> <span class='id identifier rubyid_repos_without_minor'>repos_without_minor</span> <span class='op'>=</span> <span class='id identifier rubyid_collect_minor'>collect_minor</span><span class='lparen'>(</span><span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='comma'>,</span> <span class='id identifier rubyid_include_disabled'>include_disabled</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:name</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>product</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:repos</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repos_without_minor'>repos_without_minor</span><span class='comma'>,</span>
+      <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_minors'>minors</span><span class='lparen'>(</span><span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:organization</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="minors-instance_method">
+  
+    - (<tt>Object</tt>) <strong>minors</strong>(minor_repos) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns all minors in hash representation with arch children included</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_minors'>minors</span><span class='lparen'>(</span><span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_minor'>minor</span><span class='comma'>,</span> <span class='id identifier rubyid_repos'>repos</span><span class='op'>|</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_minor'>minor</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_minor'>minor</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>minor</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_arches'>arches</span><span class='lparen'>(</span><span class='id identifier rubyid_repos'>repos</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:repos</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pprint_collection-instance_method">
+  
+    - (<tt>Object</tt>) <strong>pprint_collection</strong>(coll) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Used for debugging collect_repos output</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_pprint_collection'>pprint_collection</span> <span class='id identifier rubyid_coll'>coll</span>
+  <span class='id identifier rubyid_coll'>coll</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_prod'>prod</span><span class='op'>|</span>
+    <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_prod'>prod</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_prod'>prod</span><span class='lbracket'>[</span><span class='symbol'>:children</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_major'>major</span><span class='op'>|</span>
+      <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_major'>major</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_major'>major</span><span class='lbracket'>[</span><span class='symbol'>:children</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_minor'>minor</span><span class='op'>|</span>
+        <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_minor'>minor</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_minor'>minor</span><span class='lbracket'>[</span><span class='symbol'>:children</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_arch'>arch</span><span class='op'>|</span>
+          <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_arch'>arch</span><span class='lbracket'>[</span><span class='symbol'>:repos</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+        <span class='rbrace'>}</span>
+      <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:25 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Navigation::OrganizationMenu
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (O)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Navigation.html" title="Navigation (module)">Navigation</a></span></span>
+     &raquo; 
+    <span class="title">OrganizationMenu</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Navigation::OrganizationMenu
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/lib/navigation/organization_menu.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">+ (Object) <strong>included</strong>(base) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#default_info_subnav-instance_method" title="#default_info_subnav (instance method)">- (Object) <strong>default_info_subnav</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_org_list-instance_method" title="#menu_org_list (instance method)">- (Object) <strong>menu_org_list</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_organization-instance_method" title="#menu_organization (instance method)">- (Object) <strong>menu_organization</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#organization_navigation-instance_method" title="#organization_navigation (instance method)">- (Object) <strong>organization_navigation</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="included-class_method">
+  
+    + (<tt>Object</tt>) <strong>included</strong>(base) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/organization_menu.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:organization_navigation</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="default_info_subnav-instance_method">
+  
+    - (<tt>Object</tt>) <strong>default_info_subnav</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/organization_menu.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_default_info_subnav'>default_info_subnav</span>
+  <span class='lbracket'>[</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:org_system_default_info</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>System Default Info</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_organization_default_info_path'>organization_default_info_path</span><span class='lparen'>(</span><span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>system</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@organization</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>third_level panel_link</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:org_distributor_default_info</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Distributor Default Info</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_organization_default_info_path'>organization_default_info_path</span><span class='lparen'>(</span><span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>distributor</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@organization</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>third_level panel_link</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+  <span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_org_list-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_org_list</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/organization_menu.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_org_list'>menu_org_list</span>
+  <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:org_list</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>List</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_organizations_path'>organizations_path</span><span class='comma'>,</span>
+   <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>organizations second_level</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>organizations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_organization-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_organization</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/organization_menu.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_organization'>menu_organization</span>
+  <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:organizations</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Organizations</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='symbol'>:sub_level</span><span class='comma'>,</span>
+    <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>organizations top_level</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>organizations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_any_readable?'>any_readable?</span><span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='symbol'>:items</span><span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='id identifier rubyid_menu_org_list'>menu_org_list</span> <span class='rbracket'>]</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="organization_navigation-instance_method">
+  
+    - (<tt>Object</tt>) <strong>organization_navigation</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/organization_menu.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_organization_navigation'>organization_navigation</span>
+  <span class='lbracket'>[</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:organization_details</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Details</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_edit_organization_path'>edit_organization_path</span><span class='lparen'>(</span><span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@organization</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>panel_link</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:organization_default_info</span><span class='comma'>,</span>
+     <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Default Custom Info</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+     <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_organization_default_info_path'>organization_default_info_path</span><span class='lparen'>(</span><span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>system</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@organization</span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>panel_link menu_parent</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='symbol'>:items</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_default_info_subnav'>default_info_subnav</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:organization_history</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>History</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_events_organization_path'>events_organization_path</span><span class='lparen'>(</span><span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@organization</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>panel_link</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+  <span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:26 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

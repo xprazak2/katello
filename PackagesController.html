@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: PackagesController
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
+    
+    
+    <span class="title">PackagesController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: PackagesController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">PackagesController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/packages_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#changelog-instance_method" title="#changelog (instance method)">- (Object) <strong>changelog</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dependencies-instance_method" title="#dependencies (instance method)">- (Object) <strong>dependencies</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#filelist-instance_method" title="#filelist (instance method)">- (Object) <strong>filelist</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#lookup_package-instance_method" title="#lookup_package (instance method)">- (Object) <strong>lookup_package</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rules-instance_method" title="#rules (instance method)">- (Object) <strong>rules</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show-instance_method" title="#show (instance method)">- (Object) <strong>show</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#check_deleted_org-instance_method" title="ApplicationController#check_deleted_org (method)">#check_deleted_org</a></span>, <span class='object_link'><a href="ApplicationController.html#current_organization-instance_method" title="ApplicationController#current_organization (method)">#current_organization</a></span>, <span class='object_link'><a href="ApplicationController.html#current_organization%3D-instance_method" title="ApplicationController#current_organization= (method)">#current_organization=</a></span>, <span class='object_link'><a href="ApplicationController.html#current_user-instance_method" title="ApplicationController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="ApplicationController.html#default_label-instance_method" title="ApplicationController#default_label (method)">#default_label</a></span>, <span class='object_link'><a href="ApplicationController.html#default_label_assigned-instance_method" title="ApplicationController#default_label_assigned (method)">#default_label_assigned</a></span>, <span class='object_link'><a href="ApplicationController.html#default_notify_options-instance_method" title="ApplicationController#default_notify_options (method)">#default_notify_options</a></span>, <span class='object_link'><a href="ApplicationController.html#environment_path_element-instance_method" title="ApplicationController#environment_path_element (method)">#environment_path_element</a></span>, <span class='object_link'><a href="ApplicationController.html#environment_paths-instance_method" title="ApplicationController#environment_paths (method)">#environment_paths</a></span>, <span class='object_link'><a href="ApplicationController.html#escape_html-instance_method" title="ApplicationController#escape_html (method)">#escape_html</a></span>, <span class='object_link'><a href="ApplicationController.html#execute_after_filters-instance_method" title="ApplicationController#execute_after_filters (method)">#execute_after_filters</a></span>, <span class='object_link'><a href="ApplicationController.html#execute_rescue-instance_method" title="ApplicationController#execute_rescue (method)">#execute_rescue</a></span>, <span class='object_link'><a href="ApplicationController.html#extract_locale_from_accept_language_header-class_method" title="ApplicationController.extract_locale_from_accept_language_header (method)">extract_locale_from_accept_language_header</a></span>, <span class='object_link'><a href="ApplicationController.html#first_env_in_path-instance_method" title="ApplicationController#first_env_in_path (method)">#first_env_in_path</a></span>, <span class='object_link'><a href="ApplicationController.html#flash_to_headers-instance_method" title="ApplicationController#flash_to_headers (method)">#flash_to_headers</a></span>, <span class='object_link'><a href="ApplicationController.html#format_time-instance_method" title="ApplicationController#format_time (method)">#format_time</a></span>, <span class='object_link'><a href="ApplicationController.html#generate_label-instance_method" title="ApplicationController#generate_label (method)">#generate_label</a></span>, <span class='object_link'><a href="ApplicationController.html#label_overridden-instance_method" title="ApplicationController#label_overridden (method)">#label_overridden</a></span>, <span class='object_link'><a href="ApplicationController.html#library_path_element-instance_method" title="ApplicationController#library_path_element (method)">#library_path_element</a></span>, <span class='object_link'><a href="ApplicationController.html#log_exception-instance_method" title="ApplicationController#log_exception (method)">#log_exception</a></span>, <span class='object_link'><a href="ApplicationController.html#matches_no_redirect%3F-instance_method" title="ApplicationController#matches_no_redirect? (method)">#matches_no_redirect?</a></span>, <span class='object_link'><a href="ApplicationController.html#n_gettext_for_generate_label-instance_method" title="ApplicationController#n_gettext_for_generate_label (method)">#n_gettext_for_generate_label</a></span>, <span class='object_link'><a href="ApplicationController.html#no_env_available_msg-instance_method" title="ApplicationController#no_env_available_msg (method)">#no_env_available_msg</a></span>, <span class='object_link'><a href="ApplicationController.html#org_not_found_error-instance_method" title="ApplicationController#org_not_found_error (method)">#org_not_found_error</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_calendar_date-instance_method" title="ApplicationController#parse_calendar_date (method)">#parse_calendar_date</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_display_message-class_method" title="ApplicationController.parse_display_message (method)">parse_display_message</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_locale-instance_method" title="ApplicationController#parse_locale (method)">#parse_locale</a></span>, <span class='object_link'><a href="ApplicationController.html#render_403-instance_method" title="ApplicationController#render_403 (method)">#render_403</a></span>, <span class='object_link'><a href="ApplicationController.html#render_404-instance_method" title="ApplicationController#render_404 (method)">#render_404</a></span>, <span class='object_link'><a href="ApplicationController.html#render_bad_parameters-instance_method" title="ApplicationController#render_bad_parameters (method)">#render_bad_parameters</a></span>, <span class='object_link'><a href="ApplicationController.html#render_correct_nav-instance_method" title="ApplicationController#render_correct_nav (method)">#render_correct_nav</a></span>, <span class='object_link'><a href="ApplicationController.html#render_error-instance_method" title="ApplicationController#render_error (method)">#render_error</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_direct-instance_method" title="ApplicationController#render_panel_direct (method)">#render_panel_direct</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_items-instance_method" title="ApplicationController#render_panel_items (method)">#render_panel_items</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_results-instance_method" title="ApplicationController#render_panel_results (method)">#render_panel_results</a></span>, <span class='object_link'><a href="ApplicationController.html#requested_action-instance_method" title="ApplicationController#requested_action (method)">#requested_action</a></span>, <span class='object_link'><a href="ApplicationController.html#require_no_user-instance_method" title="ApplicationController#require_no_user (method)">#require_no_user</a></span>, <span class='object_link'><a href="ApplicationController.html#require_org-instance_method" title="ApplicationController#require_org (method)">#require_org</a></span>, <span class='object_link'><a href="ApplicationController.html#require_user-instance_method" title="ApplicationController#require_user (method)">#require_user</a></span>, <span class='object_link'><a href="ApplicationController.html#retain_search_history-instance_method" title="ApplicationController#retain_search_history (method)">#retain_search_history</a></span>, <span class='object_link'><a href="ApplicationController.html#search_validate-instance_method" title="ApplicationController#search_validate (method)">#search_validate</a></span>, <span class='object_link'><a href="ApplicationController.html#section_id-instance_method" title="ApplicationController#section_id (method)">#section_id</a></span>, <span class='object_link'><a href="ApplicationController.html#set_layout-instance_method" title="ApplicationController#set_layout (method)">#set_layout</a></span>, <span class='object_link'><a href="ApplicationController.html#set_locale-instance_method" title="ApplicationController#set_locale (method)">#set_locale</a></span>, <span class='object_link'><a href="ApplicationController.html#setup_environment_selector-instance_method" title="ApplicationController#setup_environment_selector (method)">#setup_environment_selector</a></span>, <span class='object_link'><a href="ApplicationController.html#verify_ldap-instance_method" title="ApplicationController#verify_ldap (method)">#verify_ldap</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Menu.html" title="Menu (module)">Menu</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Menu.html#included-class_method" title="Menu.included (method)">included</a></span>, <span class='object_link'><a href="Menu.html#prune_menu-instance_method" title="Menu#prune_menu (method)">#prune_menu</a></span>, <span class='object_link'><a href="Menu.html#render_admin_menu-instance_method" title="Menu#render_admin_menu (method)">#render_admin_menu</a></span>, <span class='object_link'><a href="Menu.html#render_main_menu-instance_method" title="Menu#render_main_menu (method)">#render_main_menu</a></span>, <span class='object_link'><a href="Menu.html#render_main_sub_menu-instance_method" title="Menu#render_main_sub_menu (method)">#render_main_sub_menu</a></span>, <span class='object_link'><a href="Menu.html#render_menu-instance_method" title="Menu#render_menu (method)">#render_menu</a></span>, <span class='object_link'><a href="Menu.html#render_notifications_menu-instance_method" title="Menu#render_notifications_menu (method)">#render_notifications_menu</a></span>, <span class='object_link'><a href="Menu.html#render_sublevel_menu-instance_method" title="Menu#render_sublevel_menu (method)">#render_sublevel_menu</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="AuthorizationRules.html" title="AuthorizationRules (module)">AuthorizationRules</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="AuthorizationRules.html#authorize-instance_method" title="AuthorizationRules#authorize (method)">#authorize</a></span>, <span class='object_link'><a href="AuthorizationRules.html#build_bad_params_error_msg-instance_method" title="AuthorizationRules#build_bad_params_error_msg (method)">#build_bad_params_error_msg</a></span>, <span class='object_link'><a href="AuthorizationRules.html#check_array_params-instance_method" title="AuthorizationRules#check_array_params (method)">#check_array_params</a></span>, <span class='object_link'><a href="AuthorizationRules.html#check_hash_params-instance_method" title="AuthorizationRules#check_hash_params (method)">#check_hash_params</a></span>, <span class='object_link'><a href="AuthorizationRules.html#included-class_method" title="AuthorizationRules.included (method)">included</a></span>, <span class='object_link'><a href="AuthorizationRules.html#param_rules-instance_method" title="AuthorizationRules#param_rules (method)">#param_rules</a></span>, <span class='object_link'><a href="AuthorizationRules.html#params_match-instance_method" title="AuthorizationRules#params_match (method)">#params_match</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Util/ThreadSession/Controller.html" title="Util::ThreadSession::Controller (module)">Util::ThreadSession::Controller</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Util/ThreadSession/Controller.html#included-class_method" title="Util::ThreadSession::Controller.included (method)">included</a></span>, <span class='object_link'><a href="Util/ThreadSession/Controller.html#thread_locals-instance_method" title="Util::ThreadSession::Controller#thread_locals (method)">#thread_locals</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Profiling.html" title="Profiling (module)">Profiling</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Profiling.html#do_profiling-instance_method" title="Profiling#do_profiling (method)">#do_profiling</a></span>, <span class='object_link'><a href="Profiling.html#included-class_method" title="Profiling.included (method)">included</a></span>, <span class='object_link'><a href="Profiling.html#load_ruby_prof_gem-class_method" title="Profiling.load_ruby_prof_gem (method)">load_ruby_prof_gem</a></span>, <span class='object_link'><a href="Profiling.html#profiling_enabled%3F-class_method" title="Profiling.profiling_enabled? (method)">profiling_enabled?</a></span>, <span class='object_link'><a href="Profiling.html#run_profiling%3F-instance_method" title="Profiling#run_profiling? (method)">#run_profiling?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Notifications/ControllerHelper.html" title="Notifications::ControllerHelper (module)">Notifications::ControllerHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Notifications/ControllerHelper.html#default_notify_options-instance_method" title="Notifications::ControllerHelper#default_notify_options (method)">#default_notify_options</a></span>, <span class='object_link'><a href="Notifications/ControllerHelper.html#notify-instance_method" title="Notifications::ControllerHelper#notify (method)">#notify</a></span></p>
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="changelog-instance_method">
+  
+    - (<tt>Object</tt>) <strong>changelog</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/packages_controller.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_changelog'>changelog</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>changelog</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dependencies-instance_method">
+  
+    - (<tt>Object</tt>) <strong>dependencies</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/packages_controller.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dependencies'>dependencies</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dependencies</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="filelist-instance_method">
+  
+    - (<tt>Object</tt>) <strong>filelist</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/packages_controller.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_filelist'>filelist</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filelist</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="lookup_package-instance_method">
+  
+    - (<tt>Object</tt>) <strong>lookup_package</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/packages_controller.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_lookup_package'>lookup_package</span>
+  <span class='ivar'>@package_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
+  <span class='ivar'>@package</span> <span class='op'>=</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='ivar'>@package_id</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unable to find package %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='op'>%</span> <span class='ivar'>@package_id</span> <span class='kw'>if</span> <span class='ivar'>@package</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rules-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rules</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/packages_controller.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rules'>rules</span>
+
+  <span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span>
+    <span class='op'>!</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_readable_in_org'>readable_in_org</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span>
+        <span class='symbol'>:pulp_id</span><span class='op'>=&gt;</span><span class='ivar'>@package</span><span class='period'>.</span><span class='id identifier rubyid_repoids'>repoids</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='rbrace'>}</span>
+
+  <span class='lbrace'>{</span>
+    <span class='symbol'>:show</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_view'>view</span><span class='comma'>,</span>
+    <span class='symbol'>:filelist</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_view'>view</span><span class='comma'>,</span>
+    <span class='symbol'>:changelog</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_view'>view</span><span class='comma'>,</span>
+    <span class='symbol'>:dependencies</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_view'>view</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show-instance_method">
+  
+    - (<tt>Object</tt>) <strong>show</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/packages_controller.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>show</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:46:00 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

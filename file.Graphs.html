@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: Graphs
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: Graphs</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Graphs</h1>
+
+<p><em>Note: If you do not see any graph images please generate them, see bottom of this page.</em></p>
+
+<h2>Models brief</h2>
+
+<div style="overflow: scroll; width: 100%;">
+  <img style="height: 800px;" src="graphs/models_brief.svg" >
+</div>
+
+<h2>Models complete</h2>
+
+<div style="overflow: scroll; width: 100%;">
+  <img style="height: 800px;" src="graphs/models_complete.svg" >
+</div>
+
+<h2>Controllers brief</h2>
+
+<div style="overflow: scroll; width: 100%;">
+  <img style="height: 800px;" src="graphs/controllers_brief.svg" >
+</div>
+
+<h2>Controllers complete</h2>
+
+<div style="overflow: scroll; width: 100%;">
+  <img style="height: 800px;" src="graphs/controllers_complete.svg" >
+</div>
+
+<h2>How to generate and update these graphs</h2>
+
+<ul>
+<li>enable <code>railroady</code> gem in <code>bundler.d/development.rb</code></li>
+<li><p>generate svg graphs</p>
+
+<p>!!!txt
+  bundle exec rake diagram:all</p></li>
+<li><p>move them to graphs folder</p>
+
+<p>!!!txt
+  mv -f doc/*.svg doc/graphs</p></li>
+</ul>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu May  9 10:19:20 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

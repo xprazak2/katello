@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Api::V2::SystemsController
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Api.html" title="Api (module)">Api</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../V2.html" title="Api::V2 (module)">V2</a></span></span>
+     &raquo; 
+    <span class="title">SystemsController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Api::V2::SystemsController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../V1/SystemsController.html" title="Api::V1::SystemsController (class)">Api::V1::SystemsController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="../ApiController.html" title="Api::ApiController (class)">ApiController</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="../V1/ApiController.html" title="Api::V1::ApiController (class)">Api::V1::ApiController</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="../V1/SystemsController.html" title="Api::V1::SystemsController (class)">Api::V1::SystemsController</a></span></li>
+          
+            <li class="next">Api::V2::SystemsController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Rendering.html" title="Api::V2::Rendering (module)">Rendering</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/controllers/api/v2/systems_controller.rb asd </dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <h2>Method Summary</h2>
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Rendering.html" title="Api::V2::Rendering (module)">Rendering</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Rendering.html#respond_for_async-instance_method" title="Api::V2::Rendering#respond_for_async (method)">#respond_for_async</a></span>, <span class='object_link'><a href="Rendering.html#respond_for_create-instance_method" title="Api::V2::Rendering#respond_for_create (method)">#respond_for_create</a></span>, <span class='object_link'><a href="Rendering.html#respond_for_destroy-instance_method" title="Api::V2::Rendering#respond_for_destroy (method)">#respond_for_destroy</a></span>, <span class='object_link'><a href="Rendering.html#respond_for_index-instance_method" title="Api::V2::Rendering#respond_for_index (method)">#respond_for_index</a></span>, <span class='object_link'><a href="Rendering.html#respond_for_show-instance_method" title="Api::V2::Rendering#respond_for_show (method)">#respond_for_show</a></span>, <span class='object_link'><a href="Rendering.html#respond_for_status-instance_method" title="Api::V2::Rendering#respond_for_status (method)">#respond_for_status</a></span>, <span class='object_link'><a href="Rendering.html#respond_for_update-instance_method" title="Api::V2::Rendering#respond_for_update (method)">#respond_for_update</a></span>, <span class='object_link'><a href="Rendering.html#respond_with_template-instance_method" title="Api::V2::Rendering#respond_with_template (method)">#respond_with_template</a></span>, <span class='object_link'><a href="Rendering.html#respond_with_template_collection-instance_method" title="Api::V2::Rendering#respond_with_template_collection (method)">#respond_with_template_collection</a></span>, <span class='object_link'><a href="Rendering.html#respond_with_template_resource-instance_method" title="Api::V2::Rendering#respond_with_template_resource (method)">#respond_with_template_resource</a></span>, <span class='object_link'><a href="Rendering.html#try_specific_collection_template-instance_method" title="Api::V2::Rendering#try_specific_collection_template (method)">#try_specific_collection_template</a></span>, <span class='object_link'><a href="Rendering.html#try_specific_resource_template-instance_method" title="Api::V2::Rendering#try_specific_resource_template (method)">#try_specific_resource_template</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../V1/SystemsController.html" title="Api::V1::SystemsController (class)">Api::V1::SystemsController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../V1/SystemsController.html#activate-instance_method" title="Api::V1::SystemsController#activate (method)">#activate</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#add_system_groups-instance_method" title="Api::V1::SystemsController#add_system_groups (method)">#add_system_groups</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#checkin-instance_method" title="Api::V1::SystemsController#checkin (method)">#checkin</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#create-instance_method" title="Api::V1::SystemsController#create (method)">#create</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#destroy-instance_method" title="Api::V1::SystemsController#destroy (method)">#destroy</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#enabled_repos-instance_method" title="Api::V1::SystemsController#enabled_repos (method)">#enabled_repos</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#errata-instance_method" title="Api::V1::SystemsController#errata (method)">#errata</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#find_activation_keys-instance_method" title="Api::V1::SystemsController#find_activation_keys (method)">#find_activation_keys</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#find_environment-instance_method" title="Api::V1::SystemsController#find_environment (method)">#find_environment</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#find_environment_and_content_view-instance_method" title="Api::V1::SystemsController#find_environment_and_content_view (method)">#find_environment_and_content_view</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#find_environment_by_name-instance_method" title="Api::V1::SystemsController#find_environment_by_name (method)">#find_environment_by_name</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#find_only_environment-instance_method" title="Api::V1::SystemsController#find_only_environment (method)">#find_only_environment</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#find_system-instance_method" title="Api::V1::SystemsController#find_system (method)">#find_system</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#hypervisors_update-instance_method" title="Api::V1::SystemsController#hypervisors_update (method)">#hypervisors_update</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#index-instance_method" title="Api::V1::SystemsController#index (method)">#index</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#organization_id_keys-instance_method" title="Api::V1::SystemsController#organization_id_keys (method)">#organization_id_keys</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#package_profile-instance_method" title="Api::V1::SystemsController#package_profile (method)">#package_profile</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#pools-instance_method" title="Api::V1::SystemsController#pools (method)">#pools</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#readable_filters-instance_method" title="Api::V1::SystemsController#readable_filters (method)">#readable_filters</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#refresh_subscriptions-instance_method" title="Api::V1::SystemsController#refresh_subscriptions (method)">#refresh_subscriptions</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#regenerate_identity_certificates-instance_method" title="Api::V1::SystemsController#regenerate_identity_certificates (method)">#regenerate_identity_certificates</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#releases-instance_method" title="Api::V1::SystemsController#releases (method)">#releases</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#remove_system_groups-instance_method" title="Api::V1::SystemsController#remove_system_groups (method)">#remove_system_groups</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#report-instance_method" title="Api::V1::SystemsController#report (method)">#report</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#rules-instance_method" title="Api::V1::SystemsController#rules (method)">#rules</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#show-instance_method" title="Api::V1::SystemsController#show (method)">#show</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#tasks-instance_method" title="Api::V1::SystemsController#tasks (method)">#tasks</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#update-instance_method" title="Api::V1::SystemsController#update (method)">#update</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#upload_package_profile-instance_method" title="Api::V1::SystemsController#upload_package_profile (method)">#upload_package_profile</a></span>, <span class='object_link'><a href="../V1/SystemsController.html#verify_presence_of_organization_or_environment-instance_method" title="Api::V1::SystemsController#verify_presence_of_organization_or_environment (method)">#verify_presence_of_organization_or_environment</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../V1/ApiController.html" title="Api::V1::ApiController (class)">Api::V1::ApiController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../V1/ApiController.html#find_content_filter_by_name-instance_method" title="Api::V1::ApiController#find_content_filter_by_name (method)">#find_content_filter_by_name</a></span>, <span class='object_link'><a href="../V1/ApiController.html#find_content_view_definition-instance_method" title="Api::V1::ApiController#find_content_view_definition (method)">#find_content_view_definition</a></span>, <span class='object_link'><a href="../V1/ApiController.html#find_optional_environment-instance_method" title="Api::V1::ApiController#find_optional_environment (method)">#find_optional_environment</a></span>, <span class='object_link'><a href="../V1/ApiController.html#find_optional_organization-instance_method" title="Api::V1::ApiController#find_optional_organization (method)">#find_optional_organization</a></span>, <span class='object_link'><a href="../V1/ApiController.html#find_organization-instance_method" title="Api::V1::ApiController#find_organization (method)">#find_organization</a></span>, <span class='object_link'><a href="../V1/ApiController.html#get_organization-instance_method" title="Api::V1::ApiController#get_organization (method)">#get_organization</a></span>, <span class='object_link'><a href="../V1/ApiController.html#labelize_params-instance_method" title="Api::V1::ApiController#labelize_params (method)">#labelize_params</a></span>, <span class='object_link'><a href="../V1/ApiController.html#organization_id-instance_method" title="Api::V1::ApiController#organization_id (method)">#organization_id</a></span>, <span class='object_link'><a href="../V1/ApiController.html#organization_id_keys-instance_method" title="Api::V1::ApiController#organization_id_keys (method)">#organization_id_keys</a></span>, <span class='object_link'><a href="../V1/ApiController.html#query_params-instance_method" title="Api::V1::ApiController#query_params (method)">#query_params</a></span>, <span class='object_link'><a href="../V1/ApiController.html#respond_for_async-instance_method" title="Api::V1::ApiController#respond_for_async (method)">#respond_for_async</a></span>, <span class='object_link'><a href="../V1/ApiController.html#respond_for_create-instance_method" title="Api::V1::ApiController#respond_for_create (method)">#respond_for_create</a></span>, <span class='object_link'><a href="../V1/ApiController.html#respond_for_destroy-instance_method" title="Api::V1::ApiController#respond_for_destroy (method)">#respond_for_destroy</a></span>, <span class='object_link'><a href="../V1/ApiController.html#respond_for_index-instance_method" title="Api::V1::ApiController#respond_for_index (method)">#respond_for_index</a></span>, <span class='object_link'><a href="../V1/ApiController.html#respond_for_show-instance_method" title="Api::V1::ApiController#respond_for_show (method)">#respond_for_show</a></span>, <span class='object_link'><a href="../V1/ApiController.html#respond_for_status-instance_method" title="Api::V1::ApiController#respond_for_status (method)">#respond_for_status</a></span>, <span class='object_link'><a href="../V1/ApiController.html#respond_for_update-instance_method" title="Api::V1::ApiController#respond_for_update (method)">#respond_for_update</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../AuthorizationRules.html" title="AuthorizationRules (module)">AuthorizationRules</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../AuthorizationRules.html#authorize-instance_method" title="AuthorizationRules#authorize (method)">#authorize</a></span>, <span class='object_link'><a href="../../AuthorizationRules.html#build_bad_params_error_msg-instance_method" title="AuthorizationRules#build_bad_params_error_msg (method)">#build_bad_params_error_msg</a></span>, <span class='object_link'><a href="../../AuthorizationRules.html#check_array_params-instance_method" title="AuthorizationRules#check_array_params (method)">#check_array_params</a></span>, <span class='object_link'><a href="../../AuthorizationRules.html#check_hash_params-instance_method" title="AuthorizationRules#check_hash_params (method)">#check_hash_params</a></span>, <span class='object_link'><a href="../../AuthorizationRules.html#included-class_method" title="AuthorizationRules.included (method)">included</a></span>, <span class='object_link'><a href="../../AuthorizationRules.html#param_rules-instance_method" title="AuthorizationRules#param_rules (method)">#param_rules</a></span>, <span class='object_link'><a href="../../AuthorizationRules.html#params_match-instance_method" title="AuthorizationRules#params_match (method)">#params_match</a></span>, <span class='object_link'><a href="../../AuthorizationRules.html#rules-instance_method" title="AuthorizationRules#rules (method)">#rules</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Util/ThreadSession/Controller.html" title="Util::ThreadSession::Controller (module)">Util::ThreadSession::Controller</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../Util/ThreadSession/Controller.html#included-class_method" title="Util::ThreadSession::Controller.included (method)">included</a></span>, <span class='object_link'><a href="../../Util/ThreadSession/Controller.html#thread_locals-instance_method" title="Util::ThreadSession::Controller#thread_locals (method)">#thread_locals</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../V1/ErrorHandling.html" title="Api::V1::ErrorHandling (module)">Api::V1::ErrorHandling</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../V1/ErrorHandling.html#format_subsys_exception_hash-instance_method" title="Api::V1::ErrorHandling#format_subsys_exception_hash (method)">#format_subsys_exception_hash</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#included-class_method" title="Api::V1::ErrorHandling.included (method)">included</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#pp_exception-instance_method" title="Api::V1::ErrorHandling#pp_exception (method)">#pp_exception</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_conflict_exception-instance_method" title="Api::V1::ErrorHandling#rescue_from_conflict_exception (method)">#rescue_from_conflict_exception</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_exception-instance_method" title="Api::V1::ErrorHandling#rescue_from_exception (method)">#rescue_from_exception</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_exception_with_response-instance_method" title="Api::V1::ErrorHandling#rescue_from_exception_with_response (method)">#rescue_from_exception_with_response</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_not_found-instance_method" title="Api::V1::ErrorHandling#rescue_from_not_found (method)">#rescue_from_not_found</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_record_invalid-instance_method" title="Api::V1::ErrorHandling#rescue_from_record_invalid (method)">#rescue_from_record_invalid</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_record_not_found-instance_method" title="Api::V1::ErrorHandling#rescue_from_record_not_found (method)">#rescue_from_record_not_found</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_security_violation-instance_method" title="Api::V1::ErrorHandling#rescue_from_security_violation (method)">#rescue_from_security_violation</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_standard_error-instance_method" title="Api::V1::ErrorHandling#rescue_from_standard_error (method)">#rescue_from_standard_error</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_unsupported_action_exception-instance_method" title="Api::V1::ErrorHandling#rescue_from_unsupported_action_exception (method)">#rescue_from_unsupported_action_exception</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_usage_limit_exhausted_exception-instance_method" title="Api::V1::ErrorHandling#rescue_from_usage_limit_exhausted_exception (method)">#rescue_from_usage_limit_exhausted_exception</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#rescue_from_wrapped_error-instance_method" title="Api::V1::ErrorHandling#rescue_from_wrapped_error (method)">#rescue_from_wrapped_error</a></span>, <span class='object_link'><a href="../V1/ErrorHandling.html#respond_for_exception-instance_method" title="Api::V1::ErrorHandling#respond_for_exception (method)">#respond_for_exception</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Version1.html" title="Api::Version1 (module)">Api::Version1</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Version1.html#api_version-instance_method" title="Api::Version1#api_version (method)">#api_version</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../ApiController.html" title="Api::ApiController (class)">ApiController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../ApiController.html#add_candlepin_version_header-instance_method" title="Api::ApiController#add_candlepin_version_header (method)">#add_candlepin_version_header</a></span>, <span class='object_link'><a href="../ApiController.html#current_user-instance_method" title="Api::ApiController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="../ApiController.html#exception_with_response-instance_method" title="Api::ApiController#exception_with_response (method)">#exception_with_response</a></span>, <span class='object_link'><a href="../ApiController.html#find_content_filter_by_name-instance_method" title="Api::ApiController#find_content_filter_by_name (method)">#find_content_filter_by_name</a></span>, <span class='object_link'><a href="../ApiController.html#find_content_view_definition-instance_method" title="Api::ApiController#find_content_view_definition (method)">#find_content_view_definition</a></span>, <span class='object_link'><a href="../ApiController.html#find_optional_environment-instance_method" title="Api::ApiController#find_optional_environment (method)">#find_optional_environment</a></span>, <span class='object_link'><a href="../ApiController.html#find_optional_organization-instance_method" title="Api::ApiController#find_optional_organization (method)">#find_optional_organization</a></span>, <span class='object_link'><a href="../ApiController.html#find_organization-instance_method" title="Api::ApiController#find_organization (method)">#find_organization</a></span>, <span class='object_link'><a href="../ApiController.html#format_subsys_exception_hash-instance_method" title="Api::ApiController#format_subsys_exception_hash (method)">#format_subsys_exception_hash</a></span>, <span class='object_link'><a href="../ApiController.html#get_organization-instance_method" title="Api::ApiController#get_organization (method)">#get_organization</a></span>, <span class='object_link'><a href="../ApiController.html#get_resource-instance_method" title="Api::ApiController#get_resource (method)">#get_resource</a></span>, <span class='object_link'><a href="../ApiController.html#get_resource_collection-instance_method" title="Api::ApiController#get_resource_collection (method)">#get_resource_collection</a></span>, <span class='object_link'><a href="../ApiController.html#labelize_params-instance_method" title="Api::ApiController#labelize_params (method)">#labelize_params</a></span>, <span class='object_link'><a href="../ApiController.html#organization_id-instance_method" title="Api::ApiController#organization_id (method)">#organization_id</a></span>, <span class='object_link'><a href="../ApiController.html#organization_id_keys-instance_method" title="Api::ApiController#organization_id_keys (method)">#organization_id_keys</a></span>, <span class='object_link'><a href="../ApiController.html#parse_locale-instance_method" title="Api::ApiController#parse_locale (method)">#parse_locale</a></span>, <span class='object_link'><a href="../ApiController.html#pp_exception-instance_method" title="Api::ApiController#pp_exception (method)">#pp_exception</a></span>, <span class='object_link'><a href="../ApiController.html#process_action-instance_method" title="Api::ApiController#process_action (method)">#process_action</a></span>, <span class='object_link'><a href="../ApiController.html#process_invalid-instance_method" title="Api::ApiController#process_invalid (method)">#process_invalid</a></span>, <span class='object_link'><a href="../ApiController.html#query_params-instance_method" title="Api::ApiController#query_params (method)">#query_params</a></span>, <span class='object_link'><a href="../ApiController.html#record_not_found-instance_method" title="Api::ApiController#record_not_found (method)">#record_not_found</a></span>, <span class='object_link'><a href="../ApiController.html#render_403-instance_method" title="Api::ApiController#render_403 (method)">#render_403</a></span>, <span class='object_link'><a href="../ApiController.html#render_exception-instance_method" title="Api::ApiController#render_exception (method)">#render_exception</a></span>, <span class='object_link'><a href="../ApiController.html#render_exception_without_logging-instance_method" title="Api::ApiController#render_exception_without_logging (method)">#render_exception_without_logging</a></span>, <span class='object_link'><a href="../ApiController.html#render_wrapped_exception-instance_method" title="Api::ApiController#render_wrapped_exception (method)">#render_wrapped_exception</a></span>, <span class='object_link'><a href="../ApiController.html#request_from_katello_cli%3F-instance_method" title="Api::ApiController#request_from_katello_cli? (method)">#request_from_katello_cli?</a></span>, <span class='object_link'><a href="../ApiController.html#require_user-instance_method" title="Api::ApiController#require_user (method)">#require_user</a></span>, <span class='object_link'><a href="../ApiController.html#resource_collection_name-instance_method" title="Api::ApiController#resource_collection_name (method)">#resource_collection_name</a></span>, <span class='object_link'><a href="../ApiController.html#resource_name-instance_method" title="Api::ApiController#resource_name (method)">#resource_name</a></span>, <span class='object_link'><a href="../ApiController.html#respond-instance_method" title="Api::ApiController#respond (method)">#respond</a></span>, <span class='object_link'><a href="../ApiController.html#set_locale-instance_method" title="Api::ApiController#set_locale (method)">#set_locale</a></span>, <span class='object_link'><a href="../ApiController.html#split_order-instance_method" title="Api::ApiController#split_order (method)">#split_order</a></span>, <span class='object_link'><a href="../ApiController.html#verify_ldap-instance_method" title="Api::ApiController#verify_ldap (method)">#verify_ldap</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Locale.html" title="Locale (module)">Locale</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../Locale.html#included-class_method" title="Locale.included (method)">included</a></span>, <span class='object_link'><a href="../../Locale.html#parse_accept_locale-instance_method" title="Locale#parse_accept_locale (method)">#parse_accept_locale</a></span>, <span class='object_link'><a href="../../Locale.html#pick_available_locale-instance_method" title="Locale#pick_available_locale (method)">#pick_available_locale</a></span>, <span class='object_link'><a href="../../Locale.html#pick_available_locale-class_method" title="Locale.pick_available_locale (method)">pick_available_locale</a></span>, <span class='object_link'><a href="../../Locale.html#set_locale-instance_method" title="Locale#set_locale (method)">#set_locale</a></span>, <span class='object_link'><a href="../../Locale.html#set_locale-class_method" title="Locale.set_locale (method)">set_locale</a></span>, <span class='object_link'><a href="../../Locale.html#set_locale_from_header-instance_method" title="Locale#set_locale_from_header (method)">#set_locale_from_header</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Profiling.html" title="Profiling (module)">Profiling</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../Profiling.html#do_profiling-instance_method" title="Profiling#do_profiling (method)">#do_profiling</a></span>, <span class='object_link'><a href="../../Profiling.html#included-class_method" title="Profiling.included (method)">included</a></span>, <span class='object_link'><a href="../../Profiling.html#load_ruby_prof_gem-class_method" title="Profiling.load_ruby_prof_gem (method)">load_ruby_prof_gem</a></span>, <span class='object_link'><a href="../../Profiling.html#profiling_enabled%3F-class_method" title="Profiling.profiling_enabled? (method)">profiling_enabled?</a></span>, <span class='object_link'><a href="../../Profiling.html#run_profiling%3F-instance_method" title="Profiling#run_profiling? (method)">#run_profiling?</a></span></p>
+
+  
+  
+
+</div>
+
+    <div id="footer">
+  Generated on Tue May  7 12:09:06 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

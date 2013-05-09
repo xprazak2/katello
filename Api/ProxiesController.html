@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Api::ProxiesController
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo;
+    <span class='title'>Api</span>
+     &raquo; 
+    <span class="title">ProxiesController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Api::ProxiesController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ApiController</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ApiController</li>
+          
+            <li class="next">Api::ProxiesController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/api/proxies_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="CandlepinProxiesController.html" title="Api::CandlepinProxiesController (class)">CandlepinProxiesController</a></span></p>
+</div>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#drop_api_namespace-instance_method" title="#drop_api_namespace (instance method)">- (Object) <strong>drop_api_namespace</strong>(original_request_path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#proxy_request_body-instance_method" title="#proxy_request_body (instance method)">- (Object) <strong>proxy_request_body</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#proxy_request_path-instance_method" title="#proxy_request_path (instance method)">- (Object) <strong>proxy_request_path</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rules-instance_method" title="#rules (instance method)">- (Object) <strong>rules</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="drop_api_namespace-instance_method">
+  
+    - (<tt>Object</tt>) <strong>drop_api_namespace</strong>(original_request_path) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/proxies_controller.rb', line 97</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_drop_api_namespace'>drop_api_namespace</span><span class='lparen'>(</span><span class='id identifier rubyid_original_request_path'>original_request_path</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_prefix'>prefix</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_url_prefix'>url_prefix</span><span class='rbrace'>}</span><span class='tstring_content'>/api</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_original_request_path'>original_request_path</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='id identifier rubyid_prefix'>prefix</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="proxy_request_body-instance_method">
+  
+    - (<tt>Object</tt>) <strong>proxy_request_body</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/proxies_controller.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_proxy_request_body'>proxy_request_body</span>
+  <span class='ivar'>@request_body</span> <span class='op'>=</span> <span class='ivar'>@_request</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="proxy_request_path-instance_method">
+  
+    - (<tt>Object</tt>) <strong>proxy_request_path</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/proxies_controller.rb', line 89</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_proxy_request_path'>proxy_request_path</span>
+  <span class='ivar'>@request_path</span> <span class='op'>=</span> <span class='id identifier rubyid_drop_api_namespace'>drop_api_namespace</span><span class='lparen'>(</span><span class='ivar'>@_request</span><span class='period'>.</span><span class='id identifier rubyid_fullpath'>fullpath</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rules-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rules</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/proxies_controller.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rules'>rules</span>
+  <span class='id identifier rubyid_proxy_test'>proxy_test</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span>
+    <span class='kw'>if</span> <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_application'>application</span><span class='period'>.</span><span class='id identifier rubyid_routes'>routes</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:router</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_route'>route</span><span class='comma'>,</span> <span class='id identifier rubyid_match'>match</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_application'>application</span><span class='period'>.</span><span class='id identifier rubyid_routes'>routes</span><span class='period'>.</span><span class='id identifier rubyid_router'>router</span><span class='period'>.</span><span class='id identifier rubyid_recognize'>recognize</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_rte'>rte</span><span class='comma'>,</span> <span class='id identifier rubyid_mtch'>mtch</span><span class='comma'>,</span> <span class='id identifier rubyid_prms'>prms</span><span class='op'>|</span>
+        <span class='kw'>return</span> <span class='id identifier rubyid_rte'>rte</span><span class='comma'>,</span> <span class='id identifier rubyid_mtch'>mtch</span><span class='comma'>,</span> <span class='id identifier rubyid_prms'>prms</span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_route'>route</span><span class='comma'>,</span> <span class='id identifier rubyid_match'>match</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_application'>application</span><span class='period'>.</span><span class='id identifier rubyid_routes'>routes</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_recognize'>recognize</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># route names are defined in routes.rb (:as =&gt; :name)
+</span>    <span class='kw'>case</span> <span class='id identifier rubyid_route'>route</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+    <span class='kw'>when</span> <span class='symbol'>:api_proxy_consumer_deletionrecord_delete_path</span>
+      <span class='kw'>if</span> <span class='op'>!</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span>
+        <span class='id identifier rubyid_consumer_gone'>consumer_gone</span><span class='comma'>,</span> <span class='id identifier rubyid_consumer_live'>consumer_live</span> <span class='op'>=</span> <span class='kw'>false</span>
+        <span class='kw'>begin</span>
+          <span class='const'>Resources</span><span class='op'>::</span><span class='const'>Candlepin</span><span class='op'>::</span><span class='const'>Consumer</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='comment'># check with candlepin if system is Gone, raises RestClient::Gone
+</span>          <span class='comment'># a 200 means the system exists. the deletion record wont exist, but its
+</span>          <span class='comment'># not a permissions error
+</span>          <span class='id identifier rubyid_consumer_live'>consumer_live</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>rescue</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Gone</span>
+          <span class='comment'># the correct response is a 410, since the system has been deleted
+</span>          <span class='id identifier rubyid_consumer_gone'>consumer_gone</span> <span class='op'>=</span> <span class='kw'>true</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_system'>system</span> <span class='op'>=</span> <span class='const'>System</span><span class='period'>.</span><span class='id identifier rubyid_find_by_uuid'>find_by_uuid</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
+      <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_system'>system</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_consumer_gone'>consumer_gone</span> <span class='op'>||</span> <span class='id identifier rubyid_consumer_live'>consumer_live</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:api_proxy_owner_pools_path</span>
+      <span class='id identifier rubyid_find_optional_organization'>find_optional_organization</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:consumer</span><span class='rbracket'>]</span>
+        <span class='lparen'>(</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='kw'>or</span> <span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span><span class='rparen'>)</span> <span class='kw'>and</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span> <span class='op'>==</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:consumer</span><span class='rbracket'>]</span>
+      <span class='kw'>else</span>
+        <span class='lparen'>(</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='kw'>or</span> <span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='symbol'>:api_proxy_owner_servicelevels_path</span>
+      <span class='id identifier rubyid_find_optional_organization'>find_optional_organization</span>
+      <span class='lparen'>(</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='kw'>or</span> <span class='ivar'>@organization</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:api_proxy_consumer_certificates_path</span><span class='comma'>,</span> <span class='symbol'>:api_proxy_consumer_releases_path</span><span class='comma'>,</span> <span class='symbol'>:api_proxy_certificate_serials_path</span><span class='comma'>,</span>
+         <span class='symbol'>:api_proxy_consumer_entitlements_path</span><span class='comma'>,</span> <span class='symbol'>:api_proxy_consumer_entitlements_post_path</span><span class='comma'>,</span> <span class='symbol'>:api_proxy_consumer_entitlements_delete_path</span><span class='comma'>,</span>
+         <span class='symbol'>:api_proxy_consumer_dryrun_path</span><span class='comma'>,</span> <span class='symbol'>:api_proxy_consumer_owners_path</span>
+      <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='kw'>and</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span> <span class='op'>==</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='symbol'>:api_proxy_consumer_certificates_delete_path</span>
+      <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='kw'>and</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span> <span class='op'>==</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:consumer_id</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='symbol'>:api_proxy_pools_path</span>
+      <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='kw'>and</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span> <span class='op'>==</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:consumer</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='symbol'>:api_proxy_entitlements_path</span>
+      <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='comment'># query is restricted in Candlepin
+</span>    <span class='kw'>when</span> <span class='symbol'>:api_proxy_subscriptions_post_path</span>
+      <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_consumer?'>consumer?</span> <span class='kw'>and</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span> <span class='op'>==</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:consumer_uuid</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+      <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_warn'>warn</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown proxy route </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_method'>method</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_fullpath'>fullpath</span><span class='rbrace'>}</span><span class='tstring_content'>, access denied</span><span class='tstring_end'>&quot;</span></span>
+      <span class='comment'># give the proxy route name using :as parameter and implement rule check here
+</span>      <span class='kw'>false</span>
+    <span class='kw'>end</span>
+  <span class='rbrace'>}</span>
+  <span class='lbrace'>{</span>
+    <span class='symbol'>:get</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_proxy_test'>proxy_test</span><span class='comma'>,</span>
+    <span class='symbol'>:post</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid_proxy_test'>proxy_test</span><span class='comma'>,</span>
+    <span class='symbol'>:put</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_proxy_test'>proxy_test</span><span class='comma'>,</span>
+    <span class='symbol'>:delete</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_proxy_test'>proxy_test</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:46:04 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Api::V2::Rendering
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (R)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Api.html" title="Api (module)">Api</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../V2.html" title="Api::V2 (module)">V2</a></span></span>
+     &raquo; 
+    <span class="title">Rendering</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Api::V2::Rendering
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="ActivationKeysController.html" title="Api::V2::ActivationKeysController (class)">ActivationKeysController</a></span>, <span class='object_link'><a href="ApiController.html" title="Api::V2::ApiController (class)">ApiController</a></span>, <span class='object_link'><a href="ChangesetsController.html" title="Api::V2::ChangesetsController (class)">ChangesetsController</a></span>, <span class='object_link'><a href="ContentViewDefinitionsController.html" title="Api::V2::ContentViewDefinitionsController (class)">ContentViewDefinitionsController</a></span>, <span class='object_link'><a href="ContentViewsController.html" title="Api::V2::ContentViewsController (class)">ContentViewsController</a></span>, <span class='object_link'><a href="CustomInfoController.html" title="Api::V2::CustomInfoController (class)">CustomInfoController</a></span>, <span class='object_link'><a href="DistributionsController.html" title="Api::V2::DistributionsController (class)">DistributionsController</a></span>, <span class='object_link'><a href="DistributorsController.html" title="Api::V2::DistributorsController (class)">DistributorsController</a></span>, <span class='object_link'><a href="EnvironmentsController.html" title="Api::V2::EnvironmentsController (class)">EnvironmentsController</a></span>, <span class='object_link'><a href="FilterRulesController.html" title="Api::V2::FilterRulesController (class)">FilterRulesController</a></span>, <span class='object_link'><a href="FiltersController.html" title="Api::V2::FiltersController (class)">FiltersController</a></span>, <span class='object_link'><a href="GpgKeysController.html" title="Api::V2::GpgKeysController (class)">GpgKeysController</a></span>, <span class='object_link'><a href="OrganizationDefaultInfoController.html" title="Api::V2::OrganizationDefaultInfoController (class)">OrganizationDefaultInfoController</a></span>, <span class='object_link'><a href="OrganizationsController.html" title="Api::V2::OrganizationsController (class)">OrganizationsController</a></span>, <span class='object_link'><a href="PackagesController.html" title="Api::V2::PackagesController (class)">PackagesController</a></span>, <span class='object_link'><a href="PermissionsController.html" title="Api::V2::PermissionsController (class)">PermissionsController</a></span>, <span class='object_link'><a href="PingController.html" title="Api::V2::PingController (class)">PingController</a></span>, <span class='object_link'><a href="ProductsController.html" title="Api::V2::ProductsController (class)">ProductsController</a></span>, <span class='object_link'><a href="ProvidersController.html" title="Api::V2::ProvidersController (class)">ProvidersController</a></span>, <span class='object_link'><a href="RepositoriesController.html" title="Api::V2::RepositoriesController (class)">RepositoriesController</a></span>, <span class='object_link'><a href="RepositorySetsController.html" title="Api::V2::RepositorySetsController (class)">RepositorySetsController</a></span>, <span class='object_link'><a href="RoleLdapGroupsController.html" title="Api::V2::RoleLdapGroupsController (class)">RoleLdapGroupsController</a></span>, <span class='object_link'><a href="RolesController.html" title="Api::V2::RolesController (class)">RolesController</a></span>, <span class='object_link'><a href="RootController.html" title="Api::V2::RootController (class)">RootController</a></span>, <span class='object_link'><a href="SubscriptionsController.html" title="Api::V2::SubscriptionsController (class)">SubscriptionsController</a></span>, <span class='object_link'><a href="SyncController.html" title="Api::V2::SyncController (class)">SyncController</a></span>, <span class='object_link'><a href="SyncPlansController.html" title="Api::V2::SyncPlansController (class)">SyncPlansController</a></span>, <span class='object_link'><a href="SystemGroupErrataController.html" title="Api::V2::SystemGroupErrataController (class)">SystemGroupErrataController</a></span>, <span class='object_link'><a href="SystemGroupPackagesController.html" title="Api::V2::SystemGroupPackagesController (class)">SystemGroupPackagesController</a></span>, <span class='object_link'><a href="SystemGroupsController.html" title="Api::V2::SystemGroupsController (class)">SystemGroupsController</a></span>, <span class='object_link'><a href="SystemPackagesController.html" title="Api::V2::SystemPackagesController (class)">SystemPackagesController</a></span>, <span class='object_link'><a href="SystemsController.html" title="Api::V2::SystemsController (class)">SystemsController</a></span>, <span class='object_link'><a href="TasksController.html" title="Api::V2::TasksController (class)">TasksController</a></span>, <span class='object_link'><a href="UebercertsController.html" title="Api::V2::UebercertsController (class)">UebercertsController</a></span>, <span class='object_link'><a href="UsersController.html" title="Api::V2::UsersController (class)">UsersController</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/lib/api/v2/rendering.rb<span class="defines">,<br />
+  app/lib/api/v2/rendering.rb</span>
+ asd </dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_for_async-instance_method" title="#respond_for_async (instance method)">- (Object) <strong>respond_for_async</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_for_create-instance_method" title="#respond_for_create (instance method)">- (Object) <strong>respond_for_create</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_for_destroy-instance_method" title="#respond_for_destroy (instance method)">- (Object) <strong>respond_for_destroy</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_for_index-instance_method" title="#respond_for_index (instance method)">- (Object) <strong>respond_for_index</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_for_show-instance_method" title="#respond_for_show (instance method)">- (Object) <strong>respond_for_show</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_for_status-instance_method" title="#respond_for_status (instance method)">- (Object) <strong>respond_for_status</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_for_update-instance_method" title="#respond_for_update (instance method)">- (Object) <strong>respond_for_update</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_with_template-instance_method" title="#respond_with_template (instance method)">- (Object) <strong>respond_with_template</strong>(action, resource_name, options = {}, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_with_template_collection-instance_method" title="#respond_with_template_collection (instance method)">- (Object) <strong>respond_with_template_collection</strong>(action, resource_name, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#respond_with_template_resource-instance_method" title="#respond_with_template_resource (instance method)">- (Object) <strong>respond_with_template_resource</strong>(action, resource_name, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#try_specific_collection_template-instance_method" title="#try_specific_collection_template (instance method)">- (Object) <strong>try_specific_collection_template</strong>(action, common_action, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#try_specific_resource_template-instance_method" title="#try_specific_resource_template (instance method)">- (Object) <strong>try_specific_resource_template</strong>(action, common_action, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="respond_for_async-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_for_async</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_for_async'>respond_for_async</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='int'>202</span>
+  <span class='id identifier rubyid_try_specific_resource_template'>try_specific_resource_template</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:template</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>async</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_for_create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_for_create</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_for_create'>respond_for_create</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_try_specific_resource_template'>try_specific_resource_template</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:template</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_for_destroy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_for_destroy</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_for_destroy'>respond_for_destroy</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_try_specific_resource_template'>try_specific_resource_template</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:template</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_for_index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_for_index</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_for_index'>respond_for_index</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_try_specific_collection_template'>try_specific_collection_template</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:template</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_for_show-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_for_show</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_for_show'>respond_for_show</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_with_template_resource'>respond_with_template_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:template</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_controller_name'>controller_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_for_status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_for_status</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_for_status'>respond_for_status</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_try_specific_resource_template'>try_specific_resource_template</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:template</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>status</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_for_update-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_for_update</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_for_update'>respond_for_update</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_try_specific_resource_template'>try_specific_resource_template</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:template</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_with_template-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_with_template</strong>(action, resource_name, options = {}, &amp;block) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_with_template'>respond_with_template</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_name'>resource_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>yield</span> <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+  <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='int'>200</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:template</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/api/v2/%s/%s</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id identifier rubyid_resource_name'>resource_name</span><span class='comma'>,</span> <span class='id identifier rubyid_action'>action</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_status'>status</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_with_template_collection-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_with_template_collection</strong>(action, resource_name, options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_with_template_collection'>respond_with_template_collection</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_name'>resource_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_with_template'>respond_with_template</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_name'>resource_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='ivar'>@collection</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:collection</span><span class='rbracket'>]</span> <span class='kw'>unless</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:collection</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='ivar'>@collection</span> <span class='op'>=</span> <span class='id identifier rubyid_get_resource_collection'>get_resource_collection</span> <span class='kw'>if</span> <span class='ivar'>@collection</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="respond_with_template_resource-instance_method">
+  
+    - (<tt>Object</tt>) <strong>respond_with_template_resource</strong>(action, resource_name, options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_respond_with_template_resource'>respond_with_template_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_name'>resource_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_with_template'>respond_with_template</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_name'>resource_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='ivar'>@resource</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:resource</span><span class='rbracket'>]</span> <span class='kw'>unless</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:resource</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='ivar'>@resource</span> <span class='op'>=</span> <span class='id identifier rubyid_get_resource'>get_resource</span> <span class='kw'>if</span> <span class='ivar'>@resource</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="try_specific_collection_template-instance_method">
+  
+    - (<tt>Object</tt>) <strong>try_specific_collection_template</strong>(action, common_action, options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_try_specific_collection_template'>try_specific_collection_template</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_common_action'>common_action</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_respond_with_template_collection'>respond_with_template_collection</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_controller_name'>controller_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>ActionView</span><span class='op'>::</span><span class='const'>MissingTemplate</span>
+    <span class='id identifier rubyid_respond_with_template_collection'>respond_with_template_collection</span><span class='lparen'>(</span><span class='id identifier rubyid_common_action'>common_action</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>common</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="try_specific_resource_template-instance_method">
+  
+    - (<tt>Object</tt>) <strong>try_specific_resource_template</strong>(action, common_action, options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/api/v2/rendering.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_try_specific_resource_template'>try_specific_resource_template</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_common_action'>common_action</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_respond_with_template_resource'>respond_with_template_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_action'>action</span><span class='comma'>,</span> <span class='id identifier rubyid_controller_name'>controller_name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>ActionView</span><span class='op'>::</span><span class='const'>MissingTemplate</span>
+    <span class='id identifier rubyid_respond_with_template_resource'>respond_with_template_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_common_action'>common_action</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>common</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue May  7 12:08:59 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: ForemanIntegration
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: ForemanIntegration</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Foreman integration</h1>
+
+<p>Foreman is integrated as a service. Katello is using Foreman API for orchestration. GUI will be recreated in Katello.</p>
+
+<p>Katello is using OAuth for authentication:</p>
+
+<ul>
+<li>  see <a href="http://theforeman.org/projects/foreman/wiki/API_OAuth">http://theforeman.org/projects/foreman/wiki/API_OAuth</a></li>
+<li>  see <a href="https://github.com/Pajk/apipie-rails/blob/master/lib/apipie/client/rest_client_oauth.rb">https://github.com/Pajk/apipie-rails/blob/master/lib/apipie/client/rest_client_oauth.rb</a></li>
+</ul>
+
+<h2>Setup</h2>
+
+<p>Follow <a href="https://fedorahosted.org/katello/wiki/AdvancedInstallation" target="_parent" title="instructions">instructions</a> how to setup Katello. Foreman will be also installed and configured by <code>katello-configure</code>.
+<em>(There may be some issues right now, we are working on it.)</em></p>
+
+<h2>Layers</h2>
+
+<h3>ForemanApi</h3>
+
+<p><code>foreman_api</code> is auto-generated gem from Foreman API documentation using <code>apipie-rails</code> gem. It defines methods for each API call structured by resource.</p>
+
+<p>Short example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_architectures'>architectures</span> <span class='op'>=</span> <span class='const'>ForemanApi</span><span class='op'>::</span><span class='const'>Resources</span><span class='op'>::</span><span class='const'>Architecture</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='symbol'>:base_url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>http://localhost:3000</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                                                        <span class='symbol'>:username</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>admin</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                                                        <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>changeme</span><span class='tstring_end'>'</span></span>
+<span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_architectures'>architectures</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span>
+<span class='id identifier rubyid_data'>data</span> <span class='comment'># =&gt; [{&quot;architecture&quot;=&gt;{&quot;id&quot;=&gt;5, &quot;name&quot;=&gt;&quot;i386&quot;}},
+</span>     <span class='comment'>#     {&quot;architecture&quot;=&gt;{&quot;id&quot;=&gt;9, &quot;name&quot;=&gt;&quot;ppc&quot;}},
+</span>     <span class='comment'>#     {&quot;architecture&quot;=&gt;{&quot;id&quot;=&gt;14, &quot;name&quot;=&gt;&quot;x86_64&quot;}}]
+</span>
+<span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_architectures'>architectures</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='int'>5</span>
+<span class='id identifier rubyid_data'>data</span> <span class='comment'># =&gt; {&quot;architecture&quot;=&gt;{&quot;id&quot;=&gt;5, &quot;name&quot;=&gt;&quot;i386&quot;}}
+</span></code></pre>
+
+<ul>
+<li>see <a href="https://github.com/mbacovsky/foreman_api">https://github.com/mbacovsky/foreman_api</a></li>
+<li>see <a href="https://github.com/Pajk/apipie-rails">https://github.com/Pajk/apipie-rails</a></li>
+</ul>
+
+<h3>Resources::Foreman::...</h3>
+
+<p></p>
+
+<ul>
+<li>see Resources::Foreman::Architecture</li>
+</ul>
+
+<h3>Resources::ForemanModel</h3>
+
+<p></p>
+
+<ul>
+<li>see Resources::AbstractModel</li>
+<li>see Resources::ForemanModel</li>
+</ul>
+
+<h3>Glue::Foreman::(...)</h3>
+
+<p><p>Glue::Foreman contains modules (e.g. Glue::Foreman::User) defining the orchestration. The modules are working with
+Resources::ForemanModel instances (e.g. Foreman::User).</p>
+</p>
+
+<h2>Development</h2>
+
+<h3>Accessing Foreman UI</h3>
+
+<p>Katello is generating random passwords when creating foreman-users. This behavior is turned off in development environment to make debugging easier. Katello is using plain passwords in development for developer to access Foreman UI on behalf of an user (login and password are same for Katello and Foreman).</p>
+
+<p>This can be configured in katello.yml.</p>
+
+<pre class="code yml"><code class="yml">development:
+  foreman:
+    random_password: false
+</code></pre>
+
+<h3><code>foreman_api</code> gem</h3>
+
+<p>If you need to update Foreman API documentation do not forget to update ForemanApi.</p>
+
+<ol>
+<li> update API doc in foreman</li>
+<li><p>generate foreman_api gem</p>
+
+<pre class="code txt"><code class="txt">rake apipie:client[_api] # in foreman repo
+</code></pre>
+
+<p>it will be generated in foreman root directory under <code>foreman_api</code></p></li>
+<li><p>update Katello Gemfile to use the updated <code>foreman_api</code> gem</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>foreman_api</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/path/to/foreman/foreman_api</span><span class='tstring_end'>'</span></span>
+</code></pre></li>
+<li><p>when you are done with changes</p>
+
+<ul>
+<li>  send pull request to <a href="https://github.com/theforeman/foreman" target="_parent" title="Foreman">Foreman</a></li>
+<li>  ping <a href="https://github.com/mbacovsky" target="_parent" title="@mbacovsky">@mbacovsky</a> to update and release <code>foreman_api</code> gem</li>
+</ul></li>
+</ol>
+
+<h4>Release process</h4>
+
+<p>When the PR is merged in in the Foreman upstream,</p>
+
+<ul>
+<li><p>pull the latest Foreman develop branch and run</p>
+
+<p>!!!txt
+  rake apipie:client[_api]</p></li>
+</ul>
+
+<p>in the repo. It will generate fresh foreman API bindings in foreman_api directory</p>
+
+<ul>
+<li>fork <a href="https://github.com/mbacovsky/foreman_api">https://github.com/mbacovsky/foreman_api</a>, create new branch and copy content of the generated foreman_api in it</li>
+<li>increase version in lib/foreman_api/version.rb</li>
+<li>commit your updates (be aware not to overwrite the gemspec with the generated template) and file a pull request</li>
+</ul>
+
+<p>If everything is okay and the PR is merged the following steps will be done by me (some day automatically)</p>
+
+<ul>
+<li><p>build and release gem</p>
+
+<p>!!!txt
+  rake release</p></li>
+<li><p>update the rpm package in our thirdparty repo</p></li>
+<li><p>update the rpm specfile contained in foreman_api</p></li>
+<li><p>push the updates to the theforeman/foreman_api on GitHub?</p></li>
+</ul>
+
+<h3>Other Notes</h3>
+
+<p>Apipie param validation is enabled in Foreman:</p>
+
+<pre class="code txt"><code class="txt">$ curl -F a=a http://admin:changeme@localhost:3001/api/architectures
+{&quot;error&quot;:{&quot;parameter_name&quot;:&quot;architecture&quot;,&quot;class&quot;:&quot;Apipie::ParamMissing&quot;,
+ &quot;message&quot;:&quot;Missing parameter architecture&quot;}}
+
+$ curl -F architecture[drop]=a http://admin:changeme@localhost:3001/api/architectures
+{&quot;error&quot;:{&quot;parameter_name&quot;:&quot;name&quot;,&quot;class&quot;:&quot;Apipie::ParamInvalid&quot;,
+ &quot;message&quot;:&quot;Invalid parameter 'name' value nil: Must be String&quot;}}
+</code></pre>
+
+<p>It usually means that Foreman API documentation has to be updated or wrong parameters are being sent to Foreman.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu May  9 10:19:20 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

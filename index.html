@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: README
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Katello <a href="https://travis-ci.org/Katello/katello"><img src="https://travis-ci.org/Katello/katello.png?branch=master" alt="Build Status"></a></h1>
+
+<p>Full documentation is at <a href="http://katello.github.io/katello">http://katello.github.io/katello</a></p>
+
+<h2>About</h2>
+
+<p><a href="http://www.katello.org">Katello</a> is a systems life cycle management
+tool. It allows you to manage hundreds and thousands machines with one
+click. Katello can pull content from remote repositories into isolated
+environments, make subscriptions management easier and provide
+provisioning at scale.</p>
+
+<p>Currently, it is able to handle Fedora and Red Hat Enterprise
+Linux based systems.</p>
+
+<h2>Getting Started</h2>
+
+<p>The easiest way to get stable version of Katello up and running is following
+<a href="https://fedorahosted.org/katello/wiki/Install">Katello Wiki Installation Instructions</a>.</p>
+
+<p>If you like living on the edge, go for
+<a href="https://fedorahosted.org/katello/wiki/InstallTesting">nightly builds</a>
+instead.</p>
+
+<h2>Found a bug?</h2>
+
+<p>That&#39;s rather unfortunate. But don&#39;t worry! We can help. Just file a bug
+<a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Katello">on our Bugzilla</a> or
+<a href="https://github.com/Katello/katello/issues">in Github</a>.</p>
+
+<h2>Contributing</h2>
+
+<p>See
+<a href="https://fedorahosted.org/katello/wiki/AdvancedInstallation#GettingupandRunningGIT">development instructions</a>.</p>
+
+<p>What&#39;s included in this repository:</p>
+
+<ul>
+<li>script - various development scripts</li>
+<li>actual Rails app of Katello</li>
+</ul>
+
+<h2>Contact &amp; Resources</h2>
+
+<ul>
+<li><a href="http://katello.org">Katello.org</a></li>
+<li><a href="https://fedorahosted.org/katello/wiki">Wiki</a></li>
+<li><a href="https://fedorahosted.org/mailman/listinfo/katello">User mailing list</a></li>
+<li><a href="https://www.redhat.com/mailman/listinfo/katello-devel">Developer mailing list</a></li>
+<li><a href="http://freenode.net/using_the_network.shtml">IRC Freenode</a>: #katello</li>
+<li><a href="https://twitter.com/Katello_Project">Twitter</a></li>
+</ul>
+
+<h2>Documentation</h2>
+
+<p>YARD documentation is intended for developers. This documentation contains:</p>
+
+<ul>
+<li>  code documentation</li>
+<li>  high level guides to architectures and implementation details</li>
+</ul>
+
+<p>User documentation can be found on <a href="https://fedorahosted.org/katello/">wiki</a>.</p>
+
+<p><em>Note: older developer guides can be found on wiki, they have not been migrated.</em></p>
+
+<h3>Guides</h3>
+
+<ul>
+<li>  <a href="file.YARDDocumentation.html" title="YARDDocumentation">YARDDocumentation</a></li>
+<li>  <a href="file.ForemanIntegration.html" title="ForemanIntegration">ForemanIntegration</a></li>
+<li>  <a href="file.Graphs.html" title="Graphs">Graphs</a></li>
+<li><p>Original Rails generated README <a href="file.RailsReadme.html" title="RailsReadme">RailsReadme</a>, we may do certain things differently</p>
+
+<ul>
+<li>  we use <code>doc</code> directory for storing markdown guides instead of a generated documentation</li>
+</ul></li>
+</ul>
+
+<h3>Source</h3>
+
+<ul>
+<li>  <span class='object_link'><a href="Katello/Configuration.html" title="Katello::Configuration (module)">Katello::Configuration</a></span></li>
+<li>  <span class='object_link'><a href="Notifications.html" title="Notifications (module)">Notifications</a></span></li>
+</ul>
+
+<h2>How to YARD</h2>
+
+<ul>
+<li><p>to see YARD documentation start Katello server and click on the link in the UI footer or go directly to
+<a href="http://path.to.katello/a_prefix/yard/docs/katello/frames" target="_parent" title="http://path.to.katello/a_prefix/yard/docs/katello/frames">http://path.to.katello/a_prefix/yard/docs/katello/frames</a></p>
+
+<ul>
+<li>  if it fails run <code>bundle exec yard doc --no-cache</code> first</li>
+</ul></li>
+<li><p>see <a href="file.YARDDocumentation.html" title="YARDDocumentation">YARDDocumentation</a></p></li>
+</ul>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu May  9 10:19:20 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

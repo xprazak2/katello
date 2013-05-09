@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: PromotionsHelper
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
+    
+    
+    <span class="title">PromotionsHelper</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: PromotionsHelper
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+      <dt class="r1">Includes:</dt>
+      <dd class="r1">ActionView::Helpers::JavaScriptHelper, <span class='object_link'><a href="BreadcrumbHelper.html" title="BreadcrumbHelper (module)">BreadcrumbHelper</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html" title="ChangesetBreadcrumbs (module)">ChangesetBreadcrumbs</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html" title="ContentBreadcrumbs (module)">ContentBreadcrumbs</a></span>, <span class='object_link'><a href="ErrataHelper.html" title="ErrataHelper (module)">ErrataHelper</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/helpers/promotions_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#breadcrumb_url_proc-instance_method" title="#breadcrumb_url_proc (instance method)">- (Object) <strong>breadcrumb_url_proc</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns a proc to generate a url for the env_selector.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_new_button%3F-instance_method" title="#show_new_button? (instance method)">- (Boolean) <strong>show_new_button?</strong>(manage_promotion, manage_deletion) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ErrataHelper.html" title="ErrataHelper (module)">ErrataHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ErrataHelper.html#errata_human_type-instance_method" title="ErrataHelper#errata_human_type (method)">#errata_human_type</a></span>, <span class='object_link'><a href="ErrataHelper.html#errata_title-instance_method" title="ErrataHelper#errata_title (method)">#errata_title</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ContentBreadcrumbs.html" title="ContentBreadcrumbs (module)">ContentBreadcrumbs</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ContentBreadcrumbs.html#changeset_id-instance_method" title="ContentBreadcrumbs#changeset_id (method)">#changeset_id</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#details_path-instance_method" title="ContentBreadcrumbs#details_path (method)">#details_path</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#distribution_bc_id-instance_method" title="ContentBreadcrumbs#distribution_bc_id (method)">#distribution_bc_id</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#errata_bc_filters-instance_method" title="ContentBreadcrumbs#errata_bc_filters (method)">#errata_bc_filters</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#errata_bc_id-instance_method" title="ContentBreadcrumbs#errata_bc_id (method)">#errata_bc_id</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#generate_content_breadcrumb-instance_method" title="ContentBreadcrumbs#generate_content_breadcrumb (method)">#generate_content_breadcrumb</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#packages_bc_id-instance_method" title="ContentBreadcrumbs#packages_bc_id (method)">#packages_bc_id</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#product_bc_id-instance_method" title="ContentBreadcrumbs#product_bc_id (method)">#product_bc_id</a></span>, <span class='object_link'><a href="ContentBreadcrumbs.html#repo_bc_id-instance_method" title="ContentBreadcrumbs#repo_bc_id (method)">#repo_bc_id</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="ChangesetBreadcrumbs.html" title="ChangesetBreadcrumbs (module)">ChangesetBreadcrumbs</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ChangesetBreadcrumbs.html#changeset_bc_id-instance_method" title="ChangesetBreadcrumbs#changeset_bc_id (method)">#changeset_bc_id</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#deps_cs_bc_id-instance_method" title="ChangesetBreadcrumbs#deps_cs_bc_id (method)">#deps_cs_bc_id</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#distributions_cs_bc_id-instance_method" title="ChangesetBreadcrumbs#distributions_cs_bc_id (method)">#distributions_cs_bc_id</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#errata_cs_bc_id-instance_method" title="ChangesetBreadcrumbs#errata_cs_bc_id (method)">#errata_cs_bc_id</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#generate_cs_breadcrumb-instance_method" title="ChangesetBreadcrumbs#generate_cs_breadcrumb (method)">#generate_cs_breadcrumb</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#packages_cs_bc_id-instance_method" title="ChangesetBreadcrumbs#packages_cs_bc_id (method)">#packages_cs_bc_id</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#process_cs-instance_method" title="ChangesetBreadcrumbs#process_cs (method)">#process_cs</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#product_cs_bc_id-instance_method" title="ChangesetBreadcrumbs#product_cs_bc_id (method)">#product_cs_bc_id</a></span>, <span class='object_link'><a href="ChangesetBreadcrumbs.html#repos_cs_bc_id-instance_method" title="ChangesetBreadcrumbs#repos_cs_bc_id (method)">#repos_cs_bc_id</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="BreadcrumbHelper.html" title="BreadcrumbHelper (module)">BreadcrumbHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="BreadcrumbHelper.html#add_crumb_node%21-instance_method" title="BreadcrumbHelper#add_crumb_node! (method)">#add_crumb_node!</a></span></p>
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="breadcrumb_url_proc-instance_method">
+  
+    - (<tt>Object</tt>) <strong>breadcrumb_url_proc</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>returns a proc to generate a url for the env_selector</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/promotions_helper.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_breadcrumb_url_proc'>breadcrumb_url_proc</span>
+  <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_args'>args</span><span class='op'>|</span>
+    <span class='id identifier rubyid_promotion_path'>promotion_path</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:environment</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
+          <span class='symbol'>:next_env_id</span><span class='op'>=&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:next_environment</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:next_environment</span><span class='rbracket'>]</span> <span class='kw'>and</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:environment</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_library?'>library?</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_new_button?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>show_new_button?</strong>(manage_promotion, manage_deletion) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/promotions_helper.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_show_new_button?'>show_new_button?</span><span class='lparen'>(</span><span class='id identifier rubyid_manage_promotion'>manage_promotion</span><span class='comma'>,</span> <span class='id identifier rubyid_manage_deletion'>manage_deletion</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='ivar'>@environment</span><span class='period'>.</span><span class='id identifier rubyid_library?'>library?</span>
+    <span class='id identifier rubyid_manage_promotion'>manage_promotion</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@next_environment</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_manage_deletion'>manage_deletion</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id identifier rubyid_manage_promotion'>manage_promotion</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@next_environment</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:23 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Navigation::AdministrationMenu
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (A)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Navigation.html" title="Navigation (module)">Navigation</a></span></span>
+     &raquo; 
+    <span class="title">AdministrationMenu</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Navigation::AdministrationMenu
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/lib/navigation/administration_menu.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">+ (Object) <strong>included</strong>(base) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#admin_main-instance_method" title="#admin_main (instance method)">- (Object) <strong>admin_main</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_about-instance_method" title="#menu_about (instance method)">- (Object) <strong>menu_about</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_administration-instance_method" title="#menu_administration (instance method)">- (Object) <strong>menu_administration</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_orgs-instance_method" title="#menu_orgs (instance method)">- (Object) <strong>menu_orgs</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_roles-instance_method" title="#menu_roles (instance method)">- (Object) <strong>menu_roles</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_sync_tasks-instance_method" title="#menu_sync_tasks (instance method)">- (Object) <strong>menu_sync_tasks</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu_users-instance_method" title="#menu_users (instance method)">- (Object) <strong>menu_users</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#user_navigation-instance_method" title="#user_navigation (instance method)">- (Object) <strong>user_navigation</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="included-class_method">
+  
+    + (<tt>Object</tt>) <strong>included</strong>(base) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_helper_method'>helper_method</span> <span class='symbol'>:user_navigation</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="admin_main-instance_method">
+  
+    - (<tt>Object</tt>) <strong>admin_main</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_admin_main'>admin_main</span>
+  <span class='lbracket'>[</span> <span class='id identifier rubyid_menu_administration'>menu_administration</span> <span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_about-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_about</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_about'>menu_about</span>
+  <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:about</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>About</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_about_path'>about_path</span><span class='comma'>,</span>
+   <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_any_readable?'>any_readable?</span><span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operations section_level</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>operations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_administration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_administration</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_administration'>menu_administration</span>
+  <span class='id identifier rubyid_menu'>menu</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:admin</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Administer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='symbol'>:sub_level</span><span class='comma'>,</span>
+    <span class='symbol'>:items</span><span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='id identifier rubyid_menu_orgs'>menu_orgs</span><span class='comma'>,</span> <span class='id identifier rubyid_menu_sync_tasks'>menu_sync_tasks</span><span class='comma'>,</span> <span class='id identifier rubyid_menu_users'>menu_users</span><span class='comma'>,</span> <span class='id identifier rubyid_menu_roles'>menu_roles</span> <span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operations header-widget fl menu_parent</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>operations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='symbol'>:sub_level</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_menu'>menu</span><span class='lbracket'>[</span><span class='symbol'>:items</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_menu_about'>menu_about</span> <span class='comment'># keep the about as the last item
+</span>  <span class='kw'>return</span> <span class='id identifier rubyid_menu'>menu</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_orgs-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_orgs</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_orgs'>menu_orgs</span>
+  <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:orgs</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Organizations</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_organizations_path'>organizations_path</span><span class='comma'>,</span>
+   <span class='symbol'>:if</span> <span class='op'>=&gt;</span><span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_any_readable?'>any_readable?</span><span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operations section_level</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>operations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_roles-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_roles</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_roles'>menu_roles</span>
+  <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:roles</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Roles</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_roles_path'>roles_path</span><span class='comma'>,</span>
+   <span class='symbol'>:if</span> <span class='op'>=&gt;</span><span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='const'>Role</span><span class='period'>.</span><span class='id identifier rubyid_any_readable?'>any_readable?</span><span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operations second_level</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>operations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_sync_tasks-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_sync_tasks</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_sync_tasks'>menu_sync_tasks</span>
+  <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:sync_tasks</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Synchronization</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_sync_management_manage_path'>sync_management_manage_path</span><span class='comma'>,</span>
+   <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_has_superadmin_role?'>has_superadmin_role?</span> <span class='op'>&amp;&amp;</span> <span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_katello?'>katello?</span><span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operations section_level</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>operations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu_users-instance_method">
+  
+    - (<tt>Object</tt>) <strong>menu_users</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_menu_users'>menu_users</span>
+  <span class='lbrace'>{</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:users</span><span class='comma'>,</span>
+   <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Users</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_users_path'>users_path</span><span class='comma'>,</span>
+   <span class='symbol'>:if</span> <span class='op'>=&gt;</span><span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_any_readable?'>any_readable?</span><span class='rbrace'>}</span><span class='comma'>,</span>
+   <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>operations second_level</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data-menu</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>operations</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="user_navigation-instance_method">
+  
+    - (<tt>Object</tt>) <strong>user_navigation</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/navigation/administration_menu.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_user_navigation'>user_navigation</span>
+  <span class='lbracket'>[</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:environment</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Environments</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_edit_environment_user_path'>edit_environment_user_path</span><span class='lparen'>(</span><span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='ivar'>@user</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>panel_link</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:user_roles</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Roles</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_edit_role_path'>edit_role_path</span><span class='lparen'>(</span><span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_own_role'>own_role</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@user</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>panel_link</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+    <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='symbol'>:user_details</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Details</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_edit_user_path'>edit_user_path</span><span class='lparen'>(</span><span class='ivar'>@user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:if</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@user</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:class</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>panel_link</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+  <span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:26 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

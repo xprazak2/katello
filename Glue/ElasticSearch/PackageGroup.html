@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Glue::ElasticSearch::PackageGroup
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Glue.html" title="Glue (module)">Glue</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../ElasticSearch.html" title="Glue::ElasticSearch (module)">ElasticSearch</a></span></span>
+     &raquo; 
+    <span class="title">PackageGroup</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Glue::ElasticSearch::PackageGroup
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../../PackageGroup.html" title="PackageGroup (class)">PackageGroup</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/glue/elastic_search/package_group.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">+ (Object) <strong>included</strong>(base) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="included-class_method">
+  
+    + (<tt>Object</tt>) <strong>included</strong>(base) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/package_group.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_index_options'>index_options</span>
+      <span class='lbrace'>{</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_type</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:package_group</span><span class='comma'>,</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name_autocomplete</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span>
+      <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span>
+      <span class='lbrace'>{</span>
+          <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>index</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+              <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>analysis</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filter</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>Util</span><span class='op'>::</span><span class='const'>Search</span><span class='op'>::</span><span class='id identifier rubyid_custom_filters'>custom_filters</span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>analyzer</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span><span class='const'>Util</span><span class='op'>::</span><span class='const'>Search</span><span class='op'>::</span><span class='id identifier rubyid_custom_analyzers'>custom_analyzers</span>
+              <span class='rbrace'>}</span>
+          <span class='rbrace'>}</span>
+      <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+      <span class='lbrace'>{</span>
+        <span class='symbol'>:package_group</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+          <span class='symbol'>:properties</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+            <span class='symbol'>:id</span>            <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:type</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:index</span><span class='op'>=&gt;</span><span class='symbol'>:not_analyzed</span><span class='rbrace'>}</span><span class='comma'>,</span>
+            <span class='symbol'>:package_group_id</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:type</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:index</span><span class='op'>=&gt;</span><span class='symbol'>:not_analyzed</span><span class='rbrace'>}</span><span class='comma'>,</span>
+            <span class='symbol'>:name</span>          <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:type</span><span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:analyzer</span><span class='op'>=&gt;</span><span class='symbol'>:kt_name_analyzer</span><span class='rbrace'>}</span><span class='comma'>,</span>
+            <span class='symbol'>:name_sort</span>    <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:index</span><span class='op'>=&gt;</span> <span class='symbol'>:not_analyzed</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+            <span class='symbol'>:repo_id</span>       <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:type</span><span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:index</span><span class='op'>=&gt;</span><span class='symbol'>:not_analyzed</span><span class='rbrace'>}</span><span class='comma'>,</span>
+          <span class='rbrace'>}</span>
+        <span class='rbrace'>}</span>
+      <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_elastic_index'>elastic_index</span><span class='rbrace'>}</span><span class='tstring_content'>_package_group</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id_search'>id_search</span> <span class='id identifier rubyid_ids'>ids</span>
+      <span class='kw'>return</span> <span class='const'>Util</span><span class='op'>::</span><span class='const'>Support</span><span class='period'>.</span><span class='id identifier rubyid_array_with_total'>array_with_total</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+      <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_fields'>fields</span> <span class='lbracket'>[</span><span class='symbol'>:id</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:repo_id</span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_query'>query</span> <span class='kw'>do</span>
+          <span class='id identifier rubyid_all'>all</span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_size'>size</span> <span class='id identifier rubyid_ids'>ids</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+        <span class='id identifier rubyid_filter'>filter</span> <span class='symbol'>:terms</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ids'>ids</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_results'>results</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='id identifier rubyid_query'>query</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='comma'>,</span> <span class='id identifier rubyid_page_size'>page_size</span><span class='comma'>,</span> <span class='id identifier rubyid_repoid'>repoid</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_sort'>sort</span><span class='op'>=</span><span class='lbracket'>[</span><span class='symbol'>:name_sort</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ASC</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_default_field'>default_field</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span>
+      <span class='kw'>return</span> <span class='const'>Util</span><span class='op'>::</span><span class='const'>Support</span><span class='period'>.</span><span class='id identifier rubyid_array_with_total'>array_with_total</span> <span class='kw'>if</span> <span class='op'>!</span><span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+
+      <span class='id identifier rubyid_all_rows'>all_rows</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span> <span class='comment'>#if blank, get all rows
+</span>
+      <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_query'>query</span> <span class='kw'>do</span>
+          <span class='kw'>if</span> <span class='id identifier rubyid_all_rows'>all_rows</span>
+            <span class='id identifier rubyid_all'>all</span>
+          <span class='kw'>else</span>
+            <span class='id identifier rubyid_string'>string</span> <span class='id identifier rubyid_query'>query</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:default_field</span><span class='op'>=&gt;</span><span class='id identifier rubyid_default_field'>default_field</span><span class='rbrace'>}</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+
+        <span class='kw'>if</span> <span class='id identifier rubyid_page_size'>page_size</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+         <span class='id identifier rubyid_size'>size</span> <span class='id identifier rubyid_page_size'>page_size</span>
+         <span class='id identifier rubyid_from'>from</span> <span class='id identifier rubyid_start'>start</span>
+        <span class='kw'>end</span>
+
+        <span class='kw'>if</span> <span class='id identifier rubyid_repoid'>repoid</span>
+          <span class='id identifier rubyid_filter'>filter</span> <span class='symbol'>:term</span><span class='comma'>,</span> <span class='symbol'>:repo_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repoid'>repoid</span>
+        <span class='kw'>end</span>
+        <span class='id identifier rubyid_sort'>sort</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_by'>by</span> <span class='id identifier rubyid_sort'>sort</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_sort'>sort</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='op'>!</span><span class='id identifier rubyid_all_rows'>all_rows</span>
+      <span class='kw'>end</span>
+
+
+      <span class='kw'>return</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_results'>results</span>
+    <span class='kw'>rescue</span> <span class='const'>Tire</span><span class='op'>::</span><span class='const'>Search</span><span class='op'>::</span><span class='const'>SearchRequestFailed</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+      <span class='const'>Util</span><span class='op'>::</span><span class='const'>Support</span><span class='period'>.</span><span class='id identifier rubyid_array_with_total'>array_with_total</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index_package_groups'>index_package_groups</span> <span class='id identifier rubyid_pkg_grp_ids'>pkg_grp_ids</span>
+      <span class='id identifier rubyid_pkg_grps'>pkg_grps</span> <span class='op'>=</span> <span class='id identifier rubyid_pkg_grp_ids'>pkg_grp_ids</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_pkg_grp_id'>pkg_grp_id</span><span class='op'>|</span>
+        <span class='id identifier rubyid_pkg_grp'>pkg_grp</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_pkg_grp_id'>pkg_grp_id</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_pkg_grp'>pkg_grp</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_pkg_grp'>pkg_grp</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span>
+      <span class='rbrace'>}</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='op'>::</span><span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+        <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_pkg_grps'>pkg_grps</span>
+      <span class='kw'>end</span> <span class='kw'>unless</span> <span class='id identifier rubyid_pkg_grps'>pkg_grps</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:27 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

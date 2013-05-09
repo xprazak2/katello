@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Authorization::Enforcement
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (E)</a> &raquo;
+    <span class='title'>Authorization</span>
+     &raquo; 
+    <span class="title">Enforcement</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Authorization::Enforcement
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../User.html" title="User (class)">User</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/authorization/enforcement.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">+ (Object) <strong>included</strong>(base) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allowed_all_tags%3F-instance_method" title="#allowed_all_tags? (instance method)">- (Boolean) <strong>allowed_all_tags?</strong>(verbs, resource_type, org = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>the user has access to all the tags
+This is used extensively in many of the model permission scope queries.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#allowed_tags_query-instance_method" title="#allowed_tags_query (instance method)">- (Object) <strong>allowed_tags_query</strong>(verbs, resource_type, org = nil, allowed_to_check = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allowed_tags_sql-instance_method" title="#allowed_tags_sql (instance method)">- (Object) <strong>allowed_tags_sql</strong>(verbs = nil, resource_type = nil, org = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return the sql that shows all the allowed tags for a given verb, resource_type, org
+combination .</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allowed_to%3F-instance_method" title="#allowed_to? (instance method)">- (Boolean) <strong>allowed_to?</strong>(verbs, resource_type, tags = nil, org = nil, any_tags = false) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return true if the user is allowed to do the specified action for a resource type
+verb/action can be:
+* a parameter-like Hash (eg. :controller =&gt; &#39;projects&#39;, :action =&gt; &#39;edit&#39;)
+* a permission Symbol (eg. :edit_project).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#org_permissions_query-instance_method" title="#org_permissions_query (instance method)">- (Object) <strong>org_permissions_query</strong>(org, exclude_orgs_clause = false) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="included-class_method">
+  
+    + (<tt>Object</tt>) <strong>included</strong>(base) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/authorization/enforcement.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
+    <span class='comment'># Class method that has the same functionality as allowed_all_tags? method but operates
+</span>    <span class='comment'># on the current logged user. The class attribute User.current must be set!
+</span>    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_allowed_all_tags?'>allowed_all_tags?</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>UserNotSet</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>current user is not set</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='kw'>not</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>User</span>
+      <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_allowed_all_tags?'>allowed_all_tags?</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># Class method that has the same functionality as allowed_tags_sql method but operates
+</span>    <span class='comment'># on the current logged user. The class attribute User.current must be set!
+</span>    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_allowed_tags_sql'>allowed_tags_sql</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+      <span class='const'>ResourceType</span><span class='period'>.</span><span class='id identifier rubyid_check'>check</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_verb'>verb</span>
+      <span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>UserNotSet</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>current user is not set</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='kw'>not</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>User</span>
+      <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_allowed_tags_sql'>allowed_tags_sql</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># Class method that has the same functionality as allowed_to? method but operates
+</span>    <span class='comment'># on the current logged user. The class attribute User.current must be set!
+</span>    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_allowed_to?'>allowed_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_any_tags'>any_tags</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>UserNotSet</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>current user is not set</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='kw'>not</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>User</span>
+      <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_allowed_to?'>allowed_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='id identifier rubyid_any_tags'>any_tags</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='comment'># Class method with the very same functionality as allowed_to? but throws
+</span>    <span class='comment'># SecurityViolation exception leading to the denial page.
+</span>    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_allowed_to_or_error?'>allowed_to_or_error?</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_any_tags'>any_tags</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>UserNotSet</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>current user is not set</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='kw'>not</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>User</span>
+      <span class='kw'>unless</span> <span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_allowed_to?'>allowed_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_verb'>verb</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='id identifier rubyid_any_tags'>any_tags</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_u'>u</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span><span class='rbrace'>}</span><span class='tstring_content'> is not allowed to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_verb'>verb</span><span class='rbrace'>}</span><span class='tstring_content'> in </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_resource_type'>resource_type</span><span class='rbrace'>}</span><span class='tstring_content'> using </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tags'>tags</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_msg'>msg</span>
+        <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>SecurityViolation</span><span class='comma'>,</span> <span class='id identifier rubyid_msg'>msg</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="allowed_all_tags?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>allowed_all_tags?</strong>(verbs, resource_type, org = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>the user has access to all the tags
+This is used extensively in many of the model permission scope queries.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/authorization/enforcement.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_allowed_all_tags?'>allowed_all_tags?</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='const'>ResourceType</span><span class='period'>.</span><span class='id identifier rubyid_check'>check</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_verbs'>verbs</span>
+  <span class='id identifier rubyid_verbs'>verbs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_verbs'>verbs</span> <span class='op'>=</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_verbs'>verbs</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='const'>Numeric</span> <span class='op'>===</span> <span class='id identifier rubyid_org'>org</span>
+
+  <span class='id identifier rubyid_log_roles'>log_roles</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_org_permissions'>org_permissions</span> <span class='op'>=</span> <span class='id identifier rubyid_org_permissions_query'>org_permissions_query</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>==</span> <span class='symbol'>:organizations</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_org_permissions'>org_permissions</span> <span class='op'>=</span> <span class='id identifier rubyid_org_permissions'>org_permissions</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:organization_id</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>==</span> <span class='symbol'>:organizations</span>
+
+
+  <span class='id identifier rubyid_no_tag_verbs'>no_tag_verbs</span> <span class='op'>=</span> <span class='const'>ResourceType</span><span class='op'>::</span><span class='const'>TYPES</span><span class='lbracket'>[</span><span class='id identifier rubyid_resource_type'>resource_type</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:model</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_no_tag_verbs'>no_tag_verbs</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='kw'>rescue</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_no_tag_verbs'>no_tag_verbs</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_no_tag_verbs'>no_tag_verbs</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_verb'>verb</span><span class='op'>|</span> <span class='op'>!</span><span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span> <span class='id identifier rubyid_verb'>verb</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_verb'>verb</span><span class='op'>|</span> <span class='id identifier rubyid_no_tag_verbs'>no_tag_verbs</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span> <span class='id identifier rubyid_verb'>verb</span> <span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_all_tags_clause'>all_tags_clause</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>==</span> <span class='symbol'>:organizations</span> <span class='op'>||</span> <span class='const'>ResourceType</span><span class='period'>.</span><span class='id identifier rubyid_global_types'>global_types</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_resource_type'>resource_type</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_all_tags_clause'>all_tags_clause</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND (permissions.all_tags = :true)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_clause_all_resources_or_tags'>clause_all_resources_or_tags</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-SQL</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='tstring_content'>      permissions.resource_type_id =
+        (select id from resource_types where resource_types.name = :all) OR
+        (permissions.resource_type_id =
+          (select id from resource_types where resource_types.name = :resource_type) AND
+          (verbs.verb in (:no_tag_verbs) OR
+            (permissions.all_verbs=:true OR verbs.verb in (:verbs) </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_all_tags_clause'>all_tags_clause</span><span class='rbrace'>}</span><span class='tstring_content'> )))
+</span><span class='heredoc_end'>  SQL
+</span>  <span class='id identifier rubyid_clause_params'>clause_params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:true</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:all</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>all</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:resource_type</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='symbol'>:verbs</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_verbs'>verbs</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_org_permissions'>org_permissions</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_clause_all_resources_or_tags'>clause_all_resources_or_tags</span><span class='comma'>,</span>
+                        <span class='lbrace'>{</span> <span class='symbol'>:no_tag_verbs</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_no_tag_verbs'>no_tag_verbs</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_clause_params'>clause_params</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allowed_tags_query-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allowed_tags_query</strong>(verbs, resource_type, org = nil, allowed_to_check = true)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/authorization/enforcement.rb', line 154</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_allowed_tags_query'>allowed_tags_query</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_allowed_to_check'>allowed_to_check</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='const'>ResourceType</span><span class='period'>.</span><span class='id identifier rubyid_check'>check</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_verbs'>verbs</span>
+  <span class='id identifier rubyid_verbs'>verbs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_verbs'>verbs</span> <span class='op'>=</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_verbs'>verbs</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_log_roles'>log_roles</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='const'>Numeric</span> <span class='op'>===</span> <span class='id identifier rubyid_org'>org</span>
+  <span class='id identifier rubyid_org_permissions'>org_permissions</span> <span class='op'>=</span> <span class='id identifier rubyid_org_permissions_query'>org_permissions_query</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>==</span> <span class='symbol'>:organizations</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_clause'>clause</span>        <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_clause_params'>clause_params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:all</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>all</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:true</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:resource_type</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='symbol'>:verbs</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_verbs'>verbs</span> <span class='rbrace'>}</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>==</span> <span class='symbol'>:organizations</span>
+    <span class='id identifier rubyid_clause'>clause</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-SQL</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='tstring_content'>              permissions.resource_type_id =
+                (select id from resource_types where resource_types.name = :resource_type) AND
+                (permissions.all_verbs=:true OR verbs.verb in (:verbs))
+</span><span class='heredoc_end'>    SQL
+</span>
+    <span class='id identifier rubyid_org_permissions'>org_permissions</span> <span class='op'>=</span> <span class='id identifier rubyid_org_permissions'>org_permissions</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span>
+        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>left outer join permission_tags on permissions.id = permission_tags.permission_id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_allowed_to_check'>allowed_to_check</span>
+      <span class='id identifier rubyid_org_clause'>org_clause</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>permissions.organization_id is null</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_org_clause'>org_clause</span> <span class='op'>=</span> <span class='id identifier rubyid_org_clause'>org_clause</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> OR permissions.organization_id = :organization_id </span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_org'>org</span>
+      <span class='id identifier rubyid_org_hash'>org_hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span>
+      <span class='id identifier rubyid_org_hash'>org_hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:organization_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_org'>org</span>
+      <span class='id identifier rubyid_org_permissions'>org_permissions</span> <span class='op'>=</span> <span class='id identifier rubyid_org_permissions'>org_permissions</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_org_clause'>org_clause</span><span class='comma'>,</span> <span class='id identifier rubyid_org_hash'>org_hash</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_org_permissions'>org_permissions</span> <span class='op'>=</span> <span class='id identifier rubyid_org_permissions'>org_permissions</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>permissions.organization_id is not null</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_clause'>clause</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-SQL</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='tstring_content'>              permissions.resource_type_id =
+                (select id from resource_types where resource_types.name = :all) OR
+                (permissions.resource_type_id =
+                  (select id from resource_types where resource_types.name = :resource_type) AND
+                  (permissions.all_verbs=:true OR verbs.verb in (:verbs)))
+</span><span class='heredoc_end'>    SQL
+</span>  <span class='kw'>end</span>
+  <span class='id identifier rubyid_org_permissions'>org_permissions</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_clause'>clause</span><span class='comma'>,</span> <span class='id identifier rubyid_clause_params'>clause_params</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allowed_tags_sql-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allowed_tags_sql</strong>(verbs = nil, resource_type = nil, org = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return the sql that shows all the allowed tags for a given verb, resource_type, org
+combination .
+Note: one needs generally check for &quot;allowed_all_tags?&quot; before executing this
+Note: This returns the SQL not result of the query</p>
+
+<p>This method is called by every Model&#39;s list method</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/authorization/enforcement.rb', line 104</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_allowed_tags_sql'>allowed_tags_sql</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_select_on'>select_on</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DISTINCT(permission_tags.tag_id)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_select_on'>select_on</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DISTINCT(permissions.organization_id)</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>==</span> <span class='symbol'>:organizations</span>
+
+  <span class='id identifier rubyid_allowed_tags_query'>allowed_tags_query</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lparen'>(</span><span class='id identifier rubyid_select_on'>select_on</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_sql'>to_sql</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allowed_to?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>allowed_to?</strong>(verbs, resource_type, tags = nil, org = nil, any_tags = false) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return true if the user is allowed to do the specified action for a resource type
+verb/action can be:
+* a parameter-like Hash (eg. :controller =&gt; &#39;projects&#39;, :action =&gt; &#39;edit&#39;)
+* a permission Symbol (eg. :edit_project)</p>
+
+<p>This method is called by every protected controller.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/authorization/enforcement.rb', line 121</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_allowed_to?'>allowed_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_any_tags'>any_tags</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_tags'>tags</span> <span class='op'>=</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_tags'>tags</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_tag'>tag</span><span class='op'>|</span> <span class='op'>!</span><span class='lparen'>(</span><span class='const'>Numeric</span> <span class='op'>===</span> <span class='id identifier rubyid_tag'>tag</span> <span class='op'>||</span><span class='lparen'>(</span><span class='const'>String</span> <span class='op'>===</span> <span class='id identifier rubyid_tag'>tag</span> <span class='op'>&amp;&amp;</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\d+$</span><span class='regexp_end'>/</span></span><span class='op'>===</span> <span class='id identifier rubyid_tag'>tag</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tags need to be integers - </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tags'>tags</span><span class='rbrace'>}</span><span class='tstring_content'> are not.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='const'>ResourceType</span><span class='period'>.</span><span class='id identifier rubyid_check'>check</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_verbs'>verbs</span>
+  <span class='id identifier rubyid_verbs'>verbs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_verbs'>verbs</span> <span class='op'>=</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_verbs'>verbs</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_verbs'>verbs</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_log_roles'>log_roles</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_tags'>tags</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='id identifier rubyid_any_tags'>any_tags</span><span class='rparen'>)</span>
+
+  <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_allowed_all_tags?'>allowed_all_tags?</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span>
+
+
+  <span class='id identifier rubyid_tags_query'>tags_query</span> <span class='op'>=</span> <span class='id identifier rubyid_allowed_tags_query'>allowed_tags_query</span><span class='lparen'>(</span><span class='id identifier rubyid_verbs'>verbs</span><span class='comma'>,</span> <span class='id identifier rubyid_resource_type'>resource_type</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>||</span> <span class='id identifier rubyid_resource_type'>resource_type</span> <span class='op'>==</span> <span class='symbol'>:organizations</span>
+    <span class='id identifier rubyid_to_count'>to_count</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>permissions.id</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_to_count'>to_count</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>permission_tags.tag_id</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_tags_query'>tags_query</span> <span class='op'>=</span> <span class='id identifier rubyid_tags_query'>tags_query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>permission_tags.tag_id in (:tags)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:tags</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tags'>tags</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_count'>count</span> <span class='op'>=</span> <span class='id identifier rubyid_tags_query'>tags_query</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='lparen'>(</span><span class='id identifier rubyid_to_count'>to_count</span><span class='comma'>,</span> <span class='symbol'>:distinct</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>||</span> <span class='id identifier rubyid_any_tags'>any_tags</span>
+    <span class='id identifier rubyid_count'>count</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='id identifier rubyid_count'>count</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="org_permissions_query-instance_method">
+  
+    - (<tt>Object</tt>) <strong>org_permissions_query</strong>(org, exclude_orgs_clause = false)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/authorization/enforcement.rb', line 196</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_org_permissions_query'>org_permissions_query</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='id identifier rubyid_exclude_orgs_clause'>exclude_orgs_clause</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_org_clause'>org_clause</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>permissions.organization_id is null</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_org_clause'>org_clause</span> <span class='op'>=</span> <span class='id identifier rubyid_org_clause'>org_clause</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> OR permissions.organization_id = :organization_id </span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_org'>org</span>
+  <span class='id identifier rubyid_org_hash'>org_hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_org_hash'>org_hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:organization_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_org'>org</span>
+  <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='const'>Permission</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:role</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INNER JOIN roles_users ON roles_users.role_id = roles.id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>left outer join permissions_verbs on permissions.id = permissions_verbs.permission_id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span>
+      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>left outer join verbs on verbs.id = permissions_verbs.verb_id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>roles_users.user_id</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_id'>id</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_org_clause'>org_clause</span><span class='comma'>,</span> <span class='id identifier rubyid_org_hash'>org_hash</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_exclude_orgs_clause'>exclude_orgs_clause</span>
+  <span class='id identifier rubyid_query'>query</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:26 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

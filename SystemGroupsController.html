@@ -1,0 +1,1751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: SystemGroupsController
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (S)</a> &raquo;
+    
+    
+    <span class="title">SystemGroupsController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: SystemGroupsController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">SystemGroupsController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/system_groups_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_systems-instance_method" title="#add_systems (instance method)">- (Object) <strong>add_systems</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#auto_complete-instance_method" title="#auto_complete (instance method)">- (Object) <strong>auto_complete</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#controller_display_name-instance_method" title="#controller_display_name (instance method)">- (Object) <strong>controller_display_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#copy-instance_method" title="#copy (instance method)">- (Object) <strong>copy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">- (Object) <strong>destroy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy_systems-instance_method" title="#destroy_systems (instance method)">- (Object) <strong>destroy_systems</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#edit-instance_method" title="#edit (instance method)">- (Object) <strong>edit</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#edit_systems-instance_method" title="#edit_systems (instance method)">- (Object) <strong>edit_systems</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_group-instance_method" title="#find_group (instance method)">- (Object) <strong>find_group</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#items-instance_method" title="#items (instance method)">- (Object) <strong>items</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-instance_method" title="#new (instance method)">- (Object) <strong>new</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#panel_options-instance_method" title="#panel_options (instance method)">- (Object) <strong>panel_options</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#param_rules-instance_method" title="#param_rules (instance method)">- (Object) <strong>param_rules</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_systems-instance_method" title="#remove_systems (instance method)">- (Object) <strong>remove_systems</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rules-instance_method" title="#rules (instance method)">- (Object) <strong>rules</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#section_id-instance_method" title="#section_id (instance method)">- (Object) <strong>section_id</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show-instance_method" title="#show (instance method)">- (Object) <strong>show</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#systems-instance_method" title="#systems (instance method)">- (Object) <strong>systems</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_systems-instance_method" title="#update_systems (instance method)">- (Object) <strong>update_systems</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#validate_name-instance_method" title="#validate_name (instance method)">- (Object) <strong>validate_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#check_deleted_org-instance_method" title="ApplicationController#check_deleted_org (method)">#check_deleted_org</a></span>, <span class='object_link'><a href="ApplicationController.html#current_organization-instance_method" title="ApplicationController#current_organization (method)">#current_organization</a></span>, <span class='object_link'><a href="ApplicationController.html#current_organization%3D-instance_method" title="ApplicationController#current_organization= (method)">#current_organization=</a></span>, <span class='object_link'><a href="ApplicationController.html#current_user-instance_method" title="ApplicationController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="ApplicationController.html#default_label-instance_method" title="ApplicationController#default_label (method)">#default_label</a></span>, <span class='object_link'><a href="ApplicationController.html#default_label_assigned-instance_method" title="ApplicationController#default_label_assigned (method)">#default_label_assigned</a></span>, <span class='object_link'><a href="ApplicationController.html#default_notify_options-instance_method" title="ApplicationController#default_notify_options (method)">#default_notify_options</a></span>, <span class='object_link'><a href="ApplicationController.html#environment_path_element-instance_method" title="ApplicationController#environment_path_element (method)">#environment_path_element</a></span>, <span class='object_link'><a href="ApplicationController.html#environment_paths-instance_method" title="ApplicationController#environment_paths (method)">#environment_paths</a></span>, <span class='object_link'><a href="ApplicationController.html#escape_html-instance_method" title="ApplicationController#escape_html (method)">#escape_html</a></span>, <span class='object_link'><a href="ApplicationController.html#execute_after_filters-instance_method" title="ApplicationController#execute_after_filters (method)">#execute_after_filters</a></span>, <span class='object_link'><a href="ApplicationController.html#execute_rescue-instance_method" title="ApplicationController#execute_rescue (method)">#execute_rescue</a></span>, <span class='object_link'><a href="ApplicationController.html#extract_locale_from_accept_language_header-class_method" title="ApplicationController.extract_locale_from_accept_language_header (method)">extract_locale_from_accept_language_header</a></span>, <span class='object_link'><a href="ApplicationController.html#first_env_in_path-instance_method" title="ApplicationController#first_env_in_path (method)">#first_env_in_path</a></span>, <span class='object_link'><a href="ApplicationController.html#flash_to_headers-instance_method" title="ApplicationController#flash_to_headers (method)">#flash_to_headers</a></span>, <span class='object_link'><a href="ApplicationController.html#format_time-instance_method" title="ApplicationController#format_time (method)">#format_time</a></span>, <span class='object_link'><a href="ApplicationController.html#generate_label-instance_method" title="ApplicationController#generate_label (method)">#generate_label</a></span>, <span class='object_link'><a href="ApplicationController.html#label_overridden-instance_method" title="ApplicationController#label_overridden (method)">#label_overridden</a></span>, <span class='object_link'><a href="ApplicationController.html#library_path_element-instance_method" title="ApplicationController#library_path_element (method)">#library_path_element</a></span>, <span class='object_link'><a href="ApplicationController.html#log_exception-instance_method" title="ApplicationController#log_exception (method)">#log_exception</a></span>, <span class='object_link'><a href="ApplicationController.html#matches_no_redirect%3F-instance_method" title="ApplicationController#matches_no_redirect? (method)">#matches_no_redirect?</a></span>, <span class='object_link'><a href="ApplicationController.html#n_gettext_for_generate_label-instance_method" title="ApplicationController#n_gettext_for_generate_label (method)">#n_gettext_for_generate_label</a></span>, <span class='object_link'><a href="ApplicationController.html#no_env_available_msg-instance_method" title="ApplicationController#no_env_available_msg (method)">#no_env_available_msg</a></span>, <span class='object_link'><a href="ApplicationController.html#org_not_found_error-instance_method" title="ApplicationController#org_not_found_error (method)">#org_not_found_error</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_calendar_date-instance_method" title="ApplicationController#parse_calendar_date (method)">#parse_calendar_date</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_display_message-class_method" title="ApplicationController.parse_display_message (method)">parse_display_message</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_locale-instance_method" title="ApplicationController#parse_locale (method)">#parse_locale</a></span>, <span class='object_link'><a href="ApplicationController.html#render_403-instance_method" title="ApplicationController#render_403 (method)">#render_403</a></span>, <span class='object_link'><a href="ApplicationController.html#render_404-instance_method" title="ApplicationController#render_404 (method)">#render_404</a></span>, <span class='object_link'><a href="ApplicationController.html#render_bad_parameters-instance_method" title="ApplicationController#render_bad_parameters (method)">#render_bad_parameters</a></span>, <span class='object_link'><a href="ApplicationController.html#render_correct_nav-instance_method" title="ApplicationController#render_correct_nav (method)">#render_correct_nav</a></span>, <span class='object_link'><a href="ApplicationController.html#render_error-instance_method" title="ApplicationController#render_error (method)">#render_error</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_direct-instance_method" title="ApplicationController#render_panel_direct (method)">#render_panel_direct</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_items-instance_method" title="ApplicationController#render_panel_items (method)">#render_panel_items</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_results-instance_method" title="ApplicationController#render_panel_results (method)">#render_panel_results</a></span>, <span class='object_link'><a href="ApplicationController.html#requested_action-instance_method" title="ApplicationController#requested_action (method)">#requested_action</a></span>, <span class='object_link'><a href="ApplicationController.html#require_no_user-instance_method" title="ApplicationController#require_no_user (method)">#require_no_user</a></span>, <span class='object_link'><a href="ApplicationController.html#require_org-instance_method" title="ApplicationController#require_org (method)">#require_org</a></span>, <span class='object_link'><a href="ApplicationController.html#require_user-instance_method" title="ApplicationController#require_user (method)">#require_user</a></span>, <span class='object_link'><a href="ApplicationController.html#retain_search_history-instance_method" title="ApplicationController#retain_search_history (method)">#retain_search_history</a></span>, <span class='object_link'><a href="ApplicationController.html#search_validate-instance_method" title="ApplicationController#search_validate (method)">#search_validate</a></span>, <span class='object_link'><a href="ApplicationController.html#set_layout-instance_method" title="ApplicationController#set_layout (method)">#set_layout</a></span>, <span class='object_link'><a href="ApplicationController.html#set_locale-instance_method" title="ApplicationController#set_locale (method)">#set_locale</a></span>, <span class='object_link'><a href="ApplicationController.html#setup_environment_selector-instance_method" title="ApplicationController#setup_environment_selector (method)">#setup_environment_selector</a></span>, <span class='object_link'><a href="ApplicationController.html#verify_ldap-instance_method" title="ApplicationController#verify_ldap (method)">#verify_ldap</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Menu.html" title="Menu (module)">Menu</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Menu.html#included-class_method" title="Menu.included (method)">included</a></span>, <span class='object_link'><a href="Menu.html#prune_menu-instance_method" title="Menu#prune_menu (method)">#prune_menu</a></span>, <span class='object_link'><a href="Menu.html#render_admin_menu-instance_method" title="Menu#render_admin_menu (method)">#render_admin_menu</a></span>, <span class='object_link'><a href="Menu.html#render_main_menu-instance_method" title="Menu#render_main_menu (method)">#render_main_menu</a></span>, <span class='object_link'><a href="Menu.html#render_main_sub_menu-instance_method" title="Menu#render_main_sub_menu (method)">#render_main_sub_menu</a></span>, <span class='object_link'><a href="Menu.html#render_menu-instance_method" title="Menu#render_menu (method)">#render_menu</a></span>, <span class='object_link'><a href="Menu.html#render_notifications_menu-instance_method" title="Menu#render_notifications_menu (method)">#render_notifications_menu</a></span>, <span class='object_link'><a href="Menu.html#render_sublevel_menu-instance_method" title="Menu#render_sublevel_menu (method)">#render_sublevel_menu</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="AuthorizationRules.html" title="AuthorizationRules (module)">AuthorizationRules</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="AuthorizationRules.html#authorize-instance_method" title="AuthorizationRules#authorize (method)">#authorize</a></span>, <span class='object_link'><a href="AuthorizationRules.html#build_bad_params_error_msg-instance_method" title="AuthorizationRules#build_bad_params_error_msg (method)">#build_bad_params_error_msg</a></span>, <span class='object_link'><a href="AuthorizationRules.html#check_array_params-instance_method" title="AuthorizationRules#check_array_params (method)">#check_array_params</a></span>, <span class='object_link'><a href="AuthorizationRules.html#check_hash_params-instance_method" title="AuthorizationRules#check_hash_params (method)">#check_hash_params</a></span>, <span class='object_link'><a href="AuthorizationRules.html#included-class_method" title="AuthorizationRules.included (method)">included</a></span>, <span class='object_link'><a href="AuthorizationRules.html#params_match-instance_method" title="AuthorizationRules#params_match (method)">#params_match</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Util/ThreadSession/Controller.html" title="Util::ThreadSession::Controller (module)">Util::ThreadSession::Controller</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Util/ThreadSession/Controller.html#included-class_method" title="Util::ThreadSession::Controller.included (method)">included</a></span>, <span class='object_link'><a href="Util/ThreadSession/Controller.html#thread_locals-instance_method" title="Util::ThreadSession::Controller#thread_locals (method)">#thread_locals</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Profiling.html" title="Profiling (module)">Profiling</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Profiling.html#do_profiling-instance_method" title="Profiling#do_profiling (method)">#do_profiling</a></span>, <span class='object_link'><a href="Profiling.html#included-class_method" title="Profiling.included (method)">included</a></span>, <span class='object_link'><a href="Profiling.html#load_ruby_prof_gem-class_method" title="Profiling.load_ruby_prof_gem (method)">load_ruby_prof_gem</a></span>, <span class='object_link'><a href="Profiling.html#profiling_enabled%3F-class_method" title="Profiling.profiling_enabled? (method)">profiling_enabled?</a></span>, <span class='object_link'><a href="Profiling.html#run_profiling%3F-instance_method" title="Profiling#run_profiling? (method)">#run_profiling?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Notifications/ControllerHelper.html" title="Notifications::ControllerHelper (module)">Notifications::ControllerHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Notifications/ControllerHelper.html#default_notify_options-instance_method" title="Notifications::ControllerHelper#default_notify_options (method)">#default_notify_options</a></span>, <span class='object_link'><a href="Notifications/ControllerHelper.html#notify-instance_method" title="Notifications::ControllerHelper#notify (method)">#notify</a></span></p>
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_systems-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_systems</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 192</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_systems'>add_systems</span>
+  <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:system_ids</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rbrace'>}</span> <span class='op'>-</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_system_ids'>system_ids</span> <span class='comment'>#ignore dups
+</span>  <span class='id identifier rubyid_systems'>systems</span> <span class='op'>=</span> <span class='const'>System</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ids'>ids</span><span class='rparen'>)</span>
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_system_ids'>system_ids</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_system_ids'>system_ids</span> <span class='op'>+</span> <span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='id identifier rubyid_system_joins'>system_joins</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_system_system_groups'>system_system_groups</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:system_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ids'>ids</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Successfully added system[s] to group '%s'.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>system_item</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:collection</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_system_joins'>system_joins</span><span class='comma'>,</span> <span class='symbol'>:as</span> <span class='op'>=&gt;</span> <span class='symbol'>:system</span><span class='comma'>,</span>
+         <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:editable</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="auto_complete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>auto_complete</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 248</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_auto_complete'>auto_complete</span>
+  <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name_autocomplete:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:term</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_org'>org</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span>
+
+  <span class='id identifier rubyid_groups'>groups</span> <span class='op'>=</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_query'>query</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_string'>string</span> <span class='id identifier rubyid_query'>query</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_filter'>filter</span> <span class='symbol'>:term</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:organization_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span>
+    <span class='id identifier rubyid_filter'>filter</span> <span class='symbol'>:terms</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_editable'>editable</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_g'>g</span><span class='op'>|</span> <span class='id identifier rubyid_g'>g</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_groups'>groups</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='lbrace'>{</span><span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+<span class='kw'>rescue</span> <span class='const'>Tire</span><span class='op'>::</span><span class='const'>Search</span><span class='op'>::</span><span class='const'>SearchRequestFailed</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='const'>Util</span><span class='op'>::</span><span class='const'>Support</span><span class='period'>.</span><span class='id identifier rubyid_array_with_total'>array_with_total</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="controller_display_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>controller_display_name</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+264
+265
+266</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 264</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span>
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>system_group</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="copy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>copy</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_copy'>copy</span>
+  <span class='id identifier rubyid_new_group'>new_group</span> <span class='op'>=</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_organization'>organization</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_organization'>organization</span>
+  <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_max_systems'>max_systems</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_max_systems'>max_systems</span>
+  <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+
+  <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_systems'>systems</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_systems'>systems</span>
+  <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>System Group %{new_group} created successfully as a copy of system group %{group}.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='lbrace'>{</span><span class='symbol'>:new_group</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_new_group'>new_group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:group</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>system_groups/list_group</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span><span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:item</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_new_group'>new_group</span><span class='comma'>,</span> <span class='symbol'>:accessor</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                                                            <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
+  <span class='ivar'>@group</span> <span class='op'>=</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_create!'>create!</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:system_group</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='symbol'>:organization_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>System Group %s created successfully.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_search_validate'>search_validate</span><span class='lparen'>(</span><span class='const'>SystemGroup</span><span class='comma'>,</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:search</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>'%s' did not meet the current search criteria and is not being shown.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:no_match</span> <span class='op'>=&gt;</span> <span class='kw'>true</span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_respond_to'>respond_to</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_format'>format</span><span class='op'>|</span>
+      <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_html'>html</span> <span class='lbrace'>{</span><span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>system_groups/list_group</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:item</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='comma'>,</span> <span class='symbol'>:accessor</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                                                                             <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+      <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_json'>json</span> <span class='lbrace'>{</span><span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>destroy</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 140</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>System Group %s deleted.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>common/list_remove</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy_systems-instance_method">
+  
+    - (<tt>Object</tt>) <strong>destroy_systems</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 146</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy_systems'>destroy_systems</span>
+  <span class='comment'># this will destroy both the systems contained within the group as well as the group itself
+</span>  <span class='id identifier rubyid_system_names'>system_names</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_system'>system</span><span class='op'>|</span>
+    <span class='id identifier rubyid_system_names'>system_names</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
+
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Deleted System Group %{group} and it's %{count} systems.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='lbrace'>{</span><span class='symbol'>:group</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:count</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_system_names'>system_names</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbrace'>}</span><span class='comma'>,</span>
+                 <span class='symbol'>:details</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_system_names'>system_names</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:js</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>common/list_remove</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="edit-instance_method">
+  
+    - (<tt>Object</tt>) <strong>edit</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_edit'>edit</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>edit</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='comma'>,</span>
+                                         <span class='symbol'>:editable</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span>
+                                        <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="edit_systems-instance_method">
+  
+    - (<tt>Object</tt>) <strong>edit_systems</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+215
+216
+217
+218
+219
+220
+221
+222
+223</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 215</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_edit_systems'>edit_systems</span>
+  <span class='id identifier rubyid_accessible_envs'>accessible_envs</span>  <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_environments'>environments</span>
+  <span class='id identifier rubyid_setup_environment_selector'>setup_environment_selector</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='comma'>,</span> <span class='id identifier rubyid_accessible_envs'>accessible_envs</span><span class='rparen'>)</span>
+  <span class='ivar'>@organization</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span>
+  <span class='ivar'>@environment</span> <span class='op'>=</span> <span class='id identifier rubyid_first_env_in_path'>first_env_in_path</span><span class='lparen'>(</span><span class='id identifier rubyid_accessible_envs'>accessible_envs</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>edit_systems</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='comma'>,</span> <span class='symbol'>:accessible_envs</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_accessible_envs'>accessible_envs</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_group-instance_method">
+  
+    - (<tt>Object</tt>) <strong>find_group</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+273
+274
+275</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 273</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find_group'>find_group</span>
+  <span class='ivar'>@group</span> <span class='op'>=</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>index</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="items-instance_method">
+  
+    - (<tt>Object</tt>) <strong>items</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+161
+162
+163
+164
+165
+166
+167</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 161</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_items'>items</span>
+  <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_render_panel_direct'>render_panel_direct</span><span class='lparen'>(</span><span class='const'>SystemGroup</span><span class='comma'>,</span> <span class='ivar'>@panel_options</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:search</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:offset</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='symbol'>:name_sort</span><span class='comma'>,</span> <span class='symbol'>:asc</span><span class='rbracket'>]</span><span class='comma'>,</span>
+    <span class='lbrace'>{</span><span class='symbol'>:default_field</span> <span class='op'>=&gt;</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:load</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ids'>ids</span><span class='rbrace'>}</span><span class='comma'>,</span>
+                                                         <span class='lbrace'>{</span><span class='symbol'>:organization_id</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
+  <span class='ivar'>@group</span> <span class='op'>=</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>new</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="panel_options-instance_method">
+  
+    - (<tt>Object</tt>) <strong>panel_options</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 169</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_panel_options'>panel_options</span>
+  <span class='ivar'>@panel_options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:title</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>System Groups</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:col</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='symbol'>:titles</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Name</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='comma'>,</span>
+      <span class='symbol'>:create</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>System Group</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='comma'>,</span>
+      <span class='symbol'>:ajax_scroll</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_items_system_groups_path'>items_system_groups_path</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:enable_create</span> <span class='op'>=&gt;</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_creatable?'>creatable?</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:initial_action</span> <span class='op'>=&gt;</span><span class='symbol'>:systems</span><span class='comma'>,</span>
+      <span class='symbol'>:list_partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>system_groups/list_groups</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+      <span class='symbol'>:ajax_load</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+      <span class='symbol'>:search_class</span> <span class='op'>=&gt;</span> <span class='const'>SystemGroup</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="param_rules-instance_method">
+  
+    - (<tt>Object</tt>) <strong>param_rules</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_param_rules'>param_rules</span>
+   <span class='lbrace'>{</span>
+     <span class='symbol'>:create</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:system_group</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:description</span><span class='comma'>,</span> <span class='symbol'>:max_systems</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='symbol'>:update</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:system_group</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:description</span><span class='comma'>,</span> <span class='symbol'>:max_systems</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='comma'>,</span>
+     <span class='symbol'>:add_systems</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:system_ids</span><span class='comma'>,</span> <span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+     <span class='symbol'>:remove_systems</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:system_ids</span><span class='comma'>,</span> <span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+     <span class='symbol'>:update_systems</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:system_group</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:environment_id</span><span class='comma'>,</span> <span class='symbol'>:content_view_id</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+   <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_systems-instance_method">
+  
+    - (<tt>Object</tt>) <strong>remove_systems</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+205
+206
+207
+208
+209
+210
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 205</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_systems'>remove_systems</span>
+  <span class='id identifier rubyid_systems'>systems</span> <span class='op'>=</span> <span class='const'>System</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:system_ids</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span>
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_system_ids'>system_ids</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_system_ids'>system_ids</span> <span class='op'>-</span> <span class='id identifier rubyid_systems'>systems</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Successfully removed system[s] from group '%s'.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rules-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rules</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rules'>rules</span>
+  <span class='id identifier rubyid_any_readable'>any_readable</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='id identifier rubyid_current_organization'>current_organization</span> <span class='op'>&amp;&amp;</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_any_readable?'>any_readable?</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_read_perm'>read_perm</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_edit_perm'>edit_perm</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_create_perm'>create_perm</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_creatable?'>creatable?</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_destroy_perm'>destroy_perm</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_deletable?'>deletable?</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_destroy_systems_perm'>destroy_systems_perm</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_systems_deletable?'>systems_deletable?</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_edit_systems_perm'>edit_systems_perm</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_systems_editable?'>systems_editable?</span><span class='rbrace'>}</span>
+  <span class='lbrace'>{</span>
+      <span class='symbol'>:index</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_any_readable'>any_readable</span><span class='comma'>,</span>
+      <span class='symbol'>:items</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_any_readable'>any_readable</span><span class='comma'>,</span>
+      <span class='symbol'>:new</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_create_perm'>create_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:create</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_create_perm'>create_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:copy</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_create_perm'>create_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:edit</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_perm'>read_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:systems</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_perm'>read_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:update</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_perm'>edit_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:destroy</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_destroy_perm'>destroy_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:destroy_systems</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_destroy_systems_perm'>destroy_systems_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:show</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_perm'>read_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:auto_complete</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_any_readable'>any_readable</span><span class='comma'>,</span>
+      <span class='symbol'>:add_systems</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_perm'>edit_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:remove_systems</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_perm'>edit_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:edit_systems</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_systems_perm'>edit_systems_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:update_systems</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_systems_perm'>edit_systems_perm</span><span class='comma'>,</span>
+      <span class='symbol'>:validate_name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_any_readable'>any_readable</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="section_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>section_id</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_section_id'>section_id</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>systems</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show-instance_method">
+  
+    - (<tt>Object</tt>) <strong>show</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+111
+112
+113</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 111</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>system_groups/list_group</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:item</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='comma'>,</span> <span class='symbol'>:accessor</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="systems-instance_method">
+  
+    - (<tt>Object</tt>) <strong>systems</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 185</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_systems'>systems</span>
+  <span class='ivar'>@system_joins</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_system_system_groups'>system_system_groups</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>systems</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='comma'>,</span> <span class='symbol'>:editable</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span><span class='comma'>,</span>
+                     <span class='symbol'>:systems_deletable</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_systems_deletable?'>systems_deletable?</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 115</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:system_group</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_to_ret'>to_ret</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+    <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_to_ret'>to_ret</span> <span class='op'>=</span>  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span>
+    <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_to_ret'>to_ret</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:max_systems</span><span class='rbracket'>]</span>
+    <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_max_systems'>max_systems</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:max_systems</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_to_ret'>to_ret</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_max_systems'>max_systems</span>
+  <span class='kw'>end</span>
+
+  <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>System Group %s has been updated.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+
+  <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_search_validate'>search_validate</span><span class='lparen'>(</span><span class='const'>SystemGroup</span><span class='comma'>,</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:search</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>'%s' no longer matches the current search criteria.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@group</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+                   <span class='symbol'>:asynchronous</span> <span class='op'>=&gt;</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_to_ret'>to_ret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_systems-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_systems</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 225</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update_systems'>update_systems</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:systems</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+    <span class='id identifier rubyid_systems'>systems</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_systems'>systems</span>
+    <span class='id identifier rubyid_notice_text'>notice_text</span> <span class='op'>=</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Successfully updated environment and content view for all %{count} systems in group %{group}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span>
+        <span class='lbrace'>{</span><span class='symbol'>:group</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:count</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbrace'>}</span>
+
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_systems'>systems</span> <span class='op'>=</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:systems</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_notice_text'>notice_text</span> <span class='op'>=</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Successfully updated environment and content view for %{count} selected systems in group %{group}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span>
+        <span class='lbrace'>{</span><span class='symbol'>:group</span> <span class='op'>=&gt;</span> <span class='ivar'>@group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:count</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:update_fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+    <span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span><span class='op'>|</span><span class='id identifier rubyid_system'>system</span><span class='op'>|</span>
+      <span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_update_attributes!'>update_attributes!</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:update_fields</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid_notice_text'>notice_text</span><span class='comma'>,</span> <span class='symbol'>:details</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:name</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="validate_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>validate_name</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+268
+269
+270
+271</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/system_groups_controller.rb', line 268</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_validate_name'>validate_name</span>
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:term</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='const'>SystemGroup</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:46:08 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

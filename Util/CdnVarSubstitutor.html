@@ -1,0 +1,804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Util::CdnVarSubstitutor
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Util.html" title="Util (module)">Util</a></span></span>
+     &raquo; 
+    <span class="title">CdnVarSubstitutor</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Util::CdnVarSubstitutor
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Util::CdnVarSubstitutor</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/lib/util/cdn_var_substitutor.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#with_cache-class_method" title="with_cache (class method)">+ (Object) <strong>with_cache</strong>(&amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>using substitutor from whithin the block makes sure that every
+request is made only once.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#for_each_substitute_of_next_var-instance_method" title="#for_each_substitute_of_next_var (instance method)">- (Object) <strong>for_each_substitute_of_next_var</strong>(substitutions, path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#get_substitutions_from-instance_method" title="#get_substitutions_from (instance method)">- (Object) <strong>get_substitutions_from</strong>(base_path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (CdnVarSubstitutor) <strong>initialize</strong>(cdn_resource) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>cdn_resource - an object providing access to CDN.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_substituable-instance_method" title="#is_substituable (instance method)">- (Object) <strong>is_substituable</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_substitute_of-instance_method" title="#is_substitute_of (instance method)">- (Object) <strong>is_substitute_of</strong>(substituted_url, original_url) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#precalculate-instance_method" title="#precalculate (instance method)">- (Object) <strong>precalculate</strong>(paths_with_vars) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>precalcuclate all paths at once - let&#39;s you discover errors and stop
+before it causes more pain.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#substitute_vars-instance_method" title="#substitute_vars (instance method)">- (Object) <strong>substitute_vars</strong>(path_with_vars) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>takes path e.g.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#substitute_vars_in_prefix-instance_method" title="#substitute_vars_in_prefix (instance method)">- (Object) <strong>substitute_vars_in_prefix</strong>(prefix_with_vars) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>prefix_with_vars is the part of url containing some vars.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Util::CdnVarSubstitutor (class)">CdnVarSubstitutor</a></span></tt>) <strong>initialize</strong>(cdn_resource) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>cdn_resource - an object providing access to CDN. It has to
+provide a get method that takes a path (e.g.
+/content/rhel/6.2/listing) and returns the body response)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 20</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_cdn_resource'>cdn_resource</span><span class='rparen'>)</span>
+  <span class='ivar'>@resource</span> <span class='op'>=</span> <span class='id identifier rubyid_cdn_resource'>cdn_resource</span>
+  <span class='ivar'>@substitutions</span> <span class='op'>=</span> <span class='const'>Thread</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='lbracket'>[</span><span class='symbol'>:cdn_var_substitutor_cache</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="with_cache-class_method">
+  
+    + (<tt>Object</tt>) <strong>with_cache</strong>(&amp;block) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>using substitutor from whithin the block makes sure that every
+request is made only once.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 27</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_with_cache'>with_cache</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='const'>Thread</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='lbracket'>[</span><span class='symbol'>:cdn_var_substitutor_cache</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='kw'>yield</span>
+<span class='kw'>ensure</span>
+  <span class='const'>Thread</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='lbracket'>[</span><span class='symbol'>:cdn_var_substitutor_cache</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="for_each_substitute_of_next_var-instance_method">
+  
+    - (<tt>Object</tt>) <strong>for_each_substitute_of_next_var</strong>(substitutions, path)  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 107</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_for_each_substitute_of_next_var'>for_each_substitute_of_next_var</span><span class='lparen'>(</span><span class='id identifier rubyid_substitutions'>substitutions</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_path'>path</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(.*?)\$([^\/]*)</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_base_path'>base_path</span><span class='comma'>,</span> <span class='id identifier rubyid_var'>var</span> <span class='op'>=</span> <span class='backref'>$1</span><span class='comma'>,</span> <span class='backref'>$2</span>
+    <span class='id identifier rubyid_get_substitutions_from'>get_substitutions_from</span><span class='lparen'>(</span><span class='id identifier rubyid_base_path'>base_path</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
+
+      <span class='id identifier rubyid_new_substitutions'>new_substitutions</span> <span class='op'>=</span> <span class='id identifier rubyid_substitutions'>substitutions</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_var'>var</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_new_path'>new_path</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_var'>var</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+
+      <span class='kw'>yield</span> <span class='id identifier rubyid_new_substitutions'>new_substitutions</span><span class='comma'>,</span> <span class='id identifier rubyid_new_path'>new_path</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_substitutions_from-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_substitutions_from</strong>(base_path)  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 120</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_substitutions_from'>get_substitutions_from</span><span class='lparen'>(</span><span class='id identifier rubyid_base_path'>base_path</span><span class='rparen'>)</span>
+  <span class='ivar'>@resource</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_base_path'>base_path</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>listing</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>NotFound</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span> <span class='comment'># some of listing file points to not existing content
+</span>  <span class='ivar'>@resource</span><span class='period'>.</span><span class='id identifier rubyid_log'>log</span> <span class='symbol'>:error</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+  <span class='ivar'>@resource</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:repositories_cdn_import_failed!</span><span class='rparen'>)</span>
+  <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='comment'># return no substitution for unreachable listings
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_substituable-instance_method">
+  
+    - (<tt>Object</tt>) <strong>is_substituable</strong>(path) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_is_substituable'>is_substituable</span> <span class='id identifier rubyid_path'>path</span>
+  <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_substitute_of-instance_method">
+  
+    - (<tt>Object</tt>) <strong>is_substitute_of</strong>(substituted_url, original_url) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 100</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_is_substitute_of'>is_substitute_of</span><span class='lparen'>(</span><span class='id identifier rubyid_substituted_url'>substituted_url</span><span class='comma'>,</span> <span class='id identifier rubyid_original_url'>original_url</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_substitutions'>substitutions</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_substitute_vars'>substitute_vars</span><span class='lparen'>(</span><span class='id identifier rubyid_original_url'>original_url</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span>
+  <span class='id identifier rubyid_substitutions'>substitutions</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_substituted_url'>substituted_url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="precalculate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>precalculate</strong>(paths_with_vars) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>precalcuclate all paths at once - let&#39;s you discover errors and stop
+before it causes more pain</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_precalculate'>precalculate</span><span class='lparen'>(</span><span class='id identifier rubyid_paths_with_vars'>paths_with_vars</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_paths_with_vars'>paths_with_vars</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ret'>ret</span><span class='comma'>,</span> <span class='id identifier rubyid_path_with_vars'>path_with_vars</span><span class='op'>|</span>
+    <span class='id identifier rubyid_ret'>ret</span><span class='lbracket'>[</span><span class='id identifier rubyid_path_with_vars'>path_with_vars</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_substitute_vars'>substitute_vars</span><span class='lparen'>(</span><span class='id identifier rubyid_path_with_vars'>path_with_vars</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='id identifier rubyid_ret'>ret</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="substitute_vars-instance_method">
+  
+    - (<tt>Object</tt>) <strong>substitute_vars</strong>(path_with_vars) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>takes path e.g. &quot;/rhel/server/5/$releasever/$basearch/os&quot;
+returns hash substituting variables:</p>
+
+<p>{ =&gt; &quot;6Server&quot;, &quot;basearch&quot; =&gt; &quot;i386&quot; =&gt;  &quot;/rhel/server/5/6Server/i386/os&quot;,
+   =&gt; &quot;6Server&quot;, &quot;basearch&quot; =&gt; &quot;x86_64&quot; =&gt;  &quot;/rhel/server/5/6Server/x84_64/os&quot;}</p>
+
+<p>values are loaded from CDN</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_substitute_vars'>substitute_vars</span><span class='lparen'>(</span><span class='id identifier rubyid_path_with_vars'>path_with_vars</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_path_with_vars'>path_with_vars</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(.*\$\w+)(.*)$</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_prefix_with_vars'>prefix_with_vars</span><span class='comma'>,</span> <span class='id identifier rubyid_suffix_witout_vars'>suffix_witout_vars</span> <span class='op'>=</span>  <span class='backref'>$1</span><span class='comma'>,</span> <span class='backref'>$2</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_prefix_with_vars'>prefix_with_vars</span><span class='comma'>,</span> <span class='id identifier rubyid_suffix_witout_vars'>suffix_witout_vars</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_path_with_vars'>path_with_vars</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span> <span class='op'>=</span> <span class='id identifier rubyid_substitute_vars_in_prefix'>substitute_vars_in_prefix</span><span class='lparen'>(</span><span class='id identifier rubyid_prefix_with_vars'>prefix_with_vars</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_paths_without_vars'>paths_without_vars</span> <span class='op'>=</span> <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_h'>h</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_substitutions'>substitutions</span><span class='comma'>,</span> <span class='id identifier rubyid_prefix_without_vars'>prefix_without_vars</span><span class='rparen'>)</span><span class='op'>|</span>
+    <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_substitutions'>substitutions</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_prefix_without_vars'>prefix_without_vars</span> <span class='op'>+</span> <span class='id identifier rubyid_suffix_witout_vars'>suffix_witout_vars</span><span class='semicolon'>;</span> <span class='id identifier rubyid_h'>h</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_paths_without_vars'>paths_without_vars</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="substitute_vars_in_prefix-instance_method">
+  
+    - (<tt>Object</tt>) <strong>substitute_vars_in_prefix</strong>(prefix_with_vars) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>prefix_with_vars is the part of url containing some vars. We can cache
+calcualted values for this parts. So for example for:
+  &quot;/a/$b/$c/d&quot;
+  &quot;/a/$b/$c/e&quot;
+prefix_with_vars is &quot;/a/$b/$c&quot; and we store the result after resolving
+for the first path.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/util/cdn_var_substitutor.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_substitute_vars_in_prefix'>substitute_vars_in_prefix</span><span class='lparen'>(</span><span class='id identifier rubyid_prefix_with_vars'>prefix_with_vars</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_paths_with_vars'>paths_with_vars</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prefix_with_vars'>prefix_with_vars</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span> <span class='op'>=</span> <span class='ivar'>@substitutions</span><span class='lbracket'>[</span><span class='id identifier rubyid_prefix_with_vars'>prefix_with_vars</span><span class='rbracket'>]</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span>
+    <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+    <span class='kw'>while</span> <span class='kw'>not</span> <span class='id identifier rubyid_paths_with_vars'>paths_with_vars</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+      <span class='id identifier rubyid_substitutions'>substitutions</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_paths_with_vars'>paths_with_vars</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span>
+
+      <span class='kw'>if</span> <span class='id identifier rubyid_is_substituable'>is_substituable</span> <span class='id identifier rubyid_path'>path</span>
+        <span class='id identifier rubyid_for_each_substitute_of_next_var'>for_each_substitute_of_next_var</span> <span class='id identifier rubyid_substitutions'>substitutions</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_new_substitution'>new_substitution</span><span class='comma'>,</span> <span class='id identifier rubyid_new_path'>new_path</span><span class='op'>|</span>
+          <span class='kw'>begin</span>
+            <span class='id identifier rubyid_paths_with_vars'>paths_with_vars</span><span class='lbracket'>[</span><span class='id identifier rubyid_new_substitution'>new_substitution</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_new_path'>new_path</span>
+          <span class='kw'>rescue</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>SecurityViolation</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+            <span class='comment'># Some paths may not be accessible
+</span>            <span class='ivar'>@resource</span><span class='period'>.</span><span class='id identifier rubyid_log'>log</span> <span class='symbol'>:warn</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_new_path'>new_path</span><span class='rbrace'>}</span><span class='tstring_content'> is not accessible, ignoring</span><span class='tstring_end'>&quot;</span></span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span><span class='lbracket'>[</span><span class='id identifier rubyid_substitutions'>substitutions</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='ivar'>@substitutions</span><span class='lbracket'>[</span><span class='id identifier rubyid_prefix_with_vars'>prefix_with_vars</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_prefixes_without_vars'>prefixes_without_vars</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:55 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

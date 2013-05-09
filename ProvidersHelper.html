@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: ProvidersHelper
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (P)</a> &raquo;
+    
+    
+    <span class="title">ProvidersHelper</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: ProvidersHelper
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+      <dt class="r1">Includes:</dt>
+      <dd class="r1"><span class='object_link'><a href="SyncManagementHelper.html" title="SyncManagementHelper (module)">SyncManagementHelper</a></span>, <span class='object_link'><a href="SyncManagementHelper/RepoMethods.html" title="SyncManagementHelper::RepoMethods (module)">SyncManagementHelper::RepoMethods</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/helpers/providers_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#can_edit_rh_provider%3F-instance_method" title="#can_edit_rh_provider? (instance method)">- (Boolean) <strong>can_edit_rh_provider?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#can_enable_repo%3F-instance_method" title="#can_enable_repo? (instance method)">- (Boolean) <strong>can_enable_repo?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#can_upload_rh_manifest%3F-instance_method" title="#can_upload_rh_manifest? (instance method)">- (Boolean) <strong>can_upload_rh_manifest?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#label_from_url-instance_method" title="#label_from_url (instance method)">- (Object) <strong>label_from_url</strong>(provider, url) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name_from_url-instance_method" title="#name_from_url (instance method)">- (Object) <strong>name_from_url</strong>(provider, url) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#normalize-instance_method" title="#normalize (instance method)">- (Object) <strong>normalize</strong>(children, parent_set = [], data = [], item_type = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>make the structure plain setting it&#39;s attributes according to the tree (namely id and class).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#product_map-instance_method" title="#product_map (instance method)">- (Object) <strong>product_map</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#redhat_repo_tabs-instance_method" title="#redhat_repo_tabs (instance method)">- (Object) <strong>redhat_repo_tabs</strong>(provider) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="SyncManagementHelper/RepoMethods.html" title="SyncManagementHelper::RepoMethods (module)">SyncManagementHelper::RepoMethods</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SyncManagementHelper/RepoMethods.html#arches-instance_method" title="SyncManagementHelper::RepoMethods#arches (method)">#arches</a></span>, <span class='object_link'><a href="SyncManagementHelper/RepoMethods.html#collect_arches-instance_method" title="SyncManagementHelper::RepoMethods#collect_arches (method)">#collect_arches</a></span>, <span class='object_link'><a href="SyncManagementHelper/RepoMethods.html#collect_minor-instance_method" title="SyncManagementHelper::RepoMethods#collect_minor (method)">#collect_minor</a></span>, <span class='object_link'><a href="SyncManagementHelper/RepoMethods.html#collect_repos-instance_method" title="SyncManagementHelper::RepoMethods#collect_repos (method)">#collect_repos</a></span>, <span class='object_link'><a href="SyncManagementHelper/RepoMethods.html#minors-instance_method" title="SyncManagementHelper::RepoMethods#minors (method)">#minors</a></span>, <span class='object_link'><a href="SyncManagementHelper/RepoMethods.html#pprint_collection-instance_method" title="SyncManagementHelper::RepoMethods#pprint_collection (method)">#pprint_collection</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="SyncManagementHelper.html" title="SyncManagementHelper (module)">SyncManagementHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SyncManagementHelper.html#parent_set_class-instance_method" title="SyncManagementHelper#parent_set_class (method)">#parent_set_class</a></span>, <span class='object_link'><a href="SyncManagementHelper.html#product_child-instance_method" title="SyncManagementHelper#product_child (method)">#product_child</a></span>, <span class='object_link'><a href="SyncManagementHelper.html#product_id-instance_method" title="SyncManagementHelper#product_id (method)">#product_id</a></span>, <span class='object_link'><a href="SyncManagementHelper.html#repo_id-instance_method" title="SyncManagementHelper#repo_id (method)">#repo_id</a></span>, <span class='object_link'><a href="SyncManagementHelper.html#set_id-instance_method" title="SyncManagementHelper#set_id (method)">#set_id</a></span>, <span class='object_link'><a href="SyncManagementHelper.html#syncable%3F-instance_method" title="SyncManagementHelper#syncable? (method)">#syncable?</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="can_edit_rh_provider?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>can_edit_rh_provider?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_can_edit_rh_provider?'>can_edit_rh_provider?</span>
+  <span class='ivar'>@provider_editable</span> <span class='op'>||=</span> <span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span>
+  <span class='ivar'>@provider_editable</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="can_enable_repo?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>can_enable_repo?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_can_enable_repo?'>can_enable_repo?</span>
+  <span class='ivar'>@provider_editable</span> <span class='op'>||=</span> <span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span>
+  <span class='ivar'>@provider_editable</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="can_upload_rh_manifest?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>can_upload_rh_manifest?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_can_upload_rh_manifest?'>can_upload_rh_manifest?</span>
+  <span class='ivar'>@provider_editable</span> <span class='op'>||=</span> <span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span>
+  <span class='ivar'>@provider_editable</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="label_from_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>label_from_url</strong>(provider, url) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 97</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_label_from_url'>label_from_url</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='rparen'>)</span>
+  <span class='const'>Util</span><span class='op'>::</span><span class='const'>Model</span><span class='op'>::</span><span class='id identifier rubyid_labelize'>labelize</span><span class='lparen'>(</span><span class='id identifier rubyid_name_from_url'>name_from_url</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name_from_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>name_from_url</strong>(provider, url) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name_from_url'>name_from_url</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_sub'>sub</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='period'>.</span><span class='id identifier rubyid_discovery_url'>discovery_url</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="normalize-instance_method">
+  
+    - (<tt>Object</tt>) <strong>normalize</strong>(children, parent_set = [], data = [], item_type = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>make the structure plain setting it&#39;s attributes according to the tree (namely id and class)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_children'>children</span><span class='comma'>,</span> <span class='id identifier rubyid_parent_set'>parent_set</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_item_type'>item_type</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_b'>b</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
+    <span class='id identifier rubyid_new_set'>new_set</span> <span class='op'>=</span> <span class='id identifier rubyid_parent_set'>parent_set</span> <span class='op'>+</span> <span class='lbracket'>[</span><span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+
+    <span class='id identifier rubyid_item'>item</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:id</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_set_id'>set_id</span><span class='lparen'>(</span><span class='id identifier rubyid_new_set'>new_set</span><span class='rparen'>)</span><span class='comma'>,</span>
+             <span class='symbol'>:class</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_parent_set_class'>parent_set_class</span><span class='lparen'>(</span><span class='id identifier rubyid_parent_set'>parent_set</span><span class='rparen'>)</span><span class='comma'>,</span>
+             <span class='symbol'>:name</span>  <span class='op'>=&gt;</span> <span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span>
+             <span class='symbol'>:item</span>  <span class='op'>=&gt;</span> <span class='id identifier rubyid_child'>child</span><span class='comma'>,</span>
+             <span class='symbol'>:type</span>  <span class='op'>=&gt;</span> <span class='id identifier rubyid_item_type'>item_type</span> <span class='op'>||</span> <span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
+    <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_item'>item</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='lparen'>(</span><span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_item'>item</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>product</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_item'>item</span>
+
+    <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:children</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_new_set'>new_set</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:children</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:repos</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_new_set'>new_set</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repository</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_child'>child</span><span class='lbracket'>[</span><span class='symbol'>:repos</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_data'>data</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="product_map-instance_method">
+  
+    - (<tt>Object</tt>) <strong>product_map</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_product_map'>product_map</span>
+  <span class='ivar'>@product_map</span> <span class='op'>||=</span> <span class='id identifier rubyid_normalize'>normalize</span><span class='lparen'>(</span><span class='id identifier rubyid_collect_repos'>collect_repos</span><span class='lparen'>(</span>
+                                 <span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_engineering'>engineering</span><span class='comma'>,</span>
+                                 <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='ivar'>@product_map</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="redhat_repo_tabs-instance_method">
+  
+    - (<tt>Object</tt>) <strong>redhat_repo_tabs</strong>(provider) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/providers_helper.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_redhat_repo_tabs'>redhat_repo_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_provider'>provider</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_tabs'>tabs</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:rpms</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='symbol'>:rpms</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>RPMs</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:products</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:order</span><span class='op'>=&gt;</span><span class='int'>1</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:srpms</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='symbol'>:srpms</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Source RPMs</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:products</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:order</span><span class='op'>=&gt;</span><span class='int'>2</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:debug</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='symbol'>:debug</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Debug RPMs</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:products</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:order</span><span class='op'>=&gt;</span><span class='int'>3</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:beta</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='symbol'>:beta</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Beta</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:products</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:order</span><span class='op'>=&gt;</span><span class='int'>4</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:isos</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='symbol'>:isos</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ISOs</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:products</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:order</span><span class='op'>=&gt;</span><span class='int'>5</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='symbol'>:other</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='symbol'>:other</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Other</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:products</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:order</span><span class='op'>=&gt;</span><span class='int'>6</span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_provider'>provider</span><span class='period'>.</span><span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_engineering'>engineering</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_product'>product</span><span class='op'>|</span>
+    <span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_productContent'>productContent</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prod_content'>prod_content</span><span class='op'>|</span>
+      <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_prod_content'>prod_content</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Beta </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='symbol'>:beta</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(Source RPMs)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='symbol'>:srpms</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(Debug RPMs)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='symbol'>:debug</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(ISOs)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Source ISOs</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='symbol'>:isos</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(RPMs)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='symbol'>:rpms</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_key'>key</span> <span class='op'>=</span> <span class='symbol'>:other</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_tabs'>tabs</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:products</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_tabs'>tabs</span><span class='lbracket'>[</span><span class='id identifier rubyid_key'>key</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:products</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_prod_content'>prod_content</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_tabs'>tabs</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_h'>h</span><span class='op'>|</span> <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='symbol'>:order</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:23 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

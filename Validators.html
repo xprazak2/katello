@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Validators
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (V)</a> &raquo;
+    
+    
+    <span class="title">Validators</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Validators
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/lib/validators/lock_validator.rb<span class="defines">,<br />
+  app/lib/validators/prior_validator.rb,<br /> app/lib/validators/content_validator.rb,<br /> app/lib/validators/username_validator.rb,<br /> app/lib/validators/rolename_validator.rb,<br /> app/lib/validators/unique_field_in_org.rb,<br /> app/lib/validators/permission_validator.rb,<br /> app/lib/validators/ldap_group_validator.rb,<br /> app/lib/validators/ldap_username_validator.rb,<br /> app/lib/validators/non_html_name_validator.rb,<br /> app/lib/validators/not_in_library_validator.rb,<br /> app/lib/validators/repo_disablement_validator.rb,<br /> app/lib/validators/path_descendents_validator.rb,<br /> app/lib/validators/library_presence_validator.rb,<br /> app/lib/validators/no_trailing_space_validator.rb,<br /> app/lib/validators/serialized_params_validator.rb,<br /> app/lib/validators/own_role_presence_validator.rb,<br /> app/lib/validators/changeset_erratum_validator.rb,<br /> app/lib/validators/changeset_package_validator.rb,<br /> app/lib/validators/katello_url_format_validator.rb,<br /> app/lib/validators/erratum_rule_params_validator.rb,<br /> app/lib/validators/package_rule_params_validator.rb,<br /> app/lib/validators/katello_name_format_validator.rb,<br /> app/lib/validators/katello_label_format_validator.rb,<br /> app/lib/validators/changeset_distribution_validator.rb,<br /> app/lib/validators/default_info_not_blank_validator.rb,<br /> app/lib/validators/non_library_environment_validator.rb,<br /> app/lib/validators/content_view_environment_validator.rb,<br /> app/lib/validators/package_group_rule_params_validator.rb,<br /> app/lib/validators/katello_description_format_validator.rb,<br /> app/lib/validators/self_reference_environment_validator.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Validators/ChangesetDistributionValidator.html" title="Validators::ChangesetDistributionValidator (class)">ChangesetDistributionValidator</a></span>, <span class='object_link'><a href="Validators/ChangesetErratumValidator.html" title="Validators::ChangesetErratumValidator (class)">ChangesetErratumValidator</a></span>, <span class='object_link'><a href="Validators/ChangesetPackageValidator.html" title="Validators::ChangesetPackageValidator (class)">ChangesetPackageValidator</a></span>, <span class='object_link'><a href="Validators/ContentValidator.html" title="Validators::ContentValidator (class)">ContentValidator</a></span>, <span class='object_link'><a href="Validators/ContentViewEnvironmentValidator.html" title="Validators::ContentViewEnvironmentValidator (class)">ContentViewEnvironmentValidator</a></span>, <span class='object_link'><a href="Validators/DefaultInfoNotBlankValidator.html" title="Validators::DefaultInfoNotBlankValidator (class)">DefaultInfoNotBlankValidator</a></span>, <span class='object_link'><a href="Validators/ErratumRuleParamsValidator.html" title="Validators::ErratumRuleParamsValidator (class)">ErratumRuleParamsValidator</a></span>, <span class='object_link'><a href="Validators/KatelloDescriptionFormatValidator.html" title="Validators::KatelloDescriptionFormatValidator (class)">KatelloDescriptionFormatValidator</a></span>, <span class='object_link'><a href="Validators/KatelloLabelFormatValidator.html" title="Validators::KatelloLabelFormatValidator (class)">KatelloLabelFormatValidator</a></span>, <span class='object_link'><a href="Validators/KatelloNameFormatValidator.html" title="Validators::KatelloNameFormatValidator (class)">KatelloNameFormatValidator</a></span>, <span class='object_link'><a href="Validators/KatelloUrlFormatValidator.html" title="Validators::KatelloUrlFormatValidator (class)">KatelloUrlFormatValidator</a></span>, <span class='object_link'><a href="Validators/LdapGroupValidator.html" title="Validators::LdapGroupValidator (class)">LdapGroupValidator</a></span>, <span class='object_link'><a href="Validators/LdapUsernameValidator.html" title="Validators::LdapUsernameValidator (class)">LdapUsernameValidator</a></span>, <span class='object_link'><a href="Validators/LibraryPresenceValidator.html" title="Validators::LibraryPresenceValidator (class)">LibraryPresenceValidator</a></span>, <span class='object_link'><a href="Validators/LockValidator.html" title="Validators::LockValidator (class)">LockValidator</a></span>, <span class='object_link'><a href="Validators/NoTrailingSpaceValidator.html" title="Validators::NoTrailingSpaceValidator (class)">NoTrailingSpaceValidator</a></span>, <span class='object_link'><a href="Validators/NonHtmlNameValidator.html" title="Validators::NonHtmlNameValidator (class)">NonHtmlNameValidator</a></span>, <span class='object_link'><a href="Validators/NonLibraryEnvironmentValidator.html" title="Validators::NonLibraryEnvironmentValidator (class)">NonLibraryEnvironmentValidator</a></span>, <span class='object_link'><a href="Validators/NotInLibraryValidator.html" title="Validators::NotInLibraryValidator (class)">NotInLibraryValidator</a></span>, <span class='object_link'><a href="Validators/OwnRolePresenceValidator.html" title="Validators::OwnRolePresenceValidator (class)">OwnRolePresenceValidator</a></span>, <span class='object_link'><a href="Validators/PackageGroupRuleParamsValidator.html" title="Validators::PackageGroupRuleParamsValidator (class)">PackageGroupRuleParamsValidator</a></span>, <span class='object_link'><a href="Validators/PackageRuleParamsValidator.html" title="Validators::PackageRuleParamsValidator (class)">PackageRuleParamsValidator</a></span>, <span class='object_link'><a href="Validators/PathDescendentsValidator.html" title="Validators::PathDescendentsValidator (class)">PathDescendentsValidator</a></span>, <span class='object_link'><a href="Validators/PermissionValidator.html" title="Validators::PermissionValidator (class)">PermissionValidator</a></span>, <span class='object_link'><a href="Validators/PriorValidator.html" title="Validators::PriorValidator (class)">PriorValidator</a></span>, <span class='object_link'><a href="Validators/RepoDisablementValidator.html" title="Validators::RepoDisablementValidator (class)">RepoDisablementValidator</a></span>, <span class='object_link'><a href="Validators/RolenameValidator.html" title="Validators::RolenameValidator (class)">RolenameValidator</a></span>, <span class='object_link'><a href="Validators/SelfReferenceEnvironmentValidator.html" title="Validators::SelfReferenceEnvironmentValidator (class)">SelfReferenceEnvironmentValidator</a></span>, <span class='object_link'><a href="Validators/SerializedParamsValidator.html" title="Validators::SerializedParamsValidator (class)">SerializedParamsValidator</a></span>, <span class='object_link'><a href="Validators/UniqueFieldInOrg.html" title="Validators::UniqueFieldInOrg (class)">UniqueFieldInOrg</a></span>, <span class='object_link'><a href="Validators/UsernameValidator.html" title="Validators::UsernameValidator (class)">UsernameValidator</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:25 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

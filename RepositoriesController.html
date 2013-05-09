@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: RepositoriesController
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">RepositoriesController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: RepositoriesController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">RepositoriesController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="AutoCompleteSearch.html" title="AutoCompleteSearch (module)">AutoCompleteSearch</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html" title="KatelloUrlHelper (module)">KatelloUrlHelper</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/controllers/repositories_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Copyright 2013 Red Hat, Inc.</p>
+
+<p>This software is licensed to you under the GNU General Public
+License as published by the Free Software Foundation; either version
+2 of the License (GPLv2) or (at your option) any later version.
+There is NO WARRANTY for this software, express or implied,
+including the implied warranties of MERCHANTABILITY,
+NON-INFRINGEMENT, or FITNESS FOR A PARTICULAR PURPOSE. You should
+have received a copy of GPLv2 along with this software; if not, see
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+
+
+
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="KatelloUrlHelper.html" title="KatelloUrlHelper (module)">KatelloUrlHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="KatelloUrlHelper.html#CONSTANTS_DEFINED-constant" title="KatelloUrlHelper::CONSTANTS_DEFINED (constant)">KatelloUrlHelper::CONSTANTS_DEFINED</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#DOMAIN-constant" title="KatelloUrlHelper::DOMAIN (constant)">KatelloUrlHelper::DOMAIN</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#FILEPREFIX-constant" title="KatelloUrlHelper::FILEPREFIX (constant)">KatelloUrlHelper::FILEPREFIX</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#FILEREG-constant" title="KatelloUrlHelper::FILEREG (constant)">KatelloUrlHelper::FILEREG</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#IPV4-constant" title="KatelloUrlHelper::IPV4 (constant)">KatelloUrlHelper::IPV4</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#PORT-constant" title="KatelloUrlHelper::PORT (constant)">KatelloUrlHelper::PORT</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#PROTOCOLS-constant" title="KatelloUrlHelper::PROTOCOLS (constant)">KatelloUrlHelper::PROTOCOLS</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#URLREG-constant" title="KatelloUrlHelper::URLREG (constant)">KatelloUrlHelper::URLREG</a></span></p>
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#auto_complete_library-instance_method" title="#auto_complete_library (instance method)">- (Object) <strong>auto_complete_library</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">- (Object) <strong>destroy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#edit-instance_method" title="#edit (instance method)">- (Object) <strong>edit</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enable_repo-instance_method" title="#enable_repo (instance method)">- (Object) <strong>enable_repo</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#find_product-instance_method" title="#find_product (instance method)">- (Object) <strong>find_product</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#find_provider-instance_method" title="#find_provider (instance method)">- (Object) <strong>find_provider</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#find_repository-instance_method" title="#find_repository (instance method)">- (Object) <strong>find_repository</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-instance_method" title="#new (instance method)">- (Object) <strong>new</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rules-instance_method" title="#rules (instance method)">- (Object) <strong>rules</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#section_id-instance_method" title="#section_id (instance method)">- (Object) <strong>section_id</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_gpg_key-instance_method" title="#update_gpg_key (instance method)">- (Object) <strong>update_gpg_key</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="KatelloUrlHelper.html" title="KatelloUrlHelper (module)">KatelloUrlHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="KatelloUrlHelper.html#file_prefix%3F-instance_method" title="KatelloUrlHelper#file_prefix? (method)">#file_prefix?</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#kipv4%3F-instance_method" title="KatelloUrlHelper#kipv4? (method)">#kipv4?</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#kprotocol%3F-instance_method" title="KatelloUrlHelper#kprotocol? (method)">#kprotocol?</a></span>, <span class='object_link'><a href="KatelloUrlHelper.html#kurl_valid%3F-instance_method" title="KatelloUrlHelper#kurl_valid? (method)">#kurl_valid?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="AutoCompleteSearch.html" title="AutoCompleteSearch (module)">AutoCompleteSearch</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="AutoCompleteSearch.html#auto_complete_search-instance_method" title="AutoCompleteSearch#auto_complete_search (method)">#auto_complete_search</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="SearchHelper.html" title="SearchHelper (module)">SearchHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SearchHelper.html#favorite_entries-instance_method" title="SearchHelper#favorite_entries (method)">#favorite_entries</a></span>, <span class='object_link'><a href="SearchHelper.html#history_entries-instance_method" title="SearchHelper#history_entries (method)">#history_entries</a></span>, <span class='object_link'><a href="SearchHelper.html#max_search_favorites-instance_method" title="SearchHelper#max_search_favorites (method)">#max_search_favorites</a></span>, <span class='object_link'><a href="SearchHelper.html#max_search_history-instance_method" title="SearchHelper#max_search_history (method)">#max_search_history</a></span>, <span class='object_link'><a href="SearchHelper.html#search_string-instance_method" title="SearchHelper#search_string (method)">#search_string</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#check_deleted_org-instance_method" title="ApplicationController#check_deleted_org (method)">#check_deleted_org</a></span>, <span class='object_link'><a href="ApplicationController.html#current_organization-instance_method" title="ApplicationController#current_organization (method)">#current_organization</a></span>, <span class='object_link'><a href="ApplicationController.html#current_organization%3D-instance_method" title="ApplicationController#current_organization= (method)">#current_organization=</a></span>, <span class='object_link'><a href="ApplicationController.html#current_user-instance_method" title="ApplicationController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="ApplicationController.html#default_label-instance_method" title="ApplicationController#default_label (method)">#default_label</a></span>, <span class='object_link'><a href="ApplicationController.html#default_label_assigned-instance_method" title="ApplicationController#default_label_assigned (method)">#default_label_assigned</a></span>, <span class='object_link'><a href="ApplicationController.html#default_notify_options-instance_method" title="ApplicationController#default_notify_options (method)">#default_notify_options</a></span>, <span class='object_link'><a href="ApplicationController.html#environment_path_element-instance_method" title="ApplicationController#environment_path_element (method)">#environment_path_element</a></span>, <span class='object_link'><a href="ApplicationController.html#environment_paths-instance_method" title="ApplicationController#environment_paths (method)">#environment_paths</a></span>, <span class='object_link'><a href="ApplicationController.html#escape_html-instance_method" title="ApplicationController#escape_html (method)">#escape_html</a></span>, <span class='object_link'><a href="ApplicationController.html#execute_after_filters-instance_method" title="ApplicationController#execute_after_filters (method)">#execute_after_filters</a></span>, <span class='object_link'><a href="ApplicationController.html#execute_rescue-instance_method" title="ApplicationController#execute_rescue (method)">#execute_rescue</a></span>, <span class='object_link'><a href="ApplicationController.html#extract_locale_from_accept_language_header-class_method" title="ApplicationController.extract_locale_from_accept_language_header (method)">extract_locale_from_accept_language_header</a></span>, <span class='object_link'><a href="ApplicationController.html#first_env_in_path-instance_method" title="ApplicationController#first_env_in_path (method)">#first_env_in_path</a></span>, <span class='object_link'><a href="ApplicationController.html#flash_to_headers-instance_method" title="ApplicationController#flash_to_headers (method)">#flash_to_headers</a></span>, <span class='object_link'><a href="ApplicationController.html#format_time-instance_method" title="ApplicationController#format_time (method)">#format_time</a></span>, <span class='object_link'><a href="ApplicationController.html#generate_label-instance_method" title="ApplicationController#generate_label (method)">#generate_label</a></span>, <span class='object_link'><a href="ApplicationController.html#label_overridden-instance_method" title="ApplicationController#label_overridden (method)">#label_overridden</a></span>, <span class='object_link'><a href="ApplicationController.html#library_path_element-instance_method" title="ApplicationController#library_path_element (method)">#library_path_element</a></span>, <span class='object_link'><a href="ApplicationController.html#log_exception-instance_method" title="ApplicationController#log_exception (method)">#log_exception</a></span>, <span class='object_link'><a href="ApplicationController.html#matches_no_redirect%3F-instance_method" title="ApplicationController#matches_no_redirect? (method)">#matches_no_redirect?</a></span>, <span class='object_link'><a href="ApplicationController.html#n_gettext_for_generate_label-instance_method" title="ApplicationController#n_gettext_for_generate_label (method)">#n_gettext_for_generate_label</a></span>, <span class='object_link'><a href="ApplicationController.html#no_env_available_msg-instance_method" title="ApplicationController#no_env_available_msg (method)">#no_env_available_msg</a></span>, <span class='object_link'><a href="ApplicationController.html#org_not_found_error-instance_method" title="ApplicationController#org_not_found_error (method)">#org_not_found_error</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_calendar_date-instance_method" title="ApplicationController#parse_calendar_date (method)">#parse_calendar_date</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_display_message-class_method" title="ApplicationController.parse_display_message (method)">parse_display_message</a></span>, <span class='object_link'><a href="ApplicationController.html#parse_locale-instance_method" title="ApplicationController#parse_locale (method)">#parse_locale</a></span>, <span class='object_link'><a href="ApplicationController.html#render_403-instance_method" title="ApplicationController#render_403 (method)">#render_403</a></span>, <span class='object_link'><a href="ApplicationController.html#render_404-instance_method" title="ApplicationController#render_404 (method)">#render_404</a></span>, <span class='object_link'><a href="ApplicationController.html#render_bad_parameters-instance_method" title="ApplicationController#render_bad_parameters (method)">#render_bad_parameters</a></span>, <span class='object_link'><a href="ApplicationController.html#render_correct_nav-instance_method" title="ApplicationController#render_correct_nav (method)">#render_correct_nav</a></span>, <span class='object_link'><a href="ApplicationController.html#render_error-instance_method" title="ApplicationController#render_error (method)">#render_error</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_direct-instance_method" title="ApplicationController#render_panel_direct (method)">#render_panel_direct</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_items-instance_method" title="ApplicationController#render_panel_items (method)">#render_panel_items</a></span>, <span class='object_link'><a href="ApplicationController.html#render_panel_results-instance_method" title="ApplicationController#render_panel_results (method)">#render_panel_results</a></span>, <span class='object_link'><a href="ApplicationController.html#requested_action-instance_method" title="ApplicationController#requested_action (method)">#requested_action</a></span>, <span class='object_link'><a href="ApplicationController.html#require_no_user-instance_method" title="ApplicationController#require_no_user (method)">#require_no_user</a></span>, <span class='object_link'><a href="ApplicationController.html#require_org-instance_method" title="ApplicationController#require_org (method)">#require_org</a></span>, <span class='object_link'><a href="ApplicationController.html#require_user-instance_method" title="ApplicationController#require_user (method)">#require_user</a></span>, <span class='object_link'><a href="ApplicationController.html#retain_search_history-instance_method" title="ApplicationController#retain_search_history (method)">#retain_search_history</a></span>, <span class='object_link'><a href="ApplicationController.html#search_validate-instance_method" title="ApplicationController#search_validate (method)">#search_validate</a></span>, <span class='object_link'><a href="ApplicationController.html#set_layout-instance_method" title="ApplicationController#set_layout (method)">#set_layout</a></span>, <span class='object_link'><a href="ApplicationController.html#set_locale-instance_method" title="ApplicationController#set_locale (method)">#set_locale</a></span>, <span class='object_link'><a href="ApplicationController.html#setup_environment_selector-instance_method" title="ApplicationController#setup_environment_selector (method)">#setup_environment_selector</a></span>, <span class='object_link'><a href="ApplicationController.html#verify_ldap-instance_method" title="ApplicationController#verify_ldap (method)">#verify_ldap</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Menu.html" title="Menu (module)">Menu</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Menu.html#included-class_method" title="Menu.included (method)">included</a></span>, <span class='object_link'><a href="Menu.html#prune_menu-instance_method" title="Menu#prune_menu (method)">#prune_menu</a></span>, <span class='object_link'><a href="Menu.html#render_admin_menu-instance_method" title="Menu#render_admin_menu (method)">#render_admin_menu</a></span>, <span class='object_link'><a href="Menu.html#render_main_menu-instance_method" title="Menu#render_main_menu (method)">#render_main_menu</a></span>, <span class='object_link'><a href="Menu.html#render_main_sub_menu-instance_method" title="Menu#render_main_sub_menu (method)">#render_main_sub_menu</a></span>, <span class='object_link'><a href="Menu.html#render_menu-instance_method" title="Menu#render_menu (method)">#render_menu</a></span>, <span class='object_link'><a href="Menu.html#render_notifications_menu-instance_method" title="Menu#render_notifications_menu (method)">#render_notifications_menu</a></span>, <span class='object_link'><a href="Menu.html#render_sublevel_menu-instance_method" title="Menu#render_sublevel_menu (method)">#render_sublevel_menu</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="AuthorizationRules.html" title="AuthorizationRules (module)">AuthorizationRules</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="AuthorizationRules.html#authorize-instance_method" title="AuthorizationRules#authorize (method)">#authorize</a></span>, <span class='object_link'><a href="AuthorizationRules.html#build_bad_params_error_msg-instance_method" title="AuthorizationRules#build_bad_params_error_msg (method)">#build_bad_params_error_msg</a></span>, <span class='object_link'><a href="AuthorizationRules.html#check_array_params-instance_method" title="AuthorizationRules#check_array_params (method)">#check_array_params</a></span>, <span class='object_link'><a href="AuthorizationRules.html#check_hash_params-instance_method" title="AuthorizationRules#check_hash_params (method)">#check_hash_params</a></span>, <span class='object_link'><a href="AuthorizationRules.html#included-class_method" title="AuthorizationRules.included (method)">included</a></span>, <span class='object_link'><a href="AuthorizationRules.html#param_rules-instance_method" title="AuthorizationRules#param_rules (method)">#param_rules</a></span>, <span class='object_link'><a href="AuthorizationRules.html#params_match-instance_method" title="AuthorizationRules#params_match (method)">#params_match</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Util/ThreadSession/Controller.html" title="Util::ThreadSession::Controller (module)">Util::ThreadSession::Controller</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Util/ThreadSession/Controller.html#included-class_method" title="Util::ThreadSession::Controller.included (method)">included</a></span>, <span class='object_link'><a href="Util/ThreadSession/Controller.html#thread_locals-instance_method" title="Util::ThreadSession::Controller#thread_locals (method)">#thread_locals</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Profiling.html" title="Profiling (module)">Profiling</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Profiling.html#do_profiling-instance_method" title="Profiling#do_profiling (method)">#do_profiling</a></span>, <span class='object_link'><a href="Profiling.html#included-class_method" title="Profiling.included (method)">included</a></span>, <span class='object_link'><a href="Profiling.html#load_ruby_prof_gem-class_method" title="Profiling.load_ruby_prof_gem (method)">load_ruby_prof_gem</a></span>, <span class='object_link'><a href="Profiling.html#profiling_enabled%3F-class_method" title="Profiling.profiling_enabled? (method)">profiling_enabled?</a></span>, <span class='object_link'><a href="Profiling.html#run_profiling%3F-instance_method" title="Profiling#run_profiling? (method)">#run_profiling?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Notifications/ControllerHelper.html" title="Notifications::ControllerHelper (module)">Notifications::ControllerHelper</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Notifications/ControllerHelper.html#default_notify_options-instance_method" title="Notifications::ControllerHelper#default_notify_options (method)">#default_notify_options</a></span>, <span class='object_link'><a href="Notifications/ControllerHelper.html#notify-instance_method" title="Notifications::ControllerHelper#notify (method)">#notify</a></span></p>
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="auto_complete_library-instance_method">
+  
+    - (<tt>Object</tt>) <strong>auto_complete_library</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 108</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_auto_complete_library'>auto_complete_library</span>
+  <span class='comment'># retrieve and return a list (array) of repo names in library that contain the 'term' that was passed in
+</span>  <span class='id identifier rubyid_term'>term</span> <span class='op'>=</span> <span class='const'>Util</span><span class='op'>::</span><span class='const'>Search</span><span class='op'>::</span><span class='id identifier rubyid_filter_input'>filter_input</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:term</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name:</span><span class='tstring_end'>'</span></span> <span class='op'>+</span> <span class='id identifier rubyid_term'>term</span>
+  <span class='id identifier rubyid_name_query'>name_query</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> OR </span><span class='tstring_end'>'</span></span> <span class='op'>+</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>*</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span> <span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_repos'>repos</span> <span class='op'>=</span> <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_query'>query</span> <span class='lbrace'>{</span><span class='id identifier rubyid_string'>string</span> <span class='id identifier rubyid_name_query'>name_query</span><span class='rbrace'>}</span>
+    <span class='id identifier rubyid_filter'>filter</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>and</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbracket'>[</span>
+        <span class='lbrace'>{</span><span class='symbol'>:terms</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ids'>ids</span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='comma'>,</span>
+        <span class='lbrace'>{</span><span class='symbol'>:terms</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:enabled</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='kw'>true</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+    <span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_repo'>repo</span><span class='op'>|</span>
+    <span class='id identifier rubyid_label'>label</span> <span class='op'>=</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%{repo} (Product: %{product})</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='lbrace'>{</span><span class='symbol'>:repo</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:product</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='rbrace'>}</span>
+    <span class='lbrace'>{</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_label'>label</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
+  <span class='id identifier rubyid_repo_params'>repo_params</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:repo</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_label_assigned'>label_assigned</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_label'>generate_label</span><span class='lparen'>(</span><span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>repository</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>HttpErrors</span><span class='op'>::</span><span class='const'>BadRequest</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Repository can be only created for custom provider.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@product</span><span class='period'>.</span><span class='id identifier rubyid_custom?'>custom?</span>
+
+  <span class='id identifier rubyid_gpg'>gpg</span> <span class='op'>=</span> <span class='const'>GpgKey</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:gpg_key</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:gpg_key</span><span class='rbracket'>]</span> <span class='kw'>and</span> <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:gpg_key</span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># Bundle these into one call, perhaps move to Provider
+</span>  <span class='comment'># Also fix the hard coded yum
+</span>
+  <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:unprotected</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='kw'>false</span>
+  <span class='ivar'>@product</span><span class='period'>.</span><span class='id identifier rubyid_add_repo'>add_repo</span><span class='lparen'>(</span><span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:feed</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>yum</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:unprotected</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_gpg'>gpg</span><span class='rparen'>)</span>
+  <span class='ivar'>@product</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Repository '%s' created.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_repo_params'>repo_params</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ignore_success_notice</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span> <span class='id identifier rubyid_label_assigned'>label_assigned</span> <span class='kw'>unless</span> <span class='id identifier rubyid_label_assigned'>label_assigned</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span> <span class='kw'>unless</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ignore_success_notice</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:nothing</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>rescue</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>ConflictException</span><span class='comma'>,</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordInvalid</span><span class='comma'>,</span> <span class='const'>Glue</span><span class='op'>::</span><span class='const'>Pulp</span><span class='op'>::</span><span class='const'>PulpErrors</span><span class='op'>::</span><span class='const'>ServiceUnavailable</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>Glue</span><span class='op'>::</span><span class='const'>Pulp</span><span class='op'>::</span><span class='const'>PulpErrors</span><span class='op'>::</span><span class='const'>ServiceUnavailable</span> <span class='op'>?</span> <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_exception'>exception</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_execute_after_filters'>execute_after_filters</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:nothing</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='symbol'>:bad_request</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>destroy</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Repository '%s' removed.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>common/post_delete_close_subpanel</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:path</span><span class='op'>=&gt;</span><span class='id identifier rubyid_products_repos_provider_path'>products_repos_provider_path</span><span class='lparen'>(</span><span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="edit-instance_method">
+  
+    - (<tt>Object</tt>) <strong>edit</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_edit'>edit</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>edit</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+         <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span>
+             <span class='symbol'>:editable</span><span class='op'>=&gt;</span> <span class='lparen'>(</span><span class='ivar'>@product</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span> <span class='kw'>and</span> <span class='kw'>not</span> <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_promoted?'>promoted?</span><span class='rparen'>)</span><span class='comma'>,</span>
+             <span class='symbol'>:cloned_in_environments</span> <span class='op'>=&gt;</span> <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_environments'>environments</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_env'>env</span><span class='op'>|</span> <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_is_cloned_in?'>is_cloned_in?</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:name</span><span class='rparen'>)</span>
+         <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enable_repo-instance_method">
+  
+    - (<tt>Object</tt>) <strong>enable_repo</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_enable_repo'>enable_repo</span>
+  <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_enabled'>enabled</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:repo</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='id identifier rubyid_product_content'>product_content</span> <span class='op'>=</span> <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_product_content_by_id'>product_content_by_id</span><span class='lparen'>(</span><span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_content_id'>content_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:can_disable_repo_set</span><span class='op'>=&gt;</span><span class='id identifier rubyid_product_content'>product_content</span><span class='period'>.</span><span class='id identifier rubyid_can_disable?'>can_disable?</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_product-instance_method">
+  
+    - (<tt>Object</tt>) <strong>find_product</strong>  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find_product'>find_product</span>
+  <span class='ivar'>@product</span> <span class='op'>=</span> <span class='const'>Product</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:product_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_provider-instance_method">
+  
+    - (<tt>Object</tt>) <strong>find_provider</strong>  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 130</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find_provider'>find_provider</span>
+  <span class='ivar'>@provider</span> <span class='op'>=</span> <span class='const'>Provider</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:provider_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_repository-instance_method">
+  
+    - (<tt>Object</tt>) <strong>find_repository</strong>  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 138</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_find_repository'>find_repository</span>
+  <span class='ivar'>@repository</span> <span class='op'>=</span> <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rules-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rules</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rules'>rules</span>
+  <span class='id identifier rubyid_read_any_test'>read_any_test</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='const'>Provider</span><span class='period'>.</span><span class='id identifier rubyid_any_readable?'>any_readable?</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_read_test'>read_test</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@product</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_edit_test'>edit_test</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='ivar'>@product</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_org_edit'>org_edit</span> <span class='op'>=</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span><span class='rbrace'>}</span>
+  <span class='lbrace'>{</span>
+    <span class='symbol'>:new</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_test'>edit_test</span><span class='comma'>,</span>
+    <span class='symbol'>:create</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_test'>edit_test</span><span class='comma'>,</span>
+    <span class='symbol'>:default_label</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span><span class='lbrace'>{</span><span class='kw'>true</span><span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='symbol'>:edit</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_test'>read_test</span><span class='comma'>,</span>
+    <span class='symbol'>:update_gpg_key</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_test'>edit_test</span><span class='comma'>,</span>
+    <span class='symbol'>:destroy</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_edit_test'>edit_test</span><span class='comma'>,</span>
+    <span class='symbol'>:enable_repo</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_org_edit'>org_edit</span><span class='comma'>,</span>
+    <span class='symbol'>:auto_complete_library</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_any_test'>read_any_test</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="section_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>section_id</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_section_id'>section_id</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>contents</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_gpg_key-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_gpg_key</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/repositories_controller.rb', line 81</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update_gpg_key'>update_gpg_key</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:gpg_key</span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_gpg'>gpg</span> <span class='op'>=</span> <span class='const'>GpgKey</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:gpg_key</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_gpg'>gpg</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_gpg'>gpg</span> <span class='op'>=</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_gpg_key'>gpg_key</span> <span class='op'>=</span> <span class='id identifier rubyid_gpg'>gpg</span>
+  <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
+  <span class='id identifier rubyid_notify'>notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Repository '%s' updated.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='ivar'>@repository</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_escape_html'>escape_html</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:46:05 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

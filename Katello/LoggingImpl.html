@@ -1,0 +1,981 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Katello::LoggingImpl
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (L)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Katello.html" title="Katello (module)">Katello</a></span></span>
+     &raquo; 
+    <span class="title">LoggingImpl</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Katello::LoggingImpl
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Katello::LoggingImpl</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/katello/logging.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="LoggingImpl/MultilinePatternLayout.html" title="Katello::LoggingImpl::MultilinePatternLayout (class)">MultilinePatternLayout</a></span>, <span class='object_link'><a href="LoggingImpl/TireBridge.html" title="Katello::LoggingImpl::TireBridge (class)">TireBridge</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#build_layout-instance_method" title="#build_layout (instance method)">- (Object) <strong>build_layout</strong>(pattern, colorize) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#build_root_appender-instance_method" title="#build_root_appender (instance method)">- (Object) <strong>build_root_appender</strong>(options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>currently we support two types of appenders, rolling file and syslog
+note that syslog ignores pattern and logs only messages.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#configuration-instance_method" title="#configuration (instance method)">- (Object) <strong>configuration</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>shortcut to logging configuration.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#configure-instance_method" title="#configure (instance method)">- (Object) <strong>configure</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#configure_children_loggers-instance_method" title="#configure_children_loggers (instance method)">- (Object) <strong>configure_children_loggers</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>sets all children loggers according to configuration.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#configure_color_scheme-instance_method" title="#configure_color_scheme (instance method)">- (Object) <strong>configure_color_scheme</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#configure_root_logger-instance_method" title="#configure_root_logger (instance method)">- (Object) <strong>configure_root_logger</strong>(options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>set root logger specific configuration.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#enable_tailing-instance_method" title="#enable_tailing (instance method)">- (Object) <strong>enable_tailing</strong>(logger, logger_config) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#integrate_yard_logger%21-instance_method" title="#integrate_yard_logger! (instance method)">- (Object) <strong>integrate_yard_logger!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#root_configuration-instance_method" title="#root_configuration (instance method)">- (Object) <strong>root_configuration</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>shortcut to root logger configuration.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="build_layout-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_layout</strong>(pattern, colorize)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+178
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 178</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_layout'>build_layout</span><span class='lparen'>(</span><span class='id identifier rubyid_pattern'>pattern</span><span class='comma'>,</span> <span class='id identifier rubyid_colorize'>colorize</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_pattern'>pattern</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  Log trace: %F:%L method: %M\n</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_log_trace'>log_trace</span>
+  <span class='const'>MultilinePatternLayout</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:pattern</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pattern'>pattern</span><span class='comma'>,</span> <span class='symbol'>:color_scheme</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_colorize'>colorize</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>bright</span><span class='tstring_end'>'</span></span> <span class='op'>:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="build_root_appender-instance_method">
+  
+    - (<tt>Object</tt>) <strong>build_root_appender</strong>(options)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>currently we support two types of appenders, rolling file and syslog
+note that syslog ignores pattern and logs only messages</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 148</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_build_root_appender'>build_root_appender</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_content'>joined</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>syslog</span><span class='tstring_end'>'</span></span>
+      <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_appenders'>appenders</span><span class='period'>.</span><span class='id identifier rubyid_syslog'>syslog</span><span class='lparen'>(</span>
+          <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
+          <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_reverse_merge'>reverse_merge</span><span class='lparen'>(</span><span class='symbol'>:ident</span>    <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='tstring_content'>katello</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                                <span class='symbol'>:facility</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>Syslog</span><span class='op'>::</span><span class='const'>Constants</span><span class='op'>::</span><span class='const'>LOG_DAEMON</span><span class='rparen'>)</span>
+      <span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>file</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span>
+      <span class='id identifier rubyid_log_filename'>log_filename</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:prefix</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_filename'>filename</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>begin</span>
+        <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_appenders'>appenders</span><span class='period'>.</span><span class='id identifier rubyid_rolling_file'>rolling_file</span><span class='lparen'>(</span>
+          <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
+          <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_reverse_merge'>reverse_merge</span><span class='lparen'>(</span><span class='symbol'>:filename</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_log_filename'>log_filename</span><span class='comma'>,</span>
+                                <span class='symbol'>:roll_by</span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>date</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                                <span class='symbol'>:age</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_age'>age</span><span class='comma'>,</span>
+                                <span class='symbol'>:keep</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_keep'>keep</span><span class='comma'>,</span>
+                                <span class='symbol'>:layout</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid_build_layout'>build_layout</span><span class='lparen'>(</span><span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_pattern'>pattern</span><span class='comma'>,</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_colorize'>colorize</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='rparen'>)</span>
+      <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
+        <span class='comment'># if appender cannot open output file we ignore it, STDOUT fallback will be used
+</span>        <span class='kw'>nil</span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>unsupported logger type, please choose syslog or file</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>configuration</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>shortcut to logging configuration</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_configuration'>configuration</span>
+  <span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_logging'>logging</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="configure-instance_method">
+  
+    - (<tt>Object</tt>) <strong>configure</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_configure'>configure</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>logging can be configured only once</span><span class='tstring_end'>'</span></span> <span class='kw'>if</span> <span class='ivar'>@configured</span>
+  <span class='ivar'>@configured</span> <span class='op'>=</span> <span class='kw'>true</span>
+
+  <span class='id identifier rubyid_configure_color_scheme'>configure_color_scheme</span>
+  <span class='kw'>begin</span>
+    <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_mkdir_p'>mkdir_p</span> <span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span> <span class='kw'>unless</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_directory?'>directory?</span><span class='lparen'>(</span><span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>EACCES</span>
+    <span class='comment'># ignore when we have not sufficient privileges
+</span>  <span class='kw'>end</span>
+  <span class='id identifier rubyid_configure_root_logger'>configure_root_logger</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_integrate_yard_logger!'>integrate_yard_logger!</span>
+  <span class='id identifier rubyid_configure_children_loggers'>configure_children_loggers</span>
+
+  <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='const'>Rails</span><span class='op'>::</span><span class='const'>Console</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_console_inline'>console_inline</span>
+    <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_add_appenders'>add_appenders</span><span class='lparen'>(</span>
+        <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_appenders'>appenders</span><span class='period'>.</span><span class='id identifier rubyid_stdout'>stdout</span><span class='lparen'>(</span><span class='symbol'>:layout</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_build_layout'>build_layout</span><span class='lparen'>(</span><span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_pattern'>pattern</span><span class='comma'>,</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_colorize'>colorize</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># you can add specific files per logger easily like this
+</span>  <span class='comment'>#   Logging.logger['sql'].appenders = Logging.appenders.file(&quot;#{Rails.env}_sql.log&quot;)
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="configure_children_loggers-instance_method">
+  
+    - (<tt>Object</tt>) <strong>configure_children_loggers</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>sets all children loggers according to configuration</p>
+
+<p>we use +additive+ feature of logging gem to enable or disable logger output, by default
+only root logger has an appender so if we set +additive+ attribute to false, no message
+is outputted by particular logger</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_configure_children_loggers'>configure_children_loggers</span>
+  <span class='comment'># set level and enabled configuration
+</span>  <span class='id identifier rubyid_loggers_hash'>loggers_hash</span> <span class='op'>=</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_loggers'>loggers</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span>
+  <span class='id identifier rubyid_loggers_hash'>loggers_hash</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:root</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_logger_name'>logger_name</span><span class='op'>|</span>
+    <span class='id identifier rubyid_logger_config'>logger_config</span> <span class='op'>=</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_loggers'>loggers</span><span class='lbracket'>[</span><span class='id identifier rubyid_logger_name'>logger_name</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_logger'>logger</span>        <span class='op'>=</span> <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='lbracket'>[</span><span class='id identifier rubyid_logger_name'>logger_name</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_level'>level</span> <span class='op'>=</span> <span class='id identifier rubyid_logger_config'>logger_config</span><span class='period'>.</span><span class='id identifier rubyid_level'>level</span> <span class='kw'>if</span> <span class='id identifier rubyid_logger_config'>logger_config</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:level</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_additive'>additive</span> <span class='op'>=</span> <span class='id identifier rubyid_logger_config'>logger_config</span><span class='period'>.</span><span class='id identifier rubyid_enabled'>enabled</span> <span class='kw'>if</span> <span class='id identifier rubyid_logger_config'>logger_config</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:enabled</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_enable_tailing'>enable_tailing</span> <span class='id identifier rubyid_logger'>logger</span><span class='comma'>,</span> <span class='id identifier rubyid_logger_config'>logger_config</span> <span class='kw'>if</span> <span class='id identifier rubyid_logger_config'>logger_config</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:tail_command</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_trace'>trace</span> <span class='op'>=</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_log_trace'>log_trace</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="configure_color_scheme-instance_method">
+  
+    - (<tt>Object</tt>) <strong>configure_color_scheme</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 183</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_configure_color_scheme'>configure_color_scheme</span>
+  <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_color_scheme'>color_scheme</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>bright</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+                         <span class='symbol'>:levels</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span>
+                             <span class='symbol'>:info</span>  <span class='op'>=&gt;</span> <span class='symbol'>:green</span><span class='comma'>,</span>
+                             <span class='symbol'>:warn</span>  <span class='op'>=&gt;</span> <span class='symbol'>:yellow</span><span class='comma'>,</span>
+                             <span class='symbol'>:error</span> <span class='op'>=&gt;</span> <span class='symbol'>:red</span><span class='comma'>,</span>
+                             <span class='symbol'>:fatal</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:white</span><span class='comma'>,</span> <span class='symbol'>:on_red</span><span class='rbracket'>]</span>
+                         <span class='rbrace'>}</span><span class='comma'>,</span>
+                         <span class='symbol'>:date</span>   <span class='op'>=&gt;</span> <span class='symbol'>:blue</span><span class='comma'>,</span>
+                         <span class='symbol'>:logger</span> <span class='op'>=&gt;</span> <span class='symbol'>:cyan</span><span class='comma'>,</span>
+                         <span class='symbol'>:line</span>   <span class='op'>=&gt;</span> <span class='symbol'>:yellow</span><span class='comma'>,</span>
+                         <span class='symbol'>:file</span>   <span class='op'>=&gt;</span> <span class='symbol'>:yellow</span><span class='comma'>,</span>
+                         <span class='symbol'>:method</span> <span class='op'>=&gt;</span> <span class='symbol'>:yellow</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="configure_root_logger-instance_method">
+  
+    - (<tt>Object</tt>) <strong>configure_root_logger</strong>(options)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>set root logger specific configuration</p>
+
+<p>root logger has configurable appender by argument +options+
+we also set fallback appender to STDOUT in case a developer asks for unusable appender</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 119</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_configure_root_logger'>configure_root_logger</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_level'>level</span>     <span class='op'>=</span> <span class='id identifier rubyid_root_configuration'>root_configuration</span><span class='period'>.</span><span class='id identifier rubyid_level'>level</span>
+  <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_appenders'>appenders</span> <span class='op'>=</span> <span class='id identifier rubyid_build_root_appender'>build_root_appender</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_trace'>trace</span>     <span class='op'>=</span> <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_log_trace'>log_trace</span>
+
+  <span class='comment'># fallback to log to STDOUT if there is any configuration problem
+</span>  <span class='kw'>if</span> <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_appenders'>appenders</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_appenders'>appenders</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_appenders'>appenders</span><span class='period'>.</span><span class='id identifier rubyid_stdout'>stdout</span>
+    <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='period'>.</span><span class='id identifier rubyid_warn'>warn</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>No appender set, logging to STDOUT</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enable_tailing-instance_method">
+  
+    - (<tt>Object</tt>) <strong>enable_tailing</strong>(logger, logger_config)  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 131</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_enable_tailing'>enable_tailing</span><span class='lparen'>(</span><span class='id identifier rubyid_logger'>logger</span><span class='comma'>,</span> <span class='id identifier rubyid_logger_config'>logger_config</span><span class='rparen'>)</span>
+  <span class='const'>Thread</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
+    <span class='kw'>begin</span>
+      <span class='const'>IO</span><span class='period'>.</span><span class='id identifier rubyid_popen'>popen</span><span class='lparen'>(</span><span class='id identifier rubyid_logger_config'>logger_config</span><span class='period'>.</span><span class='id identifier rubyid_tail_command'>tail_command</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_out'>out</span><span class='op'>|</span>
+        <span class='id identifier rubyid_at_exit'>at_exit</span> <span class='lbrace'>{</span> <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_kill'>kill</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INT</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+        <span class='kw'>while</span> <span class='lparen'>(</span><span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='id identifier rubyid_out'>out</span><span class='period'>.</span><span class='id identifier rubyid_gets'>gets</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_logger'>logger</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>] </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_line'>line</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='rbrace'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+      <span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>app</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_warn'>warn</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tailing thread failed: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rbrace'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rbrace'>}</span><span class='tstring_content'>)\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_backtrace'>backtrace</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="integrate_yard_logger!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>integrate_yard_logger!</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_integrate_yard_logger!'>integrate_yard_logger!</span>
+  <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>YARD</span><span class='rparen'>)</span>
+    <span class='comment'># redefine by YARD globally defined method #log to point to our logger
+</span>    <span class='const'>Object</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:define_method</span><span class='comma'>,</span> <span class='symbol'>:log</span> <span class='kw'>do</span>
+      <span class='const'>Katello</span><span class='op'>::</span><span class='const'>LoggingImpl</span><span class='op'>::</span><span class='const'>YARDLoggerDelegator</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_const_defined?'>const_defined?</span><span class='lparen'>(</span><span class='symbol'>:YARDLoggerDelegator</span><span class='rparen'>)</span>
+      <span class='comment'># define our logger child for YARD
+</span>      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_const_set'>const_set</span><span class='lparen'>(</span><span class='symbol'>:YARDLoggerDelegator</span><span class='comma'>,</span> <span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>YARD</span><span class='op'>::</span><span class='const'>Logger</span><span class='rparen'>)</span> <span class='kw'>do</span>
+
+        <span class='comment'># @return [::Logging::Logger] for yard
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid__logging_logger'>_logging_logger</span>
+          <span class='ivar'>@_logging_logger</span> <span class='op'>||=</span> <span class='kw'>begin</span>
+            <span class='id identifier rubyid_yard_logger_delegator'>yard_logger_delegator</span> <span class='op'>=</span> <span class='kw'>self</span>
+            <span class='op'>::</span><span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>yard</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_logger'>logger</span><span class='op'>|</span>
+              <span class='comment'># redefine method #level= to set also YARD logger level
+</span>              <span class='id identifier rubyid_original_method'>original_method</span> <span class='op'>=</span> <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_method'>method</span> <span class='symbol'>:level=</span>
+              <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_singleton_class'>singleton_class</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:define_method</span><span class='comma'>,</span> <span class='symbol'>:level=</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_level'>level</span><span class='op'>|</span>
+                <span class='id identifier rubyid_yard_logger_delegator'>yard_logger_delegator</span><span class='period'>.</span><span class='id identifier rubyid_instance_variable_set'>instance_variable_set</span> <span class='symbol'>:@level</span><span class='comma'>,</span> <span class='id identifier rubyid_level'>level</span>
+                <span class='id identifier rubyid_original_method'>original_method</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='id identifier rubyid_level'>level</span>
+              <span class='kw'>end</span>
+              <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_level'>level</span> <span class='op'>=</span> <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_level'>level</span>
+            <span class='kw'>end</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+
+        <span class='comment'># delegate all messages to a ::Logging::Logger
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_severity'>severity</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_progname'>progname</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_clear_line'>clear_line</span>
+          <span class='comment'>#puts &quot;-- #{severity} #{message || progname}&quot;
+</span>          <span class='id identifier rubyid__logging_logger'>_logging_logger</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_severity'>severity</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span> <span class='op'>||</span> <span class='id identifier rubyid_progname'>progname</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+        <span class='kw'>end</span>
+
+        <span class='comment'># disable setting level by Yard logger
+</span>        <span class='kw'>def</span> <span class='id identifier rubyid_level='>level=</span><span class='lparen'>(</span><span class='id identifier rubyid_level'>level</span><span class='rparen'>)</span>
+          <span class='comment'># debug &quot;setting level:#{level} ignored, use Logging.logger['yard'].level= instead&quot;
+</span>        <span class='kw'>end</span>
+      <span class='kw'>end</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="root_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>root_configuration</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>shortcut to root logger configuration</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/katello/logging.rb', line 92</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_root_configuration'>root_configuration</span>
+  <span class='id identifier rubyid_configuration'>configuration</span><span class='period'>.</span><span class='id identifier rubyid_loggers'>loggers</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:46:16 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

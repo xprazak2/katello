@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Katello::Configuration
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Katello.html" title="Katello (module)">Katello</a></span></span>
+     &raquo; 
+    <span class="title">Configuration</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Katello::Configuration
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/katello/configuration.rb<span class="defines">,<br />
+  lib/katello/configuration/node.rb,<br /> lib/katello/configuration/loader.rb,<br /> lib/katello/configuration/validator.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Katello::Configuration module contains all necessary code for Katello configuration.
+Configuration is not dependent on any gem which allows loading configuration very early
+(even before Rails). Therefore this configuration can be used anywhere
+(Gemfile, boot scripts, stand-alone)</p>
+
+<p>Configuration access points are methods <span class='object_link'><a href="../Katello.html#config-class_method" title="Katello.config (method)">config</a></span> and <span class='object_link'><a href="../Katello.html#early_config-class_method" title="Katello.early_config (method)">early_config</a></span>, see method documentation.</p>
+
+<p>Default configuration values are stored in <code>src/config/katello_defaults.yml</code>. Default values can be overridden
+in configuration files (<code>config/katello.yml</code> or <code>/etc/katello/katello.yml</code>)</p>
+
+<p>Configuration is represented with tree-like-structure defined with <span class='object_link'><a href="Configuration/Node.html" title="Katello::Configuration::Node (class)">Node</a></span>. Node has
+minimal Hash-like interface. Node is more strict than Hash. Differences:
+* If undefined key is accessed an error NoKey is raised (keys with nil values has to be
+  defined explicitly).
+* Keys can be accessed by methods. <code>config.host</code> is equivalent to <code>config[:host]</code>
+* All keys has to be Symbols, otherwise you get an ArgumentError</p>
+
+<p>AppConfig will work for now, but warning is printed to <code>$stderr</code>.</p>
+
+<p>Some examples</p>
+
+<pre class="code txt"><code class="txt"># create by a Hash which is converted to Node instance
+irb&gt; n = Katello::Configuration::Node.new 'a' =&gt; nil
+=&gt; #&lt;Katello::Configuration::Node:0x10e27b618 @data={:a=&gt;nil}&gt;
+
+# assign a value, also converted
+irb&gt; n[:a] = {'a' =&gt; 12}
+=&gt; {:a=&gt;12}
+irb&gt; n
+=&gt; #&lt;Katello::Configuration::Node:0x10e2cd2b0 @data=
+    {:a=&gt;#&lt;Katello::Configuration::Node:0x10e2bcb40 @data={:a=&gt;12}&gt;}&gt;
+
+# accessing a key
+irb&gt; n['a']
+ArgumentError: &quot;a&quot; should be a Symbol
+irb&gt; n[:a]
+=&gt; #&lt;Katello::Configuration::Node:0x10e2bcb40 @data={:a=&gt;12}&gt;
+irb&gt; n[:not]
+Katello::Configuration::Node::NoKey:  missing key 'not' in configuration
+
+# supports deep_merge and #to_hash
+irb&gt; n.deep_merge!('a' =&gt; {:b =&gt; 34})
+=&gt; #&lt;Katello::Configuration::Node:0x10e2cd2b0 @data=
+    {:a=&gt;#&lt;Katello::Configuration::Node:0x10e2a64d0 @data={:a=&gt;12, :b=&gt;34}&gt;}&gt;
+irb&gt; n.to_hash
+=&gt; {:a=&gt;{:a=&gt;12, :b=&gt;34}}
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Configuration/Loader.html" title="Katello::Configuration::Loader (class)">Loader</a></span>, <span class='object_link'><a href="Configuration/Node.html" title="Katello::Configuration::Node (class)">Node</a></span>, <span class='object_link'><a href="Configuration/Validator.html" title="Katello::Configuration::Validator (class)">Validator</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Apr 30 09:45:28 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
