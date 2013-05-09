@@ -100,7 +100,11 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">app/models/changeset.rb</dd>
+    <dd class="r1 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/changeset.rb" target="_blank">
+        app/models/changeset.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -657,6 +661,28 @@ have received a copy of GPLv2 along with this software; if not, see
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#changeset_class-class_method" title="changeset_class (class method)">+ (Object) <strong>changeset_class</strong>(args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#colliding-class_method" title="colliding (class method)">+ (Object) <strong>colliding</strong> </a>
     
 
@@ -719,6 +745,28 @@ to.target or same start and target, others should be safe, ignoring self of cour
   
     <span class="summary_desc"><div class='inline'><p>returns list of virtual permission tags for the current user.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_changeset-class_method" title="new_changeset (class method)">+ (Object) <strong>new_changeset</strong>(args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -1871,7 +1919,55 @@ to.target or same start and target, others should be safe, ignoring self of cour
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="colliding-class_method">
+  <h3 class="signature first" id="changeset_class-class_method">
+  
+    + (<tt>Object</tt>) <strong>changeset_class</strong>(args) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_changeset_class'>changeset_class</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Must provide a changeset type.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:[]</span><span class='comma'>,</span> <span class='symbol'>:type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_downcase!'>downcase!</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='const'>PROMOTION</span>
+    <span class='kw'>return</span> <span class='const'>PromotionChangeset</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='const'>DELETION</span>
+    <span class='kw'>return</span> <span class='const'>DeletionChangeset</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown changeset type. Choose one of: %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='const'>TYPES</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="colliding-class_method">
   
     + (<tt>Object</tt>) <strong>colliding</strong> 
   
@@ -1938,16 +2034,16 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-116
-117
-118
-119
-120
-121
-122</pre>
+136
+137
+138
+139
+140
+141
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 136</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_for'>create_for</span><span class='lparen'>(</span> <span class='id identifier rubyid_acct_type'>acct_type</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='const'>PROMOTION</span> <span class='op'>==</span> <span class='id identifier rubyid_acct_type'>acct_type</span>
@@ -1986,15 +2082,45 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-99
-100
-101</pre>
+119
+120
+121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_list_tags'>list_tags</span>
   <span class='id identifier rubyid_select'>select</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id,name</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_m'>m</span><span class='op'>|</span> <span class='const'>VirtualTag</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_m'>m</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_changeset-class_method">
+  
+    + (<tt>Object</tt>) <strong>new_changeset</strong>(args) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_changeset'>new_changeset</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_changeset_class'>changeset_class</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2094,13 +2220,13 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-103
-104
-105
-106</pre>
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 123</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_action_type'>action_type</span>
   <span class='kw'>return</span> <span class='const'>PROMOTION</span> <span class='kw'>if</span> <span class='const'>PromotionChangeset</span> <span class='op'>===</span> <span class='kw'>self</span>
@@ -2126,28 +2252,28 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206</pre>
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 208</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_content_view!'>add_content_view!</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_include_components'>include_components</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_env_to_verify_on_add_content'>env_to_verify_on_add_content</span><span class='period'>.</span><span class='id identifier rubyid_content_views'>content_views</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
@@ -2188,22 +2314,22 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186</pre>
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 174</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 194</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_distribution!'>add_distribution!</span> <span class='id identifier rubyid_distribution_id'>distribution_id</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span>
   <span class='id identifier rubyid_env_to_verify_on_add_content'>env_to_verify_on_add_content</span><span class='period'>.</span><span class='id identifier rubyid_repositories'>repositories</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_repo'>repo</span><span class='op'>|</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_has_distribution?'>has_distribution?</span> <span class='id identifier rubyid_distribution_id'>distribution_id</span> <span class='rbrace'>}</span> <span class='kw'>or</span>
@@ -2238,20 +2364,20 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162</pre>
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 152</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_erratum!'>add_erratum!</span> <span class='id identifier rubyid_erratum'>erratum</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span>
   <span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_has_erratum?'>has_erratum?</span><span class='lparen'>(</span><span class='id identifier rubyid_env_to_verify_on_add_content'>env_to_verify_on_add_content</span><span class='comma'>,</span> <span class='id identifier rubyid_erratum'>erratum</span><span class='period'>.</span><span class='id identifier rubyid_errata_id'>errata_id</span><span class='rparen'>)</span> <span class='kw'>or</span>
@@ -2284,26 +2410,26 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150</pre>
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 154</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_package!'>add_package!</span> <span class='id identifier rubyid_name_or_nvre'>name_or_nvre</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span>
   <span class='id identifier rubyid_env_to_verify_on_add_content'>env_to_verify_on_add_content</span><span class='period'>.</span><span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_product'>product</span> <span class='kw'>or</span>
@@ -2342,18 +2468,18 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-124
-125
-126
-127
-128
-129
-130
-131
-132</pre>
+144
+145
+146
+147
+148
+149
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_product!'>add_product!</span> <span class='id identifier rubyid_product'>product</span>
 
@@ -2384,18 +2510,18 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-164
-165
-166
-167
-168
-169
-170
-171
-172</pre>
+184
+185
+186
+187
+188
+189
+190
+191
+192</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 164</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 184</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_repository!'>add_repository!</span> <span class='id identifier rubyid_repository'>repository</span>
   <span class='id identifier rubyid_env_to_verify_on_add_content'>env_to_verify_on_add_content</span><span class='period'>.</span><span class='id identifier rubyid_repositories'>repositories</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_repository'>repository</span> <span class='kw'>or</span>
@@ -2426,16 +2552,16 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-247
-248
-249
-250
-251
-252
-253</pre>
+267
+268
+269
+270
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 247</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 267</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -2596,12 +2722,12 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-108
-109
-110</pre>
+128
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_deletion?'>deletion?</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>DeletionChangeset</span>
@@ -2736,16 +2862,16 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-278
-279
-280
-281
-282
-283
-284</pre>
+298
+299
+300
+301
+302
+303
+304</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 278</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 298</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_env_to_verify_on_add_content'>env_to_verify_on_add_content</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_promotion?'>promotion?</span>
@@ -2884,12 +3010,12 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-76
-77
-78</pre>
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errata_ids'>errata_ids</span>
   <span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_erratum'>erratum</span><span class='op'>|</span> <span class='id identifier rubyid_erratum'>erratum</span><span class='period'>.</span><span class='id identifier rubyid_errata_id'>errata_id</span> <span class='rbrace'>}</span>
@@ -2914,25 +3040,25 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276</pre>
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 261</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 281</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_package_data'>find_package_data</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='id identifier rubyid_name_or_nvre'>name_or_nvre</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_package_data'>package_data</span> <span class='op'>=</span> <span class='const'>Util</span><span class='op'>::</span><span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_parse_nvrea_nvre'>parse_nvrea_nvre</span><span class='lparen'>(</span><span class='id identifier rubyid_name_or_nvre'>name_or_nvre</span><span class='rparen'>)</span>
@@ -2970,29 +3096,29 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312</pre>
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 293</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 313</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index_repo_content'>index_repo_content</span> <span class='id identifier rubyid_to_env'>to_env</span>
   <span class='comment'># for any repos contained within the changeset, index the packages &amp; errata that have
@@ -3045,14 +3171,14 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-82
-83
-84
-85
-86</pre>
+102
+103
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_involved_products'>involved_products</span>
   <span class='id identifier rubyid_to_ret'>to_ret</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='comment'>#get a copy
@@ -3079,12 +3205,12 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-72
-73
-74</pre>
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_key_for'>key_for</span> <span class='id identifier rubyid_item'>item</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>changeset_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_item'>item</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -3109,14 +3235,14 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-364
-365
-366
-367
-368</pre>
+384
+385
+386
+387
+388</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 364</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 384</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_not_included_distribution'>not_included_distribution</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_distributions'>distributions</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_distro'>distro</span><span class='op'>|</span>
@@ -3143,14 +3269,14 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-358
-359
-360
-361
-362</pre>
+378
+379
+380
+381
+382</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 358</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 378</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_not_included_errata'>not_included_errata</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_err'>err</span><span class='op'>|</span>
@@ -3177,14 +3303,14 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-352
-353
-354
-355
-356</pre>
+372
+373
+374
+375
+376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 352</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 372</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_not_included_packages'>not_included_packages</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_packages'>packages</span><span class='period'>.</span><span class='id identifier rubyid_delete_if'>delete_if</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_pack'>pack</span><span class='op'>|</span>
@@ -3211,18 +3337,18 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-330
-331
-332
-333
-334
-335
-336
-337
-338</pre>
+350
+351
+352
+353
+354
+355
+356
+357
+358</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 330</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 350</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_not_included_products'>not_included_products</span>
   <span class='id identifier rubyid_products_ids'>products_ids</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -3253,12 +3379,12 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-340
-341
-342</pre>
+360
+361
+362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 340</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 360</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_not_included_repos'>not_included_repos</span> <span class='id identifier rubyid_product'>product</span><span class='comma'>,</span> <span class='id identifier rubyid_environment'>environment</span>
   <span class='id identifier rubyid_product_repos'>product_repos</span> <span class='op'>=</span> <span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='id identifier rubyid_environment'>environment</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span>
@@ -3283,16 +3409,16 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-344
-345
-346
-347
-348
-349
-350</pre>
+364
+365
+366
+367
+368
+369
+370</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 344</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 364</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_ids'>package_ids</span> <span class='id identifier rubyid_repos'>repos</span>
   <span class='id identifier rubyid_pkg_ids'>pkg_ids</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -3376,17 +3502,17 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-88
-89
-90
-91
-92
-93
-94
-95</pre>
+108
+109
+110
+111
+112
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_partial_products'>partial_products</span>
   <span class='id identifier rubyid_to_ret'>to_ret</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -3493,12 +3619,12 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-112
-113
-114</pre>
+132
+133
+134</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_promotion?'>promotion?</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>PromotionChangeset</span>
@@ -3523,14 +3649,14 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-208
-209
-210
-211
-212</pre>
+228
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 208</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_content_view!'>remove_content_view!</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_deleted'>deleted</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_views'>content_views</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
@@ -3557,15 +3683,15 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-240
-241
-242
-243
-244
-245</pre>
+260
+261
+262
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 240</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 260</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_distribution!'>remove_distribution!</span> <span class='id identifier rubyid_distribution_id'>distribution_id</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span>
   <span class='id identifier rubyid_deleted'>deleted</span> <span class='op'>=</span> <span class='const'>ChangesetDistribution</span><span class='period'>.</span><span class='id identifier rubyid_destroy_all'>destroy_all</span><span class='lparen'>(</span><span class='symbol'>:distribution_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_distribution_id'>distribution_id</span><span class='comma'>,</span>
@@ -3593,15 +3719,15 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-227
-228
-229
-230
-231
-232</pre>
+247
+248
+249
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 227</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_erratum!'>remove_erratum!</span> <span class='id identifier rubyid_erratum'>erratum</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span>
   <span class='id identifier rubyid_deleted'>deleted</span> <span class='op'>=</span> <span class='const'>ChangesetErratum</span><span class='period'>.</span><span class='id identifier rubyid_destroy_all'>destroy_all</span><span class='lparen'>(</span><span class='symbol'>:display_name</span>  <span class='op'>=&gt;</span> <span class='id identifier rubyid_erratum'>erratum</span><span class='period'>.</span><span class='id identifier rubyid_errata_id'>errata_id</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
@@ -3629,15 +3755,15 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-220
-221
-222
-223
-224
-225</pre>
+240
+241
+242
+243
+244
+245</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 220</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 240</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_package!'>remove_package!</span> <span class='id identifier rubyid_nvrea'>nvrea</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span>
   <span class='id identifier rubyid_deleted'>deleted</span> <span class='op'>=</span> <span class='const'>ChangesetPackage</span><span class='period'>.</span><span class='id identifier rubyid_destroy_all'>destroy_all</span><span class='lparen'>(</span><span class='symbol'>:nvrea</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_nvrea'>nvrea</span><span class='comma'>,</span> <span class='symbol'>:changeset_id</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
@@ -3665,14 +3791,14 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-214
-215
-216
-217
-218</pre>
+234
+235
+236
+237
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 214</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 234</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_product!'>remove_product!</span> <span class='id identifier rubyid_product'>product</span>
   <span class='id identifier rubyid_deleted'>deleted</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='rparen'>)</span>
@@ -3699,14 +3825,14 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-234
-235
-236
-237
-238</pre>
+254
+255
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 254</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_repository!'>remove_repository!</span> <span class='id identifier rubyid_repository'>repository</span>
   <span class='id identifier rubyid_deleted'>deleted</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_repository'>repository</span><span class='rparen'>)</span>
@@ -3843,24 +3969,24 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-314
-315
-316
-317
-318
-319
-320
-321
-322
-323
-324
-325
-326
-327
-328</pre>
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 314</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 334</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uniquify_artifacts'>uniquify_artifacts</span>
   <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_uniq!'>uniq!</span> <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3897,15 +4023,15 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-286
-287
-288
-289
-290
-291</pre>
+306
+307
+308
+309
+310
+311</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 286</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 306</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_progress!'>update_progress!</span> <span class='id identifier rubyid_percent'>percent</span>
   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_task_status'>task_status</span>
@@ -3988,12 +4114,12 @@ to.target or same start and target, others should be safe, ignoring self of cour
       <pre class="lines">
 
 
-257
-258
-259</pre>
+277
+278
+279</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 257</span>
+      <pre class="code"><span class="info file"># File 'app/models/changeset.rb', line 277</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_content!'>validate_content!</span> <span class='id identifier rubyid_elements'>elements</span>
   <span class='id identifier rubyid_elements'>elements</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span> <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordInvalid</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span> <span class='rbrace'>}</span>
@@ -4008,7 +4134,7 @@ to.target or same start and target, others should be safe, ignoring self of cour
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:40 2013 by
+  Generated on Thu May  9 10:36:21 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

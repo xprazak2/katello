@@ -100,7 +100,11 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">app/models/content_view.rb</dd>
+    <dd class="r1 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/content_view.rb" target="_blank">
+        app/models/content_view.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -746,7 +750,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>NOTE: this function will most likely become obsolete once we drop api v1.</p>
+</div></span>
   
 </li>
 
@@ -1991,7 +1996,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-306
 307
 308
 309
@@ -1999,10 +2003,11 @@ candlepin to become aware that the view is available for consumers.</p>
 311
 312
 313
-314</pre>
+314
+315</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 306</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 307</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_environment'>add_environment</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view_environments'>content_view_environments</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:environment_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_env'>env</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span><span class='rparen'>)</span>
@@ -2043,13 +2048,13 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-178
 179
 180
-181</pre>
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 179</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_all_version_library_instances'>all_version_library_instances</span>
   <span class='id identifier rubyid_all_repos'>all_repos</span> <span class='op'>=</span> <span class='id identifier rubyid_all_version_repos'>all_version_repos</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:library_instance_id</span><span class='op'>=&gt;</span><span class='kw'>nil</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>repositories.id</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_all_version_repos'>all_version_repos</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:library_instance_id</span><span class='rparen'>)</span>
@@ -2085,12 +2090,12 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-173
 174
-175</pre>
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 174</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_all_version_products'>all_version_products</span>
   <span class='const'>Product</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:environment_products</span><span class='op'>=&gt;</span><span class='symbol'>:repositories</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>repositories.id</span><span class='tstring_end'>'</span></span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_all_version_repos'>all_version_repos</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
@@ -2115,12 +2120,12 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-154
 155
-156</pre>
+156
+157</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_all_version_repos'>all_version_repos</span>
   <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:content_view_version</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content_view_versions.content_view_id</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -2139,13 +2144,22 @@ candlepin to become aware that the view is available for consumers.</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>NOTE: this function will most likely become obsolete once we drop api v1</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-102
 103
 104
 105
@@ -2164,10 +2178,11 @@ candlepin to become aware that the view is available for consumers.</p>
 118
 119
 120
-121</pre>
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span>
@@ -2395,9 +2410,9 @@ candlepin to become aware that the view is available for consumers.</p>
 </span>  <span class='comment'># list of component content views, if any, that do not exist in the environment
 </span>  <span class='comment'># provided.
 </span>  <span class='kw'>if</span> <span class='id identifier rubyid_composite'>composite</span>
-    <span class='id identifier rubyid_content_view_definition'>content_view_definition</span><span class='period'>.</span><span class='id identifier rubyid_component_content_views'>component_content_views</span><span class='period'>.</span><span class='id identifier rubyid_group'>group</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content_views.id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span>
-        <span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:content_view_versions</span> <span class='op'>=&gt;</span> <span class='symbol'>:content_view_version_environments</span><span class='rparen'>)</span><span class='period'>.</span>
-        <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content_view_version_environments.content_view_version_id </span><span class='tstring_end'>&quot;</span></span>\
+    <span class='id identifier rubyid_content_view_definition'>content_view_definition</span><span class='period'>.</span><span class='id identifier rubyid_component_content_views'>component_content_views</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>distinct content_views.*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span>
+            <span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:content_view_versions</span> <span class='op'>=&gt;</span> <span class='symbol'>:content_view_version_environments</span><span class='rparen'>)</span><span class='period'>.</span>
+            <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content_view_version_environments.content_view_version_id </span><span class='tstring_end'>&quot;</span></span>\
                <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NOT IN (SELECT content_view_version_id FROM </span><span class='tstring_end'>&quot;</span></span>\
                <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content_view_version_environments WHERE environment_id = ?)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_env'>env</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
@@ -2509,16 +2524,16 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-397
 398
 399
 400
 401
 402
-403</pre>
+403
+404</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 397</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 398</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_confirm_not_promoted'>confirm_not_promoted</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_promoted?'>promoted?</span>
@@ -2720,16 +2735,16 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-295
 296
 297
 298
 299
 300
-301</pre>
+301
+302</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 295</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 296</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cp_environment_id'>cp_environment_id</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='comment'># The id for a default view, will simply be the env id; otherwise, it
@@ -2758,16 +2773,16 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-287
 288
 289
 290
 291
 292
-293</pre>
+293
+294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 287</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 288</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cp_environment_label'>cp_environment_label</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='comment'># The label for a default view, will simply be the env label; otherwise, it
@@ -2796,7 +2811,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-230
 231
 232
 233
@@ -2807,10 +2821,11 @@ candlepin to become aware that the view is available for consumers.</p>
 238
 239
 240
-241</pre>
+241
+242</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 230</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 231</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_from_env'>from_env</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_from_env'>from_env</span><span class='period'>.</span><span class='id identifier rubyid_library?'>library?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_in_non_library_environment?'>in_non_library_environment?</span>
@@ -2901,12 +2916,12 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-123
 124
-125</pre>
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_environments'>environments</span>
   <span class='const'>KTEnvironment</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:content_view_versions</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>content_view_versions.content_view_id</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -2931,14 +2946,14 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-183
 184
 185
 186
-187</pre>
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 183</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 184</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_repo_clone'>get_repo_clone</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='comma'>,</span> <span class='id identifier rubyid_repo'>repo</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lib_id'>lib_id</span> <span class='op'>=</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_library_instance_id'>library_instance_id</span> <span class='op'>||</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
@@ -2965,7 +2980,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-340
 341
 342
 343
@@ -2984,10 +2998,11 @@ candlepin to become aware that the view is available for consumers.</p>
 356
 357
 358
-359</pre>
+359
+360</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 340</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 341</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_repos_to_promote'>get_repos_to_promote</span><span class='lparen'>(</span><span class='id identifier rubyid_from_env'>from_env</span><span class='comma'>,</span> <span class='id identifier rubyid_to_env'>to_env</span><span class='rparen'>)</span>
   <span class='comment'># Retrieve the repos that will end up in the to_env as a result of promoting this view.
@@ -3051,12 +3066,12 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-127
 128
-129</pre>
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_in_environment?'>in_environment?</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_environments'>environments</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
@@ -3103,12 +3118,12 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-243
 244
-245</pre>
+245
+246</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 244</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_in_non_library_environment?'>in_non_library_environment?</span>
   <span class='id identifier rubyid_environments'>environments</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:library</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>
@@ -3133,15 +3148,15 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-330
 331
 332
 333
 334
-335</pre>
+335
+336</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 330</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 331</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index_repositories'>index_repositories</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_repo'>repo</span><span class='op'>|</span>
@@ -3169,12 +3184,12 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-150
 151
-152</pre>
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 151</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_library_repo_ids'>library_repo_ids</span>
   <span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span> <span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_library_instance_id'>library_instance_id</span> <span class='rbrace'>}</span>
@@ -3254,7 +3269,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-361
 362
 363
 364
@@ -3268,10 +3282,11 @@ candlepin to become aware that the view is available for consumers.</p>
 372
 373
 374
-375</pre>
+375
+376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 361</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 362</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prepare_repos_for_promotion'>prepare_repos_for_promotion</span><span class='lparen'>(</span><span class='id identifier rubyid_repos_to_replace'>repos_to_replace</span><span class='comma'>,</span> <span class='id identifier rubyid_repos_to_promote'>repos_to_promote</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tasks'>tasks</span> <span class='op'>=</span> <span class='id identifier rubyid_repos_to_replace'>repos_to_replace</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_result'>result</span><span class='comma'>,</span> <span class='id identifier rubyid_repo'>repo</span><span class='op'>|</span>
@@ -3308,13 +3323,13 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-167
 168
 169
-170</pre>
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 168</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_products'>products</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_repos'>repos</span> <span class='op'>=</span> <span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
@@ -3340,7 +3355,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-201
 202
 203
 204
@@ -3367,10 +3381,11 @@ candlepin to become aware that the view is available for consumers.</p>
 225
 226
 227
-228</pre>
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 201</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 202</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_promote'>promote</span><span class='lparen'>(</span><span class='id identifier rubyid_from_env'>from_env</span><span class='comma'>,</span> <span class='id identifier rubyid_to_env'>to_env</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot promote from </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_from_env'>from_env</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>, view does not exist there.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environments'>environments</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_from_env'>from_env</span><span class='rparen'>)</span>
@@ -3420,7 +3435,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-377
 378
 379
 380
@@ -3438,10 +3452,11 @@ candlepin to become aware that the view is available for consumers.</p>
 392
 393
 394
-395</pre>
+395
+396</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 377</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 378</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_promote_repos'>promote_repos</span><span class='lparen'>(</span><span class='id identifier rubyid_promote_version'>promote_version</span><span class='comma'>,</span> <span class='id identifier rubyid_to_env'>to_env</span><span class='comma'>,</span> <span class='id identifier rubyid_promoting_repos'>promoting_repos</span><span class='rparen'>)</span>
   <span class='comment'># promote the repos to the target env
@@ -3482,7 +3497,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-189
 190
 191
 192
@@ -3492,10 +3506,11 @@ candlepin to become aware that the view is available for consumers.</p>
 196
 197
 198
-199</pre>
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 189</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 190</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_promote_via_changeset'>promote_via_changeset</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='comma'>,</span> <span class='id identifier rubyid_apply_options'>apply_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:async</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='comma'>,</span>
                           <span class='id identifier rubyid_cs_name'>cs_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_env'>env</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -3592,7 +3607,6 @@ candlepin to become aware that the view is available for consumers.</p>
       <pre class="lines">
 
 
-248
 249
 250
 251
@@ -3623,10 +3637,11 @@ candlepin to become aware that the view is available for consumers.</p>
 276
 277
 278
-279</pre>
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 249</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_refresh_view'>refresh_view</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:async</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:notify</span> <span class='op'>=&gt;</span> <span class='kw'>false</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span> <span class='id identifier rubyid_options'>options</span>
@@ -3692,7 +3707,6 @@ aware that the view is no longer available for consumers.</p>
       <pre class="lines">
 
 
-319
 320
 321
 322
@@ -3701,10 +3715,11 @@ aware that the view is no longer available for consumers.</p>
 325
 326
 327
-328</pre>
+328
+329</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 319</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_environment'>remove_environment</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_env'>env</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span>
@@ -3736,17 +3751,17 @@ aware that the view is no longer available for consumers.</p>
       <pre class="lines">
 
 
-141
 142
 143
 144
 145
 146
 147
-148</pre>
+148
+149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 141</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='id identifier rubyid_version'>version</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
@@ -3776,17 +3791,17 @@ aware that the view is no longer available for consumers.</p>
       <pre class="lines">
 
 
-158
 159
 160
 161
 162
 163
 164
-165</pre>
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 158</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 159</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_repos_in_product'>repos_in_product</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='comma'>,</span> <span class='id identifier rubyid_product'>product</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='id identifier rubyid_version'>version</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
@@ -3846,14 +3861,14 @@ aware that the view is no longer available for consumers.</p>
       <pre class="lines">
 
 
-281
 282
 283
 284
-285</pre>
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 281</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 282</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_cp_content'>update_cp_content</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='comment'># retrieve the environment and then update cp content
@@ -3880,12 +3895,12 @@ aware that the view is no longer available for consumers.</p>
       <pre class="lines">
 
 
-131
 132
-133</pre>
+133
+134</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_version'>version</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_versions'>versions</span><span class='period'>.</span><span class='id identifier rubyid_in_environment'>in_environment</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>content_view_versions.id ASC</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span>
@@ -3910,14 +3925,14 @@ aware that the view is no longer available for consumers.</p>
       <pre class="lines">
 
 
-135
 136
 137
 138
-139</pre>
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view.rb', line 136</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_version_environment'>version_environment</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='rparen'>)</span>
   <span class='comment'># TODO: rewrite this into SQL or use content_view_environment when that
@@ -3934,7 +3949,7 @@ aware that the view is no longer available for consumers.</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:45 2013 by
+  Generated on Thu May  9 10:36:25 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

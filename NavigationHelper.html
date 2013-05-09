@@ -83,7 +83,11 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/helpers/navigation_helper.rb</dd>
+    <dd class="r2 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/helpers/navigation_helper.rb" target="_blank">
+        app/helpers/navigation_helper.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -171,16 +175,16 @@
       <pre class="lines">
 
 
+50
+51
+52
+53
+54
 55
-56
-57
-58
-59
-60
-61</pre>
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/navigation_helper.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/navigation_helper.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_notices'>add_notices</span>
   <span class='kw'>return</span> <span class='lbrace'>{</span>
@@ -241,52 +245,42 @@
 45
 46
 47
-48
-49
-50
-51
-52
-53</pre>
+48</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/helpers/navigation_helper.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_menu'>generate_menu</span>
-  <span class='id identifier rubyid_navigation'>navigation</span> <span class='op'>=</span> <span class='const'>Experimental</span><span class='op'>::</span><span class='const'>Navigation</span><span class='op'>::</span><span class='const'>Menu</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_main_menu_items'>main_menu_items</span> <span class='op'>=</span> <span class='id identifier rubyid_navigation'>navigation</span><span class='period'>.</span><span class='id identifier rubyid_generate_main_menu'>generate_main_menu</span>
-  <span class='id identifier rubyid_admin_items'>admin_items</span> <span class='op'>=</span> <span class='id identifier rubyid_navigation'>navigation</span><span class='period'>.</span><span class='id identifier rubyid_generate_admin_menu'>generate_admin_menu</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_katello?'>katello?</span>
+    <span class='id identifier rubyid_main_menu'>main_menu</span>   <span class='op'>=</span> <span class='const'>Navigation</span><span class='op'>::</span><span class='const'>Menus</span><span class='op'>::</span><span class='const'>Headpin</span><span class='op'>::</span><span class='const'>Main</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_site_menu'>site_menu</span>   <span class='op'>=</span> <span class='const'>Navigation</span><span class='op'>::</span><span class='const'>Menus</span><span class='op'>::</span><span class='const'>Headpin</span><span class='op'>::</span><span class='const'>Site</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_main_menu'>main_menu</span>   <span class='op'>=</span> <span class='const'>Navigation</span><span class='op'>::</span><span class='const'>Menus</span><span class='op'>::</span><span class='const'>Main</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_site_menu'>site_menu</span>   <span class='op'>=</span> <span class='const'>Navigation</span><span class='op'>::</span><span class='const'>Menus</span><span class='op'>::</span><span class='const'>Site</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_user_menu'>user_menu</span>   <span class='op'>=</span> <span class='const'>Navigation</span><span class='op'>::</span><span class='const'>Menus</span><span class='op'>::</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_menu'>menu</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='symbol'>:location</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>left</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-    <span class='symbol'>:items</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_main_menu_items'>main_menu_items</span>
+    <span class='symbol'>:items</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_main_menu'>main_menu</span><span class='period'>.</span><span class='id identifier rubyid_items'>items</span>
   <span class='rbrace'>}</span>
 
-  <span class='id identifier rubyid_admin_menu'>admin_menu</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+  <span class='id identifier rubyid_site_menu'>site_menu</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='symbol'>:location</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>right</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-    <span class='symbol'>:items</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_admin_items'>admin_items</span>
+    <span class='symbol'>:items</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_site_menu'>site_menu</span><span class='period'>.</span><span class='id identifier rubyid_items'>items</span>
   <span class='rbrace'>}</span>
 
   <span class='id identifier rubyid_user_menu'>user_menu</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='symbol'>:location</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>right</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-    <span class='symbol'>:items</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='lbrace'>{</span>
-      <span class='symbol'>:display</span><span class='op'>=&gt;</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span><span class='comma'>,</span>
-      <span class='symbol'>:type</span>   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>dropdown</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
-      <span class='symbol'>:items</span>  <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
-        <span class='lbrace'>{</span>
-          <span class='symbol'>:display</span><span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Account</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-          <span class='symbol'>:url</span>    <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_users_path'>users_path</span><span class='lparen'>(</span><span class='id identifier rubyid_current_user'>current_user</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>#panel=user_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
-        <span class='rbrace'>}</span><span class='comma'>,</span><span class='lbrace'>{</span>
-          <span class='symbol'>:display</span><span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Sign Out</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
-          <span class='symbol'>:url</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_logout_path'>logout_path</span>
-      <span class='rbrace'>}</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span><span class='rbracket'>]</span>
+    <span class='symbol'>:items</span>    <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_user_menu'>user_menu</span><span class='rbracket'>]</span>
   <span class='rbrace'>}</span>
 
   <span class='id identifier rubyid_javascript'>javascript</span> <span class='kw'>do</span>
-    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.main_menu = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span> <span class='op'>+</span>
-    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.user_menu = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_user_menu'>user_menu</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span> <span class='op'>+</span>
-    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.admin_menu = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_admin_menu'>admin_menu</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span> <span class='op'>+</span>
-    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.notices = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_add_notices'>add_notices</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.main_menu = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span> <span class='op'>+</span>
+    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.admin_menu = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_site_menu'>site_menu</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span> <span class='op'>+</span>
+    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.user_menu = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_user_menu'>user_menu</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span> <span class='op'>+</span>
+    <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KT.notices = </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_add_notices'>add_notices</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -299,7 +293,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:23 2013 by
+  Generated on Thu May  9 10:36:10 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

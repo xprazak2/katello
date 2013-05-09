@@ -96,7 +96,11 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/models/custom_info.rb</dd>
+    <dd class="r2 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/custom_info.rb" target="_blank">
+        app/models/custom_info.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -299,7 +303,7 @@ have received a copy of GPLv2 along with this software; if not, see
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#apply_to_set-class_method" title="apply_to_set (class method)">+ (Object) <strong>apply_to_set</strong>(list_of_objects, custom_info_list) </a>
+      <a href="#apply_to_set-class_method" title="apply_to_set (class method)">+ (Object) <strong>apply_to_set</strong>(ids_and_types, custom_info_list) </a>
     
 
     
@@ -313,8 +317,7 @@ have received a copy of GPLv2 along with this software; if not, see
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Apply a set of custom info to a list of objects.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -407,6 +410,28 @@ have received a copy of GPLv2 along with this software; if not, see
   
   
   
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#strip_attributes-instance_method" title="#strip_attributes (instance method)">- (Object) <strong>strip_attributes</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
   
   
   
@@ -707,30 +732,19 @@ have received a copy of GPLv2 along with this software; if not, see
       <div class="method_details first">
   <h3 class="signature first" id="apply_to_set-class_method">
   
-    + (<tt>Object</tt>) <strong>apply_to_set</strong>(list_of_objects, custom_info_list) 
+    + (<tt>Object</tt>) <strong>apply_to_set</strong>(ids_and_types, custom_info_list) 
   
 
   
 
   
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Apply a set of custom info to a list of objects.
-Does not apply to a particular object if it already has custom info with the given keyname.
-Returns a list of the objects that had at least one custom info added to them.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
+</h3><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
+41
 42
 43
 44
@@ -744,12 +758,19 @@ Returns a list of the objects that had at least one custom info added to them.</
 52
 53
 54
-55</pre>
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 41</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_apply_to_set'>apply_to_set</span><span class='lparen'>(</span><span class='id identifier rubyid_list_of_objects'>list_of_objects</span><span class='comma'>,</span> <span class='id identifier rubyid_custom_info_list'>custom_info_list</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_apply_to_set'>apply_to_set</span><span class='lparen'>(</span><span class='id identifier rubyid_ids_and_types'>ids_and_types</span><span class='comma'>,</span> <span class='id identifier rubyid_custom_info_list'>custom_info_list</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_list_of_objects'>list_of_objects</span> <span class='op'>=</span> <span class='id identifier rubyid_ids_and_types'>ids_and_types</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_collection'>collection</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='op'>|</span>
+    <span class='id identifier rubyid_collection'>collection</span> <span class='op'>&lt;&lt;</span> <span class='const'>CustomInfo</span><span class='period'>.</span><span class='id identifier rubyid_find_informable'>find_informable</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='lbracket'>[</span><span class='symbol'>:informable_type</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='lbracket'>[</span><span class='symbol'>:informable_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
   <span class='id identifier rubyid_affected'>affected</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 
   <span class='id identifier rubyid_list_of_objects'>list_of_objects</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_obj'>obj</span><span class='op'>|</span>
@@ -757,7 +778,7 @@ Returns a list of the objects that had at least one custom info added to them.</
 
     <span class='id identifier rubyid_custom_info_list'>custom_info_list</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_to_apply'>to_apply</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='lbracket'>[</span><span class='symbol'>:keyname</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_info'>info</span><span class='op'>|</span>
       <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_custom_info'>custom_info</span><span class='period'>.</span><span class='id identifier rubyid_create!'>create!</span><span class='lparen'>(</span><span class='id identifier rubyid_info'>info</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_affected'>affected</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_obj'>obj</span>
+      <span class='id identifier rubyid_affected'>affected</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span> <span class='symbol'>:informable_type</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:informable_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='rbrace'>}</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
@@ -783,12 +804,12 @@ Returns a list of the objects that had at least one custom info added to them.</
       <pre class="lines">
 
 
-28
 29
-30</pre>
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find_by_informable_keyname'>find_by_informable_keyname</span><span class='lparen'>(</span><span class='id identifier rubyid_informable'>informable</span><span class='comma'>,</span> <span class='id identifier rubyid_keyname'>keyname</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_informable'>informable</span><span class='period'>.</span><span class='id identifier rubyid_custom_info'>custom_info</span><span class='period'>.</span><span class='id identifier rubyid_find_by_keyname'>find_by_keyname</span><span class='lparen'>(</span><span class='id identifier rubyid_keyname'>keyname</span><span class='rparen'>)</span>
@@ -823,18 +844,20 @@ Returns a list of the objects that had at least one custom info added to them.</
       <pre class="lines">
 
 
-33
 34
 35
 36
-37</pre>
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find_informable'>find_informable</span><span class='lparen'>(</span><span class='id identifier rubyid_informable_type'>informable_type</span><span class='comma'>,</span> <span class='id identifier rubyid_informable_id'>informable_id</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_klass'>klass</span> <span class='op'>=</span> <span class='id identifier rubyid_informable_type'>informable_type</span><span class='period'>.</span><span class='id identifier rubyid_classify'>classify</span><span class='period'>.</span><span class='id identifier rubyid_constantize'>constantize</span>
-  <span class='id identifier rubyid_informable'>informable</span> <span class='op'>=</span> <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_informable_id'>informable_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_class_name'>class_name</span> <span class='op'>=</span> <span class='id identifier rubyid_informable_type'>informable_type</span><span class='period'>.</span><span class='id identifier rubyid_classify'>classify</span>
+  <span class='id identifier rubyid_informable'>informable</span> <span class='op'>=</span> <span class='id identifier rubyid_class_name'>class_name</span><span class='period'>.</span><span class='id identifier rubyid_constantize'>constantize</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_informable_id'>informable_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Resource %s does not support custom information</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_class_name'>class_name</span> <span class='kw'>unless</span> <span class='id identifier rubyid_informable'>informable</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:custom_info</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_informable'>informable</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -863,12 +886,12 @@ Returns a list of the objects that had at least one custom info added to them.</
       <pre class="lines">
 
 
-65
-66
-67</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_keyname'>keyname</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_keyname'>keyname</span>
@@ -948,15 +971,47 @@ Returns a list of the objects that had at least one custom info added to them.</
       <pre class="lines">
 
 
-57
-58
-59</pre>
+60
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reindex_informable'>reindex_informable</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_informable'>informable</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='period'>.</span><span class='id identifier rubyid_import'>import</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_informable'>informable</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="strip_attributes-instance_method">
+  
+    - (<tt>Object</tt>) <strong>strip_attributes</strong>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_strip_attributes'>strip_attributes</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_keyname'>keyname</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:strip!</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:strip!</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -978,12 +1033,12 @@ Returns a list of the objects that had at least one custom info added to them.</
       <pre class="lines">
 
 
-61
-62
-63</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'app/models/custom_info.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_keyname'>keyname</span><span class='rbrace'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NOT-SPECIFIED</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -998,7 +1053,7 @@ Returns a list of the objects that had at least one custom info added to them.</
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:43 2013 by
+  Generated on Thu May  9 10:36:23 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

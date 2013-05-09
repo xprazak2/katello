@@ -94,7 +94,11 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/katello/configuration/loader.rb</dd>
+    <dd class="r2 last">
+      <a href="https://github.com/Katello/katello/tree/master/lib/katello/configuration/loader.rb" target="_blank">
+        lib/katello/configuration/loader.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -676,8 +680,8 @@ e.g. to decrypt db password</p>
   <span class='ivar'>@config_file_paths</span>        <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:config_file_paths</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_raise'>raise</span><span class='lparen'>(</span><span class='const'>ArgumentError</span><span class='rparen'>)</span>
   <span class='ivar'>@default_config_file_path</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:default_config_file_path</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_raise'>raise</span><span class='lparen'>(</span><span class='const'>ArgumentError</span><span class='rparen'>)</span>
   <span class='ivar'>@validation</span>               <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:validation</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_raise'>raise</span><span class='lparen'>(</span><span class='const'>ArgumentError</span><span class='rparen'>)</span>
-  <span class='ivar'>@config_post_process</span>      <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:config_post_process</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-  <span class='ivar'>@load_yml_post_process</span>    <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:load_yml_post_process</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='ivar'>@config_post_process</span>      <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:config_post_process</span><span class='rbracket'>]</span>
+  <span class='ivar'>@load_yml_post_process</span>    <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:load_yml_post_process</span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1243,7 +1247,7 @@ like Gemfile and other scripts</p>
 <span class='kw'>def</span> <span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_environment'>environment</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='const'>Node</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span>
     <span class='id identifier rubyid_load_config_file'>load_config_file</span> <span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_environment'>environment</span>
-    <span class='id identifier rubyid_config_post_process'>config_post_process</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_environment'>environment</span>
+    <span class='id identifier rubyid_config_post_process'>config_post_process</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span> <span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_environment'>environment</span>  <span class='kw'>if</span> <span class='id identifier rubyid_config_post_process'>config_post_process</span>
     <span class='id identifier rubyid_validate'>validate</span> <span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_environment'>environment</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -1330,7 +1334,7 @@ like Gemfile and other scripts</p>
                     <span class='kw'>end</span>
 
   <span class='const'>Node</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_hash_parsed_yml'>hash_parsed_yml</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
-    <span class='id identifier rubyid_load_yml_post_process'>load_yml_post_process</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_load_yml_post_process'>load_yml_post_process</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_load_yml_post_process'>load_yml_post_process</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1373,7 +1377,7 @@ like Gemfile and other scripts</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:46:16 2013 by
+  Generated on Thu May  9 10:37:06 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

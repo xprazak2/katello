@@ -96,7 +96,11 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/models/filter_rule.rb</dd>
+    <dd class="r2 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/filter_rule.rb" target="_blank">
+        app/models/filter_rule.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -132,17 +136,17 @@ have received a copy of GPLv2 along with this software; if not, see
         <dt id="PACKAGE-constant" class="">PACKAGE =
           
         </dt>
-        <dd><pre class="code"><span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Rpm</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span><span class='lparen'>(</span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>Package</span><span class='op'>::</span><span class='const'>CONTENT_TYPE</span></pre></dd>
       
         <dt id="PACKAGE_GROUP-constant" class="">PACKAGE_GROUP =
           
         </dt>
-        <dd><pre class="code"><span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span><span class='lparen'>(</span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>PackageGroup</span><span class='op'>::</span><span class='const'>CONTENT_TYPE</span></pre></dd>
       
         <dt id="ERRATA-constant" class="">ERRATA =
           
         </dt>
-        <dd><pre class="code"><span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span><span class='lparen'>(</span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='const'>Errata</span><span class='op'>::</span><span class='const'>CONTENT_TYPE</span></pre></dd>
       
         <dt id="CONTENT_TYPES-constant" class="">CONTENT_TYPES =
           
@@ -598,13 +602,13 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+29
+30
 31
-32
-33
-34</pre>
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parameters'>parameters</span>
   <span class='id identifier rubyid_write_attribute'>write_attribute</span><span class='lparen'>(</span><span class='symbol'>:parameters</span><span class='comma'>,</span> <span class='const'>HashWithIndifferentAccess</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_read_attribute'>read_attribute</span><span class='lparen'>(</span><span class='symbol'>:parameters</span><span class='rparen'>)</span>
@@ -737,6 +741,8 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+40
+41
 42
 43
 44
@@ -747,12 +753,10 @@ have received a copy of GPLv2 along with this software; if not, see
 49
 50
 51
-52
-53
-54</pre>
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class_for'>class_for</span><span class='lparen'>(</span> <span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_content_type'>content_type</span>
@@ -787,13 +791,13 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+55
+56
 57
-58
-59
-60</pre>
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_for'>create_for</span><span class='lparen'>(</span> <span class='id identifier rubyid_content_type'>content_type</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_clazz'>clazz</span> <span class='op'>=</span> <span class='id identifier rubyid_class_for'>class_for</span><span class='lparen'>(</span><span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
@@ -825,17 +829,17 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+60
+61
 62
 63
 64
 65
 66
-67
-68
-69</pre>
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
    <span class='id identifier rubyid_json_val'>json_val</span> <span class='op'>=</span> <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
@@ -865,14 +869,14 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+34
+35
 36
 37
-38
-39
-40</pre>
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_type'>content_type</span>
   <span class='lbrace'>{</span> <span class='const'>PackageRule</span> <span class='op'>=&gt;</span> <span class='const'>PACKAGE</span><span class='comma'>,</span>
@@ -954,12 +958,12 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-27
-28
-29</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'app/models/filter_rule.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_params_format'>params_format</span>
   <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -974,7 +978,7 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:43 2013 by
+  Generated on Thu May  9 10:36:23 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

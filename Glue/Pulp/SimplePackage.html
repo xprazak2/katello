@@ -94,7 +94,11 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/models/glue/pulp/simple_package.rb</dd>
+    <dd class="r2 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/glue/pulp/simple_package.rb" target="_blank">
+        app/models/glue/pulp/simple_package.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -154,7 +158,111 @@ have received a copy of GPLv2 along with this software; if not, see
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#epoch-instance_method" title="#epoch (instance method)">- (Object) <strong>epoch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#name-instance_method" title="#name (instance method)">- (Object) <strong>name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#release-instance_method" title="#release (instance method)">- (Object) <strong>release</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#vendor-instance_method" title="#vendor (instance method)">- (Object) <strong>vendor</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#version-instance_method" title="#version (instance method)">- (Object) <strong>version</strong> </a>
     
 
     
@@ -331,6 +439,48 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
     
       
+      <span id="epoch=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="epoch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>epoch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/simple_package.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_epoch'>epoch</span>
+  <span class='ivar'>@epoch</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
       <span id="name=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="name-instance_method">
@@ -366,6 +516,132 @@ have received a copy of GPLv2 along with this software; if not, see
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="release=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="release-instance_method">
+  
+    - (<tt>Object</tt>) <strong>release</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/simple_package.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_release'>release</span>
+  <span class='ivar'>@release</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="vendor=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="vendor-instance_method">
+  
+    - (<tt>Object</tt>) <strong>vendor</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/simple_package.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_vendor'>vendor</span>
+  <span class='ivar'>@vendor</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="version=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="version-instance_method">
+  
+    - (<tt>Object</tt>) <strong>version</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>&quot;name&quot;, &quot;arch&quot;, &quot;version&quot;, &quot;vendor&quot;, &quot;release&quot;</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/simple_package.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_version'>version</span>
+  <span class='ivar'>@version</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -414,7 +690,7 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:46:01 2013 by
+  Generated on Thu May  9 10:36:35 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

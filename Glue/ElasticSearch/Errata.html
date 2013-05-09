@@ -83,7 +83,11 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/models/glue/elastic_search/errata.rb</dd>
+    <dd class="r2 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/glue/elastic_search/errata.rb" target="_blank">
+        app/models/glue/elastic_search/errata.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -287,7 +291,8 @@
 150
 151
 152
-153</pre>
+153
+154</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/errata.rb', line 15</span>
@@ -353,7 +358,7 @@
     <span class='kw'>end</span>
 
     <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_filter'>filter</span><span class='lparen'>(</span><span class='id identifier rubyid_filter'>filter</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_filter_for_repo'>filter_for_repo</span> <span class='op'>=</span> <span class='id identifier rubyid_filter'>filter</span><span class='period'>.</span><span class='id identifier rubyid_slice'>slice</span><span class='lparen'>(</span><span class='symbol'>:repoid</span><span class='comma'>,</span> <span class='symbol'>:environment_id</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_filter_for_repo'>filter_for_repo</span> <span class='op'>=</span> <span class='id identifier rubyid_filter'>filter</span><span class='period'>.</span><span class='id identifier rubyid_slice'>slice</span><span class='lparen'>(</span><span class='symbol'>:repository_id</span><span class='comma'>,</span> <span class='symbol'>:repoid</span><span class='comma'>,</span> <span class='symbol'>:environment_id</span><span class='comma'>,</span> <span class='symbol'>:product_id</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_filter_for_errata'>filter_for_errata</span> <span class='op'>=</span> <span class='id identifier rubyid_filter'>filter</span><span class='period'>.</span><span class='id identifier rubyid_except'>except</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_filter_for_repo'>filter_for_repo</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span>
 
       <span class='id identifier rubyid_repos'>repos</span> <span class='op'>=</span> <span class='id identifier rubyid_repos_for_filter'>repos_for_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_filter_for_repo'>filter_for_repo</span><span class='rparen'>)</span>
@@ -364,7 +369,8 @@
     <span class='kw'>end</span>
 
     <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_repos_for_filter'>repos_for_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_filter'>filter</span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_repoid'>repoid</span> <span class='op'>=</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:repoid</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_repoid'>repoid</span> <span class='op'>=</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:repoid</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:repository_id</span><span class='rbracket'>]</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_repoid'>repoid</span>
         <span class='kw'>return</span> <span class='lbracket'>[</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_repoid'>repoid</span><span class='rparen'>)</span><span class='rbracket'>]</span>
       <span class='kw'>elsif</span> <span class='id identifier rubyid_environment_id'>environment_id</span> <span class='op'>=</span> <span class='id identifier rubyid_filter'>filter</span><span class='lbracket'>[</span><span class='symbol'>:environment_id</span><span class='rbracket'>]</span>
         <span class='id identifier rubyid_env'>env</span> <span class='op'>=</span> <span class='const'>KTEnvironment</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_environment_id'>environment_id</span><span class='rparen'>)</span>
@@ -441,7 +447,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:26 2013 by
+  Generated on Thu May  9 10:36:12 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

@@ -79,7 +79,11 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">app/models/glue/pulp/repo.rb</dd>
+    <dd class="r1 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/glue/pulp/repo.rb" target="_blank">
+        app/models/glue/pulp/repo.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -543,6 +547,28 @@
   <span class="summary_signature">
     
       <a href="#generate_distributor-instance_method" title="#generate_distributor (instance method)">- (Object) <strong>generate_distributor</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_importer-instance_method" title="#generate_importer (instance method)">- (Object) <strong>generate_importer</strong> </a>
     
 
     
@@ -1317,27 +1343,27 @@ that have no packages.</p>
       <pre class="lines">
 
 
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
-553
-554
-555
-556
 557
-558</pre>
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 541</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 557</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__get_most_recent_sync_status'>_get_most_recent_sync_status</span><span class='lparen'>(</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
@@ -1377,13 +1403,13 @@ that have no packages.</p>
       <pre class="lines">
 
 
-452
-453
-454
-455</pre>
+468
+469
+470
+471</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 452</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 468</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_distribution'>add_distribution</span> <span class='id identifier rubyid_distribution_id'>distribution_id</span>
   <span class='id identifier rubyid_previous'>previous</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environmental_instances'>environmental_instances</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_in_environment'>in_environment</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span><span class='period'>.</span><span class='id identifier rubyid_prior'>prior</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
@@ -1409,13 +1435,13 @@ that have no packages.</p>
       <pre class="lines">
 
 
-447
-448
-449
-450</pre>
+463
+464
+465
+466</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 447</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 463</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_errata'>add_errata</span> <span class='id identifier rubyid_errata_unit_id_list'>errata_unit_id_list</span>
   <span class='id identifier rubyid_previous'>previous</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environmental_instances'>environmental_instances</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_in_environment'>in_environment</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span><span class='period'>.</span><span class='id identifier rubyid_prior'>prior</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
@@ -1441,13 +1467,13 @@ that have no packages.</p>
       <pre class="lines">
 
 
-442
-443
-444
-445</pre>
+458
+459
+460
+461</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 442</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 458</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_packages'>add_packages</span> <span class='id identifier rubyid_pkg_id_list'>pkg_id_list</span>
   <span class='id identifier rubyid_previous'>previous</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environmental_instances'>environmental_instances</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_in_environment'>in_environment</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span><span class='period'>.</span><span class='id identifier rubyid_prior'>prior</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
@@ -1473,15 +1499,15 @@ that have no packages.</p>
       <pre class="lines">
 
 
-469
-470
-471
-472
-473
-474</pre>
+485
+486
+487
+488
+489
+490</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 469</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 485</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cancel_sync'>cancel_sync</span>
   <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cancelling synchronization of repository </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1509,13 +1535,13 @@ that have no packages.</p>
       <pre class="lines">
 
 
-425
-426
-427
-428</pre>
+441
+442
+443
+444</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 425</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 441</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_contents'>clear_contents</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_clear_content_indices'>clear_content_indices</span> <span class='kw'>if</span> <span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_use_elasticsearch'>use_elasticsearch</span>
@@ -1541,27 +1567,27 @@ that have no packages.</p>
       <pre class="lines">
 
 
-396
-397
-398
-399
-400
-401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411
 412
-413</pre>
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 396</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 412</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clone_contents'>clone_contents</span> <span class='id identifier rubyid_to_repo'>to_repo</span>
   <span class='id identifier rubyid_events'>events</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -1601,6 +1627,14 @@ that have no packages.</p>
       <pre class="lines">
 
 
+104
+105
+106
+107
+108
+109
+110
+111
 112
 113
 114
@@ -1611,29 +1645,15 @@ that have no packages.</p>
 119
 120
 121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133</pre>
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_pulp_repo'>create_pulp_repo</span>
   <span class='comment'>#if we are in library, no need for an distributor, but need to sync
 </span>  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span><span class='period'>.</span><span class='id identifier rubyid_library?'>library?</span>
-    <span class='id identifier rubyid_importer'>importer</span> <span class='op'>=</span> <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>YumImporter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:ssl_ca_cert</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_ca'>feed_ca</span><span class='comma'>,</span>
-          <span class='symbol'>:ssl_client_cert</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_cert'>feed_cert</span><span class='comma'>,</span>
-          <span class='symbol'>:ssl_client_key</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_key'>feed_key</span><span class='comma'>,</span>
-          <span class='symbol'>:feed_url</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed'>feed</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_importer'>importer</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_importer'>generate_importer</span>
   <span class='kw'>else</span>
     <span class='comment'>#if not in library, no need for sync info, but we need a distributor
 </span>    <span class='id identifier rubyid_importer'>importer</span> <span class='op'>=</span> <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>YumImporter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -1669,12 +1689,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-465
-466
-467</pre>
+481
+482
+483</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 465</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 481</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_distribution'>delete_distribution</span> <span class='id identifier rubyid_distribution_id'>distribution_id</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Distribution</span><span class='period'>.</span><span class='id identifier rubyid_unassociate_ids_from_repo'>unassociate_ids_from_repo</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_distribution_id'>distribution_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -1699,12 +1719,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-461
-462
-463</pre>
+477
+478
+479</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 461</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 477</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_errata'>delete_errata</span> <span class='id identifier rubyid_errata_id_list'>errata_id_list</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_unassociate_ids_from_repo'>unassociate_ids_from_repo</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span>  <span class='id identifier rubyid_errata_id_list'>errata_id_list</span><span class='rparen'>)</span>
@@ -1729,12 +1749,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-457
-458
-459</pre>
+473
+474
+475</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 457</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 473</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_packages'>delete_packages</span> <span class='id identifier rubyid_package_id_list'>package_id_list</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Rpm</span><span class='period'>.</span><span class='id identifier rubyid_unassociate_unit_ids_from_repo'>unassociate_unit_ids_from_repo</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span>  <span class='id identifier rubyid_package_id_list'>package_id_list</span><span class='rparen'>)</span>
@@ -1759,13 +1779,13 @@ that have no packages.</p>
       <pre class="lines">
 
 
-160
-161
-162
-163</pre>
+176
+177
+178
+179</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 160</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 176</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy_repo'>destroy_repo</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
@@ -1791,12 +1811,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-173
-174
-175</pre>
+189
+190
+191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy_repo_orchestration'>destroy_repo_orchestration</span>
   <span class='id identifier rubyid_pre_queue'>pre_queue</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delete pulp repo : </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>       <span class='symbol'>:priority</span> <span class='op'>=&gt;</span> <span class='int'>3</span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='comma'>,</span> <span class='symbol'>:destroy_repo</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -1821,15 +1841,15 @@ that have no packages.</p>
       <pre class="lines">
 
 
-255
-256
-257
-258
-259
-260</pre>
+271
+272
+273
+274
+275
+276</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 255</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 271</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_distributions'>distributions</span>
   <span class='kw'>if</span> <span class='ivar'>@repo_distributions</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1857,15 +1877,15 @@ that have no packages.</p>
       <pre class="lines">
 
 
-262
-263
-264
-265
-266
-267</pre>
+278
+279
+280
+281
+282
+283</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 262</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 278</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_distributions='>distributions=</span><span class='id identifier rubyid_attrs'>attrs</span>
   <span class='ivar'>@repo_distributions</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_dist'>dist</span><span class='op'>|</span>
@@ -1893,22 +1913,22 @@ that have no packages.</p>
       <pre class="lines">
 
 
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246</pre>
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errata'>errata</span>
   <span class='kw'>if</span> <span class='ivar'>@repo_errata</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1943,15 +1963,15 @@ that have no packages.</p>
       <pre class="lines">
 
 
-248
-249
-250
-251
-252
-253</pre>
+264
+265
+266
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 264</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errata='>errata=</span><span class='id identifier rubyid_attrs'>attrs</span>
   <span class='ivar'>@repo_errata</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_erratum'>erratum</span><span class='op'>|</span>
@@ -1979,13 +1999,13 @@ that have no packages.</p>
       <pre class="lines">
 
 
-333
-334
-335
-336</pre>
+349
+350
+351
+352</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 333</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 349</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_latest_packages_by_name'>find_latest_packages_by_name</span> <span class='id identifier rubyid_name'>name</span>
   <span class='id identifier rubyid_packages'>packages</span> <span class='op'>=</span> <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_rpms_by_nvre'>rpms_by_nvre</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -2011,12 +2031,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-325
-326
-327</pre>
+341
+342
+343</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 325</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 341</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_packages_by_name'>find_packages_by_name</span> <span class='id identifier rubyid_name'>name</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_rpms_by_nvre'>rpms_by_nvre</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span>
@@ -2041,12 +2061,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-329
-330
-331</pre>
+345
+346
+347</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 329</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 345</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_packages_by_nvre'>find_packages_by_nvre</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_version'>version</span><span class='comma'>,</span> <span class='id identifier rubyid_release'>release</span><span class='comma'>,</span> <span class='id identifier rubyid_epoch'>epoch</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_rpms_by_nvre'>rpms_by_nvre</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_version'>version</span><span class='comma'>,</span> <span class='id identifier rubyid_release'>release</span><span class='comma'>,</span> <span class='id identifier rubyid_epoch'>epoch</span>
@@ -2071,19 +2091,93 @@ that have no packages.</p>
       <pre class="lines">
 
 
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 143</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_distributor'>generate_distributor</span>
+  <span class='kw'>case</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span>
+    <span class='kw'>when</span> <span class='const'>Repository</span><span class='op'>::</span><span class='const'>YUM_TYPE</span>
+      <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>YumDistributor</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_relative_path'>relative_path</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_unprotected'>unprotected</span> <span class='op'>||</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span>
+              <span class='lbrace'>{</span><span class='symbol'>:protected</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span>
+                  <span class='symbol'>:auto_publish</span><span class='op'>=&gt;</span><span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span><span class='period'>.</span><span class='id identifier rubyid_library?'>library?</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='const'>Repository</span><span class='op'>::</span><span class='const'>FILE_TYPE</span>
+      <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>IsoDistributor</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>true</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unexpected repo type %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_importer-instance_method">
+  
+    - (<tt>Object</tt>) <strong>generate_importer</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
 135
 136
 137
 138
-139</pre>
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 125</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_generate_distributor'>generate_distributor</span>
-  <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>YumDistributor</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_relative_path'>relative_path</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_unprotected'>unprotected</span> <span class='op'>||</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span>
-    <span class='lbrace'>{</span><span class='symbol'>:protected</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='comma'>,</span>
-        <span class='symbol'>:auto_publish</span><span class='op'>=&gt;</span><span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span><span class='period'>.</span><span class='id identifier rubyid_library?'>library?</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_generate_importer'>generate_importer</span>
+  <span class='kw'>case</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span>
+    <span class='kw'>when</span> <span class='const'>Repository</span><span class='op'>::</span><span class='const'>YUM_TYPE</span>
+      <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>YumImporter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:ssl_ca_cert</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_ca'>feed_ca</span><span class='comma'>,</span>
+                    <span class='symbol'>:ssl_client_cert</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_cert'>feed_cert</span><span class='comma'>,</span>
+                    <span class='symbol'>:ssl_client_key</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_key'>feed_key</span><span class='comma'>,</span>
+                    <span class='symbol'>:feed_url</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed'>feed</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='const'>Repository</span><span class='op'>::</span><span class='const'>FILE_TYPE</span>
+      <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>IsoImporter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:ssl_ca_cert</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_ca'>feed_ca</span><span class='comma'>,</span>
+                    <span class='symbol'>:ssl_client_cert</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_cert'>feed_cert</span><span class='comma'>,</span>
+                    <span class='symbol'>:ssl_client_key</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed_key'>feed_key</span><span class='comma'>,</span>
+                    <span class='symbol'>:feed_url</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_feed'>feed</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unexpected repo type %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_type'>content_type</span>
+  <span class='kw'>end</span>
+
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2105,12 +2199,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-506
-507
-508</pre>
+522
+523
+524</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 506</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 522</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_metadata'>generate_metadata</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_publish_all'>publish_all</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
@@ -2135,22 +2229,6 @@ that have no packages.</p>
       <pre class="lines">
 
 
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376
 377
 378
 379
@@ -2168,10 +2246,26 @@ that have no packages.</p>
 391
 392
 393
-394</pre>
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 361</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 377</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_sync_complete_task'>handle_sync_complete_task</span><span class='lparen'>(</span><span class='id identifier rubyid_task_id'>task_id</span><span class='rparen'>)</span>
   <span class='comment'>#pulp_task =  Runcible::Resources::Task.poll(pulp_task_id)
@@ -2249,15 +2343,15 @@ that have no packages.</p>
       <pre class="lines">
 
 
-305
-306
-307
-308
-309
-310</pre>
+321
+322
+323
+324
+325
+326</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 305</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 321</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_distribution?'>has_distribution?</span> <span class='id identifier rubyid_id'>id</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_distributions'>distributions</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_distro'>distro</span><span class='op'>|</span>
@@ -2307,15 +2401,15 @@ that have no packages.</p>
       <pre class="lines">
 
 
-338
-339
-340
-341
-342
-343</pre>
+354
+355
+356
+357
+358
+359</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 338</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 354</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_erratum?'>has_erratum?</span> <span class='id identifier rubyid_errata_id'>errata_id</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_err'>err</span><span class='op'>|</span>
@@ -2365,12 +2459,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-321
-322
-323</pre>
+337
+338
+339</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 321</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 337</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_package?'>has_package?</span> <span class='id identifier rubyid_id'>id</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_package_ids'>package_ids</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
@@ -2410,26 +2504,14 @@ that have no packages.</p>
 90
 91
 92
-93
-94
-95
-96
-97
-98
-99
-100
-101</pre>
+93</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='kw'>if</span> <span class='const'>Rails</span><span class='op'>::</span><span class='const'>VERSION</span><span class='op'>::</span><span class='const'>STRING</span><span class='period'>.</span><span class='id identifier rubyid_start_with?'>start_with?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>3.2</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-      <span class='kw'>super</span>
-    <span class='kw'>else</span>
-      <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+    <span class='kw'>super</span>
   <span class='kw'>elsif</span>
     <span class='id identifier rubyid_type_key'>type_key</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>type</span><span class='tstring_end'>'</span></span> <span class='op'>:</span> <span class='symbol'>:type</span>
     <span class='comment'>#rename &quot;type&quot; to &quot;cp_type&quot; (activerecord and candlepin variable name conflict)
@@ -2440,11 +2522,7 @@ that have no packages.</p>
     <span class='id identifier rubyid_attrs_used_by_model'>attrs_used_by_model</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
       <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_column_defaults'>column_defaults</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:#{</span><span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbrace'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>rescue</span> <span class='kw'>true</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
-    <span class='kw'>if</span> <span class='const'>Rails</span><span class='op'>::</span><span class='const'>VERSION</span><span class='op'>::</span><span class='const'>STRING</span><span class='period'>.</span><span class='id identifier rubyid_start_with?'>start_with?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>3.2</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-      <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs_used_by_model'>attrs_used_by_model</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
-    <span class='kw'>else</span>
-      <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs_used_by_model'>attrs_used_by_model</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs_used_by_model'>attrs_used_by_model</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2497,12 +2575,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-169
-170
-171</pre>
+185
+186
+187</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 185</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_other_repos_with_same_content'>other_repos_with_same_content</span>
   <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:content_id</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_id'>content_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:pulp_id</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbracket'>]</span>
@@ -2527,12 +2605,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-165
-166
-167</pre>
+181
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 165</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 181</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_other_repos_with_same_product_and_content'>other_repos_with_same_product_and_content</span>
   <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:content_id</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_id'>content_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_in_product'>in_product</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:pulp_id</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbracket'>]</span>
@@ -2557,18 +2635,18 @@ that have no packages.</p>
       <pre class="lines">
 
 
-295
-296
-297
-298
-299
-300
-301
-302
-303</pre>
+311
+312
+313
+314
+315
+316
+317
+318
+319</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 295</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 311</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_group_categories'>package_group_categories</span><span class='lparen'>(</span><span class='id identifier rubyid_search_args'>search_args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_categories'>categories</span> <span class='op'>=</span> <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_package_categories'>package_categories</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
@@ -2599,16 +2677,16 @@ that have no packages.</p>
       <pre class="lines">
 
 
-269
-270
-271
-272
-273
-274
-275</pre>
+285
+286
+287
+288
+289
+290
+291</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 285</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_groups'>package_groups</span>
   <span class='kw'>if</span> <span class='ivar'>@repo_package_groups</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -2637,15 +2715,15 @@ that have no packages.</p>
       <pre class="lines">
 
 
-277
-278
-279
-280
-281
-282</pre>
+293
+294
+295
+296
+297
+298</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 277</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 293</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_groups='>package_groups=</span><span class='id identifier rubyid_attrs'>attrs</span>
   <span class='ivar'>@repo_package_groups</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_group'>group</span><span class='op'>|</span>
@@ -2673,19 +2751,19 @@ that have no packages.</p>
       <pre class="lines">
 
 
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293</pre>
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 284</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 300</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_groups_search'>package_groups_search</span><span class='lparen'>(</span><span class='id identifier rubyid_search_args'>search_args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_groups'>groups</span> <span class='op'>=</span> <span class='id identifier rubyid_package_groups'>package_groups</span>
@@ -2717,12 +2795,12 @@ that have no packages.</p>
       <pre class="lines">
 
 
-177
-178
-179</pre>
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_ids'>package_ids</span>
   <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_rpm_ids'>rpm_ids</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
@@ -2760,24 +2838,24 @@ and errata and purge them.</p>
       <pre class="lines">
 
 
-564
-565
-566
-567
-568
-569
-570
-571
-572
-573
-574
-575
-576
-577
-578</pre>
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 564</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 580</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_lists_for_publish'>package_lists_for_publish</span>
   <span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -2814,27 +2892,27 @@ and errata and purge them.</p>
       <pre class="lines">
 
 
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
 224
-225</pre>
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 208</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 224</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_packages'>packages</span>
   <span class='kw'>if</span> <span class='ivar'>@repo_packages</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -2874,15 +2952,15 @@ and errata and purge them.</p>
       <pre class="lines">
 
 
-227
-228
-229
-230
-231
-232</pre>
+243
+244
+245
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 227</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 243</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_packages='>packages=</span><span class='id identifier rubyid_attrs'>attrs</span>
   <span class='ivar'>@repo_packages</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_package'>package</span><span class='op'>|</span>
@@ -2910,14 +2988,14 @@ and errata and purge them.</p>
       <pre class="lines">
 
 
-154
-155
-156
-157
-158</pre>
+170
+171
+172
+173
+174</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 170</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_populate_from'>populate_from</span> <span class='id identifier rubyid_repos_map'>repos_map</span>
   <span class='id identifier rubyid_found'>found</span> <span class='op'>=</span> <span class='id identifier rubyid_repos_map'>repos_map</span><span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbracket'>]</span>
@@ -2944,21 +3022,21 @@ and errata and purge them.</p>
       <pre class="lines">
 
 
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152</pre>
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 141</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 157</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_promote'>promote</span> <span class='id identifier rubyid_from_env'>from_env</span><span class='comma'>,</span> <span class='id identifier rubyid_to_env'>to_env</span>
   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_is_cloned_in?'>is_cloned_in?</span><span class='lparen'>(</span><span class='id identifier rubyid_to_env'>to_env</span><span class='rparen'>)</span>
@@ -3003,22 +3081,6 @@ that have no packages</p>
       <pre class="lines">
 
 
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
 199
 200
 201
@@ -3026,10 +3088,26 @@ that have no packages</p>
 203
 204
 205
-206</pre>
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 183</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 199</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_purge_empty_groups_errata'>purge_empty_groups_errata</span>
   <span class='id identifier rubyid_package_lists'>package_lists</span> <span class='op'>=</span> <span class='id identifier rubyid_package_lists_for_publish'>package_lists_for_publish</span>
@@ -3111,17 +3189,17 @@ that have no packages</p>
       <pre class="lines">
 
 
-312
-313
-314
-315
-316
-317
-318
-319</pre>
+328
+329
+330
+331
+332
+333
+334
+335</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 312</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 328</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_sync_schedule'>set_sync_schedule</span><span class='lparen'>(</span><span class='id identifier rubyid_date_and_time'>date_and_time</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>YumImporter</span><span class='op'>::</span><span class='const'>ID</span>
@@ -3151,22 +3229,6 @@ that have no packages</p>
       <pre class="lines">
 
 
-510
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520
-521
-522
-523
-524
-525
 526
 527
 528
@@ -3178,10 +3240,26 @@ that have no packages</p>
 534
 535
 536
-537</pre>
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 510</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 526</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sort_sync_status'>sort_sync_status</span> <span class='id identifier rubyid_statuses'>statuses</span>
   <span class='id identifier rubyid_statuses'>statuses</span><span class='period'>.</span><span class='id identifier rubyid_sort!'>sort!</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span>
@@ -3253,12 +3331,12 @@ that have no packages</p>
       <pre class="lines">
 
 
-502
-503
-504</pre>
+518
+519
+520</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 502</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 518</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_successful_sync?'>successful_sync?</span><span class='lparen'>(</span><span class='id identifier rubyid_sync_history_item'>sync_history_item</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_sync_history_item'>sync_history_item</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>state</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='op'>::</span><span class='const'>PulpTaskStatus</span><span class='op'>::</span><span class='const'>Status</span><span class='op'>::</span><span class='const'>FINISHED</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -3283,24 +3361,24 @@ that have no packages</p>
       <pre class="lines">
 
 
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359</pre>
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 345</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 361</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync'>sync</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_sync_options'>sync_options</span><span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -3337,19 +3415,19 @@ that have no packages</p>
       <pre class="lines">
 
 
-476
-477
-478
-479
-480
-481
-482
-483
-484
-485</pre>
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 476</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 492</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_finish'>sync_finish</span>
   <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sync_status'>sync_status</span>
@@ -3381,20 +3459,20 @@ that have no packages</p>
       <pre class="lines">
 
 
-430
-431
-432
-433
-434
-435
-436
-437
-438
-439
-440</pre>
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 430</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 446</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_start'>sync_start</span>
   <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sync_status'>sync_status</span>
@@ -3427,14 +3505,14 @@ that have no packages</p>
       <pre class="lines">
 
 
-491
-492
-493
-494
-495</pre>
+507
+508
+509
+510
+511</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 491</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 507</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_state'>sync_state</span>
   <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_sync_status'>sync_status</span>
@@ -3461,12 +3539,12 @@ that have no packages</p>
       <pre class="lines">
 
 
-487
-488
-489</pre>
+503
+504
+505</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 487</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 503</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_status'>sync_status</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid__get_most_recent_sync_status'>_get_most_recent_sync_status</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@sync_status</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3513,13 +3591,13 @@ that have no packages</p>
       <pre class="lines">
 
 
-497
-498
-499
-500</pre>
+513
+514
+515
+516</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 497</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 513</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_synced?'>synced?</span>
   <span class='id identifier rubyid_sync_history'>sync_history</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sync_status'>sync_status</span>
@@ -3545,12 +3623,12 @@ that have no packages</p>
       <pre class="lines">
 
 
-108
-109
-110</pre>
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_hash'>to_hash</span>
   <span class='id identifier rubyid_pulp_repo_facts'>pulp_repo_facts</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_as_json'>as_json</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='symbol'>:sync_state</span><span class='op'>=&gt;</span> <span class='id identifier rubyid_sync_state'>sync_state</span><span class='rparen'>)</span>
@@ -3575,18 +3653,18 @@ that have no packages</p>
       <pre class="lines">
 
 
-415
-416
-417
-418
-419
-420
-421
-422
-423</pre>
+431
+432
+433
+434
+435
+436
+437
+438
+439</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 415</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 431</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unassociate_by_filter'>unassociate_by_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_content_type'>content_type</span><span class='comma'>,</span> <span class='id identifier rubyid_filter_clauses'>filter_clauses</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_content_unit'>content_unit</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -3617,13 +3695,13 @@ that have no packages</p>
       <pre class="lines">
 
 
-103
-104
-105
-106</pre>
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/repo.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uri'>uri</span>
   <span class='id identifier rubyid_uri'>uri</span> <span class='op'>=</span> <span class='const'>URI</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_pulp'>pulp</span><span class='period'>.</span><span class='id identifier rubyid_url'>url</span><span class='rparen'>)</span>
@@ -3639,7 +3717,7 @@ that have no packages</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:31 2013 by
+  Generated on Thu May  9 10:36:15 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

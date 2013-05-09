@@ -83,7 +83,11 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">app/lib/api/v1/error_handling.rb asd </dd>
+    <dd class="r2 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/lib/api/v1/error_handling.rb" target="_blank">
+        app/lib/api/v1/error_handling.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -489,7 +493,7 @@
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_rescue_from'>rescue_from</span> <span class='const'>Exception</span><span class='comma'>,</span> <span class='symbol'>:with</span> <span class='op'>=&gt;</span> <span class='symbol'>:rescue_from_exception</span> <span class='comment'># catch-all
+    <span class='id identifier rubyid_rescue_from'>rescue_from</span> <span class='const'>Exception</span><span class='comma'>,</span> <span class='symbol'>:with</span> <span class='op'>=&gt;</span> <span class='symbol'>:rescue_from_exception</span>          <span class='comment'># catch-all
 </span>    <span class='id identifier rubyid_rescue_from'>rescue_from</span> <span class='const'>StandardError</span><span class='comma'>,</span> <span class='symbol'>:with</span> <span class='op'>=&gt;</span> <span class='symbol'>:rescue_from_standard_error</span> <span class='comment'># catch-all *almost*
 </span>    <span class='id identifier rubyid_rescue_from'>rescue_from</span> <span class='const'>HttpErrors</span><span class='op'>::</span><span class='const'>WrappedError</span><span class='comma'>,</span> <span class='symbol'>:with</span> <span class='op'>=&gt;</span> <span class='symbol'>:rescue_from_wrapped_error</span>
 
@@ -583,7 +587,7 @@
     <td>
       <pre class="code"><span class="info file"># File 'app/lib/api/v1/error_handling.rb', line 129</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_pp_exception'>pp_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_pp_exception'>pp_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_reverse_merge'>reverse_merge</span><span class='lparen'>(</span><span class='symbol'>:with_class</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:with_body</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:with_backtrace</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_message'>message</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rbrace'>}</span><span class='tstring_content'>: </span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:with_class</span><span class='rbracket'>]</span>
@@ -620,7 +624,7 @@
       <pre class="code"><span class="info file"># File 'app/lib/api/v1/error_handling.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rescue_from_conflict_exception'>rescue_from_conflict_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span><span class='op'>=&gt;</span><span class='symbol'>:conflict</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='symbol'>:conflict</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -652,7 +656,7 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rescue_from_exception'>rescue_from_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Fatal Error: See logs for details or contact system administrator</span><span class='tstring_end'>'</span></span>
-  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='symbol'>:display_message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='symbol'>:status</span><span class='op'>=&gt;</span><span class='symbol'>:internal_server_error</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='symbol'>:display_message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='symbol'>:internal_server_error</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -693,7 +697,7 @@
     <span class='comment'># TODO: why not use http_code from the exception???
 </span>    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_format_subsys_exception_hash'>format_subsys_exception_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='symbol'>:bad_request</span>
   <span class='kw'>else</span>
-    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_response'>response</span> <span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_http_code'>http_code</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_http_code'>http_code</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -724,7 +728,7 @@
       <pre class="code"><span class="info file"># File 'app/lib/api/v1/error_handling.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rescue_from_not_found'>rescue_from_not_found</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span><span class='op'>=&gt;</span><span class='symbol'>:not_found</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='symbol'>:not_found</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -771,13 +775,13 @@
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span>
 
   <span class='id identifier rubyid_errors'>errors</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_exception'>exception</span>
-  <span class='kw'>when</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordInvalid</span>
-    <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ActiveRecord::RecordInvalid exception.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+           <span class='kw'>when</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordInvalid</span>
+             <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span>
+           <span class='kw'>else</span>
+             <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ActiveRecord::RecordInvalid exception.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+           <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_messages'>messages</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+  <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_messages'>messages</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
     <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_c'>c</span><span class='rbrace'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 
@@ -876,7 +880,7 @@
       <pre class="code"><span class="info file"># File 'app/lib/api/v1/error_handling.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rescue_from_standard_error'>rescue_from_standard_error</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span><span class='op'>=&gt;</span><span class='symbol'>:internal_server_error</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='symbol'>:internal_server_error</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -906,7 +910,7 @@
       <pre class="code"><span class="info file"># File 'app/lib/api/v1/error_handling.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rescue_from_unsupported_action_exception'>rescue_from_unsupported_action_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span><span class='op'>=&gt;</span><span class='symbol'>:bad_request</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='symbol'>:bad_request</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -978,9 +982,9 @@
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>REQUEST URL: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_fullpath'>fullpath</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_pp_exception'>pp_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_original'>original</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_exception'>exception</span> <span class='op'>:</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_original'>original</span><span class='rparen'>)</span>
 
-  <span class='id identifier rubyid_orig_message'>orig_message</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_original'>original</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_original'>original</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+  <span class='id identifier rubyid_orig_message'>orig_message</span>             <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_original'>original</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_original'>original</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
   <span class='id identifier rubyid_format_text_orig_message'>format_text_orig_message</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_orig_message'>orig_message</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_orig_message'>orig_message</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_format_text_orig_message'>format_text_orig_message</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_text'>text</span>                     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_format_text_orig_message'>format_text_orig_message</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
 
   <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='symbol'>:errors</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='id identifier rubyid_orig_message'>orig_message</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:with_logging</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -1026,18 +1030,18 @@
 
 <span class='kw'>def</span> <span class='id identifier rubyid_respond_for_exception'>respond_for_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_reverse_merge'>reverse_merge</span><span class='lparen'>(</span>
-    <span class='symbol'>:with_logging</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
-    <span class='symbol'>:status</span>       <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status_code</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>:</span> <span class='symbol'>:internal_server_error</span><span class='comma'>,</span>
-    <span class='symbol'>:text</span>         <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span>
-    <span class='symbol'>:display_message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span>
-    <span class='symbol'>:errors</span>       <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='symbol'>:with_logging</span>    <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+      <span class='symbol'>:status</span>          <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status_code</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>:</span> <span class='symbol'>:internal_server_error</span><span class='comma'>,</span>
+      <span class='symbol'>:text</span>            <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span>
+      <span class='symbol'>:display_message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span>
+      <span class='symbol'>:errors</span>          <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_pp_exception'>pp_exception</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:with_logging</span><span class='rbracket'>]</span>
 
   <span class='id identifier rubyid_respond_to'>respond_to</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_format'>format</span><span class='op'>|</span>
     <span class='comment'>#json has to be displayMessage for older RHEL 5.7 subscription managers
 </span>    <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_json'>json</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:json</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:displayMessage</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:display_message</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:errors</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:errors</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
-    <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>  <span class='lbrace'>{</span> <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:text</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_format'>format</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:text</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1050,7 +1054,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue May  7 12:08:59 2013 by
+  Generated on Thu May  9 10:36:10 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

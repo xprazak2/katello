@@ -79,7 +79,11 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">app/models/glue/pulp/errata.rb</dd>
+    <dd class="r1 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/glue/pulp/errata.rb" target="_blank">
+        app/models/glue/pulp/errata.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -168,7 +172,51 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#product_cp_ids-instance_method" title="#product_cp_ids (instance method)">- (Object) <strong>product_cp_ids</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#product_ids-instance_method" title="#product_ids (instance method)">- (Object) <strong>product_ids</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#products-instance_method" title="#products (instance method)">- (Object) <strong>products</strong> </a>
     
 
     
@@ -317,9 +365,69 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="product_cp_ids-instance_method">
+  
+    - (<tt>Object</tt>) <strong>product_cp_ids</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_product_cp_ids'>product_cp_ids</span>
+  <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:cp_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="product_ids-instance_method">
   
     - (<tt>Object</tt>) <strong>product_ids</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 91</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_product_ids'>product_ids</span>
+  <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="products-instance_method">
+  
+    - (<tt>Object</tt>) <strong>products</strong> 
   
 
   
@@ -349,19 +457,19 @@
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 76</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_product_ids'>product_ids</span>
-  <span class='id identifier rubyid_product_ids'>product_ids</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_products'>products</span>
+  <span class='id identifier rubyid_products'>products</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_repoids'>repoids</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_repoid'>repoid</span><span class='op'>|</span>
     <span class='comment'># there is a problem, that Pulp in versino &lt;= 0.0.265-1 doesn't remove
 </span>    <span class='comment'># repo frmo errata when deleting repository. Therefore there might be a
 </span>    <span class='comment'># situation that repo is not in Pulp anymore, see BZ 790356
 </span>    <span class='kw'>if</span> <span class='id identifier rubyid_repo'>repo</span> <span class='op'>=</span> <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:pulp_id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repoid'>repoid</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-      <span class='id identifier rubyid_product_ids'>product_ids</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+      <span class='id identifier rubyid_products'>products</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_product_ids'>product_ids</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+  <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -373,7 +481,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:30 2013 by
+  Generated on Thu May  9 10:36:15 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

@@ -79,7 +79,11 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">app/models/glue/pulp/package.rb</dd>
+    <dd class="r1 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/models/glue/pulp/package.rb" target="_blank">
+        app/models/glue/pulp/package.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -167,15 +171,15 @@
       <pre class="lines">
 
 
-38
 39
 40
 41
 42
-43</pre>
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/package.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/package.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:changelog</span><span class='rparen'>)</span> <span class='comment'>#ignore changelog for now
@@ -203,12 +207,12 @@
       <pre class="lines">
 
 
-45
 46
-47</pre>
+47
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/package.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/package.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_nvrea'>nvrea</span>
   <span class='const'>Util</span><span class='op'>::</span><span class='const'>Package</span><span class='op'>::</span><span class='id identifier rubyid_build_nvrea'>build_nvrea</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_with_indifferent_access'>with_indifferent_access</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span>
@@ -223,7 +227,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:45:30 2013 by
+  Generated on Thu May  9 10:36:15 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

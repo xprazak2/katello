@@ -93,14 +93,18 @@
   
     
       <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="AuthorizationRules.html" title="AuthorizationRules (module)">AuthorizationRules</a></span>, <span class='object_link'><a href="Menu.html" title="Menu (module)">Menu</a></span>, <span class='object_link'><a href="Notifications/ControllerHelper.html" title="Notifications::ControllerHelper (module)">Notifications::ControllerHelper</a></span>, <span class='object_link'><a href="Profiling.html" title="Profiling (module)">Profiling</a></span>, <span class='object_link'><a href="Util/ThreadSession/Controller.html" title="Util::ThreadSession::Controller (module)">Util::ThreadSession::Controller</a></span></dd>
+      <dd class="r2"><span class='object_link'><a href="AuthorizationRules.html" title="AuthorizationRules (module)">AuthorizationRules</a></span>, <span class='object_link'><a href="Locale.html" title="Locale (module)">Locale</a></span>, <span class='object_link'><a href="Menu.html" title="Menu (module)">Menu</a></span>, <span class='object_link'><a href="Notifications/ControllerHelper.html" title="Notifications::ControllerHelper (module)">Notifications::ControllerHelper</a></span>, <span class='object_link'><a href="Profiling.html" title="Profiling (module)">Profiling</a></span>, <span class='object_link'><a href="Util/ThreadSession/Controller.html" title="Util::ThreadSession::Controller (module)">Util::ThreadSession::Controller</a></span></dd>
       
     
   
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">app/controllers/application_controller.rb</dd>
+    <dd class="r1 last">
+      <a href="https://github.com/Katello/katello/tree/master/app/controllers/application_controller.rb" target="_blank">
+        app/controllers/application_controller.rb
+      </a>
+    </dd>
   
 </dl>
 <div class="clear"></div>
@@ -123,29 +127,6 @@
     </h2>
 
     <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#extract_locale_from_accept_language_header-class_method" title="extract_locale_from_accept_language_header (class method)">+ (Object) <strong>extract_locale_from_accept_language_header</strong>(locales) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>Look for match to list of locales specified in request.</p>
-</div></span>
-  
-</li>
-
       
         <li class="private ">
   <span class="summary_signature">
@@ -722,29 +703,6 @@ so generate_label and default_label_assigned can use them.</p>
         <li class="private ">
   <span class="summary_signature">
     
-      <a href="#parse_locale-instance_method" title="#parse_locale (instance method)">- (Object) <strong>parse_locale</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  <span class="note title private">private</span>
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>adapted from http_accept_lang gem, return list of browser locales.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="private ">
-  <span class="summary_signature">
-    
       <a href="#render_403-instance_method" title="#render_403 (instance method)">- (Object) <strong>render_403</strong> </a>
     
 
@@ -1099,28 +1057,6 @@ so generate_label and default_label_assigned can use them.</p>
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#set_locale-instance_method" title="#set_locale (instance method)">- (Object) <strong>set_locale</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
         <li class="private ">
   <span class="summary_signature">
     
@@ -1210,6 +1146,17 @@ so generate_label and default_label_assigned can use them.</p>
   
   
   
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Locale.html" title="Locale (module)">Locale</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Locale.html#included-class_method" title="Locale.included (method)">included</a></span>, <span class='object_link'><a href="Locale.html#parse_accept_locale-instance_method" title="Locale#parse_accept_locale (method)">#parse_accept_locale</a></span>, <span class='object_link'><a href="Locale.html#pick_available_locale-instance_method" title="Locale#pick_available_locale (method)">#pick_available_locale</a></span>, <span class='object_link'><a href="Locale.html#pick_available_locale-class_method" title="Locale.pick_available_locale (method)">pick_available_locale</a></span>, <span class='object_link'><a href="Locale.html#set_locale-instance_method" title="Locale#set_locale (method)">#set_locale</a></span>, <span class='object_link'><a href="Locale.html#set_locale-class_method" title="Locale.set_locale (method)">set_locale</a></span>, <span class='object_link'><a href="Locale.html#set_locale_from_header-instance_method" title="Locale#set_locale_from_header (method)">#set_locale_from_header</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Profiling.html" title="Profiling (module)">Profiling</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="Profiling.html#do_profiling-instance_method" title="Profiling#do_profiling (method)">#do_profiling</a></span>, <span class='object_link'><a href="Profiling.html#included-class_method" title="Profiling.included (method)">included</a></span>, <span class='object_link'><a href="Profiling.html#load_ruby_prof_gem-class_method" title="Profiling.load_ruby_prof_gem (method)">load_ruby_prof_gem</a></span>, <span class='object_link'><a href="Profiling.html#profiling_enabled%3F-class_method" title="Profiling.profiling_enabled? (method)">profiling_enabled?</a></span>, <span class='object_link'><a href="Profiling.html#run_profiling%3F-instance_method" title="Profiling#run_profiling? (method)">#run_profiling?</a></span></p>
 
@@ -1231,78 +1178,7 @@ so generate_label and default_label_assigned can use them.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="extract_locale_from_accept_language_header-class_method">
-  
-    + (<tt>Object</tt>) <strong>extract_locale_from_accept_language_header</strong>(locales) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Look for match to list of locales specified in request. If not found, try matching just
-first two letters. Finally, default to english if no matches at all.
-eg. [en_US, en] would match en</p>
-
-<p>The method accept parameter = list of locales returned by parse_locale. Since the method is used
-outside of the request context, we need to pass this data in as a parameter.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-275
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 275</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extract_locale_from_accept_language_header'>extract_locale_from_accept_language_header</span> <span class='id identifier rubyid_locales'>locales</span>
-
-  <span class='comment'># Look for full match
-</span>  <span class='id identifier rubyid_locales'>locales</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_locale'>locale</span><span class='op'>|</span>
-    <span class='kw'>return</span> <span class='id identifier rubyid_locale'>locale</span> <span class='kw'>if</span> <span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_available_locales'>available_locales</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_locale'>locale</span>
-  <span class='rbrace'>}</span>
-
-  <span class='comment'># Look for match to first two letters
-</span>  <span class='comment'>#
-</span>  <span class='id identifier rubyid_locales'>locales</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_locale'>locale</span><span class='op'>|</span>
-    <span class='kw'>return</span> <span class='id identifier rubyid_locale'>locale</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_available_locales'>available_locales</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_locale'>locale</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span>
-  <span class='rbrace'>}</span>
-
-  <span class='comment'># Default to 'en'
-</span>  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>en</span><span class='tstring_end'>'</span></span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="parse_display_message-class_method">
+  <h3 class="signature first" id="parse_display_message-class_method">
   
     + (<tt>Object</tt>) <strong>parse_display_message</strong>(input)  <span class="extras">(private)</span>
   
@@ -1329,17 +1205,17 @@ This assumes that the input follows a syntax similar to:
       <pre class="lines">
 
 
-728
-729
-730
-731
-732
-733
-734
-735</pre>
+679
+680
+681
+682
+683
+684
+685
+686</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 728</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 679</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_parse_display_message'>parse_display_message</span> <span class='id identifier rubyid_input'>input</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1385,14 +1261,14 @@ This assumes that the input follows a syntax similar to:
       <pre class="lines">
 
 
-330
-331
-332
-333
-334</pre>
+297
+298
+299
+300
+301</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 330</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 297</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_check_deleted_org'>check_deleted_org</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_current_organization'>current_organization</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_being_deleted?'>being_deleted?</span>
@@ -1419,6 +1295,16 @@ This assumes that the input follows a syntax similar to:
       <pre class="lines">
 
 
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
 208
 209
 210
@@ -1428,20 +1314,10 @@ This assumes that the input follows a syntax similar to:
 214
 215
 216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227</pre>
+217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 208</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_current_organization'>current_organization</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:current_organization_id</span><span class='rbracket'>]</span>
@@ -1483,12 +1359,12 @@ This assumes that the input follows a syntax similar to:
       <pre class="lines">
 
 
-229
-230
-231</pre>
+219
+220
+221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 229</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 219</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_current_organization='>current_organization=</span><span class='lparen'>(</span><span class='id identifier rubyid_org'>org</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:current_organization_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:id</span><span class='rparen'>)</span>
@@ -1513,12 +1389,12 @@ This assumes that the input follows a syntax similar to:
       <pre class="lines">
 
 
-373
-374
-375</pre>
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 373</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 339</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_current_user'>current_user</span>
   <span class='id identifier rubyid_user'>user</span>
@@ -1646,12 +1522,12 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-737
-738
-739</pre>
+688
+689
+690</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 737</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 688</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_default_notify_options'>default_notify_options</span>
   <span class='lbrace'>{</span> <span class='symbol'>:organization</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_organization'>current_organization</span> <span class='rbrace'>}</span>
@@ -1676,12 +1552,12 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-486
-487
-488</pre>
+437
+438
+439</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 486</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 437</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_environment_path_element'>environment_path_element</span><span class='lparen'>(</span><span class='id identifier rubyid_perms_method'>perms_method</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='const'>Proc</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a_path'>a_path</span><span class='op'>|</span> <span class='lbrace'>{</span><span class='symbol'>:id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_a_path'>a_path</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid_a_path'>a_path</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:select</span><span class='op'>=&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_perms_method'>perms_method</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='kw'>false</span> <span class='op'>:</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='period'>.</span><span class='id identifier rubyid_instance_eval'>instance_eval</span><span class='lparen'>(</span><span class='id identifier rubyid_perms_method'>perms_method</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rbrace'>}</span> <span class='rbrace'>}</span>
@@ -1706,23 +1582,23 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-494
-495
-496
-497
-498
-499
-500
-501
-502
-503
-504
-505
-506
-507</pre>
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 494</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 445</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_environment_paths'>environment_paths</span><span class='lparen'>(</span><span class='id identifier rubyid_library'>library</span><span class='comma'>,</span> <span class='id identifier rubyid_environment_path_element_generator'>environment_path_element_generator</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_paths'>paths</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_promotion_paths'>promotion_paths</span>
@@ -1758,12 +1634,12 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-233
-234
-235</pre>
+223
+224
+225</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 223</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_escape_html'>escape_html</span> <span class='id identifier rubyid_input'>input</span>
   <span class='const'>CGI</span><span class='op'>::</span><span class='id identifier rubyid_escapeHTML'>escapeHTML</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
@@ -1788,12 +1664,12 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-679
-680
-681</pre>
+630
+631
+632</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 679</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 630</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_execute_after_filters'>execute_after_filters</span>
   <span class='id identifier rubyid_flash_to_headers'>flash_to_headers</span>
@@ -1818,23 +1694,23 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-695
-696
-697
-698
-699
-700
-701
-702
-703
-704
-705
-706
-707
-708</pre>
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 695</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 646</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_execute_rescue'>execute_rescue</span> <span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='id identifier rubyid_renderer'>renderer</span>
   <span class='id identifier rubyid_log_exception'>log_exception</span> <span class='id identifier rubyid_exception'>exception</span>
@@ -1870,20 +1746,20 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-683
-684
-685
-686
-687
-688
-689
-690
-691
-692
-693</pre>
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 683</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 634</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_first_env_in_path'>first_env_in_path</span> <span class='id identifier rubyid_accessible_envs'>accessible_envs</span><span class='comma'>,</span> <span class='id identifier rubyid_include_library'>include_library</span><span class='op'>=</span><span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_organization'>organization</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span> <span class='kw'>if</span> <span class='id identifier rubyid_include_library'>include_library</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_accessible_envs'>accessible_envs</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span><span class='rparen'>)</span>
@@ -1978,13 +1854,13 @@ a label was automatically assigned to the object.</p>
       <pre class="lines">
 
 
-239
-240
-241
-242</pre>
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 239</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_format_time'>format_time</span>  <span class='id identifier rubyid_date'>date</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='kw'>return</span> <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_l'>l</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span>
@@ -2114,12 +1990,12 @@ the label that they provided has been overriden to ensure uniqueness.</p>
       <pre class="lines">
 
 
-490
-491
-492</pre>
+441
+442
+443</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 490</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 441</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_library_path_element'>library_path_element</span><span class='lparen'>(</span><span class='id identifier rubyid_perms'>perms</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_environment_path_element'>environment_path_element</span><span class='lparen'>(</span><span class='id identifier rubyid_perms'>perms</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span><span class='rparen'>)</span>
@@ -2144,12 +2020,12 @@ the label that they provided has been overriden to ensure uniqueness.</p>
       <pre class="lines">
 
 
-720
-721
-722</pre>
+671
+672
+673</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 720</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 671</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log_exception'>log_exception</span> <span class='id identifier rubyid_exception'>exception</span><span class='comma'>,</span> <span class='id identifier rubyid_level'>level</span> <span class='op'>=</span> <span class='symbol'>:error</span>
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='id identifier rubyid_level'>level</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exception'>exception</span><span class='rbrace'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rbrace'>}</span><span class='tstring_content'>)\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_backtrace'>backtrace</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_exception'>exception</span>
@@ -2196,12 +2072,12 @@ the label that they provided has been overriden to ensure uniqueness.</p>
       <pre class="lines">
 
 
-336
-337
-338</pre>
+303
+304
+305</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 336</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 303</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_matches_no_redirect?'>matches_no_redirect?</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='rparen'>)</span>
   <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>logout</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>notices/get_new</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span>
@@ -2291,12 +2167,12 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
-264
-265
-266</pre>
+254
+255
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 264</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 254</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_no_env_available_msg'>no_env_available_msg</span>
   <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No environments are currently available in this organization.  Please either add some to the organization or select an organization that has an environment to set user default.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -2321,17 +2197,17 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
-710
-711
-712
-713
-714
-715
-716
-717</pre>
+661
+662
+663
+664
+665
+666
+667
+668</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 710</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 661</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_org_not_found_error'>org_not_found_error</span> <span class='id identifier rubyid_exception'>exception</span>
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
@@ -2361,23 +2237,23 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
 247
 248
 249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260</pre>
+250</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 247</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 237</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_calendar_date'>parse_calendar_date</span><span class='lparen'>(</span><span class='id identifier rubyid_date_str'>date_str</span><span class='comma'>,</span> <span class='id identifier rubyid_time_str'>time_str</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='id identifier rubyid_date_str'>date_str</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -2392,66 +2268,6 @@ so generate_label and default_label_assigned can use them</p>
   <span class='const'>DateTime</span><span class='period'>.</span><span class='id identifier rubyid_strptime'>strptime</span><span class='lparen'>(</span><span class='id identifier rubyid_event'>event</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%m/%d/%Y %I:%M %P %:z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid date or time format</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="parse_locale-instance_method">
-  
-    - (<tt>Object</tt>) <strong>parse_locale</strong>  <span class="extras">(private)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>adapted from http_accept_lang gem, return list of browser locales</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387
-388
-389
-390</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 378</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_parse_locale'>parse_locale</span>
-  <span class='id identifier rubyid_locale_lang'>locale_lang</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HTTP_ACCEPT_LANGUAGE</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s*,\s*</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_l'>l</span><span class='op'>|</span>
-    <span class='id identifier rubyid_l'>l</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>;q=1.0</span><span class='tstring_end'>'</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_l'>l</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>;q=\d+\.\d+$</span><span class='regexp_end'>/</span></span>
-    <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>;q=</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>incorrect locale format</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^[a-z\-]+$</span><span class='regexp_end'>/i</span></span>
-    <span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
-  <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_l'>l</span><span class='op'>|</span>
-    <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>-[a-z]+$</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='rbrace'>}</span>
-  <span class='kw'>end</span>
-<span class='kw'>rescue</span>
-  <span class='lbracket'>[</span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2483,18 +2299,18 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
-393
-394
-395
-396
-397
-398
-399
-400
-401</pre>
+344
+345
+346
+347
+348
+349
+350
+351
+352</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 393</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 344</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_403'>render_403</span>
   <span class='id identifier rubyid_respond_to'>respond_to</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_format'>format</span><span class='op'>|</span>
@@ -2535,21 +2351,21 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415</pre>
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 404</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 355</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_404'>render_404</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_exception'>exception</span>
@@ -2593,24 +2409,24 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427
-428
-429
-430
-431
-432</pre>
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 418</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 369</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_bad_parameters'>render_bad_parameters</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_exception'>exception</span>
@@ -2647,25 +2463,25 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313</pre>
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 298</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_correct_nav'>render_correct_nav</span>
   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:menu_definition</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_menu_definition'>menu_definition</span><span class='lbracket'>[</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:admin_menu</span>
@@ -2713,23 +2529,23 @@ so generate_label and default_label_assigned can use them</p>
       <pre class="lines">
 
 
-436
-437
-438
-439
-440
-441
-442
-443
-444
-445
-446
-447
-448
-449</pre>
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 436</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 387</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_error'>render_error</span><span class='lparen'>(</span><span class='id identifier rubyid_exception'>exception</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_exception'>exception</span>
@@ -2848,6 +2664,55 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
 533
 534
 535
@@ -2878,59 +2743,10 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
 560
 561
 562
-563
-564
-565
-566
-567
-568
-569
-570
-571
-572
-573
-574
-575
-576
-577
-578
-579
-580
-581
-582
-583
-584
-585
-586
-587
-588
-589
-590
-591
-592
-593
-594
-595
-596
-597
-598
-599
-600
-601
-602
-603
-604
-605
-606
-607
-608
-609
-610
-611
-612</pre>
+563</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 533</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 484</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_panel_direct'>render_panel_direct</span><span class='lparen'>(</span><span class='id identifier rubyid_obj_class'>obj_class</span><span class='comma'>,</span> <span class='id identifier rubyid_panel_options'>panel_options</span><span class='comma'>,</span> <span class='id identifier rubyid_search'>search</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='comma'>,</span> <span class='id identifier rubyid_sort'>sort</span><span class='comma'>,</span> <span class='id identifier rubyid_search_options'>search_options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 
@@ -3032,47 +2848,47 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-640
-641
-642
-643
-644
-645
-646
-647
-648
-649
-650
-651
-652
-653
-654
-655
-656
-657
-658
-659
-660
-661
-662
-663
-664
-665
-666
-667
-668
-669
-670
-671
-672
-673
-674
-675
-676
-677</pre>
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 640</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 591</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_panel_items'>render_panel_items</span><span class='lparen'>(</span><span class='id identifier rubyid_items'>items</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='id identifier rubyid_search'>search</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='rparen'>)</span>
   <span class='ivar'>@items</span> <span class='op'>=</span> <span class='id identifier rubyid_items'>items</span>
@@ -3132,34 +2948,34 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-614
-615
-616
-617
-618
-619
-620
-621
-622
-623
-624
-625
-626
-627
-628
-629
-630
-631
-632
-633
-634
-635
-636
-637
-638</pre>
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 614</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 565</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_panel_results'>render_panel_results</span><span class='lparen'>(</span><span class='id identifier rubyid_results'>results</span><span class='comma'>,</span> <span class='id identifier rubyid_total'>total</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:total_count</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='id identifier rubyid_results'>results</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='id identifier rubyid_results'>results</span><span class='period'>.</span><span class='id identifier rubyid_total'>total</span>
@@ -3206,14 +3022,14 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-451
-452
-453
-454
-455</pre>
+402
+403
+404
+405
+406</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 451</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 402</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_requested_action'>requested_action</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_controller_name'>controller_name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_action_name'>action_name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -3240,17 +3056,17 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-364
-365
-366
-367
-368
-369
-370
-371</pre>
+330
+331
+332
+333
+334
+335
+336
+337</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 364</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 330</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_require_no_user'>require_no_user</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span>
@@ -3280,15 +3096,15 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-322
-323
-324
-325
-326
-327</pre>
+289
+290
+291
+292
+293
+294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 322</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 289</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_require_org'>require_org</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_session'>session</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_current_organization'>current_organization</span>
@@ -3316,32 +3132,31 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362</pre>
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 340</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 307</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_require_user'>require_user</span>
 
@@ -3363,7 +3178,6 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
     <span class='comment'>#save original uri and redirect to login page
 </span>    <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:original_uri</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_fullpath'>fullpath</span>
     <span class='id identifier rubyid_execute_after_filters'>execute_after_filters</span>
-    <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_new_user_session_url'>new_user_session_url</span> <span class='kw'>and</span> <span class='kw'>return</span> <span class='kw'>false</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -3386,14 +3200,14 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-292
-293
-294
-295
-296</pre>
+259
+260
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 292</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 259</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_retain_search_history'>retain_search_history</span>
   <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_create_or_update_search_history'>create_or_update_search_history</span><span class='lparen'>(</span><span class='const'>URI</span><span class='lparen'>(</span><span class='ivar'>@_request</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HTTP_REFERER</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:search</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -3430,22 +3244,22 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520
-521
-522
-523</pre>
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 511</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 462</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search_validate'>search_validate</span><span class='lparen'>(</span><span class='id identifier rubyid_obj_class'>obj_class</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_search'>search</span><span class='comma'>,</span> <span class='id identifier rubyid_default'>default</span><span class='op'>=</span><span class='symbol'>:name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_obj_class'>obj_class</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span>
@@ -3534,48 +3348,6 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="set_locale-instance_method">
-  
-    - (<tt>Object</tt>) <strong>set_locale</strong> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-198
-199
-200
-201
-202
-203
-204
-205
-206</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 198</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_set_locale'>set_locale</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_default_locale'>default_locale</span>
-    <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_locale'>locale</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_default_locale'>default_locale</span>
-  <span class='kw'>else</span>
-    <span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_locale'>locale</span> <span class='op'>=</span> <span class='const'>ApplicationController</span><span class='period'>.</span><span class='id identifier rubyid_extract_locale_from_accept_language_header'>extract_locale_from_accept_language_header</span> <span class='id identifier rubyid_parse_locale'>parse_locale</span>
-  <span class='kw'>end</span>
-
-  <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Setting locale: </span><span class='embexpr_beg'>#{</span><span class='const'>I18n</span><span class='period'>.</span><span class='id identifier rubyid_locale'>locale</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="setup_environment_selector-instance_method">
   
     - (<tt>Object</tt>) <strong>setup_environment_selector</strong>(org, accessible)  <span class="extras">(private)</span>
@@ -3590,37 +3362,37 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-457
-458
-459
-460
-461
-462
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483
-484</pre>
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 457</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 408</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_setup_environment_selector'>setup_environment_selector</span> <span class='id identifier rubyid_org'>org</span><span class='comma'>,</span> <span class='id identifier rubyid_accessible'>accessible</span>
   <span class='id identifier rubyid_next_env'>next_env</span> <span class='op'>=</span> <span class='const'>KTEnvironment</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:next_env_id</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:next_env_id</span><span class='rbracket'>]</span>
@@ -3670,13 +3442,13 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
       <pre class="lines">
 
 
-317
-318
-319
-320</pre>
+284
+285
+286
+287</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 317</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/application_controller.rb', line 284</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_verify_ldap'>verify_ldap</span>
   <span class='id identifier rubyid_u'>u</span> <span class='op'>=</span> <span class='id identifier rubyid_current_user'>current_user</span>
@@ -3692,7 +3464,7 @@ is OR&#39;d, whereas each HASH itself is AND&#39;d together</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Apr 30 09:46:05 2013 by
+  Generated on Thu May  9 10:36:39 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>
