@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   include KTLocale
   clear_helpers
 
-  helper UIAlchemy::TranslationHelper
+  #helper UIAlchemy::TranslationHelper
   helper_method :current_organization
   helper_method :render_correct_nav
   before_filter :require_user,:require_org
