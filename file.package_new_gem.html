@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: package_new_gem
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: package_new_gem</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>How to package new gem</h1>
+
+<p>This document is roughly describing what has to be done to add new gem dependency. Right now this
+process involves <code>katello-thirdparty</code> repository which is not publicly accessible. We are sorry about that 
+and we will try to fix it in future. For now please contact one of the core developers for help.</p>
+
+<ul>
+<li><p>go to <code>katello-thirdparty</code> repo</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_cd'>cd</span> <span class='id identifier rubyid_katello'>katello</span><span class='op'>-</span><span class='id identifier rubyid_thirdparty'>thirdparty</span>
+</code></pre>
+
+<p><code>katello-thirdparty</code> is currently not public, we are sorry about that. To </p></li>
+<li><p>create directory for new gem</p>
+
+<pre class="code ruby"><code class="ruby">mkdir rubygem-#{gemname} 
+cd rubygem-#{gemname}
+</code></pre></li>
+<li><p>download the gem</p>
+
+<pre class="code txt"><code class="txt">gem fetch #{gemname}
+</code></pre></li>
+<li><p>copy template</p>
+
+<pre class="code ruby"><code class="ruby">cp ../rubygem-template.spec ./rubygem-#{gemname}.spec
+</code></pre></li>
+<li><p>edit parts marked with <code># EDIT</code> in the copied template</p></li>
+<li><p>commit the spec file and downloaded gem</p></li>
+<li><p>tag the new gem</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_tito'>tito</span> <span class='id identifier rubyid_tag'>tag</span>
+</code></pre></li>
+<li><p>test if it builds locally (example taken from rhel6)</p>
+
+<pre class="code ruby"><code class="ruby">tito build --test --rpm
+tito build --test --rpm --scl ruby193
+</code></pre></li>
+<li><p>tag it in Koji (tags may change)</p>
+
+<pre class="code ruby"><code class="ruby">koji -c ~/.koji/katello-config add-pkg --owner=#{your_name} katello-thirdparty-fedora18 rubygem-#{gemname}
+koji -c ~/.koji/katello-config add-pkg --owner=#{your_name} katello-thirdparty-fedora19 rubygem-#{gemname}
+koji -c ~/.koji/katello-config add-pkg --owner=#{your_name} katello-thirdparty-rhel6    ruby193-rubygem-#{gemname}
+</code></pre></li>
+<li><p>test scratch build (match --dist with tag)</p>
+
+<pre class="code ruby"><code class="ruby">tito build --test --srpm --dist=.el6
+koji -c ~/.koji/katello-config build --scratch katello-thirdparty-rhel6 &lt;name-of-src-rpm-from-previous-command&gt;
+</code></pre></li>
+<li><p>push to <code>katello-thirdparty</code>, commit and tags</p>
+
+<pre class="code ruby"><code class="ruby">git push origin master &lt;tag-name&gt;
+</code></pre></li>
+<li><p>release to Koji</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_tito'>tito</span> <span class='id identifier rubyid_release'>release</span> <span class='id identifier rubyid_koji'>koji</span>
+</code></pre></li>
+<li><p>add package to comps files in <code>Katello/katello</code> repo</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rel'>rel</span><span class='op'>-</span><span class='id identifier rubyid_eng'>eng</span><span class='op'>/</span><span class='id identifier rubyid_comps'>comps</span><span class='op'>/</span><span class='id identifier rubyid_comps'>comps</span><span class='op'>-</span><span class='id identifier rubyid_katello'>katello</span><span class='op'>-</span><span class='id identifier rubyid_server'>server</span><span class='op'>-</span><span class='id identifier rubyid_fedora18'>fedora18</span><span class='period'>.</span><span class='id identifier rubyid_xml'>xml</span>
+<span class='id identifier rubyid_rel'>rel</span><span class='op'>-</span><span class='id identifier rubyid_eng'>eng</span><span class='op'>/</span><span class='id identifier rubyid_comps'>comps</span><span class='op'>/</span><span class='id identifier rubyid_comps'>comps</span><span class='op'>-</span><span class='id identifier rubyid_katello'>katello</span><span class='op'>-</span><span class='id identifier rubyid_server'>server</span><span class='op'>-</span><span class='id identifier rubyid_fedora19'>fedora19</span><span class='period'>.</span><span class='id identifier rubyid_xml'>xml</span>
+<span class='id identifier rubyid_rel'>rel</span><span class='op'>-</span><span class='id identifier rubyid_eng'>eng</span><span class='op'>/</span><span class='id identifier rubyid_comps'>comps</span><span class='op'>/</span><span class='id identifier rubyid_comps'>comps</span><span class='op'>-</span><span class='id identifier rubyid_katello'>katello</span><span class='op'>-</span><span class='id identifier rubyid_server'>server</span><span class='op'>-</span><span class='id identifier rubyid_rhel6'>rhel6</span><span class='period'>.</span><span class='id identifier rubyid_xml'>xml</span>
+</code></pre></li>
+</ul>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu Jun 27 11:21:17 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

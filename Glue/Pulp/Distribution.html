@@ -182,7 +182,7 @@
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:include</span><span class='comma'>,</span> <span class='const'>InstanceMethods</span>
 
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:id</span><span class='comma'>,</span> <span class='symbol'>:description</span><span class='comma'>,</span> <span class='symbol'>:files</span><span class='comma'>,</span> <span class='symbol'>:family</span><span class='comma'>,</span> <span class='symbol'>:variant</span><span class='comma'>,</span> <span class='symbol'>:version</span><span class='comma'>,</span> <span class='symbol'>:url</span><span class='comma'>,</span> <span class='symbol'>:arch</span>
+    <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:_id</span><span class='comma'>,</span> <span class='symbol'>:id</span><span class='comma'>,</span> <span class='symbol'>:description</span><span class='comma'>,</span> <span class='symbol'>:files</span><span class='comma'>,</span> <span class='symbol'>:family</span><span class='comma'>,</span> <span class='symbol'>:variant</span><span class='comma'>,</span> <span class='symbol'>:version</span><span class='comma'>,</span> <span class='symbol'>:url</span><span class='comma'>,</span> <span class='symbol'>:arch</span>
 
     <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
       <span class='op'>::</span><span class='const'>Distribution</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Distribution</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -199,7 +199,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:12 2013 by
+  Generated on Thu Jun 27 11:21:21 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

@@ -259,20 +259,20 @@
       <pre class="lines">
 
 
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74</pre>
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_included_packages'>included_packages</span>
   <span class='id identifier rubyid_packages'>packages</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -305,15 +305,15 @@
       <pre class="lines">
 
 
-49
-50
-51
-52
-53
-54</pre>
+60
+61
+62
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>repoids</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:repository_memberships</span><span class='rparen'>)</span>
@@ -341,16 +341,16 @@
       <pre class="lines">
 
 
-56
-57
-58
-59
-60
-61
-62</pre>
+67
+68
+69
+70
+71
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_filenames'>package_filenames</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pkglist'>pkglist</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_pkgs'>pkgs</span><span class='op'>|</span>
@@ -379,12 +379,12 @@
       <pre class="lines">
 
 
-95
-96
-97</pre>
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_product_cp_ids'>product_cp_ids</span>
   <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:cp_id</span><span class='rparen'>)</span>
@@ -409,12 +409,12 @@
       <pre class="lines">
 
 
-91
-92
-93</pre>
+102
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_product_ids'>product_ids</span>
   <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:id</span><span class='rparen'>)</span>
@@ -439,23 +439,23 @@
       <pre class="lines">
 
 
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
 87
 88
-89</pre>
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 87</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_products'>products</span>
   <span class='id identifier rubyid_products'>products</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -481,7 +481,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:15 2013 by
+  Generated on Thu Jun 27 11:21:25 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

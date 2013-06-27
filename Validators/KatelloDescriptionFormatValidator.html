@@ -106,6 +106,18 @@
 <div class="clear"></div>
 
 
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="MAX_LENGTH-constant" class="">MAX_LENGTH =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>1000</span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -167,7 +179,6 @@
       <pre class="lines">
 
 
-15
 16
 17
 18
@@ -175,12 +186,11 @@
 20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/validators/katello_description_format_validator.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'app/lib/validators/katello_description_format_validator.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_each'>validate_each</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='comma'>,</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span>
-    <span class='id identifier rubyid_max_length'>max_length</span> <span class='op'>=</span> <span class='int'>255</span>
-    <span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='lbracket'>[</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='const'>N_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cannot contain more than %s characters</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_max_length'>max_length</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_max_length'>max_length</span>
+    <span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='lbracket'>[</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='const'>N_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cannot contain more than %s characters</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='const'>MAX_LENGTH</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&lt;=</span> <span class='const'>MAX_LENGTH</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -193,7 +203,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:37:04 2013 by
+  Generated on Thu Jun 27 11:22:34 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

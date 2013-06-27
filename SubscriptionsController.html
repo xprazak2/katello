@@ -447,7 +447,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>TODO: remove this method and route since nutupane (experimental mode) uses the api method subscriptions_controller#organization_index.</p>
+</div></span>
   
 </li>
 
@@ -606,28 +607,6 @@
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#show-instance_method" title="#show (instance method)">- (Object) <strong>show</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
         <li class="private ">
   <span class="summary_signature">
     
@@ -774,10 +753,6 @@
       <pre class="lines">
 
 
-111
-112
-113
-114
 115
 116
 117
@@ -785,10 +760,14 @@
 119
 120
 121
-122</pre>
+122
+123
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_consumers'>consumers</span>
   <span class='id identifier rubyid_systems'>systems</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_systems'>systems</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span>
@@ -822,12 +801,12 @@
       <pre class="lines">
 
 
-299
-300
-301</pre>
+305
+306
+307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 299</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 305</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span>
   <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>subscription</span><span class='tstring_end'>'</span></span>
@@ -852,19 +831,19 @@
       <pre class="lines">
 
 
-258
-259
-260
-261
-262
-263
 264
 265
 266
-267</pre>
+267
+268
+269
+270
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 258</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 264</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_temp_file'>create_temp_file</span><span class='lparen'>(</span><span class='id identifier rubyid_prefix'>prefix</span><span class='rparen'>)</span>
   <span class='comment'># default external encoding in Ruby 1.9.3 is UTF-8, need to specify that we are opening a binary file (ASCII-8BIT encoding)
@@ -896,12 +875,6 @@
       <pre class="lines">
 
 
-162
-163
-164
-165
-166
-167
 168
 169
 170
@@ -912,10 +885,16 @@
 175
 176
 177
-178</pre>
+178
+179
+180
+181
+182
+183
+184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 162</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 168</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_manifest'>delete_manifest</span>
   <span class='kw'>begin</span>
@@ -954,12 +933,12 @@
       <pre class="lines">
 
 
-98
-99
-100</pre>
+107
+108
+109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 107</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edit'>edit</span>
   <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>edit</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:subscription</span> <span class='op'>=&gt;</span> <span class='ivar'>@subscription</span><span class='comma'>,</span> <span class='symbol'>:editable</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span>
@@ -984,13 +963,13 @@
       <pre class="lines">
 
 
-129
-130
-131
-132</pre>
+135
+136
+137
+138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 135</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edit_manifest'>edit_manifest</span>
   <span class='id identifier rubyid_get_manifest_details'>get_manifest_details</span>
@@ -1016,14 +995,14 @@
       <pre class="lines">
 
 
-252
-253
-254
-255
-256</pre>
+258
+259
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 252</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 258</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_or_create_temp_dir'>find_or_create_temp_dir</span>
   <span class='id identifier rubyid_dir'>dir</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='rbrace'>}</span><span class='tstring_content'>/tmp</span><span class='tstring_end'>&quot;</span></span>
@@ -1050,12 +1029,12 @@
       <pre class="lines">
 
 
-303
-304
-305</pre>
+309
+310
+311</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 309</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_provider'>find_provider</span>
     <span class='ivar'>@provider</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_redhat_provider'>redhat_provider</span>
@@ -1080,12 +1059,12 @@
       <pre class="lines">
 
 
-277
-278
-279</pre>
+283
+284
+285</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 277</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 283</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_subscription'>find_subscription</span>
   <span class='ivar'>@subscription</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_find_pool'>find_pool</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -1110,22 +1089,22 @@
       <pre class="lines">
 
 
-238
-239
-240
-241
-242
-243
 244
 245
 246
 247
 248
 249
-250</pre>
+250
+251
+252
+253
+254
+255
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 238</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 244</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_manifest_details'>get_manifest_details</span>
   <span class='ivar'>@details</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_owner_details'>owner_details</span>
@@ -1160,17 +1139,17 @@
       <pre class="lines">
 
 
-134
-135
-136
-137
-138
-139
 140
-141</pre>
+141
+142
+143
+144
+145
+146
+147</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 140</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_history'>history</span>
   <span class='kw'>begin</span>
@@ -1200,12 +1179,6 @@
       <pre class="lines">
 
 
-143
-144
-145
-146
-147
-148
 149
 150
 151
@@ -1217,10 +1190,16 @@
 157
 158
 159
-160</pre>
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_history_items'>history_items</span>
   <span class='kw'>begin</span>
@@ -1260,6 +1239,7 @@
       <pre class="lines">
 
 
+54
 55
 56
 57
@@ -1272,10 +1252,15 @@
 64
 65
 66
-67</pre>
+67
+68
+69
+70
+71
+72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
 
@@ -1284,10 +1269,16 @@
 </span>  <span class='comment'># is too restrictive, preventing viewing of previously imported subscriptions.
 </span>  <span class='kw'>if</span> <span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_editable?'>editable?</span>
     <span class='id identifier rubyid_details'>details</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_owner_details'>owner_details</span>
-    <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>upstreamUuid</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>upstreamUuid</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span> <span class='op'>||</span>
+    <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>upstreamConsumer</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span>
         <span class='lparen'>(</span><span class='op'>!</span><span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_task_status'>task_status</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='ivar'>@provider</span><span class='period'>.</span><span class='id identifier rubyid_task_status'>task_status</span><span class='period'>.</span><span class='id identifier rubyid_finish_time'>finish_time</span><span class='rparen'>)</span><span class='rparen'>)</span>
       <span class='ivar'>@panel_options</span><span class='lbracket'>[</span><span class='symbol'>:initial_state</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:panel</span> <span class='op'>=&gt;</span> <span class='symbol'>:new</span><span class='rbrace'>}</span>
     <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_experimental_ui'>experimental_ui</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:index_nutupane</span><span class='comma'>,</span> <span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='symbol'>:experimental_ui</span> <span class='op'>=&gt;</span> <span class='kw'>true</span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:index</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1304,18 +1295,22 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>TODO: remove this method and route since nutupane (experimental mode) uses the api method subscriptions_controller#organization_index</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-69
-70
-71
-72
-73
-74
 75
 76
 77
@@ -1337,38 +1332,50 @@
 93
 94
 95
-96</pre>
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_items'>items</span>
   <span class='id identifier rubyid_order'>order</span> <span class='op'>=</span> <span class='id identifier rubyid_split_order'>split_order</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:order</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:search</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_query_string'>query_string</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:search</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_offset'>offset</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:offset</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>||</span> <span class='int'>0</span>
-  <span class='id identifier rubyid_filters'>filters</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_filters'>filters</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 
-  <span class='comment'># Without any search terms, all subscriptions for an org are queried directly from candlepin instead of
-</span>  <span class='comment'># hitting elastic search. This is important since this is then only time subscriptions get reindexed
-</span>  <span class='comment'># currently.
-</span>  <span class='comment'># Note: This does open the possibility that the elastic search contents will be out of date compared to
-</span>  <span class='comment'>#       what is actually in candlepin. This could only happen, though, if the user was performing a
-</span>  <span class='comment'>#       search and didn't refresh the page while the data was changing behind the scenes. Until this
-</span>  <span class='comment'>#       becomes a specific issue, re-indexing will not be performed constantly.
-</span>  <span class='kw'>if</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_subscriptions'>subscriptions</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_redhat_provider'>redhat_provider</span><span class='period'>.</span><span class='id identifier rubyid_index_subscriptions'>index_subscriptions</span>
+  <span class='comment'># Limit subscriptions to current org and Red Hat provider
+</span>  <span class='id identifier rubyid_filters'>filters</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span><span class='symbol'>:org</span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_filters'>filters</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span><span class='symbol'>:provider_id</span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_redhat_provider'>redhat_provider</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
 
-    <span class='kw'>if</span> <span class='id identifier rubyid_offset'>offset</span> <span class='op'>!=</span> <span class='int'>0</span>
-      <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>and</span> <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_subscriptions'>subscriptions</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-    <span class='kw'>end</span>
-    <span class='id identifier rubyid_render_panel_items'>render_panel_items</span><span class='lparen'>(</span><span class='id identifier rubyid_subscriptions'>subscriptions</span><span class='comma'>,</span> <span class='ivar'>@panel_options</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_offset'>offset</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>
-    <span class='comment'># Limit subscriptions to current org and Red Hat provider
-</span>    <span class='id identifier rubyid_filters'>filters</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:org</span><span class='op'>=&gt;</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='comma'>,</span> <span class='symbol'>:provider_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_redhat_provider'>redhat_provider</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbrace'>}</span>
-    <span class='id identifier rubyid_search_results'>search_results</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='comma'>,</span> <span class='id identifier rubyid_offset'>offset</span><span class='comma'>,</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_page_size'>page_size</span><span class='comma'>,</span> <span class='id identifier rubyid_filters'>filters</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_results_total'>results_total</span> <span class='op'>=</span> <span class='id identifier rubyid_search_results'>search_results</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='id identifier rubyid_search_results'>search_results</span><span class='period'>.</span><span class='id identifier rubyid_total'>total</span>
-    <span class='id identifier rubyid_render_panel_results'>render_panel_results</span><span class='lparen'>(</span><span class='id identifier rubyid_search_results'>search_results</span><span class='comma'>,</span> <span class='id identifier rubyid_results_total'>results_total</span><span class='comma'>,</span> <span class='ivar'>@panel_options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_filters'>filters</span><span class='comma'>,</span>
+      <span class='symbol'>:load_records?</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+      <span class='symbol'>:default_field</span> <span class='op'>=&gt;</span> <span class='symbol'>:name</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:page_size</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:page_size</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='period'>.</span><span class='id identifier rubyid_page_size'>page_size</span>
+  <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:sort_by</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='symbol'>:name_sort</span>
+  <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:sort_order</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ASC</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_slice'>slice</span><span class='lparen'>(</span><span class='symbol'>:sort_by</span><span class='comma'>,</span> <span class='symbol'>:sort_order</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+  <span class='comment'># Without any search terms, reindex all subscriptions in elasticsearch. This is to insure
+</span>  <span class='comment'># that the latest information is searchable.
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_query_string'>query_string</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_query_string'>query_string</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_redhat_provider'>redhat_provider</span><span class='period'>.</span><span class='id identifier rubyid_index_subscriptions'>index_subscriptions</span>
   <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='const'>Glue</span><span class='op'>::</span><span class='const'>ElasticSearch</span><span class='op'>::</span><span class='const'>Items</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Pool</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_subscriptions'>subscriptions</span><span class='comma'>,</span> <span class='id identifier rubyid_total_count'>total_count</span> <span class='op'>=</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_retrieve'>retrieve</span><span class='lparen'>(</span><span class='id identifier rubyid_query_string'>query_string</span><span class='comma'>,</span> <span class='id identifier rubyid_offset'>offset</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_render_panel_results'>render_panel_results</span><span class='lparen'>(</span><span class='id identifier rubyid_subscriptions'>subscriptions</span><span class='comma'>,</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_total_items'>total_items</span><span class='comma'>,</span> <span class='ivar'>@panel_options</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1390,17 +1397,21 @@
       <pre class="lines">
 
 
-124
-125
-126
-127</pre>
+128
+129
+130
+131
+132
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_get_manifest_details'>get_manifest_details</span>
-  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:provider</span><span class='op'>=&gt;</span><span class='ivar'>@provider</span><span class='comma'>,</span> <span class='symbol'>:statuses</span><span class='op'>=&gt;</span><span class='ivar'>@statuses</span><span class='comma'>,</span> <span class='symbol'>:details</span><span class='op'>=&gt;</span><span class='ivar'>@details</span><span class='comma'>,</span> <span class='symbol'>:upstream</span><span class='op'>=&gt;</span><span class='ivar'>@upstream</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_can_refresh'>can_refresh</span> <span class='op'>=</span> <span class='ivar'>@upstream</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>idCert</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@upstream</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>idCert</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cert</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:provider</span><span class='op'>=&gt;</span><span class='ivar'>@provider</span><span class='comma'>,</span> <span class='symbol'>:statuses</span><span class='op'>=&gt;</span><span class='ivar'>@statuses</span><span class='comma'>,</span> <span class='symbol'>:details</span><span class='op'>=&gt;</span><span class='ivar'>@details</span><span class='comma'>,</span> <span class='symbol'>:upstream</span><span class='op'>=&gt;</span><span class='ivar'>@upstream</span><span class='comma'>,</span>
+                                    <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='comma'>,</span> <span class='symbol'>:can_refresh</span><span class='op'>=&gt;</span><span class='id identifier rubyid_can_refresh'>can_refresh</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1422,14 +1433,14 @@
       <pre class="lines">
 
 
+48
 49
 50
 51
-52
-53</pre>
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_param_rules'>param_rules</span>
   <span class='lbrace'>{</span>
@@ -1456,12 +1467,12 @@
       <pre class="lines">
 
 
-107
-108
-109</pre>
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_products'>products</span>
   <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>products</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:subscription</span><span class='op'>=&gt;</span><span class='ivar'>@subscription</span><span class='comma'>,</span> <span class='symbol'>:editable</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_controller_display_name'>controller_display_name</span><span class='rbrace'>}</span>
@@ -1486,12 +1497,6 @@
       <pre class="lines">
 
 
-213
-214
-215
-216
-217
-218
 219
 220
 221
@@ -1503,10 +1508,16 @@
 227
 228
 229
-230</pre>
+230
+231
+232
+233
+234
+235
+236</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 213</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 219</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_refresh_manifest'>refresh_manifest</span>
   <span class='kw'>begin</span>
@@ -1563,8 +1574,7 @@
 43
 44
 45
-46
-47</pre>
+46</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 29</span>
@@ -1575,7 +1585,6 @@
   <span class='lbrace'>{</span>
     <span class='symbol'>:index</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_provider_test'>read_provider_test</span><span class='comma'>,</span>
     <span class='symbol'>:items</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_provider_test'>read_provider_test</span><span class='comma'>,</span>
-    <span class='symbol'>:show</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_provider_test'>read_provider_test</span><span class='comma'>,</span>
     <span class='symbol'>:edit</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_provider_test'>read_provider_test</span><span class='comma'>,</span>  <span class='comment'># Note: edit is the callback for sliding out right panel
 </span>    <span class='symbol'>:products</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_provider_test'>read_provider_test</span><span class='comma'>,</span>
     <span class='symbol'>:consumers</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_read_provider_test'>read_provider_test</span><span class='comma'>,</span>
@@ -1608,12 +1617,12 @@
       <pre class="lines">
 
 
-232
-233
-234</pre>
+238
+239
+240</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 238</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_section_id'>section_id</span>
   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>subscriptions</span><span class='tstring_end'>'</span></span>
@@ -1638,12 +1647,6 @@
       <pre class="lines">
 
 
-281
-282
-283
-284
-285
-286
 287
 288
 289
@@ -1654,10 +1657,16 @@
 294
 295
 296
-297</pre>
+297
+298
+299
+300
+301
+302
+303</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 281</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 287</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_setup_options'>setup_options</span>
   <span class='ivar'>@panel_options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:title</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Subscriptions</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span>
@@ -1682,38 +1691,6 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="show-instance_method">
-  
-    - (<tt>Object</tt>) <strong>show</strong> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-102
-103
-104
-105</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 102</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
-  <span class='ivar'>@provider</span> <span class='op'>=</span> <span class='id identifier rubyid_current_organization'>current_organization</span><span class='period'>.</span><span class='id identifier rubyid_redhat_provider'>redhat_provider</span>
-  <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>subscriptions/list_subscription_show</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:item</span><span class='op'>=&gt;</span><span class='ivar'>@subscription</span><span class='comma'>,</span> <span class='symbol'>:columns</span> <span class='op'>=&gt;</span> <span class='const'>COLUMNS</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='comma'>,</span> <span class='symbol'>:noblock</span> <span class='op'>=&gt;</span> <span class='int'>1</span><span class='rbrace'>}</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="split_order-instance_method">
   
     - (<tt>Object</tt>) <strong>split_order</strong>(order)  <span class="extras">(private)</span>
@@ -1728,16 +1705,16 @@
       <pre class="lines">
 
 
-269
-270
-271
-272
-273
-274
-275</pre>
+275
+276
+277
+278
+279
+280
+281</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 275</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_split_order'>split_order</span> <span class='id identifier rubyid_order'>order</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_order'>order</span>
@@ -1766,12 +1743,6 @@
       <pre class="lines">
 
 
-180
-181
-182
-183
-184
-185
 186
 187
 188
@@ -1797,10 +1768,16 @@
 208
 209
 210
-211</pre>
+211
+212
+213
+214
+215
+216
+217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/subscriptions_controller.rb', line 186</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_upload'>upload</span>
   <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:provider</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span> <span class='kw'>and</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:provider</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span> <span class='symbol'>:contents</span>
@@ -1844,7 +1821,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:44 2013 by
+  Generated on Thu Jun 27 11:22:11 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

@@ -520,7 +520,7 @@ have received a copy of GPLv2 along with this software; if not, see
   <span class='ivar'>@repos</span>   <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='id identifier rubyid_from_env'>from_env</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_repo'>repo</span><span class='op'>|</span>
-    <span class='ivar'>@repos</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_repo'>repo</span> <span class='kw'>if</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_has_distribution?'>has_distribution?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_distribution_id'>distribution_id</span>
+    <span class='ivar'>@repos</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_repo'>repo</span> <span class='kw'>if</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_has_distribution?'>has_distribution?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_display_name'>display_name</span>
   <span class='kw'>end</span>
   <span class='ivar'>@repos</span>
 <span class='kw'>end</span></pre>
@@ -534,7 +534,7 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:33 2013 by
+  Generated on Thu Jun 27 11:21:58 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

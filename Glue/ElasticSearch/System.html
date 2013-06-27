@@ -256,7 +256,10 @@
 85
 86
 87
-88</pre>
+88
+89
+90
+91</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/system.rb', line 16</span>
@@ -291,7 +294,9 @@
                                      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>custom_info.KEYNAME</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
                                      <span class='symbol'>:content_view</span><span class='comma'>,</span>
                                      <span class='symbol'>:memory</span><span class='comma'>,</span>
-                                     <span class='symbol'>:sockets</span><span class='rbracket'>]</span>
+                                     <span class='symbol'>:sockets</span><span class='comma'>,</span>
+                                     <span class='symbol'>:status</span>
+                  <span class='rbracket'>]</span>
 
     <span class='id identifier rubyid_dynamic_templates'>dynamic_templates</span> <span class='op'>=</span> <span class='lbracket'>[</span>
         <span class='lbrace'>{</span>
@@ -328,6 +333,7 @@
       <span class='kw'>end</span>
       <span class='id identifier rubyid_indexes'>indexes</span> <span class='symbol'>:custom_info</span><span class='comma'>,</span> <span class='symbol'>:path</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>just_name</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
       <span class='kw'>end</span>
+      <span class='id identifier rubyid_indexes'>indexes</span> <span class='symbol'>:status</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>string</span><span class='tstring_end'>'</span></span>
 
     <span class='kw'>end</span>
 
@@ -360,9 +366,6 @@
       <pre class="lines">
 
 
-90
-91
-92
 93
 94
 95
@@ -370,10 +373,14 @@
 97
 98
 99
-100</pre>
+100
+101
+102
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/system.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/system.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_extended_index_attrs'>extended_index_attrs</span>
   <span class='lbrace'>{</span><span class='symbol'>:facts</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_facts'>facts</span><span class='comma'>,</span> <span class='symbol'>:organization_id</span><span class='op'>=&gt;</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
@@ -383,7 +390,8 @@
    <span class='symbol'>:installed_products</span><span class='op'>=&gt;</span><span class='id identifier rubyid_collect_installed_product_names'>collect_installed_product_names</span><span class='comma'>,</span>
    <span class='symbol'>:sockets</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sockets'>sockets</span><span class='comma'>,</span>
    <span class='symbol'>:custom_info</span><span class='op'>=&gt;</span><span class='id identifier rubyid_collect_custom_info'>collect_custom_info</span><span class='comma'>,</span>
-   <span class='symbol'>:content_view</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='rparen'>)</span>
+   <span class='symbol'>:content_view</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='period'>.</span><span class='id identifier rubyid_try'>try</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='symbol'>:status</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_compliance_color'>compliance_color</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -396,7 +404,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:12 2013 by
+  Generated on Thu Jun 27 11:21:22 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

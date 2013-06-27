@@ -567,7 +567,24 @@
 153
 154
 155
-156</pre>
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 15</span>
@@ -617,19 +634,22 @@
 </span>    <span class='id identifier rubyid_pkgs'>pkgs</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_packages'>packages</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_pkg'>pkg</span><span class='op'>|</span> <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
     <span class='id identifier rubyid_pulp_id'>pulp_id</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span>
 
-    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_pkgs'>pkgs</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+      <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
 
-      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_pkgs'>pkgs</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
-        <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
-          <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
-            <span class='comment'># if there is more than 1 repo associated w/ the pkg, remove this repo
-</span>            <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_pkgs'>pkgs</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
+          <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
+            <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+              <span class='comment'># if there is more than 1 repo associated w/ the pkg, remove this repo
+</span>              <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+            <span class='kw'>end</span>
           <span class='kw'>end</span>
         <span class='kw'>end</span>
       <span class='kw'>end</span>
-
-    <span class='kw'>end</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_pkgs'>pkgs</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># now, for any package that only had this repo asscociated with it, remove the package from the index
 </span>    <span class='id identifier rubyid_repoids'>repoids</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -639,10 +659,15 @@
 
   <span class='kw'>def</span> <span class='id identifier rubyid_index_errata'>index_errata</span>
     <span class='id identifier rubyid_errata'>errata</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_err'>err</span><span class='op'>|</span> <span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
-    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
-      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span>
-    <span class='kw'>end</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+      <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 
   <span class='kw'>def</span> <span class='id identifier rubyid_update_errata_index'>update_errata_index</span>
@@ -650,19 +675,22 @@
 </span>    <span class='id identifier rubyid_errata'>errata</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_err'>err</span><span class='op'>|</span> <span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
     <span class='id identifier rubyid_pulp_id'>pulp_id</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span>
 
-    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+      <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
 
-      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
-        <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
-          <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
-            <span class='comment'># if there is more than 1 repo associated w/ the errata, remove this repo
-</span>            <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
+          <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
+            <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+              <span class='comment'># if there is more than 1 repo associated w/ the errata, remove this repo
+</span>              <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+            <span class='kw'>end</span>
           <span class='kw'>end</span>
         <span class='kw'>end</span>
       <span class='kw'>end</span>
-
-    <span class='kw'>end</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='kw'>end</span>
 
     <span class='comment'># now, for any errata that only had this repo asscociated with it, remove the errata from the index
 </span>    <span class='id identifier rubyid_repoids'>repoids</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -672,10 +700,16 @@
 
   <span class='kw'>def</span> <span class='id identifier rubyid_index_package_groups'>index_package_groups</span>
     <span class='id identifier rubyid_package_groups_map'>package_groups_map</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_package_groups'>package_groups</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_pg'>pg</span><span class='op'>|</span> <span class='id identifier rubyid_pg'>pg</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_pg'>pg</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
-    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
-      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span>
-    <span class='kw'>end</span> <span class='kw'>unless</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+    <span class='kw'>unless</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+      <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 
   <span class='kw'>def</span> <span class='id identifier rubyid_update_package_group_index'>update_package_group_index</span>
@@ -740,14 +774,14 @@
       <pre class="lines">
 
 
-150
-151
-152
-153
-154</pre>
+167
+168
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_content_indices'>clear_content_indices</span>
   <span class='id identifier rubyid_update_packages_index'>update_packages_index</span>
@@ -774,13 +808,13 @@
       <pre class="lines">
 
 
-133
-134
-135
-136</pre>
+150
+151
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 133</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errata_count'>errata_count</span>
   <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='symbol'>:repoids</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -842,15 +876,15 @@
       <pre class="lines">
 
 
-143
-144
-145
-146
-147
-148</pre>
+160
+161
+162
+163
+164
+165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index_content'>index_content</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index_packages'>index_packages</span>
@@ -878,23 +912,33 @@
       <pre class="lines">
 
 
-80
-81
-82
 83
 84
 85
-86</pre>
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index_errata'>index_errata</span>
   <span class='id identifier rubyid_errata'>errata</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_err'>err</span><span class='op'>|</span> <span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
-  <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
-    <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span>
-  <span class='kw'>end</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+    <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -916,23 +960,35 @@
       <pre class="lines">
 
 
-113
-114
-115
-116
-117
-118
-119</pre>
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index_package_groups'>index_package_groups</span>
   <span class='id identifier rubyid_package_groups_map'>package_groups_map</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_package_groups'>package_groups</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_pg'>pg</span><span class='op'>|</span> <span class='id identifier rubyid_pg'>pg</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_pg'>pg</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
-  <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
-    <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span>
-  <span class='kw'>end</span> <span class='kw'>unless</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+    <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>PackageGroup</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_package_groups_map'>package_groups_map</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1000,13 +1056,13 @@
       <pre class="lines">
 
 
-138
-139
-140
-141</pre>
+155
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_package_count'>package_count</span>
   <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='symbol'>:repoids</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -1032,14 +1088,6 @@
       <pre class="lines">
 
 
-88
-89
-90
-91
-92
-93
-94
-95
 96
 97
 98
@@ -1055,29 +1103,43 @@
 108
 109
 110
-111</pre>
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_errata_index'>update_errata_index</span>
   <span class='comment'># for each of the errata in the repo, unassociate the repo from the errata
 </span>  <span class='id identifier rubyid_errata'>errata</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_err'>err</span><span class='op'>|</span> <span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_err'>err</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
   <span class='id identifier rubyid_pulp_id'>pulp_id</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span>
 
-  <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+    <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
 
-    <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
-      <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
-        <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
-          <span class='comment'># if there is more than 1 repo associated w/ the errata, remove this repo
-</span>          <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_errata'>errata</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
+        <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
+          <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+            <span class='comment'># if there is more than 1 repo associated w/ the errata, remove this repo
+</span>            <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+          <span class='kw'>end</span>
         <span class='kw'>end</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
-
-  <span class='kw'>end</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='kw'>end</span>
 
   <span class='comment'># now, for any errata that only had this repo asscociated with it, remove the errata from the index
 </span>  <span class='id identifier rubyid_repoids'>repoids</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1104,20 +1166,20 @@
       <pre class="lines">
 
 
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131</pre>
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_package_group_index'>update_package_group_index</span>
   <span class='comment'># for each of the package_groups in the repo, unassociate the repo from the package_group
@@ -1173,7 +1235,10 @@
 75
 76
 77
-78</pre>
+78
+79
+80
+81</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/repository.rb', line 55</span>
@@ -1183,19 +1248,22 @@
 </span>  <span class='id identifier rubyid_pkgs'>pkgs</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_packages'>packages</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_pkg'>pkg</span><span class='op'>|</span> <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span><span class='rbrace'>}</span>
   <span class='id identifier rubyid_pulp_id'>pulp_id</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_pulp_id'>pulp_id</span>
 
-  <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_pkgs'>pkgs</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+    <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
 
-    <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_pkgs'>pkgs</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
-      <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
-        <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
-          <span class='comment'># if there is more than 1 repo associated w/ the pkg, remove this repo
-</span>          <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+    <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='const'>Package</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_pkgs'>pkgs</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_documents'>documents</span><span class='op'>|</span>
+        <span class='id identifier rubyid_documents'>documents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_document'>document</span><span class='op'>|</span>
+          <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+            <span class='comment'># if there is more than 1 repo associated w/ the pkg, remove this repo
+</span>            <span class='id identifier rubyid_document'>document</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rparen'>)</span>
+          <span class='kw'>end</span>
         <span class='kw'>end</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
-
-  <span class='kw'>end</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_pkgs'>pkgs</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='kw'>end</span>
 
   <span class='comment'># now, for any package that only had this repo asscociated with it, remove the package from the index
 </span>  <span class='id identifier rubyid_repoids'>repoids</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>repoids:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pulp_id'>pulp_id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1242,7 +1310,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:13 2013 by
+  Generated on Thu Jun 27 11:21:23 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

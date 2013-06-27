@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: add_praise
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: add_praise</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Gem <code>praise</code></h1>
+
+<p><code>pry + raise = praise</code></p>
+
+<p>A small gem intercepting all <code>#raise</code> calls spawning <code>pry</code> sessions for investigation. There is
+a runtime-editable config file to set ignore patterns for unwanted <code>#raise</code> calls. The gem targets
+investigation of re-risen and masked-by-another exceptions.</p>
+
+<ul>
+<li>  Documentation: <a href="http://blog.pitr.ch/praise">http://blog.pitr.ch/praise</a></li>
+<li>  Source: <a href="https://github.com/pitr-ch/praise">https://github.com/pitr-ch/praise</a></li>
+<li>  Blog: <a href="http://blog.pitr.ch/blog/categories/praise/">http://blog.pitr.ch/blog/categories/praise/</a></li>
+</ul>
+
+<h2>Installation</h2>
+
+<ol>
+<li> add <code>gem &#39;praise&#39;</code> to <code>bundle.d/local.rb</code></li>
+<li><p>add the following to <code>config/initializers/_local.rb</code></p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_dir'>dir</span>    <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>..</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='kw'>__FILE__</span><span class='rparen'>)</span>
+<span class='const'>Praise</span> <span class='op'>=</span> <span class='const'>PraiseImpl</span><span class='period'>.</span>
+    <span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dir'>dir</span><span class='rbrace'>}</span><span class='tstring_content'>/ignored_exceptions.yml</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+        <span class='kw'>true</span><span class='comma'>,</span>
+        <span class='tlambda'>-&gt;</span> <span class='id identifier rubyid_level'>level</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span> <span class='tlambeg'>{</span> <span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>praise</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='const'>Logging</span><span class='period'>.</span><span class='id identifier rubyid_level_num'>level_num</span><span class='lparen'>(</span><span class='id identifier rubyid_level'>level</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span> <span class='rbrace'>}</span>
+</code></pre></li>
+</ol>
+
+<p>See <a href="http://blog.pitr.ch/praise">Documentation</a> for more information about usage.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu Jun 27 11:21:17 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

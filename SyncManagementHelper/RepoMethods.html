@@ -279,14 +279,14 @@
       <pre class="lines">
 
 
-60
-61
-62
-63
-64</pre>
+64
+65
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_arches'>arches</span><span class='lparen'>(</span><span class='id identifier rubyid_arch_repos'>arch_repos</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_collect_arches'>collect_arches</span><span class='lparen'>(</span><span class='id identifier rubyid_arch_repos'>arch_repos</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_arch'>arch</span><span class='comma'>,</span> <span class='id identifier rubyid_repos'>repos</span><span class='op'>|</span>
@@ -326,12 +326,12 @@
       <pre class="lines">
 
 
-83
-84
-85</pre>
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 87</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_collect_arches'>collect_arches</span><span class='lparen'>(</span><span class='id identifier rubyid_repos'>repos</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_group_by'>group_by</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:arch</span><span class='rparen'>)</span>
@@ -372,14 +372,14 @@ empty array is returned</p>
       <pre class="lines">
 
 
-73
-74
-75
-76
-77</pre>
+77
+78
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_collect_minor'>collect_minor</span><span class='lparen'>(</span><span class='id identifier rubyid_repos'>repos</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_result'>result</span>               <span class='op'>=</span> <span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_group_by'>group_by</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:minor</span><span class='rparen'>)</span>
@@ -416,25 +416,25 @@ empty array is returned</p>
       <pre class="lines">
 
 
-42
-43
-44
-45
 46
 47
 48
 49
-50</pre>
+50
+51
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_collect_repos'>collect_repos</span><span class='lparen'>(</span><span class='id identifier rubyid_products'>products</span><span class='comma'>,</span> <span class='id identifier rubyid_env'>env</span><span class='comma'>,</span> <span class='id identifier rubyid_include_disabled'>include_disabled</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='const'>Glue</span><span class='op'>::</span><span class='const'>Pulp</span><span class='op'>::</span><span class='const'>Repos</span><span class='period'>.</span><span class='id identifier rubyid_prepopulate!'>prepopulate!</span> <span class='id identifier rubyid_products'>products</span><span class='comma'>,</span> <span class='id identifier rubyid_env'>env</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='rbracket'>]</span>
 
   <span class='id identifier rubyid_products'>products</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_prod'>prod</span><span class='op'>|</span>
     <span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='comma'>,</span> <span class='id identifier rubyid_repos_without_minor'>repos_without_minor</span> <span class='op'>=</span> <span class='id identifier rubyid_collect_minor'>collect_minor</span><span class='lparen'>(</span><span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='id identifier rubyid_env'>env</span><span class='comma'>,</span> <span class='id identifier rubyid_include_disabled'>include_disabled</span><span class='rparen'>)</span><span class='rparen'>)</span>
-    <span class='lbrace'>{</span> <span class='symbol'>:name</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>product</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:repos</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repos_without_minor'>repos_without_minor</span><span class='comma'>,</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:name</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:object</span><span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>product</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:repos</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_repos_without_minor'>repos_without_minor</span><span class='comma'>,</span>
       <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_minors'>minors</span><span class='lparen'>(</span><span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:organization</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_prod'>prod</span><span class='period'>.</span><span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='rbrace'>}</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -468,14 +468,14 @@ empty array is returned</p>
       <pre class="lines">
 
 
-53
-54
-55
-56
-57</pre>
+57
+58
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_minors'>minors</span><span class='lparen'>(</span><span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_minor_repos'>minor_repos</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_minor'>minor</span><span class='comma'>,</span> <span class='id identifier rubyid_repos'>repos</span><span class='op'>|</span>
@@ -512,10 +512,6 @@ empty array is returned</p>
       <pre class="lines">
 
 
-88
-89
-90
-91
 92
 93
 94
@@ -525,10 +521,14 @@ empty array is returned</p>
 98
 99
 100
-101</pre>
+101
+102
+103
+104
+105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/sync_management_helper.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pprint_collection'>pprint_collection</span> <span class='id identifier rubyid_coll'>coll</span>
   <span class='id identifier rubyid_coll'>coll</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_prod'>prod</span><span class='op'>|</span>
@@ -554,7 +554,7 @@ empty array is returned</p>
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:12 2013 by
+  Generated on Thu Jun 27 11:21:21 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

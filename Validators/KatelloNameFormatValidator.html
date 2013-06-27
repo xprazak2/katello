@@ -198,15 +198,15 @@
       <pre class="lines">
 
 
-25
-26
-27
 28
 29
-30</pre>
+30
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/validators/katello_name_format_validator.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'app/lib/validators/katello_name_format_validator.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_validate_length'>validate_length</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='comma'>,</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='id identifier rubyid_max_length'>max_length</span> <span class='op'>=</span> <span class='int'>128</span><span class='comma'>,</span> <span class='id identifier rubyid_min_length'>min_length</span> <span class='op'>=</span> <span class='int'>1</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span>
@@ -240,7 +240,6 @@
       <pre class="lines">
 
 
-15
 16
 17
 18
@@ -248,14 +247,19 @@
 20
 21
 22
-23</pre>
+23
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/validators/katello_name_format_validator.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'app/lib/validators/katello_name_format_validator.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_each'>validate_each</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='comma'>,</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_value'>value</span>
-    <span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='lbracket'>[</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='const'>N_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cannot contain characters other than alpha numerals, space, '_', '-'</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A[\w| |_|-]*\Z</span><span class='regexp_end'>/</span></span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A[[:alnum:] _-]*\z</span><span class='regexp_end'>/</span></span>
+      <span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='lbracket'>[</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='const'>N_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cannot contain characters other than alpha numerals, space, '_', '-'</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
     <span class='const'>NoTrailingSpaceValidator</span><span class='period'>.</span><span class='id identifier rubyid_validate_trailing_space'>validate_trailing_space</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='comma'>,</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
     <span class='const'>KatelloNameFormatValidator</span><span class='period'>.</span><span class='id identifier rubyid_validate_length'>validate_length</span><span class='lparen'>(</span><span class='id identifier rubyid_record'>record</span><span class='comma'>,</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='kw'>else</span>
@@ -272,7 +276,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:37:00 2013 by
+  Generated on Thu Jun 27 11:22:28 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

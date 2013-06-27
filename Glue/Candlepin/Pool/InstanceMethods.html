@@ -315,7 +315,12 @@ to define instance variables</p>
 125
 126
 127
-128</pre>
+128
+129
+130
+131
+132
+133</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/pool.rb', line 61</span>
@@ -356,6 +361,7 @@ to define instance variables</p>
   <span class='ivar'>@support_level</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
   <span class='ivar'>@sockets</span> <span class='op'>=</span> <span class='int'>0</span>
   <span class='ivar'>@ram</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='ivar'>@cores</span> <span class='op'>=</span> <span class='int'>0</span>
   <span class='ivar'>@description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
   <span class='ivar'>@product_family</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
   <span class='ivar'>@variant</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
@@ -373,6 +379,8 @@ to define instance variables</p>
         <span class='ivar'>@support_level</span> <span class='op'>=</span> <span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
       <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sockets</span><span class='tstring_end'>'</span></span>
         <span class='ivar'>@sockets</span> <span class='op'>=</span> <span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>cores</span><span class='tstring_end'>'</span></span>
+        <span class='ivar'>@cores</span> <span class='op'>=</span> <span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
       <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ram</span><span class='tstring_end'>'</span></span>
         <span class='ivar'>@ram</span> <span class='op'>=</span> <span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
       <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>description</span><span class='tstring_end'>'</span></span>
@@ -385,6 +393,8 @@ to define instance variables</p>
         <span class='ivar'>@multi_entitlement</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>true</span><span class='tstring_end'>'</span></span> <span class='op'>||</span> <span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>yes</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span>
       <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>stacking_id</span><span class='tstring_end'>'</span></span>
         <span class='ivar'>@stacking_id</span> <span class='op'>=</span> <span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>instance_multiplier</span><span class='tstring_end'>'</span></span>
+        <span class='ivar'>@instance_multiplier</span> <span class='op'>=</span> <span class='id identifier rubyid_attr'>attr</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span> <span class='kw'>if</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>productAttributes</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
@@ -416,7 +426,7 @@ to define instance variables</p>
       <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/pool.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_organization'>organization</span>
-  <span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_find_by_name'>find_by_name</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_owner'>owner</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>key</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_find_by_label'>find_by_label</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_owner'>owner</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>key</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -428,7 +438,7 @@ to define instance variables</p>
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:14 2013 by
+  Generated on Thu Jun 27 11:21:25 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

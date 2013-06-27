@@ -669,6 +669,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+211
 212
 213
 214
@@ -678,11 +679,10 @@ have received a copy of GPLv2 along with this software; if not, see
 218
 219
 220
-221
-222</pre>
+221</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 212</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 211</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calc_progress'>calc_progress</span><span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_completed'>completed</span> <span class='op'>=</span> <span class='id identifier rubyid_val'>val</span><span class='period'>.</span><span class='id identifier rubyid_progress'>progress</span><span class='period'>.</span><span class='id identifier rubyid_total_size'>total_size</span> <span class='op'>-</span> <span class='id identifier rubyid_val'>val</span><span class='period'>.</span><span class='id identifier rubyid_progress'>progress</span><span class='period'>.</span><span class='id identifier rubyid_size_left'>size_left</span>
@@ -715,13 +715,13 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+126
 127
 128
-129
-130</pre>
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
   <span class='id identifier rubyid_retval'>retval</span> <span class='op'>=</span> <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_cancel_sync'>cancel_sync</span>
@@ -747,12 +747,12 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+133
 134
-135
-136</pre>
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_provider'>find_provider</span>
   <span class='const'>Repository</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:repo</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_provider'>provider</span>
@@ -777,6 +777,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+137
 138
 139
 140
@@ -784,11 +785,10 @@ have received a copy of GPLv2 along with this software; if not, see
 142
 143
 144
-145
-146</pre>
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_providers'>find_providers</span>
   <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:repoids</span><span class='rbracket'>]</span>
@@ -819,16 +819,16 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+185
 186
 187
 188
 189
 190
-191
-192</pre>
+191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 186</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 185</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_format_date'>format_date</span><span class='lparen'>(</span><span class='id identifier rubyid_check_date'>check_date</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_retval'>retval</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -857,16 +857,16 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+177
 178
 179
 180
 181
 182
-183
-184</pre>
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 177</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_format_duration'>format_duration</span><span class='lparen'>(</span><span class='id identifier rubyid_finish'>finish</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_retval'>retval</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -895,12 +895,12 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+173
 174
-175
-176</pre>
+175</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 174</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 173</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_format_state'>format_state</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='rparen'>)</span>
   <span class='cvar'>@@status_values</span><span class='lbracket'>[</span><span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rbracket'>]</span>
@@ -925,6 +925,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+147
 148
 149
 150
@@ -948,11 +949,10 @@ have received a copy of GPLv2 along with this software; if not, see
 168
 169
 170
-171
-172</pre>
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_format_sync_progress'>format_sync_progress</span><span class='lparen'>(</span><span class='id identifier rubyid_sync_status'>sync_status</span><span class='comma'>,</span> <span class='id identifier rubyid_repo'>repo</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_progress'>progress</span> <span class='op'>=</span> <span class='id identifier rubyid_sync_status'>sync_status</span><span class='period'>.</span><span class='id identifier rubyid_progress'>progress</span>
@@ -999,6 +999,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+223
 224
 225
 226
@@ -1006,11 +1007,10 @@ have received a copy of GPLv2 along with this software; if not, see
 228
 229
 230
-231
-232</pre>
+231</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 224</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 223</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_product_info'>get_product_info</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_product_size'>product_size</span> <span class='op'>=</span> <span class='int'>0</span>
@@ -1054,8 +1054,7 @@ have received a copy of GPLv2 along with this software; if not, see
 76
 77
 78
-79
-80</pre>
+79</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 66</span>
@@ -1068,7 +1067,6 @@ have received a copy of GPLv2 along with this software; if not, see
   <span class='id identifier rubyid_custom_products'>custom_products</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_p'>p</span><span class='op'>|</span> <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span> <span class='rbrace'>}</span>
 
   <span class='ivar'>@products</span> <span class='op'>=</span> <span class='id identifier rubyid_redhat_products'>redhat_products</span> <span class='op'>+</span> <span class='id identifier rubyid_custom_products'>custom_products</span>
-  <span class='ivar'>@sproducts</span> <span class='op'>=</span> <span class='ivar'>@products</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:syncable?</span><span class='rparen'>)</span>
   <span class='ivar'>@product_size</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='ivar'>@repo_status</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='ivar'>@product_map</span> <span class='op'>=</span> <span class='id identifier rubyid_collect_repos'>collect_repos</span><span class='lparen'>(</span><span class='ivar'>@products</span><span class='comma'>,</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_library'>library</span><span class='rparen'>)</span>
@@ -1095,6 +1093,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+81
 82
 83
 84
@@ -1112,11 +1111,10 @@ have received a copy of GPLv2 along with this software; if not, see
 96
 97
 98
-99
-100</pre>
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_manage'>manage</span>
   <span class='ivar'>@products</span>     <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -1279,15 +1277,15 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+101
 102
 103
 104
 105
-106
-107</pre>
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync'>sync</span>
   <span class='id identifier rubyid_ids'>ids</span> <span class='op'>=</span> <span class='id identifier rubyid_sync_repos'>sync_repos</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:repoids</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -1325,6 +1323,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+194
 195
 196
 197
@@ -1338,11 +1337,10 @@ have received a copy of GPLv2 along with this software; if not, see
 205
 206
 207
-208
-209</pre>
+208</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 195</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 194</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_repos'>sync_repos</span><span class='lparen'>(</span><span class='id identifier rubyid_repos'>repos</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_repos'>repos</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_repos'>repos</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Array</span>
@@ -1379,6 +1377,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
+108
 109
 110
 111
@@ -1394,11 +1393,10 @@ have received a copy of GPLv2 along with this software; if not, see
 121
 122
 123
-124
-125</pre>
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/sync_management_controller.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_status'>sync_status</span>
   <span class='id identifier rubyid_collected'>collected</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -1427,7 +1425,7 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:50 2013 by
+  Generated on Thu Jun 27 11:22:16 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

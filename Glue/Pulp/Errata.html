@@ -210,7 +210,18 @@
 42
 43
 44
-45</pre>
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/pulp/errata.rb', line 20</span>
@@ -238,6 +249,17 @@
       <span class='op'>::</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_erratum_attrs'>erratum_attrs</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_erratum_attrs'>erratum_attrs</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='kw'>end</span>
 
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_list_by_filter_clauses'>list_by_filter_clauses</span><span class='lparen'>(</span><span class='id identifier rubyid_clauses'>clauses</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_errata'>errata</span> <span class='op'>=</span> <span class='const'>Runcible</span><span class='op'>::</span><span class='const'>Extensions</span><span class='op'>::</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>Errata</span><span class='op'>::</span><span class='const'>CONTENT_TYPE</span><span class='comma'>,</span>
+                              <span class='symbol'>:filters</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_clauses'>clauses</span><span class='rparen'>)</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_errata'>errata</span>
+        <span class='id identifier rubyid_errata'>errata</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_attrs'>attrs</span><span class='op'>|</span>
+          <span class='op'>::</span><span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_attrs'>attrs</span>
+        <span class='kw'>end</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span>
+      <span class='kw'>else</span>
+        <span class='lbracket'>[</span><span class='rbracket'>]</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 
 <span class='kw'>end</span></pre>
@@ -251,7 +273,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:10 2013 by
+  Generated on Thu Jun 27 11:21:19 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

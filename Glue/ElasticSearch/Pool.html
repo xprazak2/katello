@@ -272,21 +272,7 @@
 131
 132
 133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148</pre>
+134</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/elastic_search/pool.rb', line 15</span>
@@ -358,7 +344,12 @@
     <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index_pools'>index_pools</span><span class='lparen'>(</span><span class='id identifier rubyid_pools'>pools</span><span class='comma'>,</span> <span class='id identifier rubyid_clear_filters'>clear_filters</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
       <span class='comment'># Clear previous pools index
 </span>      <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_clear_filters'>clear_filters</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-        <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_clear_filters'>clear_filters</span>
+        <span class='id identifier rubyid_items'>items</span> <span class='op'>=</span> <span class='const'>Glue</span><span class='op'>::</span><span class='const'>ElasticSearch</span><span class='op'>::</span><span class='const'>Items</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Pool</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+            <span class='symbol'>:filter</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_clear_filters'>clear_filters</span><span class='comma'>,</span>
+            <span class='symbol'>:load_records?</span> <span class='op'>=&gt;</span> <span class='kw'>false</span>
+        <span class='rbrace'>}</span>
+        <span class='id identifier rubyid_results'>results</span><span class='comma'>,</span> <span class='id identifier rubyid_total_count'>total_count</span> <span class='op'>=</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_retrieve'>retrieve</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
         <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
           <span class='id identifier rubyid_results'>results</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_result'>result</span><span class='op'>|</span>
             <span class='id identifier rubyid_remove'>remove</span> <span class='symbol'>:pool</span><span class='comma'>,</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
@@ -369,44 +360,25 @@
       <span class='id identifier rubyid_json_pools'>json_pools</span> <span class='op'>=</span> <span class='id identifier rubyid_pools'>pools</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_pool'>pool</span><span class='op'>|</span>
         <span class='id identifier rubyid_pool'>pool</span><span class='period'>.</span><span class='id identifier rubyid_as_json'>as_json</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_pool'>pool</span><span class='period'>.</span><span class='id identifier rubyid_index_options'>index_options</span><span class='rparen'>)</span>
       <span class='rbrace'>}</span>
-      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-        <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
-        <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_json_pools'>json_pools</span>
-      <span class='kw'>end</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_json_pools'>json_pools</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+      <span class='kw'>unless</span> <span class='id identifier rubyid_json_pools'>json_pools</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+        <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+          <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+        <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+
+        <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+          <span class='id identifier rubyid_import'>import</span> <span class='id identifier rubyid_json_pools'>json_pools</span>
+        <span class='kw'>end</span>
+
+        <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span>
+      <span class='kw'>end</span>
     <span class='kw'>end</span>
 
-    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='id identifier rubyid_query'>query</span><span class='comma'>,</span> <span class='id identifier rubyid_start'>start</span><span class='comma'>,</span> <span class='id identifier rubyid_page_size'>page_size</span><span class='comma'>,</span> <span class='id identifier rubyid_filters'>filters</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_sort'>sort</span><span class='op'>=</span><span class='lbracket'>[</span><span class='symbol'>:name_sort</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ASC</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-      <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='op'>!</span><span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
-
-      <span class='id identifier rubyid_all_rows'>all_rows</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span> <span class='comment'>#if blank, get all rows
-</span>
-      <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
-        <span class='id identifier rubyid_query'>query</span> <span class='kw'>do</span>
-          <span class='kw'>if</span> <span class='id identifier rubyid_all_rows'>all_rows</span>
-            <span class='id identifier rubyid_all'>all</span>
-          <span class='kw'>else</span>
-            <span class='comment'># No default_field is specified to let search span all indexed fields
-</span>            <span class='id identifier rubyid_string'>string</span> <span class='id identifier rubyid_query'>query</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-          <span class='kw'>end</span>
-        <span class='kw'>end</span>
-
-        <span class='kw'>if</span> <span class='id identifier rubyid_page_size'>page_size</span> <span class='op'>&gt;</span> <span class='int'>0</span>
-         <span class='id identifier rubyid_size'>size</span> <span class='id identifier rubyid_page_size'>page_size</span>
-         <span class='id identifier rubyid_from'>from</span> <span class='id identifier rubyid_start'>start</span>
-        <span class='kw'>end</span>
-
-        <span class='kw'>if</span> <span class='id identifier rubyid_filters'>filters</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:org</span><span class='rparen'>)</span>
-          <span class='id identifier rubyid_filter'>filter</span> <span class='symbol'>:term</span><span class='comma'>,</span> <span class='symbol'>:org</span><span class='op'>=&gt;</span><span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='symbol'>:org</span><span class='rbracket'>]</span>
-        <span class='kw'>end</span>
-        <span class='kw'>if</span> <span class='id identifier rubyid_filters'>filters</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='symbol'>:provider_id</span><span class='rparen'>)</span>
-          <span class='id identifier rubyid_filter'>filter</span> <span class='symbol'>:term</span><span class='comma'>,</span> <span class='symbol'>:provider_id</span><span class='op'>=&gt;</span><span class='id identifier rubyid_filters'>filters</span><span class='lbracket'>[</span><span class='symbol'>:provider_id</span><span class='rbracket'>]</span>
-        <span class='kw'>end</span>
-
-        <span class='id identifier rubyid_sort'>sort</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_by'>by</span> <span class='id identifier rubyid_sort'>sort</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_sort'>sort</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='op'>!</span><span class='id identifier rubyid_all_rows'>all_rows</span>
-      <span class='kw'>end</span>
-      <span class='kw'>return</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_results'>results</span>
-    <span class='kw'>rescue</span>
-      <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_create'>create</span> <span class='symbol'>:settings</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span><span class='comma'>,</span> <span class='symbol'>:mappings</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>Pool</span><span class='period'>.</span><span class='id identifier rubyid_index_mapping'>index_mapping</span>
+      <span class='kw'>end</span> <span class='kw'>unless</span> <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span>
+      <span class='const'>Tire</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_results'>results</span>
     <span class='kw'>end</span>
 
     <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_index_settings'>index_settings</span>
@@ -435,7 +407,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:12 2013 by
+  Generated on Thu Jun 27 11:21:22 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

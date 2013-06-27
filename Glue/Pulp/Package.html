@@ -122,6 +122,28 @@ have received a copy of GPLv2 along with this software; if not, see
   
 </p>
 
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="PULP_SELECT_FIELDS-constant" class="">PULP_SELECT_FIELDS =
+          <div class="docstring">
+  <div class="discussion">
+    <p>fields we use to trim down our unit association calls to pulp</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>name</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>epoch</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>version</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>release</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>arch</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>checksumtype</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>checksum</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -182,10 +204,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-14
-15
-16
-17
 18
 19
 20
@@ -203,10 +221,14 @@ have received a copy of GPLv2 along with this software; if not, see
 32
 33
 34
-35</pre>
+35
+36
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/package.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/pulp/package.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_included'>included</span><span class='lparen'>(</span><span class='id identifier rubyid_base'>base</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_base'>base</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='symbol'>:include</span><span class='comma'>,</span> <span class='const'>InstanceMethods</span>
@@ -215,7 +237,7 @@ have received a copy of GPLv2 along with this software; if not, see
 
     <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:_id</span><span class='comma'>,</span> <span class='symbol'>:download_url</span><span class='comma'>,</span> <span class='symbol'>:checksum</span><span class='comma'>,</span> <span class='symbol'>:license</span><span class='comma'>,</span> <span class='symbol'>:group</span><span class='comma'>,</span> <span class='symbol'>:filename</span><span class='comma'>,</span> <span class='symbol'>:requires</span><span class='comma'>,</span>  <span class='symbol'>:provides</span><span class='comma'>,</span> <span class='symbol'>:description</span><span class='comma'>,</span>
                   <span class='symbol'>:size</span><span class='comma'>,</span> <span class='symbol'>:buildhost</span><span class='comma'>,</span> <span class='symbol'>:repoids</span><span class='comma'>,</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:arch</span><span class='comma'>,</span> <span class='symbol'>:version</span><span class='comma'>,</span> <span class='symbol'>:_content_type_id</span><span class='comma'>,</span> <span class='symbol'>:epoch</span><span class='comma'>,</span> <span class='symbol'>:vendor</span><span class='comma'>,</span> <span class='symbol'>:relativepath</span><span class='comma'>,</span>
-                  <span class='symbol'>:children</span><span class='comma'>,</span> <span class='symbol'>:release</span><span class='comma'>,</span> <span class='symbol'>:checksumtype</span>
+                  <span class='symbol'>:children</span><span class='comma'>,</span> <span class='symbol'>:release</span><span class='comma'>,</span> <span class='symbol'>:checksumtype</span><span class='comma'>,</span> <span class='symbol'>:filelist</span><span class='comma'>,</span> <span class='symbol'>:changelog</span>
 
     <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id=</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>_id=</span><span class='tstring_end'>'</span></span>
     <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>_id</span><span class='tstring_end'>'</span></span>
@@ -240,7 +262,7 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:10 2013 by
+  Generated on Thu Jun 27 11:21:20 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: setup_development_environment
+  
+    &mdash; Katello
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: setup_development_environment</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Setting Up a Development Environment</h1>
+
+<p>This is a guide to help you setup some tools for developing Katello; many of
+them are optional. This guide does <strong>NOT</strong> cover how to setup the app or a
+working copy of the code.</p>
+
+<h2>Operating System</h2>
+
+<p>We generally recommend either the latest version of RHEL6 or Fedora. Fedora
+tends to have the newest tools for development while RHEL is more stable
+(<strong>Hint:</strong> everyone except @mccun934 uses Fedora). </p>
+
+<p>If you don&#39;t want to install Fedora on your desktop (boo!) then you can use
+your favorite VM solution to run katello. We even have some solutions to help
+you out with that like <a href="https://github.com/pitr-ch/kvizer">kvizer</a>. </p>
+
+<h2>Generating a key</h2>
+
+<p>First, you should generate an ssh key. This will be used for a few different
+things. To generate a key, open a termianl and run the following.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_ssh'>ssh</span><span class='op'>-</span><span class='id identifier rubyid_keygen'>keygen</span>
+</code></pre>
+
+<p>We recommend using the default location, etc. For a passphrase, it&#39;s up to you.</p>
+
+<h2>Github</h2>
+
+<ul>
+<li>First go to <a href="http://github.com">http://github.com</a> and create an account if you don&#39;t have one.</li>
+<li>Now go to a prompt and output your new public key:</li>
+</ul>
+
+<pre class="code ruby"><code class="ruby">cat ~/.ssh/id_rsa.pub
+</code></pre>
+
+<ul>
+<li>Copy the entire string including <code>ssh-rsa</code> and your <code>username@box</code>.</li>
+<li>Go to <a href="https://github.com/settings/ssh">https://github.com/settings/ssh</a> and create a new key called &quot;Work&quot; (or
+whatever you want to name it) and copy in your key.</li>
+</ul>
+
+<h2>Creating your katello forks</h2>
+
+<p>In order to develop katello, you&#39;re going to need a fork. The main two
+repositories you&#39;ll need are katello and katello-cli. Once you&#39;re logged into
+Github, visit the following links and select &quot;Fork&quot;. If you see multiple
+options like @yourname and @Katello, select @yourname.</p>
+
+<ul>
+<li><a href="https://github.com/katello/katello">https://github.com/katello/katello</a></li>
+<li><a href="https://github.com/katello/katello-cli">https://github.com/katello/katello-cli</a></li>
+</ul>
+
+<h2>Setting up your local copy</h2>
+
+<p>In order to develop code for Katello, you will need a local copy of our source
+code. We have a few different repos but this will cover how to setup our main
+code repository, katello. You could however repeat this process for our other
+repositories like katello-cli by simply substituting <code>katello</code> for
+<code>katello-cli</code>.</p>
+
+<p>First open up a terminal and <code>cd</code> into a folder in which you want to keep your
+local fork of katello. Next run the following command to check out your fork.</p>
+
+<pre class="code ruby"><code class="ruby">git clone --recursive git@github.com:&lt;your github name&gt;/katello.git
+</code></pre>
+
+<p>Now you should have a new directory in your folder called <code>katello</code>. Go ahead
+and cd into that directory (<code>cd katello</code>). Now we recommend adding the main
+Katello repo to your git configuration and we recommend calling it <code>upstream</code>.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_git'>git</span> <span class='id identifier rubyid_remote'>remote</span> <span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_upstream'>upstream</span> <span class='label'>git:</span><span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>/github</span></span><span class='period'>.</span><span class='id identifier rubyid_com'>com</span><span class='op'>/</span><span class='const'>Katello</span><span class='op'>/</span><span class='id identifier rubyid_katello'>katello</span><span class='period'>.</span><span class='id identifier rubyid_git'>git</span>
+</code></pre>
+
+<p>To confirm that everything is setup correctly, you can run <code>git remote -v</code> and
+you should see something like this:</p>
+
+<pre class="code ruby"><code class="ruby">origin  git@github.com:&lt;your github name&gt;/katello.git (fetch)
+origin  git@github.com:&lt;your github name&gt;/katello.git (push)
+upstream  git://github.com/Katello/katello.git (fetch)
+upstream  git://github.com/Katello/katello.git (push)
+</code></pre>
+
+<p>At this point, you can proceed to <a href="https://fedorahosted.org/katello/wiki/DevelopmentSetup">our development setup
+instructions</a> to get
+the Katello application and its dependencies installed and running.</p>
+
+<h2>rvm</h2>
+
+<p>Ruby version manager (or rvm) is a tool for managing ruby versions and gems.
+It&#39;s not strictly essential but we find that it makes developing much easier.
+To install rvm, go to <a href="https://rvm.io/">https://rvm.io/</a> and find the install line (it should
+start with <code>curl</code>) and paste it into a terminal. Here&#39;s that line although it
+may not be up-to-date:</p>
+
+<pre class="code ruby"><code class="ruby">\curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
+</code></pre>
+
+<p>You&#39;ll notice that this also installs Ruby 1.9.3. The latest version of Ruby is
+2.0.0 but currently on Katello we&#39;re using 1.9.3.</p>
+
+<h2>tig</h2>
+
+<p>One thing that helps with working in vim is being able to visualize commits,
+code changes, etc. For this, there is a great command line tool called tig. To
+install it, open a terminal and type in:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_sudo'>sudo</span> <span class='id identifier rubyid_yum'>yum</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_tig'>tig</span>
+</code></pre>
+
+<p>Then to run it, simply run <code>tig</code>.</p>
+
+<h2>KVM</h2>
+
+<p>VMs are essential for developing Katello. If you are using Fedora on your
+desktop, then you can use the awesome virtualization solution, KVM.</p>
+
+<p>To install KVM and other virtualization packages, install the virtualization package group.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_sudo'>sudo</span> <span class='id identifier rubyid_yum'>yum</span> <span class='id identifier rubyid_install'>install</span> <span class='ivar'>@virtualization</span>
+</code></pre>
+
+<p>Now you can create VMs by selecting the Virtual Machine Manager program from
+the main menu or you can start it from the terminal with <code>sudo virt-manager</code>.</p>
+
+<h2>IDE</h2>
+
+<p>Everyone on Katello has their own favorite IDE (and their opinions which is
+best) but some of the most popular options are below.</p>
+
+<ul>
+<li><a href="https://www.jetbrains.com/ruby/"><strong>RubyMine</strong></a> - GUI editor based on Eclipse. Has a nice intuitive graphical interface. Very easy to learn. We have licenses which are available upon request.</li>
+<li><a href="http://www.vim.org/"><strong>vim</strong></a> - a non-graphical text editor. Has a very tough learning curve but can be much more powerful than GUI editors once mastered. It is highly customizable and has a variety of plugins that give you all the features that all other modern text editors have. It also supports a variety of languages including Ruby, Python, etc.</li>
+<li><a href="https://www.gnu.org/software/emacs/"><strong>Emacs</strong></a> - much like vim, Emacs is a non-graphical text editor. It is also powerful and has a tough learning curve. It also uses Elisp which is handy for people who know Lisp.  Like vim, Emacs supports a variety of languages.</li>
+<li><a href="http://www.sublimetext.com/2"><strong>Sublime Text 2</strong></a> - a GUI editor that supports a variety of languages like Ruby, Python, etc. It&#39;s highly customizable and has a lot of plugins. It&#39;s not free but it does has a never-ending evaluation period.</li>
+</ul>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu Jun 27 11:21:17 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.6.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

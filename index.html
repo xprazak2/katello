@@ -116,23 +116,53 @@ instead.</p>
 
 <h2>Documentation</h2>
 
-<p>YARD documentation is intended for developers. This documentation contains:</p>
+<p>Documentation is generated with <a href="http://yardoc.org/">YARD</a> and hosted at <a href="http://katello.github.io/katello/">http://katello.github.io/katello/</a>.
+This documentation is intended for developers, user documentation can be found on
+<a href="https://fedorahosted.org/katello/">wiki</a>. Developer documentation contains:</p>
 
 <ul>
 <li>  code documentation</li>
 <li>  high level guides to architectures and implementation details</li>
+<li>  how-tos</li>
 </ul>
 
-<p>User documentation can be found on <a href="https://fedorahosted.org/katello/">wiki</a>.</p>
+<p><em>Note: older developer guides can be found on our wiki, they are being migrated.</em></p>
 
-<p><em>Note: older developer guides can be found on wiki, they have not been migrated.</em></p>
+<h3>How to</h3>
 
-<h3>Guides</h3>
+<ul>
+<li><p>to see YARD documentation start Katello server and find the link on &quot;About&quot; page or go directly to
+<a href="http://path.to.katello/url_prefix/yard/docs/katello/frames">http://path.to.katello/url_prefix/yard/docs/katello/frames</a></p>
+
+<ul>
+<li>  if it fails run <code>bundle exec yard doc --no-cache</code> first, which will rebuild whole documentation</li>
+</ul></li>
+<li><p>see <a href="file.YARDDocumentation.html" title="YARDDocumentation">YARDDocumentation</a></p></li>
+</ul>
+
+<h2>Current documentation</h2>
 
 <ul>
 <li>  <a href="file.YARDDocumentation.html" title="YARDDocumentation">YARDDocumentation</a></li>
-<li>  <a href="file.ForemanIntegration.html" title="ForemanIntegration">ForemanIntegration</a></li>
 <li>  <a href="file.Graphs.html" title="Graphs">Graphs</a></li>
+</ul>
+
+<h3>Debugging</h3>
+
+<ul>
+<li>  <a href="file.add_praise.html" title="Enabling Praise">Enabling Praise</a> - raise/exception investigation</li>
+</ul>
+
+<h3>Packaging</h3>
+
+<ul>
+<li>  <a href="file.package_new_gem.html" title="How to package new gem">How to package new gem</a></li>
+</ul>
+
+<h3>Other</h3>
+
+<ul>
+<li>  <a href="file.katellodb.html" title="DB schema documentation">DB schema documentation</a></li>
 <li><p>Original Rails generated README <a href="file.RailsReadme.html" title="RailsReadme">RailsReadme</a>, we may do certain things differently</p>
 
 <ul>
@@ -146,22 +176,10 @@ instead.</p>
 <li>  <span class='object_link'><a href="Katello/Configuration.html" title="Katello::Configuration (module)">Katello::Configuration</a></span></li>
 <li>  <span class='object_link'><a href="Notifications.html" title="Notifications (module)">Notifications</a></span></li>
 </ul>
-
-<h2>How to YARD</h2>
-
-<ul>
-<li><p>to see YARD documentation start Katello server and click on the link in the UI footer or go directly to
-<a href="http://path.to.katello/a_prefix/yard/docs/katello/frames" target="_parent" title="http://path.to.katello/a_prefix/yard/docs/katello/frames">http://path.to.katello/a_prefix/yard/docs/katello/frames</a></p>
-
-<ul>
-<li>  if it fails run <code>bundle exec yard doc --no-cache</code> first</li>
-</ul></li>
-<li><p>see <a href="file.YARDDocumentation.html" title="YARDDocumentation">YARDDocumentation</a></p></li>
-</ul>
 </div></div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:08 2013 by
+  Generated on Thu Jun 27 11:21:17 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

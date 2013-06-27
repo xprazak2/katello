@@ -529,7 +529,7 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="code"><span class="info file"># File 'app/models/organization_destroyer.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
-  <span class='id identifier rubyid_organization'>organization</span> <span class='op'>=</span> <span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='id identifier rubyid_organization_id'>organization_id</span>
+  <span class='id identifier rubyid_organization'>organization</span> <span class='op'>=</span> <span class='const'>Organization</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_organization_id'>organization_id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
 
   <span class='const'>Notify</span><span class='period'>.</span><span class='id identifier rubyid_success'>success</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Successfully removed organization '%s'.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span>
@@ -599,7 +599,7 @@ have received a copy of GPLv2 along with this software; if not, see
 <span class='kw'>def</span> <span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='id identifier rubyid_organization'>organization</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:async</span><span class='rbracket'>]</span>
 
-  <span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_async'>async</span><span class='lparen'>(</span><span class='symbol'>:organization</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_organization'>organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
+  <span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_async'>async</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_deletion_task_id'>deletion_task_id</span> <span class='op'>=</span> <span class='id identifier rubyid_task'>task</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
   <span class='id identifier rubyid_organization'>organization</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_task'>task</span>
@@ -614,7 +614,7 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:33 2013 by
+  Generated on Thu Jun 27 11:21:58 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

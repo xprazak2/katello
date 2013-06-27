@@ -110,6 +110,18 @@
 <div class="clear"></div>
 
 
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="MAX_CONTENT_LENGTH-constant" class="">MAX_CONTENT_LENGTH =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>100000</span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -394,10 +406,10 @@
       <pre class="lines">
 
 
-341</pre>
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'db/schema.rb', line 341</span>
+      <pre class="code"><span class="info file"># File 'db/schema.rb', line 344</span>
 
 <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span>     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>content</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>         <span class='symbol'>:null</span> <span class='op'>=&gt;</span> <span class='kw'>false</span></pre>
     </td>
@@ -444,10 +456,10 @@
       <pre class="lines">
 
 
-342</pre>
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'db/schema.rb', line 342</span>
+      <pre class="code"><span class="info file"># File 'db/schema.rb', line 345</span>
 
 <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_datetime'>datetime</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>created_at</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>      <span class='symbol'>:null</span> <span class='op'>=&gt;</span> <span class='kw'>false</span></pre>
     </td>
@@ -494,10 +506,10 @@
       <pre class="lines">
 
 
-339</pre>
+342</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'db/schema.rb', line 339</span>
+      <pre class="code"><span class="info file"># File 'db/schema.rb', line 342</span>
 
 <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_string'>string</span>   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>            <span class='symbol'>:null</span> <span class='op'>=&gt;</span> <span class='kw'>false</span></pre>
     </td>
@@ -544,10 +556,10 @@
       <pre class="lines">
 
 
-343</pre>
+346</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'db/schema.rb', line 343</span>
+      <pre class="code"><span class="info file"># File 'db/schema.rb', line 346</span>
 
 <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_datetime'>datetime</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>updated_at</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>      <span class='symbol'>:null</span> <span class='op'>=&gt;</span> <span class='kw'>false</span></pre>
     </td>
@@ -577,7 +589,6 @@
       <pre class="lines">
 
 
-32
 33
 34
 35
@@ -585,10 +596,11 @@
 37
 38
 39
-40</pre>
+40
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -648,10 +660,10 @@
       <pre class="lines">
 
 
-22</pre>
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 23</span>
 
 <span class='id identifier rubyid_belongs_to'>belongs_to</span> <span class='symbol'>:organization</span><span class='comma'>,</span> <span class='symbol'>:inverse_of</span> <span class='op'>=&gt;</span> <span class='symbol'>:gpg_keys</span></pre>
     </td>
@@ -703,10 +715,10 @@
       <pre class="lines">
 
 
-20</pre>
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 21</span>
 
 <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:products</span><span class='comma'>,</span> <span class='symbol'>:inverse_of</span> <span class='op'>=&gt;</span> <span class='symbol'>:gpg_key</span></pre>
     </td>
@@ -758,10 +770,10 @@
       <pre class="lines">
 
 
-19</pre>
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'app/models/gpg_key.rb', line 20</span>
 
 <span class='id identifier rubyid_has_many'>has_many</span> <span class='symbol'>:repositories</span><span class='comma'>,</span> <span class='symbol'>:inverse_of</span> <span class='op'>=&gt;</span> <span class='symbol'>:gpg_key</span></pre>
     </td>
@@ -774,7 +786,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:19 2013 by
+  Generated on Thu Jun 27 11:21:30 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

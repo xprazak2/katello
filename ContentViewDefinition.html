@@ -303,6 +303,28 @@
 </li>
 
       
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#errata_package_unassociate_clauses-instance_method" title="#errata_package_unassociate_clauses (instance method)">- (Object) <strong>errata_package_unassociate_clauses</strong>(errata_clauses) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
         <li class="private ">
   <span class="summary_signature">
     
@@ -626,10 +648,10 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-33</pre>
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 34</span>
 
 <span class='id identifier rubyid_scope'>scope</span> <span class='symbol'>:composite</span><span class='comma'>,</span> <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:composite</span><span class='op'>=&gt;</span><span class='kw'>true</span><span class='rparen'>)</span></pre>
     </td>
@@ -682,10 +704,10 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-34</pre>
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 35</span>
 
 <span class='id identifier rubyid_scope'>scope</span> <span class='symbol'>:non_composite</span><span class='comma'>,</span> <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='symbol'>:composite</span><span class='op'>=&gt;</span><span class='kw'>false</span><span class='rparen'>)</span></pre>
     </td>
@@ -714,22 +736,22 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
 182
 183
-184</pre>
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 172</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 182</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_archive'>archive</span>
   <span class='id identifier rubyid_excluded'>excluded</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>type</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>created_at</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>updated_at</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
@@ -774,18 +796,18 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-162
-163
-164
-165
-166
-167
-168
-169
-170</pre>
+172
+173
+174
+175
+176
+177
+178
+179
+180</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 162</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_as_json'>as_json</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span>
@@ -930,22 +952,22 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
 196
 197
-198</pre>
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 186</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_copy'>copy</span><span class='lparen'>(</span><span class='id identifier rubyid_new_attrs'>new_attrs</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_definition'>new_definition</span> <span class='op'>=</span> <span class='const'>ContentViewDefinition</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -959,6 +981,46 @@ by the filters and filter rules.</p>
 </span>  <span class='id identifier rubyid_new_definition'>new_definition</span><span class='period'>.</span><span class='id identifier rubyid_save!'>save!</span>
 
   <span class='id identifier rubyid_new_definition'>new_definition</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="errata_package_unassociate_clauses-instance_method">
+  
+    - (<tt>Object</tt>) <strong>errata_package_unassociate_clauses</strong>(errata_clauses)  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+212
+213
+214
+215
+216
+217
+218
+219</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 212</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_errata_package_unassociate_clauses'>errata_package_unassociate_clauses</span><span class='lparen'>(</span><span class='id identifier rubyid_errata_clauses'>errata_clauses</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ret'>ret</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_errata_clauses'>errata_clauses</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_pkg_filenames'>pkg_filenames</span> <span class='op'>=</span> <span class='const'>Errata</span><span class='period'>.</span><span class='id identifier rubyid_list_by_filter_clauses'>list_by_filter_clauses</span><span class='lparen'>(</span><span class='id identifier rubyid_errata_clauses'>errata_clauses</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:package_filenames</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
+    <span class='id identifier rubyid_ret'>ret</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>filename</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$in</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_pkg_filenames'>pkg_filenames</span><span class='rbrace'>}</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='id identifier rubyid_pkg_filenames'>pkg_filenames</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_ret'>ret</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -980,20 +1042,20 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267</pre>
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 257</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 274</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_clauses'>generate_clauses</span><span class='lparen'>(</span><span class='id identifier rubyid_repo'>repo</span><span class='comma'>,</span> <span class='id identifier rubyid_rules'>rules</span><span class='comma'>,</span> <span class='id identifier rubyid_inclusion'>inclusion</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_join_clause'>join_clause</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$nor</span><span class='tstring_end'>&quot;</span></span>
@@ -1026,7 +1088,6 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-66
 67
 68
 69
@@ -1076,10 +1137,12 @@ by the filters and filter rules.</p>
 113
 114
 115
-116</pre>
+116
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_repos'>generate_repos</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_notify'>notify</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='comment'># Publish algorithm
@@ -1089,6 +1152,7 @@ by the filters and filter rules.</p>
 </span>  <span class='comment'># Copy all pkg groups over
 </span>  <span class='comment'># Copy all distro over
 </span>  <span class='comment'># Start Filtering errata in the copied
+</span>  <span class='comment'># Make sure packages belonging to the errata are included/excluded
 </span>  <span class='comment'># Start Filtering package groups in the copied repo
 </span>  <span class='comment'># Start Filtering packages in the copied repo
 </span>  <span class='comment'># Remove all empty errata
@@ -1174,12 +1238,12 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-142
-143
-144</pre>
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 152</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_promoted_views?'>has_promoted_views?</span>
   <span class='op'>!</span><span class='op'>!</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_views'>content_views</span><span class='period'>.</span><span class='id identifier rubyid_promoted'>promoted</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
@@ -1226,23 +1290,23 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 156</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_repo_conflicts?'>has_repo_conflicts?</span>
   <span class='comment'># Check to see if there is a repo conflict in the component views associated with
@@ -1278,7 +1342,6 @@ by the filters and filter rules.</p>
       <pre class="lines">
 
 
-36
 37
 38
 39
@@ -1306,10 +1369,11 @@ by the filters and filter rules.</p>
 61
 62
 63
-64</pre>
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_publish'>publish</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_description'>description</span><span class='comma'>,</span> <span class='id identifier rubyid_label'>label</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:async</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:notify</span> <span class='op'>=&gt;</span> <span class='kw'>false</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span> <span class='id identifier rubyid_options'>options</span>
@@ -1372,8 +1436,6 @@ by the filters and filter rules</p>
       <pre class="lines">
 
 
-121
-122
 123
 124
 125
@@ -1391,13 +1453,24 @@ by the filters and filter rules</p>
 137
 138
 139
-140</pre>
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 123</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unassociate_contents'>unassociate_contents</span><span class='lparen'>(</span><span class='id identifier rubyid_repos'>repos</span><span class='rparen'>)</span>
   <span class='comment'># Start Filtering errata in the copied repo
+</span>  <span class='comment'># Make sure packages belonging to the errata are included/excluded
 </span>  <span class='comment'># Start Filtering package groups in the copied repo
 </span>  <span class='comment'># Start Filtering packages in the copied repo
 </span>  <span class='id identifier rubyid_repos'>repos</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_repo'>repo</span><span class='op'>|</span>
@@ -1406,6 +1479,13 @@ by the filters and filter rules</p>
       <span class='kw'>if</span> <span class='id identifier rubyid_filter_clauses'>filter_clauses</span>
         <span class='id identifier rubyid_pulp_task'>pulp_task</span> <span class='op'>=</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_unassociate_by_filter'>unassociate_by_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_content_type'>content_type</span><span class='comma'>,</span> <span class='id identifier rubyid_filter_clauses'>filter_clauses</span><span class='rparen'>)</span>
         <span class='const'>PulpTaskStatus</span><span class='op'>::</span><span class='id identifier rubyid_wait_for_tasks'>wait_for_tasks</span> <span class='lbracket'>[</span><span class='id identifier rubyid_pulp_task'>pulp_task</span><span class='rbracket'>]</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_content_type'>content_type</span> <span class='op'>==</span> <span class='const'>FilterRule</span><span class='op'>::</span><span class='const'>ERRATA</span>
+          <span class='id identifier rubyid_pkg_clause'>pkg_clause</span> <span class='op'>=</span> <span class='id identifier rubyid_errata_package_unassociate_clauses'>errata_package_unassociate_clauses</span><span class='lparen'>(</span><span class='id identifier rubyid_filter_clauses'>filter_clauses</span><span class='rparen'>)</span>
+          <span class='kw'>unless</span> <span class='id identifier rubyid_pkg_clause'>pkg_clause</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+            <span class='id identifier rubyid_pulp_task'>pulp_task</span> <span class='op'>=</span> <span class='id identifier rubyid_repo'>repo</span><span class='period'>.</span><span class='id identifier rubyid_unassociate_by_filter'>unassociate_by_filter</span><span class='lparen'>(</span><span class='const'>FilterRule</span><span class='op'>::</span><span class='const'>PACKAGE</span><span class='comma'>,</span> <span class='id identifier rubyid_pkg_clause'>pkg_clause</span><span class='rparen'>)</span>
+            <span class='const'>PulpTaskStatus</span><span class='op'>::</span><span class='id identifier rubyid_wait_for_tasks'>wait_for_tasks</span> <span class='lbracket'>[</span><span class='id identifier rubyid_pulp_task'>pulp_task</span><span class='rbracket'>]</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
@@ -1436,25 +1516,6 @@ by the filters and filter rules</p>
       <pre class="lines">
 
 
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
 221
 222
 223
@@ -1463,10 +1524,29 @@ by the filters and filter rules</p>
 226
 227
 228
-229</pre>
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 202</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 221</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unassociation_clauses'>unassociation_clauses</span><span class='lparen'>(</span><span class='id identifier rubyid_repo'>repo</span><span class='comma'>,</span> <span class='id identifier rubyid_content_type'>content_type</span><span class='rparen'>)</span>
   <span class='comment'># find applicable filters
@@ -1516,22 +1596,18 @@ by the filters and filter rules</p>
       <pre class="lines">
 
 
-241
-242
-243
-244
-245
-246
-247</pre>
+260
+261
+262
+263
+264</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 241</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 260</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_content'>validate_content</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_has_content?'>has_content?</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_composite?'>composite?</span>
     <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cannot contain products, or repositories if composite definition</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='kw'>elsif</span> <span class='id identifier rubyid_has_component_views?'>has_component_views?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_composite?'>composite?</span>
-    <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cannot contain views if not composite definition</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1554,15 +1630,15 @@ by the filters and filter rules</p>
       <pre class="lines">
 
 
-249
-250
-251
-252
-253
-254</pre>
+266
+267
+268
+269
+270
+271</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 249</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 266</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate_filters'>validate_filters</span>
   <span class='id identifier rubyid_filters'>filters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
@@ -1590,16 +1666,16 @@ by the filters and filter rules</p>
       <pre class="lines">
 
 
-231
-232
-233
-234
-235
-236
-237</pre>
+250
+251
+252
+253
+254
+255
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 231</span>
+      <pre class="code"><span class="info file"># File 'app/models/content_view_definition.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_views_repos'>views_repos</span>
   <span class='comment'># Retrieve a hash where, key=view.id and value=Set(view's repo library instance ids)
@@ -1618,7 +1694,7 @@ by the filters and filter rules</p>
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:34 2013 by
+  Generated on Thu Jun 27 11:21:59 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

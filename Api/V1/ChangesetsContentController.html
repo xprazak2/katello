@@ -585,7 +585,7 @@ have received a copy of GPLv2 along with this software; if not, see
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../ApiController.html" title="Api::ApiController (class)">ApiController</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../ApiController.html#add_candlepin_version_header-instance_method" title="Api::ApiController#add_candlepin_version_header (method)">#add_candlepin_version_header</a></span>, <span class='object_link'><a href="../ApiController.html#current_user-instance_method" title="Api::ApiController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="../ApiController.html#get_resource-instance_method" title="Api::ApiController#get_resource (method)">#get_resource</a></span>, <span class='object_link'><a href="../ApiController.html#get_resource_collection-instance_method" title="Api::ApiController#get_resource_collection (method)">#get_resource_collection</a></span>, <span class='object_link'><a href="../ApiController.html#process_action-instance_method" title="Api::ApiController#process_action (method)">#process_action</a></span>, <span class='object_link'><a href="../ApiController.html#request_from_katello_cli%3F-instance_method" title="Api::ApiController#request_from_katello_cli? (method)">#request_from_katello_cli?</a></span>, <span class='object_link'><a href="../ApiController.html#require_user-instance_method" title="Api::ApiController#require_user (method)">#require_user</a></span>, <span class='object_link'><a href="../ApiController.html#resource_collection_name-instance_method" title="Api::ApiController#resource_collection_name (method)">#resource_collection_name</a></span>, <span class='object_link'><a href="../ApiController.html#resource_name-instance_method" title="Api::ApiController#resource_name (method)">#resource_name</a></span>, <span class='object_link'><a href="../ApiController.html#respond-instance_method" title="Api::ApiController#respond (method)">#respond</a></span>, <span class='object_link'><a href="../ApiController.html#split_order-instance_method" title="Api::ApiController#split_order (method)">#split_order</a></span>, <span class='object_link'><a href="../ApiController.html#verify_ldap-instance_method" title="Api::ApiController#verify_ldap (method)">#verify_ldap</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../ApiController.html#add_candlepin_version_header-instance_method" title="Api::ApiController#add_candlepin_version_header (method)">#add_candlepin_version_header</a></span>, <span class='object_link'><a href="../ApiController.html#current_user-instance_method" title="Api::ApiController#current_user (method)">#current_user</a></span>, <span class='object_link'><a href="../ApiController.html#get_resource-instance_method" title="Api::ApiController#get_resource (method)">#get_resource</a></span>, <span class='object_link'><a href="../ApiController.html#get_resource_collection-instance_method" title="Api::ApiController#get_resource_collection (method)">#get_resource_collection</a></span>, <span class='object_link'><a href="../ApiController.html#process_action-instance_method" title="Api::ApiController#process_action (method)">#process_action</a></span>, <span class='object_link'><a href="../ApiController.html#request_from_katello_cli%3F-instance_method" title="Api::ApiController#request_from_katello_cli? (method)">#request_from_katello_cli?</a></span>, <span class='object_link'><a href="../ApiController.html#request_from_rhsm%3F-instance_method" title="Api::ApiController#request_from_rhsm? (method)">#request_from_rhsm?</a></span>, <span class='object_link'><a href="../ApiController.html#require_user-instance_method" title="Api::ApiController#require_user (method)">#require_user</a></span>, <span class='object_link'><a href="../ApiController.html#resource_collection_name-instance_method" title="Api::ApiController#resource_collection_name (method)">#resource_collection_name</a></span>, <span class='object_link'><a href="../ApiController.html#resource_name-instance_method" title="Api::ApiController#resource_name (method)">#resource_name</a></span>, <span class='object_link'><a href="../ApiController.html#respond-instance_method" title="Api::ApiController#respond (method)">#respond</a></span>, <span class='object_link'><a href="../ApiController.html#split_order-instance_method" title="Api::ApiController#split_order (method)">#split_order</a></span>, <span class='object_link'><a href="../ApiController.html#verify_ldap-instance_method" title="Api::ApiController#verify_ldap (method)">#verify_ldap</a></span></p>
 
   
   
@@ -666,13 +666,15 @@ have received a copy of GPLv2 along with this software; if not, see
 121
 122
 123
-124</pre>
+124
+125</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_distribution'>add_distribution</span>
-  <span class='ivar'>@changeset</span><span class='period'>.</span><span class='id identifier rubyid_add_distribution!'>add_distribution!</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:distribution_id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='ivar'>@product</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_distribution'>distribution</span> <span class='op'>=</span> <span class='const'>Distribution</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:distribution_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@changeset</span><span class='period'>.</span><span class='id identifier rubyid_add_distribution!'>add_distribution!</span><span class='lparen'>(</span><span class='id identifier rubyid_distribution'>distribution</span><span class='comma'>,</span> <span class='ivar'>@product</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:text</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Added distribution '%s'</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:distribution_id</span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -827,13 +829,13 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-135
-136
 137
-138</pre>
+138
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_changeset!'>find_changeset!</span>
   <span class='ivar'>@changeset</span> <span class='op'>=</span> <span class='const'>Changeset</span><span class='period'>.</span><span class='id identifier rubyid_find_by_id'>find_by_id</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:changeset_id</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>or</span>
@@ -881,14 +883,14 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-140
-141
 142
 143
-144</pre>
+144
+145
+146</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_content_view!'>find_content_view!</span>
   <span class='id identifier rubyid_id'>id</span>    <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:action</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>add_content_view</span><span class='tstring_end'>&quot;</span></span> <span class='op'>?</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:content_view_id</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
@@ -937,28 +939,18 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-154
-155
 156
 157
 158
 159
-160
-161
-162
-163</pre>
+160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 156</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_product'>find_product</span>
-  <span class='id identifier rubyid_product_id'>product_id</span> <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:product_id</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_product_id'>product_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:product_id</span><span class='rbracket'>]</span>
-  <span class='kw'>elsif</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_product_id'>product_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
-  <span class='kw'>end</span>
-  <span class='ivar'>@product</span> <span class='op'>=</span> <span class='const'>Product</span><span class='period'>.</span><span class='id identifier rubyid_find_by_cp_id'>find_by_cp_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product_id'>product_id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_product_id'>product_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_product_id'>product_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:product_id</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
+  <span class='ivar'>@product</span> <span class='op'>=</span> <span class='const'>Product</span><span class='period'>.</span><span class='id identifier rubyid_find_by_cp_id'>find_by_cp_id</span><span class='lparen'>(</span><span class='id identifier rubyid_product_id'>product_id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='ivar'>@changeset</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span><span class='period'>.</span><span class='id identifier rubyid_organization'>organization</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_product_id'>product_id</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>HttpErrors</span><span class='op'>::</span><span class='const'>NotFound</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Couldn't find product with id '%s'</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_product_id'>product_id</span> <span class='kw'>if</span> <span class='ivar'>@product</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1015,19 +1007,21 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-127
 128
 129
 130
-131</pre>
+131
+132
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_distribution'>remove_distribution</span>
-  <span class='id identifier rubyid_render_after_removal'>render_after_removal</span> <span class='ivar'>@changeset</span><span class='period'>.</span><span class='id identifier rubyid_remove_distribution!'>remove_distribution!</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='ivar'>@product</span><span class='rparen'>)</span><span class='comma'>,</span>
-                       <span class='symbol'>:success</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Removed distribution '%s'</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span>
-                       <span class='symbol'>:not_found</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Distribution '%s' not found in the changeset</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_distribution'>distribution</span> <span class='op'>=</span> <span class='const'>Distribution</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:content_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_render_after_removal'>render_after_removal</span> <span class='ivar'>@changeset</span><span class='period'>.</span><span class='id identifier rubyid_remove_distribution!'>remove_distribution!</span><span class='lparen'>(</span><span class='id identifier rubyid_distribution'>distribution</span><span class='comma'>,</span> <span class='ivar'>@product</span><span class='rparen'>)</span><span class='comma'>,</span>
+                       <span class='symbol'>:success</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Removed distribution '%s'</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:content_id</span><span class='rbracket'>]</span><span class='comma'>,</span>
+                       <span class='symbol'>:not_found</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Distribution '%s' not found in the changeset</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:content_id</span><span class='rbracket'>]</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1189,16 +1183,16 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-146
-147
 148
 149
 150
 151
-152</pre>
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/api/v1/changesets_content_controller.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_render_after_removal'>render_after_removal</span><span class='lparen'>(</span><span class='id identifier rubyid_removed_objects'>removed_objects</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_render'>render</span><span class='lparen'>(</span><span class='kw'>unless</span> <span class='id identifier rubyid_removed_objects'>removed_objects</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
@@ -1275,7 +1269,7 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:37:03 2013 by
+  Generated on Thu Jun 27 11:22:33 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

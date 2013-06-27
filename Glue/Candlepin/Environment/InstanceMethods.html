@@ -281,14 +281,14 @@
       <pre class="lines">
 
 
-80
-81
-82
-83
-84</pre>
+84
+85
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 84</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_all_env_content_ids'>all_env_content_ids</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='period'>.</span><span class='id identifier rubyid_repos'>repos</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_owner'>owner</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span> <span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_enabled'>enabled</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_env_content_ids'>env_content_ids</span><span class='comma'>,</span> <span class='id identifier rubyid_repo'>repo</span><span class='op'>|</span>
@@ -322,7 +322,11 @@
 47
 48
 49
-50</pre>
+50
+51
+52
+53
+54</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 43</span>
@@ -330,6 +334,10 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_del_environment'>del_environment</span>
   <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Deleting environment in candlepin: %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span>
   <span class='const'>Resources</span><span class='op'>::</span><span class='const'>Candlepin</span><span class='op'>::</span><span class='const'>Environment</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_cp_id'>cp_id</span><span class='rparen'>)</span>
+  <span class='kw'>true</span>
+<span class='kw'>rescue</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>ResourceNotFound</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_info'>info</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Candlepin environment doesn't exist: %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span>
+  <span class='kw'>true</span>
 <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
   <span class='const'>Rails</span><span class='period'>.</span><span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failed to delete candlepin environment %s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span>
                        <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='rbrace'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='rbrace'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_backtrace'>backtrace</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -355,14 +363,14 @@
       <pre class="lines">
 
 
-61
-62
-63
-64
-65</pre>
+65
+66
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy_environment_orchestration'>destroy_environment_orchestration</span>
   <span class='id identifier rubyid_post_queue'>post_queue</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>candlepin environment for content view: </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -389,17 +397,17 @@
       <pre class="lines">
 
 
-52
-53
-54
-55
 56
 57
 58
-59</pre>
+59
+60
+61
+62
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_save_environment_orchestration'>save_environment_orchestration</span>
   <span class='kw'>case</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_orchestration_for'>orchestration_for</span>
@@ -429,14 +437,14 @@
       <pre class="lines">
 
 
-86
-87
-88
-89
-90</pre>
+90
+91
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_saved_env_content_ids'>saved_env_content_ids</span>
   <span class='const'>Resources</span><span class='op'>::</span><span class='const'>Candlepin</span><span class='op'>::</span><span class='const'>Environment</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_cp_id'>cp_id</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='symbol'>:environmentContent</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_content'>content</span><span class='op'>|</span>
@@ -515,19 +523,19 @@
       <pre class="lines">
 
 
-67
-68
-69
-70
 71
 72
 73
 74
 75
-76</pre>
+76
+77
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'app/models/glue/candlepin/environment.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update_cp_content'>update_cp_content</span>
   <span class='id identifier rubyid_all_env_ids'>all_env_ids</span> <span class='op'>=</span> <span class='id identifier rubyid_all_env_content_ids'>all_env_content_ids</span>
@@ -549,7 +557,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:13 2013 by
+  Generated on Thu Jun 27 11:21:24 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

@@ -345,6 +345,28 @@ have received a copy of GPLv2 along with this software; if not, see
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#dashboard_layout-instance_method" title="#dashboard_layout (instance method)">- (Object) <strong>dashboard_layout</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#errata_product_names-instance_method" title="#errata_product_names (instance method)">- (Object) <strong>errata_product_names</strong>(errata, repos) </a>
     
 
@@ -434,6 +456,50 @@ have received a copy of GPLv2 along with this software; if not, see
   <span class="summary_signature">
     
       <a href="#promotions-instance_method" title="#promotions (instance method)">- (Object) <strong>promotions</strong>(num = quantity) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_column-instance_method" title="#render_column (instance method)">- (Object) <strong>render_column</strong>(column) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render_dashboard-instance_method" title="#render_dashboard (instance method)">- (Object) <strong>render_dashboard</strong> </a>
     
 
     
@@ -562,6 +628,28 @@ have received a copy of GPLv2 along with this software; if not, see
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#widget_drag_and_drop_text-instance_method" title="#widget_drag_and_drop_text (instance method)">- (Object) <strong>widget_drag_and_drop_text</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -586,7 +674,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-79
 80
 81
 82
@@ -594,10 +681,11 @@ have received a copy of GPLv2 along with this software; if not, see
 84
 85
 86
-87</pre>
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_changeset_class'>changeset_class</span> <span class='id identifier rubyid_cs'>cs</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_cs'>cs</span><span class='period'>.</span><span class='id identifier rubyid_state'>state</span> <span class='op'>===</span> <span class='const'>Changeset</span><span class='op'>::</span><span class='const'>PROMOTED</span>
@@ -628,7 +716,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-89
 90
 91
 92
@@ -638,10 +725,11 @@ have received a copy of GPLv2 along with this software; if not, see
 96
 97
 98
-99</pre>
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_changeset_message'>changeset_message</span> <span class='id identifier rubyid_cs'>cs</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_cs'>cs</span><span class='period'>.</span><span class='id identifier rubyid_state'>state</span> <span class='op'>===</span> <span class='const'>Changeset</span><span class='op'>::</span><span class='const'>PROMOTED</span>
@@ -674,16 +762,16 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-105
 106
 107
 108
 109
 110
-111</pre>
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_changeset_path_helper'>changeset_path_helper</span> <span class='id identifier rubyid_cs'>cs</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_cs'>cs</span><span class='period'>.</span><span class='id identifier rubyid_state'>state</span> <span class='op'>===</span> <span class='const'>Changeset</span><span class='op'>::</span><span class='const'>PROMOTED</span>
@@ -712,7 +800,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-44
 45
 46
 47
@@ -720,10 +807,11 @@ have received a copy of GPLv2 along with this software; if not, see
 49
 50
 51
-52</pre>
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_view_class'>content_view_class</span><span class='lparen'>(</span><span class='id identifier rubyid_version'>version</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_task_status'>task_status</span><span class='period'>.</span><span class='id identifier rubyid_finished?'>finished?</span>
@@ -754,7 +842,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-54
 55
 56
 57
@@ -766,10 +853,11 @@ have received a copy of GPLv2 along with this software; if not, see
 63
 64
 65
-66</pre>
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_view_message'>content_view_message</span><span class='lparen'>(</span><span class='id identifier rubyid_version'>version</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_task_status'>task_status</span><span class='period'>.</span><span class='id identifier rubyid_error?'>error?</span>
@@ -804,16 +892,16 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-36
 37
 38
 39
 40
 41
-42</pre>
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_view_name'>content_view_name</span><span class='lparen'>(</span><span class='id identifier rubyid_version'>version</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_content_view'>content_view</span><span class='period'>.</span><span class='id identifier rubyid_content_view_definition'>content_view_definition</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span>
@@ -842,13 +930,13 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-68
 69
 70
-71</pre>
+71
+72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_view_path_helper'>content_view_path_helper</span><span class='lparen'>(</span><span class='id identifier rubyid_version'>version</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_content_view_definitions_path'>content_view_definitions_path</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='op'>+</span>
@@ -874,13 +962,13 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-31
 32
 33
-34</pre>
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_content_view_versions'>content_view_versions</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span><span class='op'>=</span><span class='id identifier rubyid_quantity'>quantity</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='const'>ContentViewVersion</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_non_default_view'>non_default_view</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:task_status</span><span class='rparen'>)</span><span class='period'>.</span>
@@ -908,12 +996,14 @@ have received a copy of GPLv2 along with this software; if not, see
 
 19
 20
-21</pre>
+21
+22</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dashboard_ajax_entry'>dashboard_ajax_entry</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_identifier'>identifier</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_class_wrapper'>class_wrapper</span><span class='comma'>,</span> <span class='id identifier rubyid_dropbutton'>dropbutton</span><span class='comma'>,</span> <span class='id identifier rubyid_quantity'>quantity</span><span class='op'>=</span><span class='int'>5</span>
+  <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='symbol'>:url_prefix</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_url'>url</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'>Katello</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='lbracket'>[</span><span class='symbol'>:url_prefix</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_render'>render</span> <span class='symbol'>:partial</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ajax_entry</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:locals</span><span class='op'>=&gt;</span><span class='lbrace'>{</span><span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:url</span><span class='op'>=&gt;</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='symbol'>:class_wrap</span><span class='op'>=&gt;</span><span class='id identifier rubyid_class_wrapper'>class_wrapper</span><span class='comma'>,</span> <span class='symbol'>:identifier</span><span class='op'>=&gt;</span><span class='id identifier rubyid_identifier'>identifier</span><span class='comma'>,</span> <span class='symbol'>:dropbutton</span><span class='op'>=&gt;</span><span class='id identifier rubyid_dropbutton'>dropbutton</span><span class='comma'>,</span> <span class='symbol'>:quantity</span><span class='op'>=&gt;</span><span class='id identifier rubyid_quantity'>quantity</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -952,6 +1042,36 @@ have received a copy of GPLv2 along with this software; if not, see
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="dashboard_layout-instance_method">
+  
+    - (<tt>Object</tt>) <strong>dashboard_layout</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 185</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dashboard_layout'>dashboard_layout</span>
+  <span class='ivar'>@layout</span> <span class='op'>||=</span> <span class='const'>Dashboard</span><span class='op'>::</span><span class='const'>Layout</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='comma'>,</span> <span class='id identifier rubyid_current_user'>current_user</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="errata_product_names-instance_method">
   
     - (<tt>Object</tt>) <strong>errata_product_names</strong>(errata, repos) 
@@ -966,7 +1086,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-154
 155
 156
 157
@@ -983,10 +1102,11 @@ have received a copy of GPLv2 along with this software; if not, see
 168
 169
 170
-171</pre>
+171
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errata_product_names'>errata_product_names</span> <span class='id identifier rubyid_errata'>errata</span><span class='comma'>,</span> <span class='id identifier rubyid_repos'>repos</span>
   <span class='comment'># return a comma-separated list of product names that this errata is associated with
@@ -1026,7 +1146,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-143
 144
 145
 146
@@ -1035,10 +1154,11 @@ have received a copy of GPLv2 along with this software; if not, see
 149
 150
 151
-152</pre>
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_errata_type_class'>errata_type_class</span> <span class='id identifier rubyid_errata'>errata</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_errata'>errata</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
@@ -1070,15 +1190,15 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-177
 178
 179
 180
 181
-182</pre>
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_checkin'>get_checkin</span><span class='lparen'>(</span><span class='id identifier rubyid_system'>system</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_checkin_time'>checkin_time</span>
@@ -1106,7 +1226,6 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-113
 114
 115
 116
@@ -1124,10 +1243,11 @@ have received a copy of GPLv2 along with this software; if not, see
 128
 129
 130
-131</pre>
+131
+132</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_products_synced'>products_synced</span> <span class='id identifier rubyid_num'>num</span><span class='op'>=</span><span class='id identifier rubyid_quantity'>quantity</span>
   <span class='id identifier rubyid_syncing_products'>syncing_products</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -1168,19 +1288,107 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-73
 74
 75
 76
-77</pre>
+77
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_promotions'>promotions</span> <span class='id identifier rubyid_num'>num</span><span class='op'>=</span><span class='id identifier rubyid_quantity'>quantity</span>
   <span class='kw'>return</span>  <span class='const'>Changeset</span><span class='period'>.</span><span class='id identifier rubyid_joins'>joins</span><span class='lparen'>(</span><span class='symbol'>:task_status</span><span class='rparen'>)</span><span class='period'>.</span>
       <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>changesets.environment_id</span><span class='tstring_end'>&quot;</span></span><span class='op'>=&gt;</span><span class='const'>KTEnvironment</span><span class='period'>.</span><span class='id identifier rubyid_changesets_readable'>changesets_readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span>
       <span class='id identifier rubyid_order'>order</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>task_statuses.updated_at DESC</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_limit'>limit</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_column-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_column</strong>(column) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 199</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_column'>render_column</span><span class='lparen'>(</span><span class='id identifier rubyid_column'>column</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_output'>output</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_widget'>widget</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_widget'>widget</span><span class='period'>.</span><span class='id identifier rubyid_content_path'>content_path</span>
+      <span class='id identifier rubyid_output'>output</span> <span class='op'>+=</span> <span class='id identifier rubyid_dashboard_ajax_entry'>dashboard_ajax_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_widget'>widget</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='comma'>,</span> <span class='id identifier rubyid_widget'>widget</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_widget'>widget</span><span class='period'>.</span><span class='id identifier rubyid_content_path'>content_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>widget</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_output'>output</span> <span class='op'>+=</span> <span class='id identifier rubyid_dashboard_entry'>dashboard_entry</span><span class='lparen'>(</span><span class='id identifier rubyid_widget'>widget</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='comma'>,</span> <span class='id identifier rubyid_widget'>widget</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_output'>output</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="render_dashboard-instance_method">
+  
+    - (<tt>Object</tt>) <strong>render_dashboard</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 189</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_render_dashboard'>render_dashboard</span>
+  <span class='id identifier rubyid_output'>output</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_dashboard_layout'>dashboard_layout</span><span class='period'>.</span><span class='id identifier rubyid_columns'>columns</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_col'>col</span><span class='op'>|</span>
+    <span class='id identifier rubyid_output'>output</span> <span class='op'>+=</span> <span class='id identifier rubyid_content_tag'>content_tag</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>div</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>class:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>column</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_render_column'>render_column</span><span class='lparen'>(</span><span class='id identifier rubyid_col'>col</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_output'>output</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1202,12 +1410,12 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-139
 140
-141</pre>
+141
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 140</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subscription_counts'>subscription_counts</span>
   <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='const'>Glue</span><span class='op'>::</span><span class='const'>Candlepin</span><span class='op'>::</span><span class='const'>OwnerInfo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span>
@@ -1232,14 +1440,14 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-133
 134
 135
 136
-137</pre>
+137
+138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 133</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 134</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sync_percentage'>sync_percentage</span><span class='lparen'>(</span><span class='id identifier rubyid_product'>product</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_stat'>stat</span> <span class='op'>=</span><span class='id identifier rubyid_product'>product</span><span class='period'>.</span><span class='id identifier rubyid_sync_status'>sync_status</span><span class='period'>.</span><span class='id identifier rubyid_progress'>progress</span>
@@ -1266,12 +1474,12 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-173
 174
-175</pre>
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 174</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_system_path_helper'>system_path_helper</span> <span class='id identifier rubyid_system'>system</span>
   <span class='id identifier rubyid_systems_path'>systems_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#panel=system_</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_system'>system</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>&amp;panelpage=errata</span><span class='tstring_end'>'</span></span>
@@ -1296,12 +1504,12 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-101
 102
-103</pre>
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_systems_list'>systems_list</span> <span class='id identifier rubyid_num'>num</span><span class='op'>=</span><span class='id identifier rubyid_quantity'>quantity</span>
   <span class='const'>System</span><span class='period'>.</span><span class='id identifier rubyid_readable'>readable</span><span class='lparen'>(</span><span class='id identifier rubyid_current_organization'>current_organization</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_limit'>limit</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
@@ -1326,16 +1534,16 @@ have received a copy of GPLv2 along with this software; if not, see
       <pre class="lines">
 
 
-23
 24
 25
 26
 27
 28
-29</pre>
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_user_notices'>user_notices</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span> <span class='op'>=</span> <span class='id identifier rubyid_quantity'>quantity</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_truncate'>truncate</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:truncate</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='int'>45</span>
@@ -1349,12 +1557,42 @@ have received a copy of GPLv2 along with this software; if not, see
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="widget_drag_and_drop_text-instance_method">
+  
+    - (<tt>Object</tt>) <strong>widget_drag_and_drop_text</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/dashboard_helper.rb', line 211</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_widget_drag_and_drop_text'>widget_drag_and_drop_text</span>
+  <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Click on the widget title text to drag and drop.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:10 2013 by
+  Generated on Thu Jun 27 11:21:20 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>

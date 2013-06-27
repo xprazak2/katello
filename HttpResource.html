@@ -649,12 +649,12 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-154
-155
-156</pre>
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 166</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_thing'>create_thing</span><span class='lparen'>(</span><span class='id identifier rubyid_request_type'>request_type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_request_type'>request_type</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -679,19 +679,22 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133</pre>
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_a_path'>a_path</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Resource DELETE request: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_a_path'>a_path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -702,6 +705,9 @@ Authentication header added to the request headers.</p>
   <span class='id identifier rubyid_result'>result</span>
 <span class='kw'>rescue</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
   <span class='id identifier rubyid_raise_rest_client_exception'>raise_rest_client_exception</span> <span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DELETE</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>ECONNREFUSED</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_service'>service</span> <span class='op'>=</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_second'>second</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>ConnectionRefusedException</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A backend service [ %s ] is unreachable</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -732,7 +738,10 @@ Authentication header added to the request headers.</p>
 97
 98
 99
-100</pre>
+100
+101
+102
+103</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 91</span>
@@ -746,6 +755,9 @@ Authentication header added to the request headers.</p>
   <span class='id identifier rubyid_result'>result</span>
 <span class='kw'>rescue</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
   <span class='id identifier rubyid_raise_rest_client_exception'>raise_rest_client_exception</span> <span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GET</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>ECONNREFUSED</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_service'>service</span> <span class='op'>=</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_second'>second</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>ConnectionRefusedException</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A backend service [ %s ] is unreachable</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -767,15 +779,15 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-197
-198
-199
-200
-201
-202</pre>
+209
+210
+211
+212
+213
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 197</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 209</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hash_to_query'>hash_to_query</span><span class='lparen'>(</span><span class='id identifier rubyid_query_parameters'>query_parameters</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_query_parameters'>query_parameters</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>?</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_so_far'>so_far</span><span class='comma'>,</span> <span class='id identifier rubyid_current'>current</span><span class='op'>|</span>
@@ -803,15 +815,15 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-147
-148
-149
-150
-151
-152</pre>
+159
+160
+161
+162
+163
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 147</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 159</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_join_path'>join_path</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_so_far'>so_far</span><span class='comma'>,</span> <span class='id identifier rubyid_current'>current</span><span class='op'>|</span>
@@ -892,19 +904,22 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-102
-103
-104
 105
 106
 107
 108
 109
 110
-111</pre>
+111
+112
+113
+114
+115
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_a_path'>a_path</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Resource POST request: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_a_path'>a_path</span><span class='rbrace'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_payload'>payload</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -915,6 +930,9 @@ Authentication header added to the request headers.</p>
   <span class='id identifier rubyid_result'>result</span>
 <span class='kw'>rescue</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
   <span class='id identifier rubyid_raise_rest_client_exception'>raise_rest_client_exception</span> <span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>POST</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>ECONNREFUSED</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_service'>service</span> <span class='op'>=</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_second'>second</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>ConnectionRefusedException</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A backend service [ %s ] is unreachable</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1053,12 +1071,12 @@ Authentication header added to the request headers.</p>
     <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error parsing the body: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_backtrace'>backtrace</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='kw'>if</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>404</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>500</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>502</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>503</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>504</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span> <span class='id identifier rubyid_resp'>resp</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
       <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Remote server status code </span><span class='tstring_end'>&quot;</span></span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_resp'>resp</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
-      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RestClientException</span><span class='comma'>,</span><span class='lbrace'>{</span><span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='symbol'>:service_code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_service_code'>service_code</span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_status_code'>status_code</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RestClientException</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='symbol'>:service_code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_service_code'>service_code</span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_status_code'>status_code</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NetworkException</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_resp'>resp</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='comma'>,</span> <span class='id identifier rubyid_resp'>resp</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
-  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RestClientException</span><span class='comma'>,</span><span class='lbrace'>{</span><span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='symbol'>:service_code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_service_code'>service_code</span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_status_code'>status_code</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RestClientException</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:message</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='symbol'>:service_code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_service_code'>service_code</span><span class='comma'>,</span> <span class='symbol'>:code</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_status_code'>status_code</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1080,19 +1098,22 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-113
-114
-115
-116
-117
-118
 119
 120
 121
-122</pre>
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_a_path'>a_path</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_logger'>logger</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Resource PUT request: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_a_path'>a_path</span><span class='rbrace'>}</span><span class='tstring_content'>, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_payload'>payload</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1103,6 +1124,9 @@ Authentication header added to the request headers.</p>
   <span class='id identifier rubyid_result'>result</span>
 <span class='kw'>rescue</span> <span class='const'>RestClient</span><span class='op'>::</span><span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
   <span class='id identifier rubyid_raise_rest_client_exception'>raise_rest_client_exception</span> <span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PUT</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>ECONNREFUSED</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='id identifier rubyid_service'>service</span> <span class='op'>=</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_second'>second</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Errors</span><span class='op'>::</span><span class='const'>ConnectionRefusedException</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A backend service [ %s ] is unreachable</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>%</span> <span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1134,19 +1158,19 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145</pre>
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_raise_rest_client_exception'>raise_rest_client_exception</span> <span class='id identifier rubyid_e'>e</span><span class='comma'>,</span> <span class='id identifier rubyid_a_path'>a_path</span><span class='comma'>,</span> <span class='id identifier rubyid_http_method'>http_method</span>
   <span class='comment'># message method in rest-client is hardcoded - we need to override it
@@ -1189,18 +1213,6 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
 172
 173
 174
@@ -1216,10 +1228,22 @@ Authentication header added to the request headers.</p>
 184
 185
 186
-187</pre>
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 160</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rest_client'>rest_client</span><span class='lparen'>(</span><span class='id identifier rubyid_http_type'>http_type</span><span class='comma'>,</span> <span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='comment'># Need full path to properly generate the signature
@@ -1315,12 +1339,12 @@ Authentication header added to the request headers.</p>
       <pre class="lines">
 
 
-193
-194
-195</pre>
+205
+206
+207</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 193</span>
+      <pre class="code"><span class="info file"># File 'app/lib/http_resource.rb', line 205</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_url_encode'>url_encode</span><span class='lparen'>(</span><span class='id identifier rubyid_element'>element</span><span class='rparen'>)</span>
   <span class='const'>CGI</span><span class='op'>::</span><span class='id identifier rubyid_escape'>escape</span> <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>unless</span> <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1401,7 +1425,7 @@ Authentication header added to the request headers.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu May  9 10:36:21 2013 by
+  Generated on Thu Jun 27 11:21:33 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>
