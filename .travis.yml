@@ -18,3 +18,7 @@ env:
   - JOB=rspec
   - JOB=other
   - JOB=javascript
+
+branches:
+  except:
+    - enginify
