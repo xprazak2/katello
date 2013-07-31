@@ -37,7 +37,7 @@ end
 
 module Katello
   class PulpSyncStatus < PulpTaskStatus
-    use_index_of TaskStatus if Katello.config.use_elasticsearch
+    use_index_of Katello::TaskStatus if Katello.config.use_elasticsearch
 
     HISTORY_ERROR = 'failed'
     HISTORY_SUCCESS = 'success'
@@ -47,7 +47,7 @@ module Katello
     WAITING   = "waiting"
     CANCELED  = "canceled"
 
-    class Status < ::TaskStatus::Status
+    class Status < TaskStatus::Status
       NOT_SYNCED = :not_synced
     end
 
