@@ -168,7 +168,7 @@ if(!Object.keys) {
 }
 
 
-//override the jQuery UJS $.rails.allowAction
+// override the jQuery UJS $.rails.allowAction
 $.rails.allowAction = function(element) {
     var message = element.data('confirm'),
     answer = false, callback;
@@ -540,7 +540,8 @@ $(window).ready(function(){
     });
 
     window.alert = function(message){KT.common.customAlert(message);return false;};
-    $.rails.confirm = function(message) {
+    // ENGINIFY
+    /*$.rails.confirm = function(message) {
         KT.common.customConfirm({message: message}); return false;
-    };
+    };*/
 });

@@ -15,7 +15,6 @@ require 'base64'
 
 module Katello
   class ApplicationController < ::ApplicationController
-    layout 'katello'
     include Notifications::ControllerHelper
     include Profiling
     # TODO: ENGINIFY: disabling KTLocale, as it requires certain properties on a User
