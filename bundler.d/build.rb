@@ -9,5 +9,6 @@ end
 
 group :ci do
   # needed by hudson
-  gem 'ci_reporter', '~> 1.7.2', :require => false
+  # ENGINIFY
+  #gem 'ci_reporter', '~> 1.7.2', :require => false
 end
