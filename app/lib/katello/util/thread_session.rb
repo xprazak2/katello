@@ -103,13 +103,12 @@ module Katello
       module Controller
         def self.included(base)
           base.class_eval do
-            #around_filter :thread_locals
             before_filter :setup_runcible
           end
         end
 
         def setup_runcible
-          if Katello.config.use_pulp
+          if Katello.config.use_pulp && ::User.current
             uri = URI.parse(Katello.config.pulp.url)
 
               ::Runcible::Base.config = {
@@ -127,12 +126,6 @@ module Katello
           end
         end
 
-        def thread_locals
-          User.current = current_user
-          yield
-        ensure
-          User.current = nil
-        end
       end
     end
   end
