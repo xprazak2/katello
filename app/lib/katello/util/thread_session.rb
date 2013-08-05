@@ -39,7 +39,6 @@ module Katello
   module Util
     module ThreadSession
 
-      # include this in the User model
       module UserModel
         def self.included(base)
           base.class_eval do
@@ -75,9 +74,6 @@ module Katello
               end
             end
 
-
-            # Executes given block on behalf of a different user. Mostly for debuggin purposes since
-            # the username is hardcoded in the codebase! Example:
             #
             # User.as :admin do
             #   ...
