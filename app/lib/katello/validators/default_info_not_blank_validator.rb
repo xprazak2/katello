@@ -10,17 +10,14 @@
 # have received a copy of GPLv2 along with this software; if not, see
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
-class I18nController < ApplicationController
-  before_filter :authorize
-
-  def rules
-    show_test = lambda {User.current}
-    {:show => show_test}
-  end
-
-  def show
-    respond_to do |format|
-      format.json { render :json => render_to_string(:partial => 'dictionary')}
+module Validators
+  class DefaultInfoNotBlankValidator < ActiveModel::EachValidator
+    def validate_each(record, attribute, value)
+      value.each_key do |type|
+        value[type].each do |key|
+          record.errors[attribute] << _("cannot contain blank keynames") and return if key.blank?
+        end
+      end
     end
   end
 end

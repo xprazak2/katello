@@ -10,17 +10,18 @@
 # have received a copy of GPLv2 along with this software; if not, see
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
-module Validators
-  class DefaultInfoValidator < ActiveModel::EachValidator
+module Katello
+  class I18nController < ApplicationController
+    before_filter :authorize
 
-    MAX_SIZE = 256
+    def rules
+      show_test = lambda {User.current}
+      {:show => show_test}
+    end
 
-    def validate_each(record, attribute, value)
-      value.each_key do |type|
-        value[type].each do |key|
-          record.errors[attribute] << _("cannot contain blank keynames") and return if key.blank?
-          record.errors[attribute] << _("must be less than %d characters") % MAX_SIZE and return if key.size >= MAX_SIZE
-        end
+    def show
+      respond_to do |format|
+        format.json { render :json => render_to_string(:partial => 'dictionary')}
       end
     end
   end
