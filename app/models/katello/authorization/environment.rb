@@ -189,107 +189,67 @@ module Katello
       end
 
       def systems_readable?
-<<<<<<< HEAD
-        self.organization.systems_readable? ||
-            (Katello.config.katello? &&
-                User.allowed_to?(SYSTEMS_READABLE, :environments, self.id, self.organization))
-      end
-
-      def systems_editable?
-        User.allowed_to?([:update_systems], :organizations, nil, self.organization) ||
-            (Katello.config.katello? &&
-                User.allowed_to?([:update_systems], :environments, self.id, self.organization))
-      end
-
-      def systems_deletable?
-        User.allowed_to?([:delete_systems], :organizations, nil, self.organization) ||
-            (Katello.config.katello? &&
-                User.allowed_to?([:delete_systems], :environments, self.id, self.organization))
-      end
-
-      def systems_registerable?
-        self.organization.systems_registerable? ||
-            (Katello.config.katello? &&
-                User.allowed_to?([:register_systems], :environments, self.id, self.organization))
-      end
-
-      def distributors_readable?
-        self.organization.distributors_readable? ||
-            (Katello.config.katello? &&
-                User.allowed_to?(DISTRIBUTORS_READABLE, :environments, self.id, self.organization))
-      end
-
-      def distributors_editable?
-        User.allowed_to?([:update_distributors], :organizations, nil, self.organization) ||
-            (Katello.config.katello? &&
-                User.allowed_to?([:update_distributors], :environments, self.id, self.organization))
-      end
-
-      def distributors_deletable?
-        User.allowed_to?([:delete_distributors], :organizations, nil, self.organization) ||
-            (Katello.config.katello? &&
-                User.allowed_to?([:delete_distributors], :environments, self.id, self.organization))
-      end
-
-      def distributors_registerable?
-        self.organization.distributors_registerable? ||
-            (Katello.config.katello? &&
-                User.allowed_to?([:register_distributors], :environments, self.id, self.organization))
-=======
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #self.organization.systems_readable? ||
-        #    User.allowed_to?(SYSTEMS_READABLE, :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?(SYSTEMS_READABLE, :environments, self.id, self.organization))
         true
       end
 
       def systems_editable?
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #User.allowed_to?([:update_systems], :organizations, nil, self.organization) ||
-        #    User.allowed_to?([:update_systems], :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?([:update_systems], :environments, self.id, self.organization))
         true
       end
 
       def systems_deletable?
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #User.allowed_to?([:delete_systems], :organizations, nil, self.organization) ||
-        #    User.allowed_to?([:delete_systems], :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?([:delete_systems], :environments, self.id, self.organization))
         true
       end
 
       def systems_registerable?
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #self.organization.systems_registerable? ||
-        #    User.allowed_to?([:register_systems], :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?([:register_systems], :environments, self.id, self.organization))
         true
       end
 
       def distributors_readable?
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #self.organization.distributors_readable? ||
-        #    User.allowed_to?(DISTRIBUTORS_READABLE, :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?(DISTRIBUTORS_READABLE, :environments, self.id, self.organization))
         true
       end
 
       def distributors_editable?
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #User.allowed_to?([:update_distributors], :organizations, nil, self.organization) ||
-        #    User.allowed_to?([:update_distributors], :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?([:update_distributors], :environments, self.id, self.organization))
         true
       end
 
       def distributors_deletable?
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #User.allowed_to?([:delete_distributors], :organizations, nil, self.organization) ||
-        #    User.allowed_to?([:delete_distributors], :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?([:delete_distributors], :environments, self.id, self.organization))
         true
       end
 
       def distributors_registerable?
-        # TODO: ENGINIFY: assume all actions are allowed
+        # ENGINIFY: Fix up authorization
         #self.organization.distributors_registerable? ||
-        #    User.allowed_to?([:register_distributors], :environments, self.id, self.organization)
+        #    (Katello.config.katello? &&
+        #        User.allowed_to?([:register_distributors], :environments, self.id, self.organization))
         true
->>>>>>> Engine: disabling authorization (User.allowed_to)
       end
     end
 

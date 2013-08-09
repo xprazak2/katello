@@ -66,6 +66,7 @@ module Katello
           :new_notices_url   => notices_get_new_path
         }
       end
+    end
 
   end
 end

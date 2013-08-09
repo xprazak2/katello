@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.summary     = ""
   gem.description = ""
 
-  gem.files = Dir["{app,vendor,lib,db,config}/**/*"] + ["LICENSE.txt", "Rakefile", "README.md"]
+  gem.files = Dir["{app,vendor,lib,db,config,engines}/**/*"] + ["LICENSE.txt", "Rakefile", "README.md"]
   gem.require_paths = ["lib"]
 
   # Core Dependencies
@@ -52,7 +52,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "acts_as_reportable", ">=1.1.1"
     
   # Pulp
-  gem.add_dependency "runcible", "0.4.12"
+  gem.add_dependency "runcible", "1.0.0"
   gem.add_dependency "anemone"
 
   # UI

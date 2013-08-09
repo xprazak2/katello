@@ -11,7 +11,7 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 module Katello
-  class ProductsController < ApplicationController
+  class ProductsController < Katello::ApplicationController
     respond_to :html, :js
 
     before_filter :find_product, :only => [:edit, :update, :destroy, :refresh_content, :disable_content]

@@ -28,6 +28,7 @@ require "uuidtools"
 require "delayed_job"
 
 require "headpin/headpin"
+require File.expand_path("../engines/bastion/lib/bastion", File.dirname(__FILE__))
 
 module Katello
 
