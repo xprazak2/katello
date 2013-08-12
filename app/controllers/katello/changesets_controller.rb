@@ -11,8 +11,7 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 module Katello
-  class ChangesetsController < ApplicationController
-    include AutoCompleteSearch
+  class ChangesetsController < Katello::ApplicationController
     include BreadcrumbHelper
     include ChangesetBreadcrumbs
 
@@ -51,14 +50,17 @@ module Katello
 
     #changeset history index
     def index
-      accessible_envs = KTEnvironment.changesets_readable(current_organization)
-      setup_environment_selector(current_organization, accessible_envs)
+      if current_organization
+        accessible_envs = KTEnvironment.changesets_readable(current_organization)
+        setup_environment_selector(current_organization, accessible_envs)
+      end
       render :index, :locals=>{:accessible_envs => accessible_envs}
     end
 
     #extended scroll for changeset_history
     def items
-      render_panel_direct(Changeset, @panel_options, params[:search], params[:offset], [:name_sort, 'asc'],
+      offset = params[:offset] || 0
+      render_panel_direct(Changeset, @panel_options, params[:search], offset, [:name_sort, 'asc'],
           {:default_field => :name, :filter=>[{:environment_id=>[@environment.id]}, {:state=>[Changeset::PROMOTED, Changeset::DELETED]}]})
     end
 
@@ -68,7 +70,7 @@ module Katello
 
     #list item
     def show
-      render :partial=>"common/list_update", :locals=>{:item=>@changeset, :accessor=>"id", :columns=>['name']}
+      render :partial=>"katello/common/list_update", :locals=>{:item=>@changeset, :accessor=>"id", :columns=>['name']}
     end
 
     def section_id
@@ -89,8 +91,8 @@ module Katello
     end
 
     def create
-      if params[:changeset][:action_type].blank? or
-         params[:changeset][:action_type] == Changeset::PROMOTION
+      if params[:katello_changeset][:action_type].blank? or
+         params[:katello_changeset][:action_type] == Changeset::PROMOTION
 
         if @next_environment.blank?
           notify.error _("Please create at least one environment.")
@@ -103,8 +105,8 @@ module Katello
         env_id = @environment.id
         type = Changeset::DELETION
       end
-      @changeset = Changeset.create_for(type, :name => params[:changeset][:name],
-                                        :description => params[:changeset][:description],
+      @changeset = Changeset.create_for(type, :name => params[:katello_changeset][:name],
+                                        :description => params[:katello_changeset][:description],
                                         :environment_id => env_id)
 
       notify.success _("Promotion Changeset '%s' was created.") % @changeset["name"]
@@ -246,7 +248,7 @@ module Katello
         @environment = @changeset.environment
       elsif params[:env_id]
         @environment = KTEnvironment.find(params[:env_id])
-      else
+      elsif current_organization
         #didnt' find an environment, just do the first the user has access to
         list = KTEnvironment.changesets_readable(current_organization).where(:library=>false).order(:name)
         @environment ||= list.first || current_organization.library
@@ -276,7 +278,7 @@ module Katello
                    :name => controller_display_name,
                    :accessor => :id,
                    :ajax_load => true,
-                   :ajax_scroll => items_changesets_path(),
+                   :ajax_scroll => items_katello_changesets_path(),
                    :search_class=>Changeset}
     end
 

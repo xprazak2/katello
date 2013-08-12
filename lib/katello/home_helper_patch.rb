@@ -17,7 +17,9 @@ module Katello
              [_('Providers'), :"katello/providers"],
              [_('Sync Management'),  :"katello/sync_management"],
              [_('Content View Definitions'), :"katello/content_view_definitions"],
-             [_('Content Search'), :"katello/content_search"]
+             [_('Content Search'), :"katello/content_search"],
+             [_('Changesets'), :"katello/promotions"],
+             [_('Changesets History'), :"katello/changesets"]
             ]
         choices.insert(3,[:divider],[:group, _("Content"), content_group])
       end

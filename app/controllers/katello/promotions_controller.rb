@@ -11,7 +11,7 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 module Katello
-  class PromotionsController < ApplicationController
+  class PromotionsController < Katello::ApplicationController
 
     before_filter :find_environment
     before_filter :authorize
@@ -34,23 +34,29 @@ module Katello
       'contents'
     end
 
+    def index
+      show
+    end
+
     def show
-      access_envs = accessible_environments
-      setup_environment_selector(current_organization, access_envs)
+      if current_organization
+        access_envs = accessible_environments
+        setup_environment_selector(current_organization, access_envs)
 
-      @promotion_changesets = @next_environment.working_promotion_changesets if (@next_environment && @next_environment.changesets_readable?)
-      @deletion_changesets = @environment.working_deletion_changesets if (@environment && @environment.changesets_readable?)
+        @promotion_changesets = @next_environment.working_promotion_changesets if (@next_environment && @next_environment.changesets_readable?)
+        @deletion_changesets = @environment.working_deletion_changesets if (@environment && @environment.changesets_readable?)
 
-      @locals_hash = {
-        :accessible_envs=> access_envs,
-        :manage_deletion_changesets => (@environment && @environment.changesets_manageable?)? true : false,
-        :manage_promotion_changesets => (@next_environment && @next_environment.changesets_manageable?)? true : false,
-        :apply_promotion_changesets => (@next_environment && @next_environment.changesets_promotable?)? true : false,
-        :apply_deletion_changesets => (@environment && @environment.changesets_deletable?)? true : false,
-        :read_deletion_changesets => (@environment && @environment.changesets_readable?)? true : false,
-        :read_promotion_changesets => (@next_environment && @next_environment.changesets_readable?)? true : false,
-        :read_contents => (@environment && @environment.contents_readable?)? true: false
-      }
+        @locals_hash = {
+            :accessible_envs=> access_envs,
+            :manage_deletion_changesets => (@environment && @environment.changesets_manageable?)? true : false,
+            :manage_promotion_changesets => (@next_environment && @next_environment.changesets_manageable?)? true : false,
+            :apply_promotion_changesets => (@next_environment && @next_environment.changesets_promotable?)? true : false,
+            :apply_deletion_changesets => (@environment && @environment.changesets_deletable?)? true : false,
+            :read_deletion_changesets => (@environment && @environment.changesets_readable?)? true : false,
+            :read_promotion_changesets => (@next_environment && @next_environment.changesets_readable?)? true : false,
+            :read_contents => (@environment && @environment.contents_readable?)? true: false
+        }
+      end
 
       render :show, :locals=>@locals_hash
     end

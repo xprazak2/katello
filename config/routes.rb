@@ -385,7 +385,7 @@ Rails.application.routes.draw do
 
       resources :promotions, :only =>[] do
         collection do
-          get :index, :action =>:show
+          get :index
         end
         member do
           get :show

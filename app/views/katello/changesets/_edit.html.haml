@@ -6,18 +6,18 @@
 
 = content_for :content do
   .grid_10
-    %input#changeset{:type => "hidden", 'data-ajax_url'=>changeset_path(@changeset.id)}
+    %input#changeset{:type => "hidden", 'data-ajax_url'=>katello_changeset_path(@changeset.id)}
 
     .fieldset
       .grid_3.ra
         %label #{_("Name:")}
       .grid_5.la{:name=>"name", :class=>("editable edit_textfield" if editable),
-          "data-id"=>@changeset.id,"data-url"=>changeset_path(@changeset.id)} #{@changeset.name}
+          "data-id"=>@changeset.id,"data-url"=>katello_changeset_path(@changeset.id)} #{@changeset.name}
     .fieldset
       .grid_3.ra
         %label #{_("Description:")}
       .grid_5.la{:name=>"description", :class=>("editable edit_description" if editable),
-          "data-id"=>@changeset.id,'data-maxlength'=>default_description_limit,"data-url"=>changeset_path(@changeset.id)}<
+          "data-id"=>@changeset.id,'data-maxlength'=>default_description_limit,"data-url"=>katello_changeset_path(@changeset.id)}<
         = @changeset.description.blank? ? _("None") : @changeset.description
     .fieldset
       .grid_3.ra
@@ -28,7 +28,7 @@
       .grid_3.ra
         %label #{_("Promoted By:")}
       .grid_5.la
-        #{@changeset.task_status_id.nil? ? _("Unknown") : @changeset.task_status.user.username }
+        #{@changeset.task_status_id.nil? ? _("Unknown") : @changeset.task_status.user.login }
     .fieldset
       .grid_3.ra
         %label #{_("Promotion Date:")}
@@ -39,7 +39,7 @@
     #changeset_history_tabs
       .grid_10
         %h2 #{_("Contents:")}
-        -if @changeset.involved_products.empty? && @changeset.content_views.empty?
+        -if @changeset.content_views.empty?
           .grid_7.prefix_1
             #{_("This changeset contains no content.")}
         -else

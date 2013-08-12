@@ -1,9 +1,17 @@
-= stylesheet 'widgets/path_selector'
+- if current_organization.nil?
+  %div
+    = _("This page requires an organization context; therefore, please select an organization.")
 
-.grid_16
-  = environment_selector(:library_clickable=>false, :accessible_envs=>accessible_envs)
+- else
 
-.grid_16
-  = two_panel(@changesets, @panel_options)
+  = javascript 'katello/changesets'
+  = stylesheet 'katello/widgets/path_selector'
 
-= javascript :changesets
+  = content_for(:katello_content) do
+    .grid_16
+      = environment_selector(:library_clickable=>false, :accessible_envs=>accessible_envs)
+
+    .grid_16
+      = two_panel(@changesets, @panel_options)
+
+  = render :file => 'katello/layouts/katello_base'

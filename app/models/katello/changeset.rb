@@ -58,9 +58,9 @@ module Katello
       start  = to.environment.prior.id
       target = to.environment.id
       joins(:environment => :priors).
-          where(['"changesets"."id" <> ? AND ('<<
-                     '"environments"."id" = ? OR "environment_priors"."prior_id" = ? OR ' <<
-                     '("environments"."id" = ? AND "environment_priors"."prior_id" = ?))',
+          where(['"katello_changesets"."id" <> ? AND ('<<
+                     '"katello_environments"."id" = ? OR "katello_environment_priors"."prior_id" = ? OR ' <<
+                     '("katello_environments"."id" = ? AND "katello_environment_priors"."prior_id" = ?))',
                  to.id, start, target, target, start])
     }
 

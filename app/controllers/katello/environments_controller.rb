@@ -11,7 +11,7 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 module Katello
-  class EnvironmentsController < ApplicationController
+  class EnvironmentsController < Katello::ApplicationController
     respond_to :html, :js
 
     before_filter :find_organization, :only => [:show, :edit, :update, :destroy, :index, :new, :create, :default_label, :products]

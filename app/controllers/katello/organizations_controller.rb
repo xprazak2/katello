@@ -12,7 +12,7 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 module Katello
-  class OrganizationsController < ApplicationController
+  class OrganizationsController < Katello::ApplicationController
     include AutoCompleteSearch
     respond_to :html, :js
     before_filter :find_organization, :only => [:edit, :update, :destroy, :events, :default_info]
