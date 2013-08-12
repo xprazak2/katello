@@ -13,7 +13,8 @@ module Katello
       def setting_options_with_content_link
         choices = setting_options_without_content_link
         content_group =
-            [[_('Providers'),    :"katello/providers"],
+            [[_('Environment Paths'), :"katello/organizations"],
+             [_('Providers'), :"katello/providers"],
              [_('Sync Management'),  :"katello/sync_management"],
              [_('Content View Definitions'), :"katello/content_view_definitions"],
              [_('Content Search'), :"katello/content_search"]

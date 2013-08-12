@@ -72,9 +72,17 @@ module Katello
     end
 
     def items
-      ids = Organization.without_deleting.readable.collect(&:id)
-      render_panel_direct(Organization, @panel_options, params[:search], params[:offset], [:name_sort, 'asc'],
-                          {:default_field => :name, :filter=>[{"id"=>ids}]})
+      # ENGINIFY: Figure out after combining Foreman and Katello models
+      #ids = ::Organization.without_deleting.readable.pluck(:id)
+
+      if current_organization
+        ids = [current_organization.id]
+      else
+        ids = ::Organization.readable.pluck(:id)
+      end
+      offset = params[:offset] || 0
+      render_panel_direct(::Organization, @panel_options, params[:search], offset, [:name_sort, 'asc'],
+                          {:default_field => :name, :filter => [{"id" => ids}]})
     end
 
     def show
@@ -82,7 +90,7 @@ module Katello
         render :partial=>"new"
       else
         find_organization
-        render :partial=>"common/list_update", :locals => {:item => @organization, :accessor => 'label', :columns => ['name']}
+        render :partial=>"katello/common/list_update", :locals => {:item => @organization, :accessor => 'label', :columns => ['name']}
       end
     end
 
@@ -109,16 +117,16 @@ module Katello
         @new_env = @organization.library
       end
 
-      notify.success _("Organization '%s' was created.") % @organization["name"]
+      notify.success _("::Organization '%s' was created.") % @organization["name"]
       notify.message org_label_assigned unless org_label_assigned.blank?
 
-      if search_validate(Organization, @organization.id, params[:search])
+      if search_validate(::Organization, @organization.id, params[:search])
         if @new_env.nil?
           notify.message _("Click on 'Add Environment' to create the first environment")
         else
           notify.message env_label_assigned unless env_label_assigned.blank?
         end
-        render :partial=>"common/list_item", :locals=>{:item=>@organization, :accessor=>"label", :columns=>['name'], :name=>controller_display_name}
+        render :partial=>"katello/common/list_item", :locals=>{:item=>@organization, :accessor=>"label", :columns=>['name'], :name=>controller_display_name}
       else
         notify.message _("'%s' did not meet the current search criteria and is not being shown.") % @organization["name"]
         render :json => { :no_match => true }
@@ -163,7 +171,7 @@ module Katello
       @organization.save!
       notify.success _("Organization '%s' was updated.") % @organization["name"]
 
-      if not search_validate(Organization, @organization.id, params[:search])
+      if not search_validate(::Organization, @organization.id, params[:search])
         notify.message _("'%s' no longer matches the current search criteria.") % @organization["name"],
                        :asynchronous => false
       end
@@ -185,11 +193,11 @@ module Katello
       id = @organization.label
       OrganizationDestroyer.destroy @organization, :notify => true
       notify.success _("Organization '%s' has been scheduled for background deletion.") % @organization.name
-      render :partial => "common/list_remove", :locals => {:id=> id, :name=> controller_display_name}
+      render :partial => "katello/common/list_remove", :locals => {:id=> id, :name=> controller_display_name}
     end
 
     def environments_partial
-      @organization = Organization.find(params[:id])
+      @organization = ::Organization.find(params[:id])
       env_user_id = params[:user_id]?params[:user_id].to_s : nil
       if env_user_id == current_user.id.to_s && (!current_user.editable?)
         accessible_envs = KTEnvironment.systems_registerable(@organization)
@@ -224,7 +232,7 @@ module Katello
     end
 
     def default_info
-      Organization.check_informable_type!(params[:informable_type])
+      ::Organization.check_informable_type!(params[:informable_type])
       task = TaskStatus.find_by_id(@organization.apply_info_task_id)
       task_state = (task.blank? ? nil : task.state)
       task_uuid = (task.blank? ? nil : task.uuid)
@@ -235,7 +243,7 @@ module Katello
     protected
 
     def find_organization
-      @organization = Organization.find_by_label(params[:id].to_s)
+      @organization = ::Organization.find_by_label(params[:id].to_s)
       if @organization.blank?
         message = _("Couldn't find organization with ID %s") % params[:id]
         notify.error message
@@ -245,21 +253,19 @@ module Katello
     end
 
     def find_organization_by_id
-      @organization = Organization.find(params[:id])
+      @organization = ::Organization.find(params[:id])
     end
 
     def setup_options
-      @panel_options = { :title => _('Organizations'),
-                 :col => ['name'],
-                 :titles => [_('Name')],
-                 :create => _('Organization'),
-                 :create_label => _('+ New Organization'),
-                 :name => controller_display_name,
-                 :accessor => :label,
-                 :ajax_load  => true,
-                 :ajax_scroll => items_organizations_path(),
-                 :enable_create => Organization.creatable?,
-                 :search_class=>Organization}
+      @panel_options = { :title => _('Manage Environment Paths'),
+                         :col => ['name'],
+                         :titles => [_('Organization Name')],
+                         :name => controller_display_name,
+                         :accessor => :label,
+                         :ajax_load  => true,
+                         :ajax_scroll => items_katello_organizations_path(),
+                         :enable_create => false,
+                         :search_class=>::Organization}
     end
 
     def search_filter

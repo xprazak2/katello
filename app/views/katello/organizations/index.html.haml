@@ -1,16 +1,22 @@
+= javascript 'katello/organizations'
+
 = stylesheet :orgs
 
-#orgs
-  .grid_16
-    = help_tip_button
-    - if Katello.config.katello?
-      = help_tip(_("Organizations allow content and systems to be separated by logical divisions.  " + |
-                   "To edit the environments within an organization, click on that organization and then click " + |
-                   "on the desired environment." )) |
-    - else
-      = help_tip(_("Organizations allow content and systems to be separated by logical divisions."))
+= content_for(:katello_content) do
+  -# TODO: ENGINIFY - disable searchbar for scoped_search
+  - @searchbar = false
 
-  .grid_16#main
-    = two_panel(@organizations, @panel_options)
+  #orgs
+    .grid_16
+      = help_tip_button
+      - if Katello.config.katello?
+        = help_tip(_("Organizations allow content and systems to be separated by logical divisions.  " + |
+                     "To edit the environments within an organization, click on that organization and then click " + |
+                     "on the desired environment." )) |
+      - else
+        = help_tip(_("Organizations allow content and systems to be separated by logical divisions."))
 
-= javascript :organizations
+    .grid_16#main
+      = two_panel(@organizations, @panel_options)
+
+= render :file => 'katello/layouts/katello_base'
