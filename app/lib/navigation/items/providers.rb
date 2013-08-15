@@ -17,9 +17,9 @@ module Navigation
 
       def initialize(organization)
         @key           = :providers
-        @display       = _("Custom Content Repositories")
+        @display       = _("Products")
         @authorization = lambda{ organization && Provider.any_readable?(organization) }
-        @url           = providers_path
+        @url           = products_path(:anchor => '/products')
       end
 
     end

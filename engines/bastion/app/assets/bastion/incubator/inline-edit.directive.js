@@ -31,7 +31,7 @@ angular.module('alchemy')
         return {
             replace: true,
             controller: 'AlchEditController',
-            templateUrl: 'incubator/views/alch-edit.html'
+            templateUrl: '/incubator/views/alch-edit.html'
         };
     })
     .controller('AlchEditController', ['$scope', function($scope) {

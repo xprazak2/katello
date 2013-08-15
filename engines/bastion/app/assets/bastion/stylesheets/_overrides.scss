@@ -1,0 +1,21 @@
+// Overrides with Foreman styles that clash currently
+
+#content {
+  width: 100%;
+
+  .row {
+    display: none;
+  }
+}
+
+#main {
+  padding-top: 0;
+}
+
+.table-striped tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th {
+  background-color: inherit;
+}
+
+.button, .btn, button {
+  margin: 0;
+}

@@ -50,13 +50,16 @@ angular.module('Bastion.widgets').factory('Nutupane',
 
             self.query = function() {
                 var params = {
-                    'organization_id':  CurrentOrganization,
                     'search':           $location.search().search || "",
                     'sort_by':          self.table.sort.by,
                     'sort_order':       self.table.sort.order,
                     'paged':            true,
                     'offset':           self.table.resource.offset
                 };
+
+                if (CurrentOrganization !== '') {
+                    params['organization_id'] = CurrentOrganization;
+                }
 
                 self.table.working = true;
                 var deferred = $q.defer();
@@ -88,28 +91,23 @@ angular.module('Bastion.widgets').factory('Nutupane',
 
             self.table.nextPage = function() {
                 var table = self.table;
-                if (table.working || (table.resource.offset > 0 && table.hasMore())) {
-                    return;
+                if (table.working || !table.hasMore()) {
+                    return $q.defer().promise;
                 }
                 return self.query();
             };
 
             self.table.hasMore = function() {
-                return self.table.resource.subtotal === self.table.resource.offset;
+                return self.table.resource.subtotal > self.table.resource.offset;
             };
 
             self.table.sortBy = function(column) {
                 var sort = self.table.sort;
-
-                if (!column) {
-                    return;
-                }
-
                 if (column.id === sort.by) {
                     sort.order = (sort.order === 'ASC') ? 'DESC' : 'ASC';
                 } else {
-                    sort.by = column.id;
                     sort.order = 'ASC';
+                    sort.by = column.id;
                 }
 
                 column.sortOrder = sort.order;

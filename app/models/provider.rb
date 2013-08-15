@@ -24,6 +24,8 @@ class Provider < ActiveRecord::Base
   CUSTOM = 'Custom'
   TYPES = [REDHAT, CUSTOM]
 
+  attr_accessible :name
+
   serialize :discovered_repos, Array
 
   belongs_to :organization
@@ -32,7 +34,6 @@ class Provider < ActiveRecord::Base
   has_many :products, :inverse_of => :provider
   has_many :repositories, through: :products
 
-  validates :name, :presence => true
   validates_with Validators::KatelloNameFormatValidator, :attributes => :name
   validates_with Validators::KatelloDescriptionFormatValidator, :attributes => :description
 

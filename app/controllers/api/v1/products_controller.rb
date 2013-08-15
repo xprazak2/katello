@@ -12,6 +12,7 @@
 
 class Api::V1::ProductsController < Api::V1::ApiController
   respond_to :json
+
   before_filter :find_optional_organization, :only => [:index, :repositories, :show, :update, :destroy, :set_sync_plan, :remove_sync_plan]
   before_filter :find_environment, :only => [:index, :repositories]
   before_filter :find_content_view, :only => [:repositories]
@@ -26,19 +27,19 @@ class Api::V1::ProductsController < Api::V1::ApiController
     repo_test  = lambda { Product.any_readable?(@organization) }
 
     {
-        :index            => index_test,
-        :show             => read_test,
-        :update           => edit_test,
-        :destroy          => edit_test,
-        :repositories     => repo_test,
-        :set_sync_plan    => edit_test,
-        :remove_sync_plan => edit_test
+      :index            => index_test,
+      :show             => read_test,
+      :update           => edit_test,
+      :destroy          => edit_test,
+      :repositories     => repo_test,
+      :set_sync_plan    => edit_test,
+      :remove_sync_plan => edit_test
     }
   end
 
   def param_rules
     {
-        :update => { :product => [:description, :gpg_key_name, :recursive] }
+      :update => { :product => [:description, :gpg_key_name, :recursive] }
     }
   end
 

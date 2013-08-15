@@ -49,6 +49,23 @@ class Api::V1::ApiController < Api::ApiController
     return @query_params
   end
 
+  def sort_params
+    options = {}
+    my_params = params.clone
+
+    if my_params[:sort_by]
+      options[:sort_by] = my_params[:sort_by]
+      my_params.delete(:sort_by)
+    end
+
+    if my_params[:sort_order]
+      options[:sort_order]= my_params[:sort_order]
+      my_params.delete(:sort_order)
+    end
+
+    return options, my_params
+  end
+
   protected
 
   def find_organization

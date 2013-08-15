@@ -19,10 +19,12 @@ $spritePath: url("../alchemy/icons/action-icons.png");
 @import "alchemy-forms/forms";
 @import "alchemy-buttons/buttons";
 @import "alchemy/components/sprites/sprites";
+@import "alchemy/components/flash_messages/flash_messages";
 @import "alchemy/components/text/text";
 
 @import "header";
-@import "nutupane";
+@import "bastion/stylesheets/nutupane";
+@import "bastion/stylesheets/overrides";
 
 @import "widgets/tipsy_custom";
 @import "jquery.tipsy";

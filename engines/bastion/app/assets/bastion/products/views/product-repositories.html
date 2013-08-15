@@ -1,0 +1,32 @@
+<section class="details details-full">
+  <div class="form">
+    <input type="text"
+           class="input input-search"
+           placeholder="{{ 'Filter' | i18n }}"
+           ng-model="repositorySearch">
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{{ "Name" | i18n }}</th>
+        <th>{{ "Arch" | i18n }}</th>
+        <th>{{ "Last Sync" | i18n }}</th>
+        <th>{{ "Sync State" | i18n }}</th>
+        <th>{{ "Package Count" | i18n }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="repository in repositories.records | filter:repositorySearch" row-select>
+        <td>
+          <a class="clickable" ng-click="showRepository(repository)">{{ repository.name }}</a>
+        </td>
+        <td>{{ repository.architecture.name }}</td>
+        <td>{{ repository.last_sync | date:"short" }}</td>
+        <td>{{ repository.sync_state }}</td>
+        <td>{{ repository.package_count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

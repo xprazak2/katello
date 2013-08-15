@@ -11,27 +11,77 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 
-class Api::V2::ProvidersController < Api::V1::ProvidersController
+class Api::V2::ProvidersController < Api::V2::ApiController
 
-  include Api::V2::Rendering
+  before_filter :find_organization, :only => [:index, :create]
+  before_filter :authorize
 
   resource_description do
     api_version "v2"
   end
 
   def_param_group :provider do
-    param :provider, Hash, :required => true, :action_aware => true do
-      param :name, String, :desc => "Provider name", :required => true
-      param :description, String, :desc => "Provider description"
-      param :repository_url, String, :desc => "Repository URL"
-    end
+    #param :name, String, :desc => "Provider name", :required => true
   end
 
-  api :POST, "/organizations/:organization_id/providers", "Create a provider"
-  param :organization_id, :identifier, :desc => "Organization identifier", :required => true
+  def rules
+    index_test  = lambda { true }#lambda { Provider.any_readable?(@organization) }
+    create_test = lambda { Provider.creatable?(@organization) }
+    read_test   = lambda { @provider.readable? }
+    edit_test   = lambda { @provider.editable? }
+    delete_test = lambda { @provider.deletable? }
+
+    {
+      :index                    => index_test,
+      :show                     => index_test,
+      :create                   => create_test,
+      :update                   => edit_test,
+      :destroy                  => delete_test,
+      :discovery                => edit_test,
+      :products                 => read_test,
+      :import_manifest          => edit_test,
+      :import_manifest_progress => read_test,
+      :refresh_manifest         => edit_test,
+      :delete_manifest          => edit_test,
+      :import_products          => edit_test,
+      :refresh_products         => edit_test,
+      :product_create           => edit_test
+    }
+  end
+
+  def param_rules
+    {
+      :create => [:name, :organization_id],
+      :update => [:name]
+    }
+  end
+
+  api :GET, "/providers", "List providers"
+  def index
+    query_string = params[:name] ? "name:#{params[:name]}" : params[:search]
+
+    options = sort_params
+    options[:load_records?] = true
+
+    options[:filters] = [
+      {:not => {:term => {:provider_type => Provider::REDHAT}}},
+      {:term => {:organization_id => @organization.id}}
+    ]
+
+    items = Glue::ElasticSearch::Items.new(Provider)
+    providers, total_count = items.retrieve(query_string, params[:offset], options)
+
+    respond_for_index :collection => {:records => providers, :subtotal => total_count, :total => items.total_items}
+  end
+
+  api :POST, "/providers", "Create a provider"
   param_group :provider
   def create
-    super
+    provider = Provider.create!(params) do |p|
+      p.organization  = @organization
+      p.provider_type ||= Provider::CUSTOM
+    end
+    respond_for_create :resource => provider
   end
 
   api :DELETE, "/providers/:id", "Destroy a provider"
@@ -51,5 +101,13 @@ class Api::V2::ProvidersController < Api::V1::ProvidersController
   def refresh_products
     super
   end
+
+  private
+
+    def find_provider
+      @provider = Provider.find(params[:id])
+      @organization ||= @provider.organization
+      raise HttpErrors::NotFound, _("Couldn't find provider '%s'") % params[:id] if @provider.nil?
+    end
 
 end

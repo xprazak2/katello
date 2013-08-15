@@ -23,6 +23,7 @@ table.details-visible {
 
 .table {
   font-size: 110%;
+  margin-bottom: 0 !important;
 
   tr:hover td,
   tr.focus td {
@@ -191,6 +192,11 @@ table.details-visible {
   }
 }
 
+.nutupane-actions {
+  display: inline-block;
+  margin-left: 10px;
+}
+
 .selected-action-container {
   vertical-align: middle;
 }
@@ -199,7 +205,7 @@ table.details-visible {
   display: none;
 }
 
-.system-details {
+.item-details {
   height: 100%;
   left: 20%;
   min-width: 30%;
@@ -214,6 +220,10 @@ table.details-visible {
     background: transparent;
     border: none;
     padding: 10px 0;
+  }
+
+  .icon-backward {
+    margin-right: 5px;
   }
 
   h2 {
@@ -232,15 +242,19 @@ table.details-visible {
   .details-header {
     height: 40px;
     position: relative;
+    margin-bottom: 10px;
   }
 
   .details-actions {
     display: inline-block;
-
   }
 
   button {
     margin: 0;
+  }
+
+  .new-header {
+    border-bottom: 3px solid #e3e5e7;
   }
 
   .details-navigation {
@@ -291,7 +305,6 @@ table.details-visible {
     display: inline-block;
     padding: 0 20px 20px 20px;
     vertical-align: top;
-    width: 50%;
 
     .detail {
       margin-bottom: 5px;
@@ -312,6 +325,10 @@ table.details-visible {
     .sub-detail {
       margin: 5px 15px 0;
     }
+  }
+
+  .details-full {
+    width: 100%;
   }
 }
 
@@ -336,7 +353,7 @@ table.details-visible {
 }
 
 .select-action {
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .inline-icon {

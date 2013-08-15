@@ -35,6 +35,7 @@
 //= require "bastion/incubator/alch-container-scroll.directive"
 //= require "bastion/incubator/alch-infinite-scroll.directive"
 //= require "bastion/incubator/inline-edit.directive"
+//= require "bastion/incubator/alch-input.directive"
 
 //= require "bastion/i18n/i18n.module"
 //= require "bastion/i18n/i18n-dictionary.factory"
@@ -61,3 +62,12 @@
 
 //= require "bastion/subscriptions/subscriptions.module.js"
 //= require "bastion/subscriptions/subscriptions.factory.js"
+
+//= require "bastion/products/products.module.js"
+//= require_tree "./products"
+
+//= require "bastion/providers/providers.module.js"
+//= require "bastion/providers/provider.factory.js"
+
+//= require "bastion/repositories/repositories.module.js"
+//= require_tree "./repositories"

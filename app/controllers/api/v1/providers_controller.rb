@@ -34,7 +34,6 @@ class Api::V1::ProvidersController < Api::V1::ApiController
     {
         :index                    => index_test,
         :show                     => index_test,
-
         :create                   => create_test,
         :update                   => edit_test,
         :destroy                  => delete_test,
