@@ -116,6 +116,7 @@ module Katello
       Concerns::MediumExtensions.create_medium({
         content_view: view,
         repositories: view.versions.first.repositories,
+        environment: self.organization.library,
         organization: view.organization,
         operatingsystems: view.operatingsystems
       })

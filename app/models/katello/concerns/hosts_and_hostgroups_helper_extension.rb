@@ -6,8 +6,10 @@ module Katello
       included do
         def os_media
           return [] if @operatingsystem.blank?
-          if params[:content_view_id]
-            @operatingsystem.media.with_content_view(params[:content_view_id])
+          if params[:kt_environment_id]
+            unless params[:content_view_id].blank?
+              @operatingsystem.media.with_environment(params[:kt_environment_id]).with_content_view(params[:content_view_id])
+            end
           else
             @operatingsystem.media.without_content_views
           end

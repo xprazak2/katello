@@ -219,6 +219,7 @@ module Katello
         PulpTaskStatus::wait_for_tasks prepare_repos_for_promotion(replacing_version.repos(to_env), repos_to_promote)
       end
       tasks = promote_repos(promote_version, to_env, repos_to_promote)
+      PulpTaskStatus::wait_for_tasks(tasks.flatten)
 
       if replacing_version
         replacing_version = ContentViewVersion.find(replacing_version.id) if replacing_version.readonly?
@@ -229,6 +230,14 @@ module Katello
           replacing_version.save!
         end
       end
+
+      Concerns::MediumExtensions.create_medium({
+        content_view: self,
+        repositories: self.version(to_env).repos(to_env),
+        environment: to_env,
+        organization: self.organization,
+        operatingsystems: self.operatingsystems
+      })
 
       Glue::Event.trigger(Katello::Actions::ContentViewPromote, self, from_env, to_env)
 

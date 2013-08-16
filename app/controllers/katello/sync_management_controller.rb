@@ -11,7 +11,7 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 module Katello
-  class SyncManagementController < ApplicationController
+  class SyncManagementController < Katello::ApplicationController
     include TranslationHelper
     include ActionView::Helpers::DateHelper
     include ActionView::Helpers::NumberHelper

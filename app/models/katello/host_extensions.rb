@@ -16,6 +16,7 @@ module Katello
     extend ActiveSupport::Concern
 
     included do
+      belongs_to :content_environment, :class_name => "Katello::KTEnvironment", :foreign_key => :kt_environment_id
       belongs_to :content_view
     end
   end
