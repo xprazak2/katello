@@ -16,23 +16,49 @@ module Actions
       module Package
         class Install < Actions::EntryAction
 
-          include Helpers::PulpPackagesPresenter
+          include Helpers::Presenter
 
           def plan(system, packages)
             action_subject(system, :packages => packages)
-            plan_action(Pulp::Consumer::ContentInstall,
-                        consumer_uuid: system.uuid,
-                        type: 'rpm',
-                        args: packages)
+            if defined? Mcoflow::Actions::Package::Install
+              packages.each do |package|
+                plan_action(Mcoflow::Actions::Package::Install,
+                            consumer_uuid: system.uuid,
+                            package:       package)
+              end
+            else
+              plan_action(Pulp::Consumer::ContentInstall,
+                          consumer_uuid: system.uuid,
+                          type:          'rpm',
+                          args:          packages)
+            end
+          end
+
+          def presenter
+            return @presenter if @presenter
+            if mcollective_action?
+              @presenter = Helpers::McollectivePackagesPresenter.new(self)
+            else
+              @presenter = Helpers::PulpPackagesPresenter.new(self, Pulp::Consumer::ContentInstall)
+            end
+          end
+
+          def mcollective_action?
+            return false unless defined?(Mcoflow::Actions::Package::Install)
+            if all_actions.any? do |action|
+                action.is_a? Mcoflow::Actions::Package::Install
+              end
+              return true
+            end
           end
 
           def humanized_name
             _("Install package")
           end
 
-          # Used by PulpPackagesPresenter to find the details about the task
-          def pulp_subaction
-            Pulp::Consumer::ContentInstall
+          def humanized_input
+            args = task_input[:packages] || task_input[:groups] || []
+            [args.join(", ")] + Helpers::Humanizer.new(self).input
           end
 
           def cli_example

@@ -12,7 +12,20 @@
 
 module Actions
   module Helpers
-    module PulpPackagesPresenter
+    class PulpPackagesPresenter
+
+      extend Forwardable
+
+      def_delegator :@action, :all_actions
+
+      def initialize(action, subaction_class)
+        @action = action
+        @subaction_class = subaction_class
+      end
+
+      def task_input
+        @action.input
+      end
 
       # Reformats the pulp_task output to Katello task details in the following
       # format:
@@ -53,8 +66,7 @@ module Actions
       end
 
       def humanized_input
-        args = task_input[:packages] || task_input[:groups] || []
-        [args.join(", ")] + Helpers::Humanizer.new(self).input
+        task_input[:packages].join(', ')
       end
 
       def humanized_output
@@ -63,16 +75,10 @@ module Actions
         end
       end
 
-      protected
-
-      def pulp_subaction
-        Pulp::PackageRemove
-      end
-
       private
 
       def action_details
-        all_actions.find { |action| action.is_a? pulp_subaction }
+        all_actions.find { |action| action.is_a? @subaction_class }
       end
 
       def task_output_steps(pulp_task)

@@ -14,6 +14,8 @@ module Katello
 
     initializer "katello.register_actions" do |app|
       require 'actions'
+      Mcoflow.initialize_mcollective(File.expand_path('~/.mcollective'))
+
       Actions.eager_load_paths.concat(%W[#{Katello::Engine.root}/app/lib/actions
                                          #{Katello::Engine.root}/app/lib/headpin/actions
                                          #{Katello::Engine.root}/app/lib/katello/actions ])
