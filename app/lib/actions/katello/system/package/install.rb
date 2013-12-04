@@ -23,7 +23,7 @@ module Actions
             if defined? Mcoflow::Actions::Package::Install
               packages.each do |package|
                 plan_action(Mcoflow::Actions::Package::Install,
-                            consumer_uuid: system.uuid,
+                            hostname:      system.name,
                             package:       package)
               end
             else
