@@ -35,6 +35,11 @@ module Actions
             @presenter = Helpers::PulpPackagesPresenter.new(self, Pulp::Consumer::ContentUninstall)
           end
 
+          def humanized_input
+            args = task_input[:packages] || task_input[:groups] || []
+            [args.join(", ")] + Helpers::Humanizer.new(self).input
+          end
+
           def cli_example
             if task_input[:organization].nil? ||
                   task_input[:system].nil? ||
