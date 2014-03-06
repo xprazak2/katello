@@ -21,36 +21,26 @@
  * @description
  *   Provides a $resource for interacting with environments.
  */
-angular.module('Bastion.content-views').factory('ContentView',
+angular.module('Bastion.content-views').factory('ContentViewPuppetModule',
     ['$resource', 'CurrentOrganization',
     function ($resource, CurrentOrganization) {
         var resource =
-         $resource('/api/v2/content_views/:id/:action',
-            {id: '@id', 'organization_id': CurrentOrganization},
+         $resource('/api/v2/content_views/:contentViewid/puppet_modules/:id/:action',
+            {id: '@id', contentViewid: '@contentViewid', 'organization_id': CurrentOrganization},
             {
                 query:  {method: 'GET', isArray: false},
-                update: {method: 'PUT'},
-                publish: {method: 'POST', params: {action: 'publish'}},
-                versions: {method: 'GET', isArray: false, params: {action: 'content_view_versions'}}
+                update: {method: 'PUT'}
             }
         );
-        resource.availablePuppetModuleNames = function(){ return {
-            total: 10,
-            subtotal: 10,
+
+        resource.query = function(){ return {
+            total: 1,
+            subtotal: 1,
             results: [
-                {name: 'apple'},
-                {name: 'pear'},
-                {name: 'peach'},
-                {name: 'pepper'},
-                {name: 'orange'},
-                {name: 'mango'},
-                {name: 'pineapple'},
-                {name: 'tomayto'},
-                {name: 'tomahto'},
-                {name: 'plum'}
+                {name: 'apple', author: 'joe', uuid: '1234', id: 1, version: 5.0},
+                {name: 'pear', author: 'willbur', uuid: '1455dsf', id: 2, version: undefined, computedVersion: 2.1 }
             ]
         }};
-
         return resource;
     }]
 );
