@@ -48,6 +48,7 @@ module Katello
     param :root_name, String, :desc => "root-node of collection contained in responses (default: 'results')"
 
     def item_search(item_class, params, options)
+      fail "Item search not defined" if @search_service.nil?
       if params[:order]
         (params[:sort_by], params[:sort_order]) = params[:order].split(' ')
       end
