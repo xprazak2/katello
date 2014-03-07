@@ -1,5 +1,4 @@
 
 object @object
-
-
-attributes :module_name, :module_count
+attributes :term => :module_name
+attributes :count => :module_count
