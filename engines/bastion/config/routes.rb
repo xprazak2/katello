@@ -11,7 +11,8 @@ Bastion::Engine.routes.draw do
         subscriptions
         sync_plans
         host_collections
-        katello_tasks
+        katello_tasks        
+        abcde
       ]
     end
 
