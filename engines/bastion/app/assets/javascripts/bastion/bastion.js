@@ -110,3 +110,6 @@
 //= require_tree "./activation-keys"
 
 //= require "bastion/bastion-bootstrap"
+
+//= require "bastion/integration/integration.module.js"
+//= require_tree "./integration"

@@ -43,5 +43,6 @@ BASTION_MODULES = [
     'Bastion.host-collections',
     'Bastion.content-hosts',
     'Bastion.tasks',
-    'Bastion.widgets'
+    'Bastion.widgets',
+    'Bastion.integration'
 ];
