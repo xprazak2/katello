@@ -12,6 +12,7 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
     })
     .state('jobs.index', {
       url: '/jobs',
+      permission: 'view_jobs',
       views: {
           'table': {
               templateUrl: 'integration/views/jobs-table-full.html'

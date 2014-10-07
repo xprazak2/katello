@@ -12,7 +12,7 @@ Bastion::Engine.routes.draw do
         sync_plans
         host_collections
         katello_tasks        
-        abcde
+        jobs
       ]
     end
 
