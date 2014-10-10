@@ -86,7 +86,13 @@ angular.module('Bastion').config(
 
         $locationProvider.html5Mode(true);
 
-        $provide.factory('PrefixInterceptor', ['$q', '$templateCache', function ($q, $templateCache) {
+        $provide.factory('PrefixInterceptor', ['$q', '$templateCache', '$injector', '$location', function ($q, $templateCache, $injector, $location) {
+            // routing prefix fix for integration module
+            $window = $injector.get('$window')
+            if ($location.path().match(/^\/job.*/)) {
+                RootURL = "integration"
+            }
+            
             return {
                 request: function (config) {
                     if (config.url.indexOf('.html') !== -1) {
@@ -95,7 +101,7 @@ angular.module('Bastion').config(
                         }
                     } else if (!config.url.match(/^\/foreman_tasks/)) {
                         config.url = RootURL + config.url;
-                    }
+                    } 
 
                     return config || $q.when(config);
                 }
