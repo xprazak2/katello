@@ -5,21 +5,22 @@ angular.module('Bastion.integration').controller('JobsController',
             $scope.successMessages = [];
             $scope.errorMessages = [];
 
-            /*var params = {
+            var params = {
                 'search': $location.search().search || "",
                 'sort_by': 'name',
                 'sort_order': 'ASC' 
-            }*/
+            }
 
-            var nutupane = new Nutupane(Job/*, params*/);
+            var nutupane = new Nutupane(Job, params);
             $scope.jobsTable = nutupane.table;
+            $scope.removeRow = nutupane.removeRow;
             $scope.nutupane = nutupane;
 
             $scope.jobsTable.closeItem = function () {
               $scope.transitionTo('jobs.index');
             };
 
-            //nutupane.enableSelectAllResults();
+            nutupane.enableSelectAllResults();
 
             $scope.table = $scope.jobsTable;
 

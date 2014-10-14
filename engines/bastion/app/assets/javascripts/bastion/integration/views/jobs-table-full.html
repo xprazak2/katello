@@ -15,14 +15,22 @@
   <div data-extend-template="layouts/select-all-results.html"></div>
 
   <tbody>
-    <tr alch-table-row ng-repeat="job in JobsTable.rows" row-select="job">
+    <tr alch-table-row ng-repeat="job in jobsTable.rows" row-select="job">
       <td alch-table-cell>
-        <!-- <a ui-sref="jobs.details.info({jobId: job.id})"> -->
+        <a ui-sref="jobs.details.info({jobId: job.id})">
           <div>{{ job.name }}</div>
-        <!-- </a> -->
+        </a>
       </td>
-      <td alch-table-cell>{{ job.content_view.name }}</td>
-      <td alch-table-cell>{{ job.hostgroup.name }}</td>
+      <td alch-table-cell>
+        <a ng-href="/content_views/{{ job.content_view.id }}/info">
+          <div>{{ job.content_view.name }}</div>
+        </a>
+      </td>
+      <td alch-table-cell>
+        <a href="/hostgroups/{{ job.hostgroup.id + "-" + job.hostgroup.name}}/edit">
+          <div>{{ job.hostgroup.name }}</div>
+        </a>
+      </td>
     </tr>
   </tbody> 
 </table>
