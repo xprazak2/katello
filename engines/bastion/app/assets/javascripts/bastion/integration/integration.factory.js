@@ -1,7 +1,9 @@
 angular.module('Bastion.integration').factory('Job',
-    ['BastionResource', function (BastionResource) {
+    ['BastionResource', 'CurrentOrganization',
+    function (BastionResource, CurrentOrganization) {
 
-        return BastionResource('/api/jobs/:id/:action', {id: '@id'}, {
+        return BastionResource('/api/organizations/:organizationId/jobs/:id/:action',
+         {id: '@id', organizationId: CurrentOrganization}, {
           
           update: {method: 'PUT'}
           

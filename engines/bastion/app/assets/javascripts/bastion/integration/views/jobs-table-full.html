@@ -22,14 +22,17 @@
         </a>
       </td>
       <td alch-table-cell>
-        <a ng-href="/content_views/{{ job.content_view.id }}/info">
-          <div>{{ job.content_view.name }}</div>
+        <a ng-show="{{ job.content_view !== null }}"
+           ng-href="/content_views/{{ job.content_view.id }}/info">                    
+          <div >{{ job.content_view.name }}</div>
         </a>
+        <div ng-show="{{ job.content_view === null }}" translate>none</div>
       </td>
       <td alch-table-cell>
-        <a href="/hostgroups/{{ job.hostgroup.id + "-" + job.hostgroup.name}}/edit">
-          <div>{{ job.hostgroup.name }}</div>
-        </a>
+        <!-- <a> -->
+          <div ng-show="{{ job.hostgroup !== null }}">{{ job.hostgroup.name }}</div>
+          <div ng-show="{{ job.hostgroup === null }}" translate>none</div>
+        <!-- </a> -->
       </td>
     </tr>
   </tbody> 
