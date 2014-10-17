@@ -24,6 +24,14 @@ angular.module('Bastion.integration').controller('JobsController',
 
             $scope.table = $scope.jobsTable;
 
+            $scope.deleteJob = function (job) {
+                job.$remove(function () {
+                    $scope.successMessages.push(translate('Job %s has been deleted.').replace('%s', job.name));
+                    $scope.removeRow(job.id);
+                    $scope.transitionTo('jobs.index');
+                });
+            };
+
 
 
         }]
