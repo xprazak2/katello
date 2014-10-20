@@ -87,11 +87,6 @@ angular.module('Bastion').config(
         $locationProvider.html5Mode(true);
 
         $provide.factory('PrefixInterceptor', ['$q', '$templateCache', '$injector', '$location', function ($q, $templateCache, $injector, $location) {
-            // routing prefix fix for integration module
-            $window = $injector.get('$window')
-            if ($location.path().match(/^\/job.*/)) {
-                RootURL = "integration"
-            }
             
             return {
                 request: function (config) {

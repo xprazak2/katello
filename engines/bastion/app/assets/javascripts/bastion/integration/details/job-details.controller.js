@@ -10,8 +10,7 @@ angular.module('Bastion.integration').controller('JobDetailsController',
         } else {
             $scope.panel = {loading: true};
         }
-
-        console.log($scope.$stateParams.jobId);        
+        
         $scope.job = Job.get({id: $scope.$stateParams.jobId}, function () {
             $scope.panel.loading = false;
         });

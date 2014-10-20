@@ -31,8 +31,5 @@ angular.module('Bastion.integration').controller('JobsController',
                     $scope.transitionTo('jobs.index');
                 });
             };
-
-
-
         }]
 );
