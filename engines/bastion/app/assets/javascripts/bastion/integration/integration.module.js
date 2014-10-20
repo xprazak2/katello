@@ -40,7 +40,7 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
 
     .state('jobs.details', {
         abstract: true,
-        url: 'jobs/:jobId',
+        url: '/jobs/:jobId',
         permission: 'view_jobs',
         collapsed: true,
         views: {
