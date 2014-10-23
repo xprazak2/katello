@@ -32,11 +32,17 @@
   <nav>
     <ul class="nav nav-tabs">
       
-      <!-- <li ng-class="{active: stateIncludes('jobs.details.info')}"> -->
-        <!-- <a translate ui-sref="jobs.details.info({jobId: job.id})"> -->
-          <!-- Details -->
-        <!-- </a> -->
-      <!-- </li> -->
+      <li ng-class="{active: stateIncludes('jobs.details.info')}">
+        <a translate ui-sref="jobs.details.info({jobId: job.id})">
+          Details
+        </a>
+      </li>
+
+      <li ng-class="{ active : stateIncludes('jobs.details.content-views')}">
+        <a translate ui-sref="jobs.details.content-views({jobId: job.id})">
+          Content Views
+        </a>
+      </li>
 
     </ul>
   </nav>

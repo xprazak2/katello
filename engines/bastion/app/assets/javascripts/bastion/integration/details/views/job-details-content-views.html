@@ -1,0 +1,109 @@
+<span page-title ng-model="job">{{ 'Job: ' | translate }} {{ job.name }}</span>
+
+<section class="nutupane-subsection">
+  <div alch-alert success-messages="successMessages" error-messages="errorMessages"></div>
+
+  <h4>
+    <span translate>Current Content View: </span>
+    <a ui-sref="content-views.details.info({ contentViewId: job.content_view.id })">
+      <span class="no-capitalize" ng-show="job.content_view.name">{{ job.content_view.name}}</span>
+    </a>
+    <span class="no-capitalize" ng-show="!job.content_view.name" translate>none</span>
+ </h4>
+
+ 
+
+  <div class="nutupane-bar">
+    
+    <div class="col-sm-3">
+      <input type="text"
+              class="form-control"  
+              placeholder="{{ 'Filter' | translate }}"
+              ng-model="cvFilter" />
+   </div> 
+
+
+
+    <div class="fr select-action">
+      <span class="nutupane-info">
+        <span translate>{{ cvTable.numSelected }} Selected</span>
+        <span>|</span>
+        <a class="deselect-action"
+           translate
+           ng-class="{ 'disabled-link' : cvTable.numSelected === 0 }"
+           ng-click="cvTable.selectAll(false)">
+          Deselect All
+        </a>
+      </span>
+
+      <button class="btn btn-default"
+              ng-hide="denied('edit_jobs')"
+              ng-disabled=" cvTable.numSelected === 0 || cvTable.working "
+              ng-click="setCV()">
+        {{ 'Set Content View' | translate }}
+      </button>
+
+    </div>
+  </div>
+
+  <div alch-table="cvTable" class="nutupane">
+    <div alch-container-scroll alch-infinite-scroll="cvTable.nextPage()">
+      
+      <div ng-show="cvTable.rows.length == 0">
+        <div class="loading-mask" ng-show="cvTable.working">
+          <i class="icon-spinner icon-spin"></i>
+            {{ "Loading..." | translate }}          
+        </div>
+
+        <p class="alert alert-info"
+           ng-hide="cvTable.working"
+           translate> No Content Views to show.
+        </p>
+      </div>
+
+      <table ng-show="cvTable.rows.length > 0"
+             ng-class="{ 'table-mask': cvTable.working }"
+             class="table table-full table-striped">
+
+        <thead>
+          <tr alch-table-head row-select="contentView">
+            <th alch-table-column="name" tranlate>Name</th>
+            <th alch-table-column="composite" tranlate>Composite?</th>
+            <th alch-table-column="lastPublished" tranlate>Last Published</th>
+            <th alch-table-column="environments" tranlate>Environments</th>
+            <th alch-table-column="repositories" tranlate>Repositories</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr alch-table-row ng-repeat="contentView in cvTable.rows | filter:cvFilter" row-select="contentView">
+            
+            <td alch-table-cell>
+              <a ui-sref="content-views.details.info({ contentViewId: contentView.id })">
+                {{ contentView.name }}
+              </a>
+            </td>
+
+            <td alch-table-cell>{{ contentView.composite }}</td>
+            <td alch-table-cell>{{ contentView.last_published }}</td>
+            
+            <td alch-table-cell>
+              <span ng-show="contentView.environments.length !== 0"
+                    ng-repeat="environment in contentView.environments" ng-if="environment.permissions.readable">
+                {{ environment.name }}
+                <span ng-if="!$last">, </span>
+              </span>
+              <span ng-show="contentView.environments.length === 0" translate>
+                Not yet published
+              </span>
+            </td>
+
+            <td alch-table-cell>{{ contentView.repositories.length }}</td>
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</section>

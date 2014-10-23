@@ -54,10 +54,27 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         }
     })
     .state('jobs.details.info',{
-      url: '/info',
-      permission: 'view_jobs',
-      collapsed: true,
-      controller: 'JobDetailsInfoController',
-      templateUrl: 'integration/details/views/job-details-info.html'
+        url: '/info',
+        permission: 'edit_jobs',
+        collapsed: true,
+        controller: 'JobDetailsInfoController',
+        templateUrl: 'integration/details/views/job-details-info.html'
+    })
+    .state('jobs.details.content-views', {
+        url: '/content_views',
+        permission: 'edit_jobs',
+        collapsed: true,
+        controller: 'JobDetailsContentViewsController',
+        templateUrl: 'integration/details/views/job-details-content-views.html'
+        /*views: {
+            /*'current-content-view@jobs.details.content-views': {
+                controller: 'JobDetailsCurrentContentViewController',
+                templateUrl: 'integration/details/views/job-details-current-content-view.html'
+            },
+            'set-content-view@jobs.details.content-views': {
+                controller: 'JobDetailsContentViewsController',
+                templateUrl: 'integration/details/views/job-details-content-views.html'
+            }
+        }*/
     })
 }]);
