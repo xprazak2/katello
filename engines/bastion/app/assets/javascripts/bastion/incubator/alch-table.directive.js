@@ -79,6 +79,10 @@ angular.module('alchemy')
             $scope.table.chosenRow = row;
         };
 
+        this.getChosen = $scope.table.getChosen = function () {
+            return $scope.table.chosenRow;
+        };
+
         this.selectAll = $scope.table.selectAll = function (selected) {
             var table = $scope.table,
                 rowsSelected = 0;

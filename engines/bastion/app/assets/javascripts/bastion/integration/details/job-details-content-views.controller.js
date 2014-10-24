@@ -17,8 +17,40 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
             })
 
             var cvNutupane = new Nutupane(ContentView, params);
+            $scope.nutupane = cvNutupane;
             $scope.cvTable = cvNutupane.table;
-            $scope.nutupane = cvNutupane;   
+
+            $scope.setContentView = function () {
+                var success,
+                    error,
+                    deferred = $q.defer();
+
+                    $scope.chosen = $scope.cvTable.getChosen();
+                    data = {content_view_id: $scope.chosen.id}
+
+                    success = function (response) {
+                        deferred.resolve(response);
+                        $scope.successMessages.push(translate('New Content View successfully set.'));                    };
+                        $scope.cvTable.working = false;
+                        cvNutupane.refresh();
+                        $scope.job.content_view = $scope.chosen;
+                        
+
+                    error = function (response) {
+                        deferred.reject(response);
+                        angular.forEach(response.data.errors, function (errorMessage, key) {
+                            if (angular.isString(key)) {
+                                errorMessage = [key, errorMessage].join(' ');
+                            }
+                            $scope.errorMessages.push(translate('Error occured while saving Job: ') + errorMessage);
+                        });
+                        $scope.cvTable.working = false;
+                    };
+
+                    Job.setContentView({id: $scope.job.id}, data, success, error);
+                    return deferred.promise;
+            };
+               
 
 
 

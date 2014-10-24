@@ -5,7 +5,8 @@ angular.module('Bastion.integration').factory('Job',
         return BastionResource('/api/organizations/:organizationId/jobs/:id/:action',
          {id: '@id', organizationId: CurrentOrganization}, {
           
-          update: {method: 'PUT'}
+          update: {method: 'PUT'},
+          setContentView: {method: 'PUT', params: {action: 'set_content_view'}}
           
         });
     }]

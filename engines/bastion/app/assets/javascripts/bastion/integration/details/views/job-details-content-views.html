@@ -6,12 +6,10 @@
   <h4>
     <span translate>Current Content View: </span>
     <a ui-sref="content-views.details.info({ contentViewId: job.content_view.id })">
-      <span class="no-capitalize" ng-show="job.content_view.name">{{ job.content_view.name}}</span>
+      <span class="no-capitalize" ng-show="job.content_view.name" ng-bind="job.content_view.name"></span>
     </a>
     <span class="no-capitalize" ng-show="!job.content_view.name" translate>none</span>
  </h4>
-
- 
 
   <div class="nutupane-bar">
     
@@ -26,20 +24,22 @@
 
     <div class="fr select-action">
       <span class="nutupane-info">
-        <span translate>{{ cvTable.numSelected }} Selected</span>
-        <span>|</span>
-        <a class="deselect-action"
+      <!-- TODO?: unchoose current choice, requires changes in alch-table.directive -->
+        <!-- <span translate>{{ cvTable.numSelected }} Selected</span> -->
+        <!-- <span>|</span> -->
+      <!--  <a class="deselect-action"
            translate
-           ng-class="{ 'disabled-link' : cvTable.numSelected === 0 }"
-           ng-click="cvTable.selectAll(false)">
-          Deselect All
+           ng-class="{ 'disabled-link' : cvTable.getChosen() === null }"
+           ng-click="cvTable.unchoose()">
+          Deselect
         </a>
-      </span>
+      </span> -->
 
       <button class="btn btn-default"
               ng-hide="denied('edit_jobs')"
-              ng-disabled=" cvTable.numSelected === 0 || cvTable.working "
-              ng-click="setCV()">
+              ng-disabled=" !cvTable.getChosen() || cvTable.working " 
+              ng-click="setContentView()">
+              
         {{ 'Set Content View' | translate }}
       </button>
 
@@ -62,21 +62,21 @@
       </div>
 
       <table ng-show="cvTable.rows.length > 0"
-             ng-class="{ 'table-mask': cvTable.working }"
+             ng-class="{'table-mask': cvTable.working}"
              class="table table-full table-striped">
 
         <thead>
-          <tr alch-table-head row-select="contentView">
-            <th alch-table-column="name" tranlate>Name</th>
-            <th alch-table-column="composite" tranlate>Composite?</th>
-            <th alch-table-column="lastPublished" tranlate>Last Published</th>
-            <th alch-table-column="environments" tranlate>Environments</th>
-            <th alch-table-column="repositories" tranlate>Repositories</th>
+          <tr alch-table-head row-choice="contentView">
+            <th alch-table-column="name" translate>Name</th>
+            <th alch-table-column="composite" translate>Composite?</th>
+            <th alch-table-column="lastPublished" translate>Last Published</th>
+            <th alch-table-column="environments" translate>Environments</th>
+            <th alch-table-column="repositories" translate>Repositories</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr alch-table-row ng-repeat="contentView in cvTable.rows | filter:cvFilter" row-select="contentView">
+          <tr alch-table-row ng-repeat="contentView in cvTable.rows | filter:cvFilter" row-choice="contentView">
             
             <td alch-table-cell>
               <a ui-sref="content-views.details.info({ contentViewId: contentView.id })">
