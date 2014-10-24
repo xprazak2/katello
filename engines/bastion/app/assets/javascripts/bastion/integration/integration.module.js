@@ -66,15 +66,12 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         collapsed: true,
         controller: 'JobDetailsContentViewsController',
         templateUrl: 'integration/details/views/job-details-content-views.html'
-        /*views: {
-            /*'current-content-view@jobs.details.content-views': {
-                controller: 'JobDetailsCurrentContentViewController',
-                templateUrl: 'integration/details/views/job-details-current-content-view.html'
-            },
-            'set-content-view@jobs.details.content-views': {
-                controller: 'JobDetailsContentViewsController',
-                templateUrl: 'integration/details/views/job-details-content-views.html'
-            }
-        }*/
+    })
+    .state('jobs.details.hostgroups',{
+        url: '/hostgroups',
+        permission: 'edit_jobs',
+        collapsed: true,
+        controller: 'JobDetailsHostgroupsController',
+        templateUrl: 'integration/details/views/job-details-hostgroups.html'
     })
 }]);

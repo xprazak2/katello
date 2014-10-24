@@ -6,7 +6,8 @@ angular.module('Bastion.integration').factory('Job',
          {id: '@id', organizationId: CurrentOrganization}, {
           
           update: {method: 'PUT'},
-          setContentView: {method: 'PUT', params: {action: 'set_content_view'}}
+          setContentView: {method: 'PUT', params: {action: 'set_content_view'}},
+          setHostgroup: {method: 'PUT', params: {action: 'set_hostgroup'}},
           
         });
     }]

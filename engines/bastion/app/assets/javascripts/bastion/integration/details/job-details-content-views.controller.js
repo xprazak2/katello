@@ -26,7 +26,7 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
                     deferred = $q.defer();
 
                     $scope.chosen = $scope.cvTable.getChosen();
-                    data = {content_view_id: $scope.chosen.id}
+                    data = {content_view_id: $scope.chosen.id};
 
                     success = function (response) {
                         deferred.resolve(response);
@@ -56,4 +56,4 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
 
             
         }
-    ])
+    ]);
