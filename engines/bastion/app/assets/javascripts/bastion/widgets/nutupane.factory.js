@@ -70,9 +70,13 @@ angular.module('Bastion.widgets').factory('Nutupane',
                 replace = replace || false;
                 table.working = true;
 
-                params.page = table.resource.page + 1;
-                params.search = table.searchTerm || "";
-                params.search = self.searchTransform(params.search);
+                if (!params.foremanResource) {
+                    params.page = table.resource.page + 1;
+                    params.search = table.searchTerm || "";
+                    params.search = self.searchTransform(params.search);
+                } else {
+                    params = {};
+                }
 
                 resource[table.action](params, function (response) {
 

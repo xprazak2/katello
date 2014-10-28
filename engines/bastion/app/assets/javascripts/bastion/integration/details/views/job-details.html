@@ -44,6 +44,12 @@
         </a>
       </li>
 
+      <li ng-class="{ active : stateIncludes('jobs.details.hostgroups')}">
+        <a translate ui-sref="jobs.details.hostgroups({jobId: job.id})">
+          Hostgroups
+        </a>
+      </li>
+
     </ul>
   </nav>
 

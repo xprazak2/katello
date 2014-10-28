@@ -14,7 +14,7 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
 
             $scope.job = $scope.job || Job.get({id: $scope.$stateParams.jobId}, function () {
                 $scope.panel.loading = false;
-            })
+            });
 
             var cvNutupane = new Nutupane(ContentView, params);
             $scope.nutupane = cvNutupane;
@@ -30,11 +30,11 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
 
                     success = function (response) {
                         deferred.resolve(response);
-                        $scope.successMessages.push(translate('New Content View successfully set.'));                    };
+                        $scope.successMessages.push(translate('New Content View successfully set.'));
                         $scope.cvTable.working = false;
                         cvNutupane.refresh();
                         $scope.job.content_view = $scope.chosen;
-                        
+                    };                 
 
                     error = function (response) {
                         deferred.reject(response);
@@ -49,11 +49,6 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
 
                     Job.setContentView({id: $scope.job.id}, data, success, error);
                     return deferred.promise;
-            };
-               
-
-
-
-            
+            };          
         }
     ]);

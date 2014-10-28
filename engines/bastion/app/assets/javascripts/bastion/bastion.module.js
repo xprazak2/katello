@@ -94,10 +94,13 @@ angular.module('Bastion').config(
                         if ($templateCache.get(config.url) === undefined) {
                             config.url = '/' + config.url;
                         }
-                    } else if (!config.url.match(/^\/foreman_tasks/)) {
-                        config.url = RootURL + config.url;
+                    } else if (!config.url.match(/^\/foreman_tasks/) && 
+                               !config.url.match(/^\/integration/) &&
+                               !config.url.match(/hostgroup/)) {                        
+                        
+                        config.url = RootURL + config.url;                        
                     } 
-
+                    
                     return config || $q.when(config);
                 }
             };

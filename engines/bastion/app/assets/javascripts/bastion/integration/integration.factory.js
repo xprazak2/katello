@@ -2,7 +2,7 @@ angular.module('Bastion.integration').factory('Job',
     ['BastionResource', 'CurrentOrganization',
     function (BastionResource, CurrentOrganization) {
 
-        return BastionResource('/api/organizations/:organizationId/jobs/:id/:action',
+        return BastionResource('/integration/api/organizations/:organizationId/jobs/:id/:action',
          {id: '@id', organizationId: CurrentOrganization}, {
           
           update: {method: 'PUT'},
@@ -10,5 +10,23 @@ angular.module('Bastion.integration').factory('Job',
           setHostgroup: {method: 'PUT', params: {action: 'set_hostgroup'}},
           
         });
+    }]
+);
+
+angular.module('Bastion.integration').factory('Hostgroup',
+    ['BastionResource', 'CurrentOrganization',
+    function (BastionResource, CurrentOrganization) {
+
+        return BastionResource('/api/v2/hostgroups/:id/:action',
+            {id: '@id', organizationId: CurrentOrganization}, {});
+    }]
+);
+
+angular.module('Bastion.integration').factory('HostgroupView', 
+    ['BastionResource',
+    function (BastionResource) {
+
+        return BastionResource('/hostgroups/:id/edit',
+            {id: '@id'}, {});
     }]
 );
