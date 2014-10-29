@@ -1,6 +1,6 @@
 angular.module('Bastion.integration').controller('JobsController',
-    ['$scope', '$location', 'translate', 'Nutupane', 'Job', 'CurrentOrganization', 
-        function ($scope, $location, translate, Nutupane, Job, CurrentOrganization) {
+    ['$scope', '$location', 'translate', 'Nutupane', 'Job', 'CurrentOrganization', '$window',
+        function ($scope, $location, translate, Nutupane, Job, CurrentOrganization, $window) {
 
             $scope.successMessages = [];
             $scope.errorMessages = [];
@@ -31,5 +31,9 @@ angular.module('Bastion.integration').controller('JobsController',
                     $scope.transitionTo('jobs.index');
                 });
             };
+
+            $scope.transitionToHostgroup = function (hostgroup) {
+                $window.location.href = '/hostgroups/' + hostgroup.id + '/edit';
+            }
         }]
 );

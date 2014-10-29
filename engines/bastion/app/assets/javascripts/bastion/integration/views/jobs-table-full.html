@@ -24,15 +24,18 @@
       <td alch-table-cell>
         <a ng-show="{{ job.content_view !== null }}"
            ui-sref="content-views.details.info({ contentViewId: job.content_view.id })">                    
-          <div >{{ job.content_view.name }}</div>
+          <div>{{ job.content_view.name }}</div>
         </a>
         <div ng-show="{{ job.content_view === null }}" translate>none</div>
       </td>
       <td alch-table-cell>
-        <!-- <a> -->
-          <div ng-show="{{ job.hostgroup !== null }}">{{ job.hostgroup.name }}</div>
-          <div ng-show="{{ job.hostgroup === null }}" translate>none</div>
-        <!-- </a> -->
+        <a ng-show="{{ job.hostgroup !== null }}"
+           ng-click="transitionToHostgroup(job.hostgroup)">
+          <div>{{ job.hostgroup.name }}</div>
+        </a>
+                
+        <div ng-show="{{ job.hostgroup === null }}" translate>none</div>
+        
       </td>
     </tr>
   </tbody> 

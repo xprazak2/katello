@@ -21,12 +21,3 @@ angular.module('Bastion.integration').factory('Hostgroup',
             {id: '@id', organizationId: CurrentOrganization}, {});
     }]
 );
-
-angular.module('Bastion.integration').factory('HostgroupView', 
-    ['BastionResource',
-    function (BastionResource) {
-
-        return BastionResource('/hostgroups/:id/edit',
-            {id: '@id'}, {});
-    }]
-);

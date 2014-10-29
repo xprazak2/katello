@@ -5,7 +5,9 @@
 
   <h4>
     <span translate>Current Hostgroup: </span>
-    <span class="no-capitalize" ng-show="job.hostgroup.name" ng-bind="job.hostgroup.name"></span> 
+    <a ng-click="transitionToHostgroup(job.hostgroup)" ng-show="job.hostgroup.name">
+      <span class="no-capitalize"  ng-bind="job.hostgroup.name"></span>
+    </a> 
     <span class="no-capitalize" ng-show="!job.hostgroup.name" translate>none</span>
   </h4>
 
@@ -60,7 +62,11 @@
         <tbody>
           <tr alch-table-row ng-repeat="hostgroup in hostgroupsTable.rows | filter:hostgroupFilter" row-choice="hostgroup">
             
-            <td alch-table-cell>{{ hostgroup.name }}</td>
+            <td alch-table-cell>
+              <a ng-click="transitionToHostgroup(hostgroup)">
+                {{ hostgroup.name }}
+              </a>
+            </td>
             <td alch-table-cell>{{ hostgroup.created_at }}</td>
 
           </tr>
