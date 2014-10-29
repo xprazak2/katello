@@ -1,9 +1,10 @@
-<!--<p class="alert alert-info" ng-show="jobsTable.rows.lenght === 0" translate>
-  You currently do not have any jobs. You can add Jobs using the button on the right.
+<p class="alert alert-info" ng-show="jobsTable.rows.lenght === 0" translate>
+  You currently do not have any Jobs. You can add Jobs using the button on the right.
 </p>
--->
+
 <table class="table table-striped"
-        ng-class="{'table-mask' : jobsTable.working}">
+        ng-class="{'table-mask' : jobsTable.working}"
+        ng-show="jobsTable.rows.length > 0">
   <thead>
     <tr alch-table-head row-select>
       <th alch-table-column="name" sortable><span translate>Name</span></th>

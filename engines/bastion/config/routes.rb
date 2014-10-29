@@ -13,6 +13,7 @@ Bastion::Engine.routes.draw do
         host_collections
         katello_tasks        
         jobs
+        tests
       ]
     end
 

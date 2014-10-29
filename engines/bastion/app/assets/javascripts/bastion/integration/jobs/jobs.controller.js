@@ -9,7 +9,7 @@ angular.module('Bastion.integration').controller('JobsController',
                 'search': $location.search().search || "",
                 'sort_by': 'name',
                 'sort_order': 'ASC' 
-            }
+            };
 
             var nutupane = new Nutupane(Job, params);
             $scope.jobsTable = nutupane.table;

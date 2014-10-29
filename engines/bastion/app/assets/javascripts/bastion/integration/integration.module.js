@@ -74,4 +74,20 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         controller: 'JobDetailsHostgroupsController',
         templateUrl: 'integration/jobs/details/views/job-details-hostgroups.html'
     })
+
+    .state('tests', {
+        abstract: true,
+        controller: 'TestsController',
+        templateUrl: 'integration/tests/views/tests.html'
+    })
+    .state('tests.index', {
+        url: '/tests',
+        permission: 'view_tests',
+        views: {
+            'table': {
+                templateUrl: 'integration/tests/views/tests-table-full.html'
+            }
+        }
+    })
+
 }]);
