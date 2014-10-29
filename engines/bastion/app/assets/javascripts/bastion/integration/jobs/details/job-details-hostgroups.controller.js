@@ -24,12 +24,8 @@ angular.module('Bastion.integration').controller('JobDetailsHostgroupsController
                     error,
                     deferred = $q.defer();
 
-
                     $scope.chosen = $scope.hostgroupsTable.getChosen();
-                    console.log($scope.chosen);
                     data = {hostgroup_id: $scope.chosen.id};
-
-                    console.log(data);
 
                     success = function (response) {
                         deferred.resolve(response);
@@ -49,6 +45,8 @@ angular.module('Bastion.integration').controller('JobDetailsHostgroupsController
                         });
                         $scope.hostgroupsTable.working = false;
                     };
+
+                    $scope.hostgroupsTable.working = true;
                     Job.setHostgroup({id: $scope.job.id}, data, success, error);
                     return deferred.promise;
             };

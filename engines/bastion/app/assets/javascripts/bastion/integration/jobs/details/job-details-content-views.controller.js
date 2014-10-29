@@ -47,6 +47,7 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
                         $scope.cvTable.working = false;
                     };
 
+                    $scope.cvTable.working = true;
                     Job.setContentView({id: $scope.job.id}, data, success, error);
                     return deferred.promise;
             };          

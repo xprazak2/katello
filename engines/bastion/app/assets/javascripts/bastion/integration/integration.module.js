@@ -8,14 +8,14 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
     $stateProvider.state('jobs', {
         abstract: true,
         controller: 'JobsController',
-        templateUrl: 'integration/views/jobs.html'    
+        templateUrl: 'integration/jobs/views/jobs.html'    
     })
     .state('jobs.index', {
       url: '/jobs',
       permission: 'view_jobs',
       views: {
           'table': {
-              templateUrl: 'integration/views/jobs-table-full.html'
+              templateUrl: 'integration/jobs/views/jobs-table-full.html'
               }
           }
     })
@@ -25,15 +25,15 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         collapsed: true,
         views: {
             'table': {
-                templateUrl: 'integration/views/jobs-table-collapsed.html'
+                templateUrl: 'integration/jobs/views/jobs-table-collapsed.html'
             },
             'action-panel': {
                 controller: 'NewJobController',
-                templateUrl: 'integration/new/views/new-job.html'
+                templateUrl: 'integration/jobs/new/views/new-job.html'
             },
             'job-form@jobs.new': {
                 controller: 'NewJobController',
-                templateUrl: 'integration/new/views/new-job-form.html'
+                templateUrl: 'integration/jobs/new/views/new-job-form.html'
             }
         }
     })
@@ -45,11 +45,11 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         collapsed: true,
         views: {
             'table': {
-                  templateUrl: 'integration/views/jobs-table-collapsed.html'
+                  templateUrl: 'integration/jobs/views/jobs-table-collapsed.html'
             },
             'action-panel': {
                   controller: 'JobDetailsController',
-                  templateUrl: 'integration/details/views/job-details.html' 
+                  templateUrl: 'integration/jobs/details/views/job-details.html' 
             }
         }
     })
@@ -58,20 +58,20 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         permission: 'edit_jobs',
         collapsed: true,
         controller: 'JobDetailsInfoController',
-        templateUrl: 'integration/details/views/job-details-info.html'
+        templateUrl: 'integration/jobs/details/views/job-details-info.html'
     })
     .state('jobs.details.content-views', {
         url: '/content_views',
         permission: 'edit_jobs',
         collapsed: true,
         controller: 'JobDetailsContentViewsController',
-        templateUrl: 'integration/details/views/job-details-content-views.html'
+        templateUrl: 'integration/jobs/details/views/job-details-content-views.html'
     })
     .state('jobs.details.hostgroups',{
         url: '/hostgroups',
         permission: 'edit_jobs',
         collapsed: true,
         controller: 'JobDetailsHostgroupsController',
-        templateUrl: 'integration/details/views/job-details-hostgroups.html'
+        templateUrl: 'integration/jobs/details/views/job-details-hostgroups.html'
     })
 }]);
