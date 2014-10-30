@@ -1,9 +1,10 @@
-<!-- <p class="alert alert-info" ng-show="testsTable.rows.lenght === 0" translate> -->
-  <!-- You currently do not have any Tests. You can add Tobs using the button on the right. -->
-<!-- </p> -->
+<p class="alert alert-info"  ng-show="testsTable.rows.length === 0" translate>
+  You currently do not have any Tests. You can add Tests using the button on the right.
+</p>
 
 <table class="table table-striped"
-       ng-class="{'table-mask' : testsTable.working}">
+       ng-class="{'table-mask' : testsTable.working}"
+       ng-show="testsTable.rows.length > 0">
   <thead>
     <tr alch-table-head row-select>
       <th alch-table-column="name" sortable><span translate>Name</span></th>
@@ -15,7 +16,9 @@
   <tbody>
     <tr alch-table-row ng-repeat="test in testsTable.rows" row-select="test">
       <td alch-table-cell>
-        <div>{{ test.name }}</div>
+        <a ui-sref="tests.details.info({testId: test.id})">
+          <div>{{ test.name }}</div>                  
+        </a>
       </td>
     </tr>
   </tbody>

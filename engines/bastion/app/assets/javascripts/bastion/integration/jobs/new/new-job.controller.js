@@ -11,7 +11,7 @@ angular.module('Bastion.integration').controller('NewJobController',
         };
 
         function success (job) {
-            $scope.working = false
+            $scope.working = false;
             $scope.successMessages = [translate('New job successfully created.')];
 
             if ($scope.jobsTable) {
@@ -27,4 +27,5 @@ angular.module('Bastion.integration').controller('NewJobController',
                 $scope.jobForm[field].$error.messages = errors;
             });
         }
-    }])
+    }]
+);

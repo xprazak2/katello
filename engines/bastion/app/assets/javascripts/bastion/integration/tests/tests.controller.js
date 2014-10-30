@@ -23,7 +23,7 @@ angular.module('Bastion.integration').controller('TestsController',
 
         $scope.deleteTest = function (test) {
             test.$remove(function () {
-                $sope.successMessages.push(translate('Test %s has been deleted.').replace('%s', test.name));
+                $scope.successMessages.push(translate('Test %s has been deleted.').replace('%s', test.name));
                 $scope.removeRow(test.id);
                 $scope.transitionTo('tests.index');
             });
