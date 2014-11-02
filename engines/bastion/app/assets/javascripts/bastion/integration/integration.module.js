@@ -52,7 +52,7 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
             }
         }
     })
-    .state('jobs.details.info',{
+    .state('jobs.details.info', {
         url: '/info',
         permission: 'edit_jobs',
         collapsed: true,
@@ -66,12 +66,31 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         controller: 'JobDetailsContentViewsController',
         templateUrl: 'integration/jobs/details/views/job-details-content-views.html'
     })
-    .state('jobs.details.hostgroups',{
+    .state('jobs.details.hostgroups', {
         url: '/hostgroups',
         permission: 'edit_jobs',
         collapsed: true,
         controller: 'JobDetailsHostgroupsController',
         templateUrl: 'integration/jobs/details/views/job-details-hostgroups.html'
+    })
+    .state('jobs.details.tests', {
+        abstract: true,
+        collapsed: true,
+        templateUrl: 'integration/jobs/details/views/job-details-tests.html'
+    })
+    .state('jobs.details.tests.list', {
+        url: '/tests',
+        collapsed: true,
+        permission: 'view_jobs',
+        controller: 'JobDetailsTestsListController',
+        templateUrl: 'integration/jobs/details/views/job-details-tests-table.html'
+    })
+    .state('jobs.details.tests.available', {
+        url: '/tests/available',
+        collapsed: true,
+        permission: 'view_jobs',
+        controller: 'JobDetailsTestsAvailController',
+        templateUrl: 'integration/jobs/details/views/job-details-tests-table.html'
     })
 
 

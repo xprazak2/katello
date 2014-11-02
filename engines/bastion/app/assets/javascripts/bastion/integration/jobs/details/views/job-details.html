@@ -18,7 +18,7 @@
       
       <button class="btn btn-default" ng-click="openModal()" ng-hide="denied('destroy_job', job)">
         <i class="icon-trash"></i>
-        {{ "Remove Job" | translate }}
+        {{ "Delete Job" | translate }}
       </button>
 
       <button class="btn btn-default" ui-sref="jobs.index">
@@ -47,6 +47,12 @@
       <li ng-class="{ active : stateIncludes('jobs.details.hostgroups')}">
         <a translate ui-sref="jobs.details.hostgroups({jobId: job.id})">
           Hostgroups
+        </a>
+      </li>
+
+      <li ng-class="{active: stateIncludes('jobs.details.tests.list')}">
+        <a translate ui-sref="jobs.details.tests.list">
+          Tests
         </a>
       </li>
 

@@ -8,6 +8,13 @@ angular.module('Bastion.integration').factory('Job',
             update: {method: 'PUT'},
             setContentView: {method: 'PUT', params: {action: 'set_content_view'}},
             setHostgroup: {method: 'PUT', params: {action: 'set_hostgroup'}},
+            removeTests: {method: 'PUT', params: {action: 'remove_tests'}},
+            addTests: {method: 'PUT', params: {action: 'add_tests'}},
+            availableTests: {method: 'GET', params: {action: 'available_tests'}},
+            tests: {method: 'GET', transformResponse: function (response) {
+                var job = angular.fromJson(response);
+                return {results: job.tests};
+            }},
           
         });
     }]
