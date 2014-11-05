@@ -66,6 +66,18 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         controller: 'JobDetailsContentViewsController',
         templateUrl: 'integration/jobs/details/views/job-details-content-views.html'
     })
+    .state('jobs.details.content-views.new', {
+        url: '/content_views/new',
+        permission: 'create_content_views',
+        collapsed: true,
+        views: {
+            '@jobs.details': {
+                controller: 'JobsDetailsNewContentViewController',
+                templateUrl: 'content-views/new/views/content-view-new.html'
+            }
+        }
+    })
+
     .state('jobs.details.hostgroups', {
         url: '/hostgroups',
         permission: 'edit_jobs',
@@ -91,6 +103,17 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         permission: 'view_jobs',
         controller: 'JobDetailsTestsAvailController',
         templateUrl: 'integration/jobs/details/views/job-details-tests-table.html'
+    })
+    .state('jobs.details.tests.new-test', {
+        url: '/tests/new',
+        collapsed: true, 
+        permission: 'create_tests',
+        views: {
+            '@jobs.details': {
+                controller: 'NewTestController',
+                templateUrl: 'integration/tests/new/views/new-test-form.html'
+            }
+        }
     })
 
 

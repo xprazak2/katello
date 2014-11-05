@@ -9,6 +9,7 @@ angular.module('Bastion.integration').controller('JobDetailsContentViewsControll
                 'search': $location.search().search || "",
                 'sort_by': 'name',
                 'sort_order': 'ASC',
+                'nondefault': true,
                 /*'full_result': true*/
             };
 
