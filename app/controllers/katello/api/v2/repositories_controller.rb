@@ -102,6 +102,7 @@ class Api::V2::RepositoriesController < Api::V2::ApiController
   api :POST, "/repositories/:id/sync", N_("Sync a repository")
   param :id, :identifier, :required => true, :desc => N_("repository ID")
   def sync
+    binding.pry
     task = async_task(::Actions::Katello::Repository::Sync, @repository)
     respond_for_async :resource => task
   end

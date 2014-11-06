@@ -87,6 +87,7 @@ module Katello
     def repo_discover
       fail _("url not defined.") if params[:url].blank?
       task = async_task(::Actions::Katello::Repository::Discover, params[:url])
+      binding.pry
       respond_for_async :resource => task
     end
 

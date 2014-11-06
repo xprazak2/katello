@@ -116,6 +116,14 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         }
     })
 
+    .state('jobs.details.to-environment', {
+        url: '/to_environment',
+        collapsed: true,
+        permission: 'edit_jobs',
+        controller: 'JobDetailsToEnvironmentController',
+        templateUrl: 'integration/jobs/details/views/job-details-to-environment.html'
+    })
+
 
     .state('tests', {
         abstract: true,
@@ -172,5 +180,7 @@ angular.module('Bastion.integration').config(['$stateProvider', function ($state
         controller: 'TestDetailsInfoController',
         templateUrl: 'integration/tests/details/views/test-details-info.html'
     })
+
+
 
 }]);
