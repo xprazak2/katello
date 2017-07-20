@@ -3,6 +3,7 @@ module Actions
     module Foreman
       class ContentUpdate < Actions::Katello::Foreman::Abstract
         middleware.use ::Actions::Middleware::RemoteAction
+        middleware.use Actions::Middleware::KeepCurrentUser
 
         def plan(environment, content_view, repo = nil)
           plan_self(environment_id: environment.id,
