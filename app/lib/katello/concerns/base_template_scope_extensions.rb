@@ -6,7 +6,8 @@ module Katello
       module Overrides
         def allowed_helpers
           super + [:errata, :host_subscriptions, :host_applicable_errata_ids, :host_applicable_errata_filtered,
-                   :host_latest_applicable_rpm_version, :load_pools, :load_errata_applications]
+                   :host_latest_applicable_rpm_version, :load_pools, :load_errata_applications,
+                   :host_sla, :host_products, :sub_name, :sub_sku, :host_virtual_guests]
         end
       end
 
@@ -20,6 +21,32 @@ module Katello
 
       def host_subscriptions(host)
         host.subscriptions
+      end
+
+      def host_subscription_facet(host)
+        host.subscription_facet
+      end
+
+      def host_sla(host)
+        host_subscription_facet(host)&.service_level
+      end
+
+      def host_products(host)
+        host_subscription_facet(host)&.installed_products
+      end
+
+      def sub_name(pool)
+        return unless pool
+        pool.subscription&.name
+      end
+
+      def sub_sku(pool)
+        return unless pool
+        pool.subscription&.cp_id
+      end
+
+      def host_virtual_guests(host)
+        host_subscription_facet(host)&.virtual_guests
       end
 
       def host_applicable_errata_ids(host)
